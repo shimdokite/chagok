@@ -1,83 +1,131 @@
-# 차곡 — 1일차
+# 차곡 (Chagok)
 
-직원이 복지 한도를 확인하고 복지비를 신청하는 포트폴리오 프로젝트입니다. **현재는 데모 로그인·홈, 실제 연결 확인 API, 비활성 신청 웹뷰, 브릿지 계측까지만 구현**했습니다. 실제 Google 인증·DB·사진·신청 저장·승인·반려는 없습니다.
+직원이 복지 한도를 확인하고 복지비를 신청하며, 담당자가 신청을 검토하는 과정을 위한 포트폴리오 프로젝트입니다. React Native 앱과 Next.js 웹을 WebView로 연결하는 구조로 개발하고 있습니다.
+
+## 주요 기능
+
+현재 구현된 기능:
+
+- 데모 로그인과 고정 데이터 기반 복지 한도·최근 신청 내역 표시
+- 앱에서 신청 웹 화면 열기·닫기
+- 서버 연결 상태 확인 및 오류 재시도
+- 앱과 웹 사이 메시지 검증·왕복 시간 측정
+
+실제 로그인·영수증 업로드·신청 저장·승인 및 반려는 개발 예정입니다. 현재 앱의 신청 폼은 비활성 상태이며, 별도의 HTML 시안에서 가상 신청 흐름을 확인할 수 있습니다.
+
+## 데모
+
+채울 예정
+
+## 기술 스택
+
+| 영역 | 기술 |
+| --- | --- |
+| 모바일 | React Native, Expo, Expo Router |
+| 웹 | Next.js, React |
+| API·계약 | tRPC, Zod |
+| 언어·구성 | TypeScript, npm workspaces |
+| 테스트 | Vitest |
+
+정확한 의존성 버전은 각 패키지의 `package.json`과 `package-lock.json`에서 관리합니다.
 
 ## 시작하기
 
-Node **24 LTS**와 npm을 사용합니다. 시스템 Node 25는 설치된 Expo 58의 지원 범위 밖입니다.
+### 요구 사항
+
+- Node.js 24 (`>=24.3.0 <25`) 및 npm
+- iOS 앱 실행 시 macOS, Xcode, iOS 시뮬레이터, CocoaPods
+
+### 설치
 
 ```sh
-nvm use       # nvm을 사용하는 경우. 없다면 Node 24 LTS 준비
+git clone https://github.com/shimdokite/chagok.git
+cd chagok
+nvm use # nvm 사용 시. 그 외에는 Node.js 24를 준비합니다.
 npm ci
-npm run dev:web       # 터미널 1: http://localhost:3000/apply
-npm run dev:preview   # 터미널 2: http://localhost:8081 (RN Web 미리보기)
 ```
 
-이번 작업에서는 시스템 Node 25를 유지하고 `.local-tools/node24/node_modules/.bin/node` v24.22.3을 사용합니다. OS 재부팅으로 이전 `/private/tmp` 도구가 사라져 프로젝트 내부에 복구했습니다. `.local-tools/`는 Git에서 제외됩니다.
+처음 설치할 때 모바일 환경 파일을 준비합니다.
 
 ```sh
-PATH=/Users/doyeon/Desktop/chagok/.local-tools/node24/node_modules/.bin:$PATH npm run dev:web
-PATH=/Users/doyeon/Desktop/chagok/.local-tools/node24/node_modules/.bin:$PATH npm run dev:preview
+cp apps/mobile/.env.example apps/mobile/.env.local
 ```
 
-- 브라우저: `/` 로그인 → 데모로 둘러보기 → `/home` → `/apply`.
-- RN Web 신청 화면의 iframe은 화면 검토용입니다. 네이티브 WebView·브릿지 RTT를 검증하지 않습니다.
-- 홈 하단 개발 도구: 실제 서버 확인, 재시도, 닫힌 측정 세션 공유.
-- 기기 신청 화면 개발 도구: WEB_READY 확인, 준비 3회 + 본 측정 20회, 재로드, 원본 공유.
+`EXPO_PUBLIC_WEB_ORIGIN`은 앱이 접근할 Next.js 서버 주소입니다. 기본값은 iOS 시뮬레이터용 `http://127.0.0.1:3000`입니다. 환경변수를 변경하면 Metro를 재시작해야 하며, `EXPO_PUBLIC_*`에는 비밀값을 넣지 않습니다. 나머지 설정은 [.env.example](apps/mobile/.env.example)을 참고하세요.
 
-## 네이티브 Development Build
+### 웹 미리보기
 
-**iPhone 17 / iOS 27.2 시뮬레이터에서 Development Build 0.1.0 (1) 설치·실행을 확인했습니다.** 실제 API 성공/중단/복구, WebView 열기/닫기, 준비 3회+20회 실측과 취소·재진입 원본까지 확보했습니다. 실제 iPhone·Android는 아직 미검증입니다.
-
-현재 Device Hub에 차곡 홈이 열려 있고 Metro(8081), Next(3000)가 실행 중입니다. 브라우저 검토 경로는 `http://localhost:3000/apply`입니다. 현재 8081은 네이티브 앱용 Metro이며 RN Web 미리보기는 별도 모드입니다.
-
-프로젝트 루트에서 새 터미널을 열 때:
+두 터미널에서 각각 실행합니다.
 
 ```sh
-export PATH="$PWD/.local-tools/node24/node_modules/.bin:$PWD/.local-tools/gems/bin:/opt/homebrew/opt/ruby/bin:$PATH"
-export GEM_HOME="$PWD/.local-tools/gems"
-export GEM_PATH="$GEM_HOME"
-export DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer
-npm run dev:web      # 터미널 1
-npm run dev:mobile   # 터미널 2 (위 환경 설정 후)
+# 터미널 1: 웹 및 API 서버
+npm run dev:web
+
+# 터미널 2: 앱의 웹 미리보기
+npm run dev:preview
 ```
 
-최초 재빌드는 같은 환경에서 `npm run ios -w @chagok/mobile`을 사용합니다. Xcode 27의 시뮬레이터 UI는 **Device Hub**이며 앱 경로는 `/Applications/Xcode.app/Contents/Applications/DeviceHub.app`입니다. 설치·실행 명령과 오류 해결 기록은 [iOS 환경 준비](docs/verification/ios-setup.md)에 있습니다.
+- 앱 미리보기: [localhost:8081](http://localhost:8081) — 데모 로그인 → 홈 → 신청 화면
+- 신청 웹 화면: [localhost:3000/apply](http://localhost:3000/apply)
 
-`apps/mobile/.env.local`에 웹 origin과 실측 기기·빌드·웹 모드·sourceRef를 설정했습니다. 다른 기기나 코드로 다시 측정할 때 `.env.example` 설명에 따라 갱신하고 Metro를 재시작합니다. 공개 값만 사용하며 Git 제외 대상입니다.
+웹 미리보기는 화면 확인용입니다. 네이티브 WebView와 브릿지 측정은 iOS 앱에서 확인합니다.
 
-| 실행 환경 | `EXPO_PUBLIC_WEB_ORIGIN` |
-| --- | --- |
-| iOS 시뮬레이터 | `http://127.0.0.1:3000` |
-| Android 에뮬레이터 | `http://10.0.2.2:3000` |
-| 실제 기기 | `http://<같은 Wi-Fi의 Mac LAN IP>:3000` |
+### iOS 앱
 
-기기의 localhost는 Mac이 아닙니다. 환경변수 변경 후 Metro를 다시 시작하세요. 네이티브 origin과 `/apply` 경로가 정확히 일치해야 합니다. Android 실제 실행과 개발 HTTP 접근은 미검증입니다. HTTPS/인증서 검증을 전체 해제하지 않았습니다.
+웹·API 서버를 실행한 상태에서 Development Build를 빌드·설치합니다.
 
-앱 식별자는 신규 기본값 `dev.doyeon.chagok`, scheme은 `chagok`입니다. 이 폴더 내 중복은 없지만 Apple/Google 계정의 전역 등록 여부는 미확인입니다. 원격 EAS 프로젝트·계정·유료 빌드는 만들지 않았습니다. `ios/`는 Expo가 생성한 로컬 산출물이며 Git 제외 대상입니다. 네이티브 설정의 원본은 `app.config.ts`입니다.
+```sh
+npm run ios -w @chagok/mobile
+```
 
-## 검증 명령
+이미 앱이 설치되어 있다면 다음 명령으로 Metro에 연결합니다.
+
+```sh
+npm run dev:mobile
+```
+
+웹 미리보기와 네이티브 Metro는 기본 포트가 같으므로 하나를 종료한 뒤 다른 모드를 실행하세요. 자세한 환경 준비와 문제 해결은 [iOS 환경 설정 기록](docs/verification/ios-setup.md)을 참고하세요. Android 실행 가이드는 채울 예정입니다.
+
+## 테스트 및 빌드
+
+프로젝트 루트에서 실행합니다.
 
 ```sh
 npm run typecheck
 npm test
 npm run build:web
-cd apps/mobile
-npx expo-doctor
-npx expo export --platform ios --platform android --output-dir dist
 ```
 
-전체 결과: [검증 기록](docs/verification/day-01.md), [AC 18개](docs/acceptance-day-01.md).
+## 프로젝트 구조
 
-## 코드 지도와 이어가기
+```text
+apps/
+  mobile/       React Native 앱
+  web/          Next.js 웹 화면 및 API 진입점
+packages/
+  api/          tRPC 라우터
+  contracts/    공유 메시지 계약 및 데모 데이터
+scripts/        검증 스크립트
+docs/           기획·개발·검증·학습 문서
+```
 
-- [PR·커밋 필수 컨벤션과 자동 작성](docs/contributing.md): AI 작업 종료 시 [PR 초안](docs/changes/latest-pr.md)과 [커밋 초안](docs/changes/latest-commit.txt)을 갱신합니다. Git 초기화 후 커밋 템플릿 연결 절차도 포함합니다.
+## 프로젝트 문서
 
-- `apps/mobile`: RN 화면·라우팅·WebView·개발 도구
-- `apps/web`: Next.js `/apply`와 `/api/trpc`
-- `packages/api`: public `health.check`; 앱에서는 `AppRouter`를 **type-only import**
-- `packages/contracts`: Zod 메시지 계약과 불변 데모 fixture
-- [진행 상태](docs/progress.md), [작업별 학습](docs/learning/day-01.md), [측정 상태](docs/metrics/daily/day-01.md)
-- [직접 확인 순서](docs/manual-checks.md), [승인 명세](docs/plans/day-01.md), [기준 시안](docs/design/)
+- [제품 범위와 개발 계획](docs/product.md)
+- [코드 구조](docs/repository-map.md)
+- [진행 기록](docs/progress.md)
+- [검증 결과](docs/verification/day-01.md) · [수동 확인 절차](docs/manual-checks.md)
+- [측정 기록](docs/metrics/daily/day-01.md) · [학습 기록](docs/learning/day-01.md)
+- [기준 시안](docs/design/)
 
-2026-11-13 사용자가 Device Hub 화면·스크롤을 최종 확인하여 1일차 인수와 PR 생성을 승인했습니다. 공개 저장소 [shimdokite/chagok](https://github.com/shimdokite/chagok)에 [1일차 PR #1](https://github.com/shimdokite/chagok/pull/1)을 열었습니다. 브랜치는 `feat/day-01-foundation`, 대상은 `main`입니다. [PR 설명 초안](docs/pr-draft.md)에 실제 요청 인용과 AC 결과를 기록했습니다. **2일차 구현은 시작하지 않았습니다.**
+## 기여 방법
+
+변경 사항은 [PR·커밋 작성 규칙](docs/contributing.md)에 따라 작성합니다. AI 작업자는 [AGENTS.md](AGENTS.md)를 함께 참고하세요.
+
+## 배포
+
+채울 예정
+
+## 라이선스
+
+채울 예정
