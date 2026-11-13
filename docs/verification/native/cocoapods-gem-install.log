@@ -1,0 +1,60 @@
+Successfully installed rexml-3.4.4
+Building native extensions. This could take a while...
+Successfully installed nkf-0.3.0
+Successfully installed nanaimo-0.4.0
+Successfully installed colored2-3.1.2
+Successfully installed claide-1.1.0
+Successfully installed CFPropertyList-3.0.8
+Successfully installed base64-0.3.0
+Successfully installed atomos-0.1.3
+Successfully installed xcodeproj-1.28.1
+Successfully installed ruby-macho-4.1.0
+Successfully installed nap-1.2.0
+Successfully installed molinillo-0.8.0
+Successfully installed gh_inspector-1.1.3
+Successfully installed fourflusher-2.3.1
+Successfully installed cocoapods-try-1.2.0
+Successfully installed netrc-0.11.0
+Successfully installed cocoapods-trunk-1.6.0
+Successfully installed cocoapods-search-1.0.1
+Successfully installed cocoapods-plugins-1.0.0
+Successfully installed cocoapods-downloader-2.1
+Successfully installed cocoapods-deintegrate-1.0.5
+Successfully installed logger-1.7.0
+Successfully installed ffi-1.17.4-arm64-darwin
+Successfully installed ethon-0.19.2
+Successfully installed typhoeus-1.7.1
+Successfully installed public_suffix-4.0.7
+Successfully installed fuzzy_match-2.0.4
+Successfully installed concurrent-ruby-1.3.8
+Successfully installed mutex_m-0.3.0
+Successfully installed httpclient-2.10.0
+A new major version is available for Algolia! Please now use the https://rubygems.org/gems/algolia gem to get the latest features.
+Successfully installed algoliasearch-1.27.5
+Successfully installed addressable-2.9.2
+Successfully installed tzinfo-2.0.6
+NOTE: minitest 5 will be the last in the minitest family to support
+      ruby 1.8 to 2.7. If you need to keep using these versions,
+      you need to pin your dependency to minitest with something
+      like "~> 5.0". See History.rdoc to locate compatible
+      versions.
+
+      Further, minitest 6 will be dropping the following:
+
+      + MiniTest (it's been Minitest for >10 years)
+      + MiniTest::Unit
+      + MiniTest::Unit::TestCase
+      + assert_send (unless you argue for it well)
+      + assert_equal nil, obj
+      + mocks and stubs: moving minitest/mock.rb to its own gem
+Successfully installed minitest-5.27.0
+Successfully installed i18n-1.15.2
+Successfully installed drb-2.2.3
+Successfully installed connection_pool-2.5.5
+Building native extensions. This could take a while...
+Successfully installed bigdecimal-4.1.3
+Successfully installed benchmark-0.5.0
+Successfully installed activesupport-7.2.4
+Successfully installed cocoapods-core-1.17.0
+Successfully installed cocoapods-1.17.0
+42 gems installed

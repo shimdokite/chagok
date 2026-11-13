@@ -1,0 +1,6 @@
+{
+  "scope": "45 source/config manifest files, env example, both actual measurement JSONs",
+  "filesScanned": 48,
+  "patternMatches": [],
+  "note": "Pattern scan plus manual review; no secret values printed."
+}

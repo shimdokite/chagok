@@ -1,0 +1,158 @@
+{
+  "startedAt": "2026-11-13T12:01:54.035Z",
+  "endedAt": "2026-11-13T12:02:03.844Z",
+  "platform": "ios",
+  "os": "27.2",
+  "before": {
+    "ready": true,
+    "running": false,
+    "result": null,
+    "error": false
+  },
+  "after": {
+    "ready": true,
+    "running": false,
+    "result": null,
+    "error": false
+  },
+  "cases": [
+    "invalid-json",
+    "null",
+    "wrong-channel",
+    "wrong-version",
+    "unknown-type",
+    "nonempty-payload",
+    "extra-key",
+    "missing-id",
+    "unmatched-pong",
+    "external-origin",
+    "same-origin-other-path",
+    "query",
+    "custom-scheme",
+    "new-window",
+    "target-blank",
+    "final-document"
+  ],
+  "events": [
+    {
+      "case": "invalid-json",
+      "kind": "message",
+      "data": "{",
+      "url": "http://127.0.0.1:3000/apply",
+      "decision": "rejected-schema",
+      "at": "2026-11-13T12:01:54.079Z"
+    },
+    {
+      "case": "null",
+      "kind": "message",
+      "data": "null",
+      "url": "http://127.0.0.1:3000/apply",
+      "decision": "rejected-schema",
+      "at": "2026-11-13T12:01:54.645Z"
+    },
+    {
+      "case": "wrong-channel",
+      "kind": "message",
+      "data": "{\"channel\":\"other\",\"version\":1,\"payload\":{},\"type\":\"CLOSE_WEBVIEW\"}",
+      "url": "http://127.0.0.1:3000/apply",
+      "decision": "rejected-schema",
+      "at": "2026-11-13T12:01:55.264Z"
+    },
+    {
+      "case": "wrong-version",
+      "kind": "message",
+      "data": "{\"channel\":\"chagok.bridge\",\"version\":2,\"payload\":{},\"type\":\"CLOSE_WEBVIEW\"}",
+      "url": "http://127.0.0.1:3000/apply",
+      "decision": "rejected-schema",
+      "at": "2026-11-13T12:01:55.879Z"
+    },
+    {
+      "case": "unknown-type",
+      "kind": "message",
+      "data": "{\"channel\":\"chagok.bridge\",\"version\":1,\"payload\":{},\"type\":\"SUBMIT\"}",
+      "url": "http://127.0.0.1:3000/apply",
+      "decision": "rejected-schema",
+      "at": "2026-11-13T12:01:56.497Z"
+    },
+    {
+      "case": "nonempty-payload",
+      "kind": "message",
+      "data": "{\"channel\":\"chagok.bridge\",\"version\":1,\"payload\":{\"amount\":20000},\"type\":\"CLOSE_WEBVIEW\"}",
+      "url": "http://127.0.0.1:3000/apply",
+      "decision": "rejected-schema",
+      "at": "2026-11-13T12:01:57.113Z"
+    },
+    {
+      "case": "extra-key",
+      "kind": "message",
+      "data": "{\"channel\":\"chagok.bridge\",\"version\":1,\"payload\":{},\"type\":\"CLOSE_WEBVIEW\",\"unexpected\":true}",
+      "url": "http://127.0.0.1:3000/apply",
+      "decision": "rejected-schema",
+      "at": "2026-11-13T12:01:57.730Z"
+    },
+    {
+      "case": "missing-id",
+      "kind": "message",
+      "data": "{\"channel\":\"chagok.bridge\",\"version\":1,\"payload\":{},\"type\":\"PONG\"}",
+      "url": "http://127.0.0.1:3000/apply",
+      "decision": "rejected-schema",
+      "at": "2026-11-13T12:01:58.349Z"
+    },
+    {
+      "case": "unmatched-pong",
+      "kind": "message",
+      "data": "{\"channel\":\"chagok.bridge\",\"version\":1,\"payload\":{},\"type\":\"PONG\",\"requestId\":\"m08-unknown\"}",
+      "url": "http://127.0.0.1:3000/apply",
+      "decision": "accepted",
+      "at": "2026-11-13T12:01:58.961Z"
+    },
+    {
+      "case": "external-origin",
+      "kind": "navigation",
+      "url": "https://example.com/chagok-m08",
+      "allowed": false,
+      "at": "2026-11-13T12:01:59.586Z"
+    },
+    {
+      "case": "same-origin-other-path",
+      "kind": "navigation",
+      "url": "http://127.0.0.1:3000/m08-not-allowed",
+      "allowed": false,
+      "at": "2026-11-13T12:02:00.182Z"
+    },
+    {
+      "case": "query",
+      "kind": "navigation",
+      "url": "http://127.0.0.1:3000/apply?m08=1",
+      "allowed": false,
+      "at": "2026-11-13T12:02:00.781Z"
+    },
+    {
+      "case": "custom-scheme",
+      "kind": "navigation",
+      "url": "chagok-m08-blocked://test",
+      "allowed": false,
+      "at": "2026-11-13T12:02:01.419Z"
+    },
+    {
+      "case": "new-window",
+      "kind": "new-window-blocked",
+      "url": "https://example.com/chagok-m08-popup",
+      "at": "2026-11-13T12:02:02.021Z"
+    },
+    {
+      "case": "target-blank",
+      "kind": "new-window-blocked",
+      "url": "https://example.com/chagok-m08-link",
+      "at": "2026-11-13T12:02:02.657Z"
+    },
+    {
+      "case": "final-document",
+      "kind": "message",
+      "data": "{\"channel\":\"chagok.bridge\",\"version\":1,\"payload\":{},\"type\":\"PONG\",\"requestId\":\"m08-final\"}",
+      "url": "http://127.0.0.1:3000/apply",
+      "decision": "accepted",
+      "at": "2026-11-13T12:02:03.245Z"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+
+> chagok@0.1.0 dev:web
+> npm run dev -w @chagok/web
+
+
+> @chagok/web@0.1.0 dev
+> next dev --hostname 0.0.0.0
+
+▲ Next.js 16.4.6 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://0.0.0.0:3000
+✓ Ready in 132ms
+✓ Running next.config.ts took 16ms
+
+✓ Generated AGENTS.md for AI agents. Set `agentRules: false` in next.config to disable.
+ GET /api/trpc/health.check 200 in 440ms (next.js: 423ms, application-code: 17ms)
+ GET /api/trpc/health.check 200 in 22ms (next.js: 17ms, application-code: 5ms)
+⚠ Found a change in next.config.ts. Restarting the server to apply the changes...
+▲ Next.js 16.4.6 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://0.0.0.0:3000
+✓ Ready in 224ms
+✓ Running next.config.ts took 24ms
+
+ GET /api/trpc/health.check 200 in 385ms (next.js: 373ms, application-code: 12ms)
+[?25h
+
+> chagok@0.1.0 dev:web
+> npm run dev -w @chagok/web
+
+
+> @chagok/web@0.1.0 dev
+> next dev --hostname 0.0.0.0
+
+▲ Next.js 16.4.6 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://0.0.0.0:3000
+✓ Ready in 146ms
+✓ Running next.config.ts took 14ms
+
+ GET /api/trpc/health.check 200 in 371ms (next.js: 360ms, application-code: 12ms)
+ GET /apply 200 in 103ms (next.js: 39ms, application-code: 64ms)
+⚠ Blocked cross-origin request to Next.js dev resource /_next/hmr from "127.0.0.1".
+Cross-origin access to Next.js dev resources is blocked by default for safety.
+
+To allow this host in development, add it to "allowedDevOrigins" in next.config.js and restart the dev server:
+
+// next.config.js
+module.exports = {
+  allowedDevOrigins: ['127.0.0.1'],
+}
+
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+⚠ Blocked cross-origin request to Next.js dev resource /__nextjs_font/geist-latin.woff2 from "127.0.0.1".
+Cross-origin access to Next.js dev resources is blocked by default for safety.
+
+To allow this host in development, add it to "allowedDevOrigins" in next.config.js and restart the dev server:
+
+// next.config.js
+module.exports = {
+  allowedDevOrigins: ['127.0.0.1'],
+}
+
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+ GET /apply 200 in 19ms (next.js: 1.1ms, application-code: 18ms)
+ GET /apply 200 in 14ms (next.js: 0.9ms, application-code: 13ms)
+ GET /api/trpc/health.check 200 in 4ms (next.js: 1.7ms, application-code: 2ms)

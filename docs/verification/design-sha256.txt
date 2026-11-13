@@ -1,0 +1,3 @@
+8261461e5e7ad4750b343d89504bdd3197cd70cbe50365e2fdb69c55251f1168  docs/design/chagok-admin-reference.png
+c5616c10de884704bca0c6feb8aaa59f6cb77de50dccc4bfea21eb26a163b3ad  docs/design/chagok-mobile-reference.png
+0bf5b8bf4c5391a7c88fc77c7dbd120204bd63e4618b30b4c37d3ff8ddfc4b5d  docs/design/chagok-prototype.html

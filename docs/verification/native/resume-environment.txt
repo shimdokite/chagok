@@ -1,0 +1,7 @@
+Resume: 2026-11-13 Asia/Seoul
+macOS 27.2.1 (26B131), arm64
+Xcode 27.2 (27B52), /Applications/Xcode.app
+Initial active developer directory: /Library/Developer/CommandLineTools
+Initial license state: agreement pending (UI opened; user asked to review/accept)
+Node 24 restored under .local-tools/node24; system Node 25 unchanged
+No CocoaPods/Ruby Homebrew installation present at resume

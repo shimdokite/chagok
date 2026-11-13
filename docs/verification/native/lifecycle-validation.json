@@ -1,0 +1,81 @@
+{
+  "passed": true,
+  "runs": [
+    {
+      "experimentId": "mwerowjf-3",
+      "status": "completed",
+      "reason": null,
+      "warmups": 3,
+      "samples": 20,
+      "summary": {
+        "attempts": 20,
+        "success": 20,
+        "failure": 0,
+        "timeout": 0,
+        "cancelled": 0,
+        "medianMs": 1.8291249999310821,
+        "minMs": 1.5912919999100268,
+        "maxMs": 3.0239589996635914
+      }
+    },
+    {
+      "experimentId": "mwerq4wn-27",
+      "status": "cancelled",
+      "reason": "close",
+      "warmups": 2,
+      "samples": 0,
+      "summary": {
+        "attempts": 0,
+        "success": 0,
+        "failure": 0,
+        "timeout": 0,
+        "cancelled": 0,
+        "medianMs": null,
+        "minMs": null,
+        "maxMs": null
+      }
+    },
+    {
+      "experimentId": "mwerqrph-34",
+      "status": "cancelled",
+      "reason": "reload",
+      "warmups": 2,
+      "samples": 0,
+      "summary": {
+        "attempts": 0,
+        "success": 0,
+        "failure": 0,
+        "timeout": 0,
+        "cancelled": 0,
+        "medianMs": null,
+        "minMs": null,
+        "maxMs": null
+      }
+    },
+    {
+      "experimentId": "mwerr4g1-39",
+      "status": "completed",
+      "reason": null,
+      "warmups": 3,
+      "samples": 20,
+      "summary": {
+        "attempts": 20,
+        "success": 20,
+        "failure": 0,
+        "timeout": 0,
+        "cancelled": 0,
+        "medianMs": 1.8713744999840856,
+        "minMs": 0.8182910000905395,
+        "maxMs": 2.782041999977082
+      }
+    }
+  ],
+  "checks": [
+    "first run equals baseline raw",
+    "close cancellation preserved",
+    "reload cancellation preserved",
+    "new session separated",
+    "20 successes after reentry and reload"
+  ],
+  "validationNote": "Initial ad hoc validator expected undefined reason; actual schema uses null for completed. Corrected validator only; raw unchanged."
+}

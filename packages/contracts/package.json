@@ -1,0 +1,15 @@
+{
+  "name": "@chagok/contracts",
+  "version": "0.1.0",
+  "private": true,
+  "exports": {
+    ".": "./src/bridge.ts",
+    "./demo": "./src/demo.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "zod": "^4.1.0"
+  }
+}

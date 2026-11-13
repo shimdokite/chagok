@@ -1,0 +1,43 @@
+{
+  "date": "2026-11-13",
+  "timezone": "Asia/Seoul",
+  "M08": {
+    "status": "passed",
+    "actualCallbackAssertions": 16,
+    "stateUnchanged": true,
+    "device": "iPhone 17 iOS 27.2 Simulator"
+  },
+  "M09": {
+    "status": "passed within documented display scope",
+    "devices": [
+      "iPhone 13 mini iOS 27.2 Simulator",
+      "iPhone 17 iOS 27.2 Simulator"
+    ],
+    "fixes": [
+      "tab label overlap",
+      "balance line split",
+      "recent request title compression"
+    ],
+    "method": "native screenshots; CUA AX buttons; actual ScrollView/WebView scroll with local development controls",
+    "manualRemaining": []
+  },
+  "checks": {
+    "typecheckExitCode": 0,
+    "unitTestsPassed": 33,
+    "testFilesPassed": 5,
+    "m08AssertionsPassed": 16,
+    "iosProductionJsExport": "passed"
+  },
+  "newPerformanceMeasurement": false,
+  "finalSourceManifestSha256": "d62f26c701ae2f39190dd47e422369fa2bdb282ea629e509feae12b167755091",
+  "sourceFileCount": 50,
+  "day02Started": false,
+  "prOpened": false,
+  "userFinalAcceptance": {
+    "date": "2026-11-13",
+    "timezone": "Asia/Seoul",
+    "quote": "Device Hub에서 직접 확인했고 화면이랑 스크롤 모두 정상 동작해. 1일차 최종 확인 완료로 기록하고, PR을 올리자.",
+    "screenAndScroll": "confirmed",
+    "prAuthorized": true
+  }
+}

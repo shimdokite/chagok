@@ -1,0 +1,48 @@
+{
+  "at": "2026-11-13T11:48:14.115Z",
+  "url": "http://127.0.0.1:3015/chagok-prototype.html",
+  "browser": "157.0.8103.78",
+  "sourceSha256": "7dbe5820c520b0d85173edbbe717caab780861615de94ad53ccc47348567740e",
+  "results": [
+    {
+      "name": "missing-receipt",
+      "passed": true,
+      "observations": {
+        "balance": 65000,
+        "message": "영수증을 먼저 첨부해 주세요."
+      },
+      "consoleErrors": [],
+      "pageErrors": []
+    },
+    {
+      "name": "approve",
+      "passed": true,
+      "observations": {
+        "balances": [
+          65000,
+          45000,
+          45000
+        ],
+        "employeeStatus": "승인 완료"
+      },
+      "consoleErrors": [],
+      "pageErrors": []
+    },
+    {
+      "name": "reject",
+      "passed": true,
+      "observations": {
+        "balances": [
+          65000,
+          45000,
+          65000
+        ],
+        "employeeStatus": "반려",
+        "reason": "영수증 사용일을 확인해 주세요.",
+        "emptyReasonBlocked": true
+      },
+      "consoleErrors": [],
+      "pageErrors": []
+    }
+  ]
+}

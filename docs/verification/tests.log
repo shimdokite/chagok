@@ -1,0 +1,13 @@
+
+> chagok@0.1.0 test
+> vitest run
+
+
+ RUN  v5.1.0 /Users/doyeon/Desktop/chagok
+
+
+ Test Files  5 passed (5)
+      Tests  33 passed (33)
+   Start at  16:38:47
+   Duration  133ms (import 47%, transform 36%, tests 13%, worker 4%)
+

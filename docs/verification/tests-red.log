@@ -1,0 +1,346 @@
+
+> chagok@0.1.0 test
+> vitest run
+
+
+ RUN  v5.1.0 /Users/doyeon/Desktop/chagok
+
+ ❯ packages/contracts/src/demo.test.ts (1 test | 1 failed) 4ms
+   × reserves submitted and approved amounts, excluding rejected claims 4ms
+ ❯ packages/contracts/src/bridge.test.ts (18 tests | 6 failed) 6ms
+   ❯ untrusted bridge input (18)
+     × accepts WEB_READY 3ms
+     × accepts CLOSE_WEBVIEW 0ms
+     × accepts PING 0ms
+     × accepts PONG 0ms
+     × limits navigation to exact origin and apply path 0ms
+     × serializes hostile requestId as data in injection 1ms
+(node:77915) PromiseRejectionHandledWarning: Promise rejection was handled asynchronously (rejection id: 20)
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ❯ apps/mobile/src/metrics/bridge-benchmark.test.ts (9 tests | 8 failed) 8ms
+   ❯ benchmark lifecycle (9)
+     × does not send before WEB_READY 5ms
+     × matches only current ID and ignores duplicate responses 0ms
+     × records timeout and never counts a late PONG 0ms
+     × cancels on reload and clears pending timers 0ms
+     × rejects concurrent runs and waits 100ms AFTER each response 0ms
+     × cancels interval sleep and isolates the next session 0ms
+     × separates 3 warmups from 20 measured samples 1ms
+     × records send failure without leaving a timer 0ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 15 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/contracts/src/bridge.test.ts > untrusted bridge input > accepts WEB_READY
+ FAIL  packages/contracts/src/bridge.test.ts > untrusted bridge input > accepts CLOSE_WEBVIEW
+ FAIL  packages/contracts/src/bridge.test.ts > untrusted bridge input > accepts PING
+ FAIL  packages/contracts/src/bridge.test.ts > untrusted bridge input > accepts PONG
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ packages/contracts/src/bridge.test.ts:6:136
+      4| describe('untrusted bridge input', () => {
+      5|   it.each(['WEB_READY', 'CLOSE_WEBVIEW', 'PING', 'PONG'])('accepts %s'…
+      6|     expect(parseBridgeMessage(JSON.stringify({ ...base, type, ...(['PI…
+       |                                                                                                                                        ^
+      7|   });
+      8|   it.each([
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/15]⎯
+
+ FAIL  packages/contracts/src/bridge.test.ts > untrusted bridge input > limits navigation to exact origin and apply path
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ packages/contracts/src/bridge.test.ts:16:86
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/15]⎯
+
+ FAIL  packages/contracts/src/bridge.test.ts > untrusted bridge input > serializes hostile requestId as data in injection
+AssertionError: expected undefined to deeply equal { channel: 'chagok.bridge', …(4) }
+
+- Expected:
+{
+  "channel": "chagok.bridge",
+  "payload": {},
+  "requestId": "\";throw new Error(\"bad\");// ",
+  "type": "PING",
+  "version": 1,
+}
+
++ Received:
+undefined
+
+ ❯ packages/contracts/src/bridge.test.ts:22:22
+     20|     let received: unknown;
+     21|     new Function('window', injectionFor(message))({__CHAGOK_BRIDGE__:{…
+     22|     expect(received).toEqual(message);
+       |                      ^
+     23|   });
+     24| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/15]⎯
+
+ FAIL  packages/contracts/src/demo.test.ts > reserves submitted and approved amounts, excluding rejected claims
+AssertionError: expected {} to deeply equal { total: 100000, used: 35000, …(1) }
+
+- Expected
++ Received
+
+- {
+-   "available": 65000,
+-   "total": 100000,
+-   "used": 35000,
+- }
++ {}
+
+ ❯ packages/contracts/src/demo.test.ts:4:40
+      2| import { demo, balance } from './demo';
+      3| it('reserves submitted and approved amounts, excluding rejected claims…
+      4|  expect(balance(demo.requests,100000)).toEqual({total:100000,used:3500…
+       |                                        ^
+      5|  expect(balance([{amount:30000,status:'REJECTED'}],100000).available).…
+      6| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/15]⎯
+
+ FAIL  apps/mobile/src/metrics/bridge-benchmark.test.ts > benchmark lifecycle > does not send before WEB_READY
+AssertionError: expected [Function] to throw error including 'not-ready' but got 'not-implemented'
+
+Expected: "not-ready"
+Received: "not-implemented"
+
+ ❯ apps/mobile/src/metrics/bridge-benchmark.test.ts:12:112
+     10| const ready=()=>engine.receive({channel:'chagok.bridge',version:1,type…
+     11| describe('benchmark lifecycle',()=>{
+     12|  it('does not send before WEB_READY',async()=>{await expect(engine.run…
+       |                                                                                                                ^
+     13|  it('matches only current ID and ignores duplicate responses',async()=…
+     14|   ready();const run=engine.runBridgeBenchmark({count:1,warmupCount:0});
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/15]⎯
+
+ FAIL  apps/mobile/src/metrics/bridge-benchmark.test.ts > benchmark lifecycle > matches only current ID and ignores duplicate responses
+TypeError: Cannot read properties of undefined (reading 'requestId')
+ ❯ apps/mobile/src/metrics/bridge-benchmark.test.ts:15:44
+     13|  it('matches only current ID and ignores duplicate responses',async()=…
+     14|   ready();const run=engine.runBridgeBenchmark({count:1,warmupCount:0});
+     15|   const id=(sent[0] as {requestId:string}).requestId;
+       |                                            ^
+     16|   engine.receive(pong('wrong')); await vi.advanceTimersByTimeAsync(12);
+     17|   engine.receive(pong(id));engine.receive(pong(id));
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/15]⎯
+
+ FAIL  apps/mobile/src/metrics/bridge-benchmark.test.ts > benchmark lifecycle > records timeout and never counts a late PONG
+TypeError: Cannot read properties of undefined (reading 'requestId')
+ ❯ apps/mobile/src/metrics/bridge-benchmark.test.ts:21:113
+     19|  });
+     20|  it('records timeout and never counts a late PONG',async()=>{
+     21|   ready();const run=engine.runBridgeBenchmark({count:1,warmupCount:0})…
+       |                                                                                                                 ^
+     22|   await vi.advanceTimersByTimeAsync(3000);engine.receive(pong(id));con…
+     23|   expect(result.summary.timeout).toBe(1);expect(result.summary.success…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/15]⎯
+
+ FAIL  apps/mobile/src/metrics/bridge-benchmark.test.ts > benchmark lifecycle > cancels on reload and clears pending timers
+Error: not-implemented
+ ❯ BridgeBenchmark.runBridgeBenchmark apps/mobile/src/metrics/bridge-benchmark.ts:6:58
+      4|  receive(_:unknown){return false;}
+      5|  reset(_:string){}
+      6|  async runBridgeBenchmark(..._:any[]):Promise<any>{throw new Error('no…
+       |                                                          ^
+      7| }
+      8|
+ ❯ apps/mobile/src/metrics/bridge-benchmark.test.ts:26:28
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/15]⎯
+
+ FAIL  apps/mobile/src/metrics/bridge-benchmark.test.ts > benchmark lifecycle > rejects concurrent runs and waits 100ms AFTER each response
+AssertionError: expected [Function] to throw error including 'already-running' but got 'not-implemented'
+
+Expected: "already-running"
+Received: "not-implemented"
+
+ ❯ apps/mobile/src/metrics/bridge-benchmark.test.ts:31:44
+     29|  it('rejects concurrent runs and waits 100ms AFTER each response',asyn…
+     30|   ready();const run=engine.runBridgeBenchmark({count:2,warmupCount:0});
+     31|   await expect(engine.runBridgeBenchmark()).rejects.toThrow('already-r…
+       |                                            ^
+     32|   await vi.advanceTimersByTimeAsync(50);engine.receive(pong((sent[0] a…
+     33|   await vi.advanceTimersByTimeAsync(99);expect(sent).toHaveLength(1);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/15]⎯
+
+ FAIL  apps/mobile/src/metrics/bridge-benchmark.test.ts > benchmark lifecycle > cancels interval sleep and isolates the next session
+TypeError: Cannot read properties of undefined (reading 'requestId')
+ ❯ apps/mobile/src/metrics/bridge-benchmark.test.ts:38:114
+     36|  });
+     37|  it('cancels interval sleep and isolates the next session',async()=>{
+     38|   ready();const run=engine.runBridgeBenchmark({count:2,warmupCount:0})…
+       |                                                                                                                  ^
+     39|   engine.receive(pong(old));await vi.advanceTimersByTimeAsync(0);engin…
+     40|   expect(vi.getTimerCount()).toBe(0);ready();const next=engine.runBrid…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/15]⎯
+
+ FAIL  apps/mobile/src/metrics/bridge-benchmark.test.ts > benchmark lifecycle > separates 3 warmups from 20 measured samples
+Error: not-implemented
+ ❯ BridgeBenchmark.runBridgeBenchmark apps/mobile/src/metrics/bridge-benchmark.ts:6:58
+      4|  receive(_:unknown){return false;}
+      5|  reset(_:string){}
+      6|  async runBridgeBenchmark(..._:any[]):Promise<any>{throw new Error('no…
+       |                                                          ^
+      7| }
+      8|
+ ❯ apps/mobile/src/metrics/bridge-benchmark.test.ts:45:28
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/15]⎯
+
+ FAIL  apps/mobile/src/metrics/bridge-benchmark.test.ts > benchmark lifecycle > records send failure without leaving a timer
+Error: not-implemented
+ ❯ BridgeBenchmark.runBridgeBenchmark apps/mobile/src/metrics/bridge-benchmark.ts:6:58
+      4|  receive(_:unknown){return false;}
+      5|  reset(_:string){}
+      6|  async runBridgeBenchmark(..._:any[]):Promise<any>{throw new Error('no…
+       |                                                          ^
+      7| }
+      8|
+ ❯ apps/mobile/src/metrics/bridge-benchmark.test.ts:49:115
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/15]⎯
+
+⎯⎯⎯⎯⎯⎯ Unhandled Errors ⎯⎯⎯⎯⎯⎯
+
+Vitest caught 5 unhandled errors during the test run.
+This might cause false positive tests. Resolve unhandled errors to make sure your tests are not affected.
+
+⎯⎯⎯⎯ Unhandled Rejection ⎯⎯⎯⎯⎯
+Error: not-implemented
+ ❯ BridgeBenchmark.runBridgeBenchmark apps/mobile/src/metrics/bridge-benchmark.ts:6:58
+      4|  receive(_:unknown){return false;}
+      5|  reset(_:string){}
+      6|  async runBridgeBenchmark(..._:any[]):Promise<any>{throw new Error('no…
+       |                                                          ^
+      7| }
+      8|
+ ❯ apps/mobile/src/metrics/bridge-benchmark.test.ts:14:28
+ ❯ node_modules/vitest/dist/chunks/run.CjdgFZiW.js:1632:35
+ ❯ node_modules/vitest/dist/chunks/run.CjdgFZiW.js:2801:26
+ ❯ node_modules/vitest/dist/chunks/run.CjdgFZiW.js:3338:20
+ ❯ runWithCancel node_modules/vitest/dist/chunks/run.CjdgFZiW.js:3333:10
+ ❯ node_modules/vitest/dist/chunks/run.CjdgFZiW.js:3318:20
+ ❯ runWithTimeout node_modules/vitest/dist/chunks/run.CjdgFZiW.js:3276:10
+
+This error originated in "apps/mobile/src/metrics/bridge-benchmark.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "separates 3 warmups from 20 measured samples". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯ Unhandled Rejection ⎯⎯⎯⎯⎯
+Error: not-implemented
+ ❯ BridgeBenchmark.runBridgeBenchmark apps/mobile/src/metrics/bridge-benchmark.ts:6:58
+      4|  receive(_:unknown){return false;}
+      5|  reset(_:string){}
+      6|  async runBridgeBenchmark(..._:any[]):Promise<any>{throw new Error('no…
+       |                                                          ^
+      7| }
+      8|
+ ❯ apps/mobile/src/metrics/bridge-benchmark.test.ts:21:28
+ ❯ node_modules/vitest/dist/chunks/run.CjdgFZiW.js:1632:35
+ ❯ node_modules/vitest/dist/chunks/run.CjdgFZiW.js:2801:26
+ ❯ node_modules/vitest/dist/chunks/run.CjdgFZiW.js:3338:20
+ ❯ runWithCancel node_modules/vitest/dist/chunks/run.CjdgFZiW.js:3333:10
+ ❯ node_modules/vitest/dist/chunks/run.CjdgFZiW.js:3318:20
+ ❯ runWithTimeout node_modules/vitest/dist/chunks/run.CjdgFZiW.js:3276:10
+
+This error originated in "apps/mobile/src/metrics/bridge-benchmark.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "separates 3 warmups from 20 measured samples". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯ Unhandled Rejection ⎯⎯⎯⎯⎯
+Error: not-implemented
+ ❯ BridgeBenchmark.runBridgeBenchmark apps/mobile/src/metrics/bridge-benchmark.ts:6:58
+      4|  receive(_:unknown){return false;}
+      5|  reset(_:string){}
+      6|  async runBridgeBenchmark(..._:any[]):Promise<any>{throw new Error('no…
+       |                                                          ^
+      7| }
+      8|
+ ❯ apps/mobile/src/metrics/bridge-benchmark.test.ts:30:28
+ ❯ node_modules/vitest/dist/chunks/run.CjdgFZiW.js:1632:35
+ ❯ node_modules/vitest/dist/chunks/run.CjdgFZiW.js:2801:26
+ ❯ node_modules/vitest/dist/chunks/run.CjdgFZiW.js:3338:20
+ ❯ runWithCancel node_modules/vitest/dist/chunks/run.CjdgFZiW.js:3333:10
+ ❯ node_modules/vitest/dist/chunks/run.CjdgFZiW.js:3318:20
+ ❯ runWithTimeout node_modules/vitest/dist/chunks/run.CjdgFZiW.js:3276:10
+
+This error originated in "apps/mobile/src/metrics/bridge-benchmark.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "separates 3 warmups from 20 measured samples". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯ Unhandled Rejection ⎯⎯⎯⎯⎯
+Error: not-implemented
+ ❯ BridgeBenchmark.runBridgeBenchmark apps/mobile/src/metrics/bridge-benchmark.ts:6:58
+      4|  receive(_:unknown){return false;}
+      5|  reset(_:string){}
+      6|  async runBridgeBenchmark(..._:any[]):Promise<any>{throw new Error('no…
+       |                                                          ^
+      7| }
+      8|
+ ❯ apps/mobile/src/metrics/bridge-benchmark.test.ts:38:28
+ ❯ node_modules/vitest/dist/chunks/run.CjdgFZiW.js:1632:35
+ ❯ node_modules/vitest/dist/chunks/run.CjdgFZiW.js:2801:26
+ ❯ node_modules/vitest/dist/chunks/run.CjdgFZiW.js:3338:20
+ ❯ runWithCancel node_modules/vitest/dist/chunks/run.CjdgFZiW.js:3333:10
+ ❯ node_modules/vitest/dist/chunks/run.CjdgFZiW.js:3318:20
+ ❯ runWithTimeout node_modules/vitest/dist/chunks/run.CjdgFZiW.js:3276:10
+
+This error originated in "apps/mobile/src/metrics/bridge-benchmark.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "separates 3 warmups from 20 measured samples". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯ Unhandled Rejection ⎯⎯⎯⎯⎯
+Error: not-implemented
+ ❯ BridgeBenchmark.runBridgeBenchmark apps/mobile/src/metrics/bridge-benchmark.ts:6:58
+      4|  receive(_:unknown){return false;}
+      5|  reset(_:string){}
+      6|  async runBridgeBenchmark(..._:any[]):Promise<any>{throw new Error('no…
+       |                                                          ^
+      7| }
+      8|
+ ❯ apps/mobile/src/metrics/bridge-benchmark.test.ts:45:28
+ ❯ node_modules/vitest/dist/chunks/run.CjdgFZiW.js:1632:35
+ ❯ node_modules/vitest/dist/chunks/run.CjdgFZiW.js:2801:26
+ ❯ node_modules/vitest/dist/chunks/run.CjdgFZiW.js:3338:20
+ ❯ runWithCancel node_modules/vitest/dist/chunks/run.CjdgFZiW.js:3333:10
+ ❯ node_modules/vitest/dist/chunks/run.CjdgFZiW.js:3318:20
+ ❯ runWithTimeout node_modules/vitest/dist/chunks/run.CjdgFZiW.js:3276:10
+
+This error originated in "apps/mobile/src/metrics/bridge-benchmark.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "separates 3 warmups from 20 measured samples". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+
+
+ Test Files  3 failed (3)
+      Tests  15 failed | 13 passed (28)
+     Errors  5 errors
+   Start at  16:27:14
+   Duration  119ms (transform 54%, tests 20%, import 19%, worker 7%)
+

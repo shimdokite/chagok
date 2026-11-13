@@ -1,0 +1,6 @@
+{
+  "scope": "source/config files excluding dependencies/generated native/build outputs",
+  "filesScanned": 47,
+  "patternMatches": [],
+  "note": "Pattern scan plus manual review; not a guarantee against every possible secret."
+}

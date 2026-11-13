@@ -1,0 +1,43 @@
+apps/mobile/app.config.ts 31ms
+apps/mobile/app/_layout.tsx 4ms
+apps/mobile/app/apply.tsx 1ms
+apps/mobile/app/home.tsx 10ms
+apps/mobile/app/index.tsx 6ms
+apps/mobile/package.json 8ms
+apps/mobile/src/bridge/useWebViewBridge.ts 7ms
+apps/mobile/src/components/ApplyContainer.tsx 7ms
+apps/mobile/src/components/ApplyContainer.web.tsx 2ms
+apps/mobile/src/components/BenefitBalanceCard.tsx 4ms
+apps/mobile/src/components/BenefitCategoryList.tsx 2ms
+apps/mobile/src/components/RecentRequestList.tsx 3ms
+apps/mobile/src/components/ui.tsx 7ms
+apps/mobile/src/dev/BridgeDiagnostics.tsx 7ms
+apps/mobile/src/dev/ServerDiagnostics.tsx 4ms
+apps/mobile/src/fixtures/demo-benefits.ts 1ms
+apps/mobile/src/lib/trpc.ts 1ms
+apps/mobile/src/metrics/bridge-benchmark.test.ts 12ms
+apps/mobile/src/metrics/bridge-benchmark.ts 11ms
+apps/mobile/src/theme/tokens.ts 1ms
+apps/mobile/tsconfig.json 1ms
+apps/web/next-env.d.ts 2ms (unchanged)
+apps/web/next.config.ts 1ms
+apps/web/package.json 0ms
+apps/web/src/app/api/trpc/[trpc]/route.ts 3ms
+apps/web/src/app/apply/page.tsx 2ms
+apps/web/src/app/globals.css 21ms
+apps/web/src/app/layout.tsx 1ms
+apps/web/src/app/page.tsx 1ms
+apps/web/src/components/bridge/BridgeReceiver.tsx 4ms
+apps/web/tsconfig.json 2ms
+packages/api/package.json 0ms
+packages/api/src/http.test.ts 1ms
+packages/api/src/index.ts 1ms
+packages/api/src/router.ts 1ms
+packages/api/tsconfig.json 0ms (unchanged)
+packages/contracts/package.json 0ms
+packages/contracts/src/bridge.test.ts 3ms
+packages/contracts/src/bridge.ts 3ms
+packages/contracts/src/demo.test.ts 1ms
+packages/contracts/src/demo.ts 2ms
+packages/contracts/tsconfig.json 1ms (unchanged)
+[error] No files matching the pattern were found: "*.{json}".

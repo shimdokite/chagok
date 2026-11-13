@@ -1,0 +1,91 @@
+
+> chagok@0.1.0 dev:web
+> npm run dev -w @chagok/web
+
+
+> @chagok/web@0.1.0 dev
+> next dev --hostname 0.0.0.0
+
+▲ Next.js 16.4.6 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://0.0.0.0:3000
+✓ Ready in 209ms
+✓ Running next.config.ts took 77ms
+
+ GET /apply 200 in 189ms (next.js: 68ms, application-code: 121ms)
+ GET /api/trpc/health.check 200 in 1046ms (next.js: 1001ms, application-code: 46ms)
+[?25h
+
+> chagok@0.1.0 dev:web
+> npm run dev -w @chagok/web
+
+
+> @chagok/web@0.1.0 dev
+> next dev --hostname 0.0.0.0
+
+▲ Next.js 16.4.6 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://0.0.0.0:3000
+✓ Ready in 408ms
+✓ Running next.config.ts took 118ms
+
+ GET /apply 200 in 547ms (next.js: 195ms, application-code: 353ms)
+⚠ Blocked cross-origin request to Next.js dev resource /_next/hmr from "127.0.0.1".
+Cross-origin access to Next.js dev resources is blocked by default for safety.
+
+To allow this host in development, add it to "allowedDevOrigins" in next.config.js and restart the dev server:
+
+// next.config.js
+module.exports = {
+  allowedDevOrigins: ['127.0.0.1'],
+}
+
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+ GET /apply 200 in 60ms (next.js: 3ms, application-code: 57ms)
+⚠ Found a change in next.config.ts. Restarting the server to apply the changes...
+[?25h
+
+> chagok@0.1.0 dev:web
+> npm run dev -w @chagok/web
+
+
+> @chagok/web@0.1.0 dev
+> next dev --hostname 0.0.0.0
+
+▲ Next.js 16.4.6 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://0.0.0.0:3000
+✓ Ready in 242ms
+✓ Running next.config.ts took 24ms
+
+ GET /_next/hmr 404 in 687ms (next.js: 576ms, application-code: 110ms)
+⚠ Blocked cross-origin request to Next.js dev resource /_next/hmr from "untrusted.example".
+Cross-origin access to Next.js dev resources is blocked by default for safety.
+
+To allow this host in development, add it to "allowedDevOrigins" in next.config.js and restart the dev server:
+
+// next.config.js
+module.exports = {
+  allowedDevOrigins: ['untrusted.example'],
+}
+
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+ GET /apply 200 in 109ms (next.js: 7ms, application-code: 102ms)
+✓ Compiled in 89ms
+ GET /apply 200 in 71ms (next.js: 4ms, application-code: 67ms)
+✓ Compiled in 26ms
+ GET /apply 200 in 37ms (next.js: 2ms, application-code: 35ms)
+ GET /apply 200 in 48ms (next.js: 4ms, application-code: 45ms)
+ GET /apply 200 in 27ms (next.js: 1.4ms, application-code: 25ms)
+ GET /api/trpc/health.check 200 in 541ms (next.js: 503ms, application-code: 38ms)
+ GET /apply 200 in 22ms (next.js: 1.1ms, application-code: 21ms)
+ GET /api/trpc/health.check 200 in 7ms (next.js: 3ms, application-code: 5ms)
+ GET / 307 in 45ms (next.js: 11ms, application-code: 34ms)
+ GET /apply 200 in 19ms (next.js: 0.4ms, application-code: 18ms)
+ GET / 307 in 24ms (next.js: 1.1ms, application-code: 23ms)
+ GET /apply 200 in 14ms (next.js: 0.4ms, application-code: 13ms)
+ GET /apply 200 in 72ms (next.js: 5ms, application-code: 68ms)
+ GET /apply 200 in 31ms (next.js: 1.3ms, application-code: 30ms)
+ GET /apply 200 in 111ms (next.js: 13ms, application-code: 98ms)
+ GET /apply 200 in 47ms (next.js: 2.0ms, application-code: 45ms)
+ GET /apply 200 in 22ms (next.js: 1.7ms, application-code: 20ms)

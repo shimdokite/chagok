@@ -1,0 +1,33 @@
+{
+  "date": "2026-11-13",
+  "timezone": "Asia/Seoul",
+  "host": "macOS 27.2.1 (26B131), arm64",
+  "xcode": "27.2 (27B52)",
+  "node": "24.22.3",
+  "ruby": "4.0.9",
+  "cocoapods": "1.17.0",
+  "podInstallExitCode": 0,
+  "xcodebuildExitCode": 0,
+  "configuration": "Debug",
+  "sdk": "iphonesimulator27.2",
+  "architecture": "arm64",
+  "bundleIdentifier": "dev.doyeon.chagok",
+  "appVersion": "0.1.0",
+  "buildNumber": "1",
+  "codeSigningAllowed": false,
+  "typecheckExitCode": 0,
+  "testFilesPassed": 5,
+  "testsPassed": 33,
+  "artifact": ".local-tools/DerivedData/Build/Products/Debug-iphonesimulator/app.app",
+  "webBuildExitCode": 0,
+  "nativeAppExecuted": true,
+  "simulator": "iPhone 17 / iOS 27.2 (24B8117)",
+  "nativeChecks": [
+    "login/home",
+    "API success/offline/recovered",
+    "WebView ready/close/reload",
+    "20 roundtrips",
+    "close/reload cancellation retained"
+  ],
+  "physicalDeviceTested": false
+}

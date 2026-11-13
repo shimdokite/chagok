@@ -1,0 +1,6 @@
+{
+  "beforeSha256": "0bf5b8bf4c5391a7c88fc77c7dbd120204bd63e4618b30b4c37d3ff8ddfc4b5d",
+  "afterSha256": "7dbe5820c520b0d85173edbbe717caab780861615de94ad53ccc47348567740e",
+  "onlyChange": "iframe sandbox: allow-scripts -> allow-scripts allow-forms",
+  "exactSingleReplacementVerified": true
+}

@@ -1,0 +1,512 @@
+{
+  "formulae": [
+    {
+      "name": "ca-certificates",
+      "full_name": "ca-certificates",
+      "tap": "homebrew/core",
+      "oldnames": [],
+      "aliases": [],
+      "versioned_formulae": [],
+      "desc": "Mozilla CA certificate store",
+      "license": "MPL-2.0",
+      "homepage": "https://curl.se/docs/caextract.html",
+      "versions": {
+        "stable": "2026-11-05",
+        "head": null,
+        "bottle": true
+      },
+      "urls": {
+        "stable": {
+          "url": "https://curl.se/ca/cacert-2026-11-05.pem",
+          "tag": null,
+          "revision": null,
+          "using": null,
+          "checksum": "427c064216761a1e72a8b30f0d954d08cb6e4435a82091fb865afd20c8497285"
+        }
+      },
+      "patches": [],
+      "revision": 0,
+      "version_scheme": 0,
+      "compatibility_version": null,
+      "autobump": true,
+      "no_autobump_message": null,
+      "skip_livecheck": false,
+      "bottle": {
+        "stable": {
+          "rebuild": 0,
+          "root_url": "https://ghcr.io/v2/homebrew/core",
+          "files": {
+            "all": {
+              "cellar": ":any_skip_relocation",
+              "url": "https://ghcr.io/v2/homebrew/core/ca-certificates/blobs/sha256:8a5a35e1a3223e6bc6ca7c853e0ac3d2568de2cc329b61688682bdf57165dab9",
+              "sha256": "8a5a35e1a3223e6bc6ca7c853e0ac3d2568de2cc329b61688682bdf57165dab9"
+            }
+          }
+        }
+      },
+      "pour_bottle_only_if": null,
+      "keg_only": false,
+      "keg_only_reason": null,
+      "options": [],
+      "build_dependencies": [],
+      "dependencies": [],
+      "test_dependencies": [],
+      "recommended_dependencies": [],
+      "optional_dependencies": [],
+      "uses_from_macos": [],
+      "uses_from_macos_bounds": [],
+      "requirements": [],
+      "conflicts_with": [],
+      "conflicts_with_reasons": [],
+      "link_overwrite": [],
+      "caveats": null,
+      "installed": [
+        {
+          "version": "2026-03-19",
+          "used_options": [],
+          "built_as_bottle": true,
+          "poured_from_bottle": true,
+          "time": 1776062280,
+          "runtime_dependencies": [],
+          "installed_on_request": false
+        },
+        {
+          "version": "2026-05-14",
+          "used_options": [],
+          "built_as_bottle": true,
+          "poured_from_bottle": true,
+          "time": 1782279648,
+          "runtime_dependencies": [],
+          "installed_on_request": false
+        },
+        {
+          "version": "2026-11-05",
+          "used_options": [],
+          "built_as_bottle": true,
+          "poured_from_bottle": true,
+          "time": 1794559707,
+          "runtime_dependencies": [],
+          "installed_on_request": false
+        }
+      ],
+      "linked_keg": "2026-11-05",
+      "pinned": false,
+      "outdated": false,
+      "deprecated": false,
+      "deprecation_date": null,
+      "deprecation_reason": null,
+      "deprecation_replacement_formula": null,
+      "deprecation_replacement_cask": null,
+      "deprecate_args": null,
+      "disabled": false,
+      "disable_date": null,
+      "disable_reason": null,
+      "disable_replacement_formula": null,
+      "disable_replacement_cask": null,
+      "disable_args": null,
+      "post_install_steps": [
+        {
+          "command": {
+            "base": "libexec",
+            "path": "post-install"
+          },
+          "type": "run",
+          "args": [
+            "{{pkgshare}}/cacert.pem",
+            "{{pkgetc}}/cert.pem"
+          ]
+        }
+      ],
+      "post_install_defined": false,
+      "service": null,
+      "tap_git_head": "062c61fadfb8c2027e64823a60ed8849e4131150",
+      "ruby_source_path": "Formula/c/ca-certificates.rb",
+      "ruby_source_checksum": {
+        "sha256": "f91688b4ef39b7655316d645b9a3054e3a9a9e3a027226fb375911a1685c7cf3"
+      }
+    },
+    {
+      "name": "cocoapods",
+      "full_name": "cocoapods",
+      "tap": "homebrew/core",
+      "oldnames": [],
+      "aliases": [],
+      "versioned_formulae": [],
+      "desc": "Dependency manager for Cocoa projects",
+      "license": "MIT",
+      "homepage": "https://cocoapods.org/",
+      "versions": {
+        "stable": "1.17.0",
+        "head": null,
+        "bottle": true
+      },
+      "urls": {
+        "stable": {
+          "url": "https://github.com/CocoaPods/CocoaPods/archive/refs/tags/1.17.0.tar.gz",
+          "tag": null,
+          "revision": null,
+          "using": null,
+          "checksum": "1a3e63e815e61ad7661326d6e6ba2593328a596ceb94953d4388e3fe01e27f90"
+        }
+      },
+      "patches": [],
+      "revision": 1,
+      "version_scheme": 0,
+      "compatibility_version": null,
+      "autobump": true,
+      "no_autobump_message": null,
+      "skip_livecheck": false,
+      "bottle": {
+        "stable": {
+          "rebuild": 0,
+          "root_url": "https://ghcr.io/v2/homebrew/core",
+          "files": {
+            "arm64_golden_gate": {
+              "cellar": ":any_skip_relocation",
+              "url": "https://ghcr.io/v2/homebrew/core/cocoapods/blobs/sha256:518d2ab4921ca19bd794420c1f8994697851facb47c26087f36f80f64810e1ed",
+              "sha256": "518d2ab4921ca19bd794420c1f8994697851facb47c26087f36f80f64810e1ed"
+            }
+          }
+        }
+      },
+      "pour_bottle_only_if": null,
+      "keg_only": false,
+      "keg_only_reason": null,
+      "options": [],
+      "build_dependencies": [
+        "pkgconf"
+      ],
+      "dependencies": [
+        "ruby"
+      ],
+      "test_dependencies": [],
+      "recommended_dependencies": [],
+      "optional_dependencies": [],
+      "uses_from_macos": [
+        "libffi"
+      ],
+      "uses_from_macos_bounds": [
+        {}
+      ],
+      "requirements": [],
+      "conflicts_with": [],
+      "conflicts_with_reasons": [],
+      "link_overwrite": [],
+      "caveats": null,
+      "installed": [],
+      "linked_keg": null,
+      "pinned": false,
+      "outdated": false,
+      "deprecated": false,
+      "deprecation_date": null,
+      "deprecation_reason": null,
+      "deprecation_replacement_formula": null,
+      "deprecation_replacement_cask": null,
+      "deprecate_args": null,
+      "disabled": false,
+      "disable_date": null,
+      "disable_reason": null,
+      "disable_replacement_formula": null,
+      "disable_replacement_cask": null,
+      "disable_args": null,
+      "post_install_steps": [],
+      "post_install_defined": false,
+      "service": null,
+      "tap_git_head": "062c61fadfb8c2027e64823a60ed8849e4131150",
+      "ruby_source_path": "Formula/c/cocoapods.rb",
+      "ruby_source_checksum": {
+        "sha256": "dfe15ecc179e0688aede0690f18bef9d196d16222c7c6615dc51644ba7a7646b"
+      }
+    },
+    {
+      "name": "ruby",
+      "full_name": "ruby",
+      "tap": "homebrew/core",
+      "oldnames": [],
+      "aliases": [
+        "ruby@4",
+        "ruby@4.0"
+      ],
+      "versioned_formulae": [
+        "ruby@3.4",
+        "ruby@3.3",
+        "ruby@3.2",
+        "ruby@3.1"
+      ],
+      "desc": "Powerful, clean, object-oriented scripting language",
+      "license": "Ruby",
+      "homepage": "https://www.ruby-lang.org/",
+      "versions": {
+        "stable": "4.0.9",
+        "head": "HEAD",
+        "bottle": true
+      },
+      "urls": {
+        "stable": {
+          "url": "https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.9.tar.gz",
+          "tag": null,
+          "revision": null,
+          "using": null,
+          "checksum": "c35350682ff050b79702d57ade4516e7336063f510155d19fb2fb5b3f3909511"
+        },
+        "head": {
+          "url": "https://github.com/ruby/ruby.git",
+          "branch": "master",
+          "using": null
+        }
+      },
+      "patches": [],
+      "revision": 0,
+      "version_scheme": 0,
+      "compatibility_version": null,
+      "autobump": true,
+      "no_autobump_message": null,
+      "skip_livecheck": false,
+      "bottle": {
+        "stable": {
+          "rebuild": 0,
+          "root_url": "https://ghcr.io/v2/homebrew/core",
+          "files": {
+            "arm64_golden_gate": {
+              "cellar": "/opt/homebrew/Cellar",
+              "url": "https://ghcr.io/v2/homebrew/core/ruby/blobs/sha256:e994fdb3c373383034f8a54edde2208e1a96ce9eaa6d1359fc9e612791c1eefd",
+              "sha256": "e994fdb3c373383034f8a54edde2208e1a96ce9eaa6d1359fc9e612791c1eefd"
+            }
+          }
+        }
+      },
+      "pour_bottle_only_if": null,
+      "keg_only": false,
+      "keg_only_reason": null,
+      "options": [],
+      "build_dependencies": [
+        "pkgconf",
+        "rust"
+      ],
+      "dependencies": [
+        "libyaml",
+        "openssl@4"
+      ],
+      "test_dependencies": [],
+      "recommended_dependencies": [],
+      "optional_dependencies": [],
+      "uses_from_macos": [
+        "libffi",
+        "libxcrypt"
+      ],
+      "uses_from_macos_bounds": [
+        {},
+        {}
+      ],
+      "requirements": [],
+      "conflicts_with": [],
+      "conflicts_with_reasons": [],
+      "link_overwrite": [
+        "bin/bundle",
+        "bin/bundler"
+      ],
+      "caveats": "By default, binaries installed by gem will be placed into:\n  $HOMEBREW_PREFIX/lib/ruby/gems/4.0.0/bin\n\nYou may want to add this to your PATH.\n",
+      "installed": [],
+      "linked_keg": null,
+      "pinned": false,
+      "outdated": false,
+      "deprecated": false,
+      "deprecation_date": null,
+      "deprecation_reason": null,
+      "deprecation_replacement_formula": null,
+      "deprecation_replacement_cask": null,
+      "deprecate_args": null,
+      "disabled": false,
+      "disable_date": null,
+      "disable_reason": null,
+      "disable_replacement_formula": null,
+      "disable_replacement_cask": null,
+      "disable_args": null,
+      "post_install_steps": [
+        {
+          "paths": [
+            {
+              "path": "{{HOMEBREW_PREFIX}}/lib/ruby/gems/{{version.major_minor}}.0/gems/bundler-*"
+            }
+          ],
+          "recursive": true,
+          "type": "remove"
+        },
+        {
+          "source": {
+            "base": "prefix",
+            "path": "lib/libruby.dylib"
+          },
+          "id": "{{HOMEBREW_PREFIX}}/opt/ruby@{{version.major_minor}}/lib/libruby.{{version.major_minor}}.dylib",
+          "resolve_source": true,
+          "guards": [
+            {
+              "condition": "on",
+              "value": "macos",
+              "id": "1"
+            },
+            {
+              "base": "homebrew_prefix",
+              "path": "opt/ruby@{{version.major_minor}}/lib/libruby.{{version.major_minor}}.dylib",
+              "condition": "if_exists",
+              "id": "2"
+            }
+          ],
+          "type": "change_dylib_id"
+        }
+      ],
+      "post_install_defined": false,
+      "service": null,
+      "tap_git_head": "062c61fadfb8c2027e64823a60ed8849e4131150",
+      "ruby_source_path": "Formula/r/ruby.rb",
+      "ruby_source_checksum": {
+        "sha256": "8a13e947f67526c6cee5edc6a830582675ea645a89e36369e553724282c70623"
+      },
+      "head_dependencies": {
+        "build_dependencies": [
+          "autoconf",
+          "pkgconf",
+          "rust"
+        ],
+        "dependencies": [
+          "libyaml",
+          "openssl@4"
+        ],
+        "test_dependencies": [],
+        "recommended_dependencies": [],
+        "optional_dependencies": [],
+        "uses_from_macos": [
+          "libffi",
+          "libxcrypt"
+        ],
+        "uses_from_macos_bounds": [
+          {},
+          {}
+        ]
+      }
+    },
+    {
+      "name": "openssl@4",
+      "full_name": "openssl@4",
+      "tap": "homebrew/core",
+      "oldnames": [],
+      "aliases": [
+        "openssl"
+      ],
+      "versioned_formulae": [
+        "openssl@3.6",
+        "openssl@3",
+        "openssl@3.0"
+      ],
+      "desc": "Cryptography and SSL/TLS Toolkit",
+      "license": "Apache-2.0",
+      "homepage": "https://openssl-library.org",
+      "versions": {
+        "stable": "4.1.0",
+        "head": null,
+        "bottle": true
+      },
+      "urls": {
+        "stable": {
+          "url": "https://github.com/openssl/openssl/releases/download/openssl-4.1.0/openssl-4.1.0.tar.gz",
+          "tag": null,
+          "revision": null,
+          "using": null,
+          "checksum": "50c17baf54cb008f6ce42d50deb4b28050a1aad711636cabd4b241c7e90cc2fd"
+        }
+      },
+      "patches": [],
+      "revision": 0,
+      "version_scheme": 0,
+      "compatibility_version": null,
+      "autobump": true,
+      "no_autobump_message": null,
+      "skip_livecheck": false,
+      "bottle": {
+        "stable": {
+          "rebuild": 0,
+          "root_url": "https://ghcr.io/v2/homebrew/core",
+          "files": {
+            "arm64_golden_gate": {
+              "cellar": "/opt/homebrew/Cellar",
+              "url": "https://ghcr.io/v2/homebrew/core/openssl/4/blobs/sha256:d239639f77a275caa217707e126790b3f5f5c86e5bc6e2a996e5df7fdaed44a6",
+              "sha256": "d239639f77a275caa217707e126790b3f5f5c86e5bc6e2a996e5df7fdaed44a6"
+            }
+          }
+        }
+      },
+      "pour_bottle_only_if": null,
+      "keg_only": false,
+      "keg_only_reason": null,
+      "options": [],
+      "build_dependencies": [],
+      "dependencies": [
+        "ca-certificates"
+      ],
+      "test_dependencies": [],
+      "recommended_dependencies": [],
+      "optional_dependencies": [],
+      "uses_from_macos": [
+        {
+          "perl": "build"
+        }
+      ],
+      "uses_from_macos_bounds": [
+        {}
+      ],
+      "requirements": [],
+      "conflicts_with": [],
+      "conflicts_with_reasons": [],
+      "link_overwrite": [
+        "bin/openssl",
+        "include/openssl/*",
+        "share/man/man*/*ssl.gz",
+        "lib/libcrypto*",
+        "lib/libssl*",
+        "lib/ossl-modules/legacy.*",
+        "lib/cmake/OpenSSL/OpenSSLConfig.cmake",
+        "lib/cmake/OpenSSL/OpenSSLConfigVersion.cmake",
+        "lib/pkgconfig/libcrypto.pc",
+        "lib/pkgconfig/libssl.pc",
+        "lib/pkgconfig/openssl.pc"
+      ],
+      "caveats": "To add additional certificates, place .pem, .crt, .cer, or .crl files in\n  $HOMEBREW_PREFIX/etc/openssl@4/certs\n\nand run\n  $HOMEBREW_PREFIX/Cellar/openssl@4/4.1.0/bin/openssl rehash $HOMEBREW_PREFIX/etc/openssl@4/certs\n",
+      "installed": [],
+      "linked_keg": null,
+      "pinned": false,
+      "outdated": false,
+      "deprecated": false,
+      "deprecation_date": null,
+      "deprecation_reason": null,
+      "deprecation_replacement_formula": null,
+      "deprecation_replacement_cask": null,
+      "deprecate_args": null,
+      "disabled": false,
+      "disable_date": null,
+      "disable_reason": null,
+      "disable_replacement_formula": null,
+      "disable_replacement_cask": null,
+      "disable_args": null,
+      "post_install_steps": [
+        {
+          "source": {
+            "path": "{{etc}}/ca-certificates/cert.pem"
+          },
+          "target": {
+            "path": "{{pkgetc}}/cert.pem"
+          },
+          "force": true,
+          "type": "symlink"
+        }
+      ],
+      "post_install_defined": false,
+      "service": null,
+      "tap_git_head": "062c61fadfb8c2027e64823a60ed8849e4131150",
+      "ruby_source_path": "Formula/o/openssl@4.rb",
+      "ruby_source_checksum": {
+        "sha256": "50f58cda0dfd54aabc627e53205a88afc2e1780d83f43a99c525b58950c32049"
+      }
+    }
+  ],
+  "casks": []
+}

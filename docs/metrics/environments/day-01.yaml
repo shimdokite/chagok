@@ -1,0 +1,46 @@
+date: 2026-11-13
+timezone: Asia/Seoul
+status: measured_on_ios_simulator
+host:
+  OS: macOS 27.2.1 (26B131)
+  architecture: arm64
+  node_used: 24.22.3
+  system_node: 25.0.0
+  npm: 11.6.2
+  xcode: 27.2 (27B52)
+  ruby: 4.0.9
+  cocoapods: 1.17.0
+app:
+  expo: 58.0.25
+  react_native: 0.88.1
+  react: 19.3.0
+  webview: 14.0.1
+  build: development Debug arm64 simulator
+  native_build_executed: true
+  device: iPhone 17 (iOS Simulator, arm64)
+  device_OS: iOS 27.2 (24B8117)
+  device_udid: ECA59080-35A7-42E0-BE0C-7E4C4A4BEFEA
+  bundle_id: dev.doyeon.chagok
+  version: 0.1.0
+  build_number: '1'
+  physical_device: false
+web:
+  next: 16.4.6
+  mode_observed: development
+  origin: http://127.0.0.1:3000
+  additional_allowed_dev_host: 127.0.0.1
+experiment:
+  sourceRef: sha256:028c852edd41826d35eb7842368849c532b0716c4777169cc6d76b7c0091d8d7
+  source_manifest: ../../verification/native/app-source-sha256.txt
+  warmup_count: 3
+  requested_count: 20
+  interval_after_response_ms: 100
+  timeout_ms: 3000
+  clock: RN performance.now()
+  first_sample_kst: '2026-11-13T18:21:23.262+09:00'
+  last_sample_kst: '2026-11-13T18:21:25.479+09:00'
+  real_samples: 20
+  raw_file: ../raw/day-01-bridge.json
+  lifecycle_raw_file: ../raw/day-01-bridge-lifecycle.json
+  export: React Native Share > Copy > simctl pbpaste; unmodified JSON
+  scope: simulator development baseline only; not physical-device or release performance

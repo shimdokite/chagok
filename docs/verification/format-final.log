@@ -1,0 +1,29 @@
+apps/mobile/app/_layout.tsx 21ms (unchanged)
+apps/mobile/app/apply.tsx 1ms (unchanged)
+apps/mobile/app/home.tsx 11ms (unchanged)
+apps/mobile/app/index.tsx 6ms (unchanged)
+apps/mobile/src/bridge/useWebViewBridge.ts 7ms (unchanged)
+apps/mobile/src/components/ApplyContainer.tsx 9ms (unchanged)
+apps/mobile/src/components/ApplyContainer.web.tsx 2ms (unchanged)
+apps/mobile/src/components/BenefitBalanceCard.tsx 4ms (unchanged)
+apps/mobile/src/components/BenefitCategoryList.tsx 2ms (unchanged)
+apps/mobile/src/components/RecentRequestList.tsx 3ms (unchanged)
+apps/mobile/src/components/ui.tsx 5ms (unchanged)
+apps/mobile/src/dev/BridgeDiagnostics.tsx 3ms
+apps/mobile/src/dev/ServerDiagnostics.tsx 3ms
+apps/mobile/src/fixtures/demo-benefits.ts 0ms (unchanged)
+apps/mobile/src/lib/trpc.ts 1ms (unchanged)
+apps/mobile/src/metrics/benchmark-history.test.ts 2ms
+apps/mobile/src/metrics/benchmark-history.ts 1ms
+apps/mobile/src/metrics/bridge-benchmark.test.ts 10ms
+apps/mobile/src/metrics/bridge-benchmark.ts 10ms
+apps/mobile/src/theme/tokens.ts 1ms (unchanged)
+packages/api/src/http.test.ts 1ms (unchanged)
+packages/api/src/index.ts 0ms (unchanged)
+packages/api/src/router.ts 1ms (unchanged)
+packages/contracts/src/bridge.test.ts 2ms (unchanged)
+packages/contracts/src/bridge.ts 3ms (unchanged)
+packages/contracts/src/demo.test.ts 1ms (unchanged)
+packages/contracts/src/demo.ts 1ms (unchanged)
+package.json 5ms (unchanged)
+tsconfig.base.json 1ms
