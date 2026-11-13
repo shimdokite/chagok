@@ -1,0 +1,33 @@
+
+ RUN  v5.1.0 /Users/doyeon/Desktop/chagok
+
+ ❯ packages/api/src/http.test.ts (2 tests | 1 failed) 15ms
+   × returns actual health data and allows the local RN Web preview origin 14ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/api/src/http.test.ts > returns actual health data and allows the local RN Web preview origin
+AssertionError: expected null to be 'http://localhost:8081' // Object.is equality
+
+- Expected:
+"http://localhost:8081"
+
++ Received:
+null
+
+ ❯ packages/api/src/http.test.ts:6:62
+      4|  const response=await GET(new Request('http://localhost:3000/api/trpc/…
+      5|  expect(await response.json()).toEqual({result:{data:{status:'ok',serv…
+      6|  expect(response.headers.get('Access-Control-Allow-Origin')).toBe('htt…
+       |                                                              ^
+      7| });
+      8| it('does not allow arbitrary sites or credentials',async()=>{
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 passed (2)
+   Start at  16:31:28
+   Duration  114ms (transform 46%, tests 30%, import 20%, worker 4%)
+

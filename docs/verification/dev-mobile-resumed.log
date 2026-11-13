@@ -1,0 +1,105 @@
+
+> chagok@0.1.0 dev:mobile
+> npm run dev -w @chagok/mobile
+
+
+> @chagok/mobile@0.1.0 dev
+> expo start --dev-client
+
+env: load .env.local
+env: export EXPO_PUBLIC_BENCHMARK_APP_BUILD EXPO_PUBLIC_BENCHMARK_DEVICE EXPO_PUBLIC_BENCHMARK_SOURCE_REF EXPO_PUBLIC_BENCHMARK_WEB_MODE EXPO_PUBLIC_WEB_ORIGIN
+Starting project at /Users/doyeon/Desktop/chagok/apps/mobile
+Expo Autolinking module resolution enabled
+Starting Metro Bundler
+
+Waiting on http://localhost:8081
+
+Logs for your project will appear below.
+| (node:30043) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:30043) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:30043) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:30043) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:30043) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:30043) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+iOS Bundled 24864ms node_modules/expo-router/entry.js (1547 modules)
+
+> chagok@0.1.0 dev:mobile
+> npm run dev -w @chagok/mobile
+
+
+> @chagok/mobile@0.1.0 dev
+> expo start --dev-client
+
+env: load .env.local
+env: export EXPO_PUBLIC_BENCHMARK_APP_BUILD EXPO_PUBLIC_BENCHMARK_DEVICE EXPO_PUBLIC_BENCHMARK_SOURCE_REF EXPO_PUBLIC_BENCHMARK_WEB_MODE EXPO_PUBLIC_WEB_ORIGIN
+Starting project at /Users/doyeon/Desktop/chagok/apps/mobile
+Expo Autolinking module resolution enabled
+Starting Metro Bundler
+
+Waiting on http://localhost:8081
+
+Logs for your project will appear below.
+| (node:48478) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:48478) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:48478) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:48478) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:48478) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:48478) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+iOS Bundled 719ms node_modules/expo-router/entry.js (1495 modules)
+
+> chagok@0.1.0 dev:mobile
+> npm run dev -w @chagok/mobile
+
+
+> @chagok/mobile@0.1.0 dev
+> expo start --dev-client
+
+env: load .env.local
+env: export EXPO_PUBLIC_BENCHMARK_APP_BUILD EXPO_PUBLIC_BENCHMARK_DEVICE EXPO_PUBLIC_BENCHMARK_SOURCE_REF EXPO_PUBLIC_BENCHMARK_WEB_MODE EXPO_PUBLIC_WEB_ORIGIN
+Starting project at /Users/doyeon/Desktop/chagok/apps/mobile
+Expo Autolinking module resolution enabled
+Starting Metro Bundler
+
+Waiting on http://localhost:8081
+
+Logs for your project will appear below.
+| (node:49531) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:49531) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:49531) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:49531) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:49531) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:49531) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+iOS Bundled 838ms node_modules/expo-router/entry.js (1511 modules)
+ DEBUG  [bridge] invalid-message
+ DEBUG  [bridge] invalid-message
+ DEBUG  [bridge] invalid-message
+ DEBUG  [bridge] invalid-message
+ DEBUG  [bridge] invalid-message
+ DEBUG  [bridge] invalid-message
+ DEBUG  [bridge] invalid-message
+ DEBUG  [bridge] invalid-message
+iOS Bundled 508ms node_modules/expo-router/entry.js (1 module)
+iOS Bundled 209ms node_modules/expo-router/entry.js (1 module)
+iOS Bundled 160ms node_modules/expo-router/entry.js (1 module)
+iOS Bundled 84ms node_modules/expo-router/entry.js (1 module)
+iOS Bundled 80ms node_modules/expo-router/entry.js (1 module)
+iOS Bundled 95ms node_modules/expo-router/entry.js (1 module)
+iOS Bundled 98ms node_modules/expo-router/entry.js (1 module)

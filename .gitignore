@@ -1,0 +1,14 @@
+node_modules/
+.local-tools/
+.next/
+.expo/
+dist/
+*.tsbuildinfo
+.env*
+!.env.example
+ios/
+android/
+.DS_Store
+
+# Local historical source archives; Git stores source history.
+snapshots/

@@ -1,0 +1,55 @@
+Warning: You are using macOS 27.
+We do not provide support for this pre-release version.
+
+This is a Tier 2 configuration:
+  https://docs.brew.sh/Support-Tiers#tier-2
+You can report issues with Tier 2 configurations to Homebrew/* repositories!
+Read the above document before opening any issues or PRs.
+
+Warning: The following taps are not trusted:
+  mongodb/brew
+
+Homebrew is currently ignoring formulae, casks and commands from these taps because tap trust is required.
+Prefer trusting only the specific formulae, casks or commands you need.
+Trust installed formulae from these taps with:
+  brew trust --formula mongodb/brew/mongodb-community mongodb/brew/mongodb-database-tools
+Trust other specific casks and commands with:
+  brew trust --cask <user>/<tap>/<cask>
+  brew trust --command <user>/<tap>/<command>
+Whole-tap trust is broader and includes all current and future formulae,
+casks and commands from the listed taps. Trust whole taps with:
+  brew trust mongodb/brew
+Untap them with:
+  brew untap mongodb/brew
+To disable trust checks:
+  export HOMEBREW_NO_REQUIRE_TAP_TRUST=1
+This is not recommended and will be removed in a later release.
+For more information, see:
+  https://docs.brew.sh/Tap-Trust
+==> Would install 1 formula:
+cocoapods
+==> Downloading https://ghcr.io/v2/homebrew/core/cocoapods/manifests/1.17.0_1
+==> Would install 3 dependencies for cocoapods:
+libyaml
+openssl@4
+ruby
+==> Would upgrade 1 dependency for cocoapods:
+ca-certificates
+==> Fetching downloads for: cocoapods
+✔︎ Bottle Manifest ca-certificates (2026-11-05)
+✔︎ Bottle Manifest openssl@4 (4.1.0)
+✔︎ Bottle Manifest ruby (4.0.9)
+✔︎ Bottle Manifest libyaml (0.2.5)
+✔︎ Bottle ca-certificates (2026-11-05)
+✔︎ Bottle libyaml (0.2.5)
+✔︎ Bottle openssl@4 (4.1.0)
+✔︎ Bottle cocoapods (1.17.0_1)
+✔︎ Bottle ruby (4.0.9)
+==> Installing dependencies for cocoapods: libyaml, ca-certificates, openssl@4 and ruby
+==> Installing cocoapods dependency: libyaml
+==> Pouring libyaml--0.2.5.arm64_golden_gate.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/libyaml/0.2.5: 11 files, 341.9KB
+==> Installing cocoapods dependency: ca-certificates
+Error: Cannot link ca-certificates
+Another version is already linked: /opt/homebrew/Cellar/ca-certificates/2026-11-05
+==> Pouring ca-certificates--2026-11-05.all.bottle.tar.gz

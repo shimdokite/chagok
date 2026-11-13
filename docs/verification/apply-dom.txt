@@ -1,0 +1,26 @@
+- main:
+  - strong: 복지비 신청
+  - generic: ▥ 그로브
+  - generic: 앱에서 이용할 수 있어요. 신청 기능은 준비 중이에요.
+  - heading "어떤 복지를 사용했나요?" [level=1]
+  - paragraph: 사용 내역과 영수증을 함께 알려주세요.
+  - text: 복지 항목
+  - combobox "복지 항목" [disabled]:
+    - option "식비" [disabled] [selected]
+    - option "도서비" [disabled]
+    - option "운동비" [disabled]
+  - text: 사용일
+  - textbox "사용일" [disabled]: 2026-11-13
+  - text: 신청 금액
+  - textbox "신청 금액 원 현재 65,000원까지 신청할 수 있어요." [disabled]:
+    - /placeholder: "0"
+  - generic: 원
+  - generic: 현재 65,000원까지 신청할 수 있어요.
+  - text: 사용 내용
+  - textbox "사용 내용" [disabled]:
+    - /placeholder: 사용 내용을 입력해 주세요
+  - text: 영수증
+  - button "영수증" [disabled]: ◎ 영수증 촬영·선택 · 준비 중
+  - button "복지비 신청하기 · 준비 중" [disabled]
+  - paragraph: 데모 화면이에요. 입력·첨부·제출은 아직 사용할 수 없어요.
+- alert

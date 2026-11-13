@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "checks": [
+    "3 warmups",
+    "20 unique requests",
+    "20 success",
+    "RN monotonic duration arithmetic",
+    "sample environments match",
+    "summary independently recomputed",
+    "source manifest digest matches"
+  ],
+  "summary": {
+    "attempts": 20,
+    "success": 20,
+    "failure": 0,
+    "timeout": 0,
+    "cancelled": 0,
+    "medianMs": 1.8291249999310821,
+    "minMs": 1.5912919999100268,
+    "maxMs": 3.0239589996635914
+  },
+  "environment": {
+    "device": "iPhone 17 (iOS Simulator, arm64)",
+    "OS": "ios 27.2",
+    "appBuild": "development 0.1.0 (1), Debug simulator, Xcode 27.2 (27B52)",
+    "webBuildMode": "development",
+    "sourceRef": "sha256:028c852edd41826d35eb7842368849c532b0716c4777169cc6d76b7c0091d8d7"
+  }
+}

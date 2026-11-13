@@ -1,0 +1,31 @@
+
+> chagok@0.1.0 dev:preview
+> npm run web -w @chagok/mobile
+
+
+> @chagok/mobile@0.1.0 web
+> expo start --web --port 8081
+
+Starting project at /Users/doyeon/Desktop/chagok/apps/mobile
+Expo Autolinking module resolution enabled
+Starting Metro Bundler
+
+Waiting on http://localhost:8081
+
+Logs for your project will appear below.
+TypeScript: The tsconfig.json#include property has been updated
+| (node:82133) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:82133) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:82133) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:82133) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:82133) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:82133) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+Web Bundled 2154ms node_modules/expo-router/entry.js (915 modules)
+Web Bundled 31ms node_modules/expo-router/entry.js (1 module)
+Web Bundled 24ms node_modules/expo-router/entry.js (1 module)

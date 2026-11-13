@@ -1,0 +1,72 @@
+Warning: You are using macOS 27.
+We do not provide support for this pre-release version.
+
+This is a Tier 2 configuration:
+  https://docs.brew.sh/Support-Tiers#tier-2
+You can report issues with Tier 2 configurations to Homebrew/* repositories!
+Read the above document before opening any issues or PRs.
+
+Warning: The following taps are not trusted:
+  mongodb/brew
+
+Homebrew is currently ignoring formulae, casks and commands from these taps because tap trust is required.
+Prefer trusting only the specific formulae, casks or commands you need.
+Trust installed formulae from these taps with:
+  brew trust --formula mongodb/brew/mongodb-community mongodb/brew/mongodb-database-tools
+Trust other specific casks and commands with:
+  brew trust --cask <user>/<tap>/<cask>
+  brew trust --command <user>/<tap>/<command>
+Whole-tap trust is broader and includes all current and future formulae,
+casks and commands from the listed taps. Trust whole taps with:
+  brew trust mongodb/brew
+Untap them with:
+  brew untap mongodb/brew
+To disable trust checks:
+  export HOMEBREW_NO_REQUIRE_TAP_TRUST=1
+This is not recommended and will be removed in a later release.
+For more information, see:
+  https://docs.brew.sh/Tap-Trust
+==> Would install 1 formula:
+cocoapods
+==> Downloading https://ghcr.io/v2/homebrew/core/cocoapods/manifests/1.17.0_1
+Already downloaded: /Users/doyeon/Library/Caches/Homebrew/downloads/cfd4d68882bd941b760bc9039080eb4b958387abb3084a84980f08df71bb9c2b--cocoapods-1.17.0_1.bottle_manifest.json
+✔︎ Bottle openssl@4 (4.1.0)
+==> Would install 2 dependencies for cocoapods:
+openssl@4
+ruby
+==> Fetching downloads for: cocoapods
+✔︎ Bottle cocoapods (1.17.0_1)
+✔︎ Bottle ruby (4.0.9)
+✔︎ Bottle cocoapods (1.17.0_1)
+✔︎ Bottle ruby (4.0.9)
+==> Installing dependencies for cocoapods: openssl@4 and ruby
+==> Installing cocoapods dependency: openssl@4
+==> Pouring openssl@4--4.1.0.arm64_golden_gate.bottle.tar.gz
+Unlinking /opt/homebrew/Cellar/openssl@3/3.6.2... 6560 symlinks removed.
+🍺  /opt/homebrew/Cellar/openssl@4/4.1.0: 6,869 files, 24.6MB
+==> Installing cocoapods dependency: ruby
+Error: unknown install step: remove
+/opt/homebrew/Library/Homebrew/install_steps.rb:570:in 'Homebrew::InstallSteps::Runner#run_install_step'
+/opt/homebrew/Library/Homebrew/install_steps.rb:444:in 'block in Homebrew::InstallSteps::Runner#run'
+/opt/homebrew/Library/Homebrew/install_steps.rb:440:in 'Array#each'
+/opt/homebrew/Library/Homebrew/install_steps.rb:440:in 'Homebrew::InstallSteps::Runner#run'
+/opt/homebrew/Library/Homebrew/formula.rb:1605:in 'block in Formula#run_post_install_steps'
+/opt/homebrew/Library/Homebrew/formula.rb:1457:in 'Formula#with_logging'
+/opt/homebrew/Library/Homebrew/formula.rb:1604:in 'Formula#run_post_install_steps'
+/opt/homebrew/Library/Homebrew/formula_installer.rb:1024:in 'FormulaInstaller#finish'
+/opt/homebrew/Library/Homebrew/formula_installer.rb:940:in 'FormulaInstaller#install_dependency'
+/opt/homebrew/Library/Homebrew/formula_installer.rb:855:in 'block in FormulaInstaller#install_dependencies'
+/opt/homebrew/Library/Homebrew/formula_installer.rb:855:in 'Array#each'
+/opt/homebrew/Library/Homebrew/formula_installer.rb:855:in 'FormulaInstaller#install_dependencies'
+/opt/homebrew/Library/Homebrew/formula_installer.rb:589:in 'FormulaInstaller#install'
+/opt/homebrew/Library/Homebrew/install.rb:699:in 'Homebrew::Install.install_formula'
+/opt/homebrew/Library/Homebrew/install.rb:492:in 'block in Homebrew::Install.install_formulae'
+/opt/homebrew/Library/Homebrew/install.rb:489:in 'Array#each'
+/opt/homebrew/Library/Homebrew/install.rb:489:in 'Homebrew::Install.install_formulae'
+/opt/homebrew/Library/Homebrew/cmd/install.rb:398:in 'Homebrew::Cmd::InstallCmd#run'
+/opt/homebrew/Library/Homebrew/brew.rb:121:in '<main>'
+This error was expected, as this is not a Tier 1 configuration:
+  https://docs.brew.sh/Support-Tiers
+Do not report any issues to Homebrew/* repositories!
+Read the above document instead before opening any issues or PRs.
+==> Pouring ruby--4.0.9.arm64_golden_gate.bottle.tar.gz

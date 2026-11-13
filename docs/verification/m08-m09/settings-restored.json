@@ -1,0 +1,15 @@
+{
+  "verified": "2026-11-13 KST",
+  "devices": {
+    "iPhone17": {
+      "appearance": "light",
+      "content_size": "large"
+    },
+    "Chagok M09 Mini": {
+      "appearance": "light",
+      "content_size": "large"
+    }
+  },
+  "source": "four successful simctl ui read commands",
+  "visualChecks": "0; absence confirmed in native Mini home"
+}

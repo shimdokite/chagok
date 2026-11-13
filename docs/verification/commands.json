@@ -1,0 +1,17 @@
+[
+  {
+    "command": "npm run typecheck",
+    "exitCode": 0,
+    "log": "typecheck.log"
+  },
+  {
+    "command": "npm test",
+    "exitCode": 0,
+    "log": "tests.log"
+  },
+  {
+    "command": "npm run build:web",
+    "exitCode": 0,
+    "log": "build-web.log"
+  }
+]

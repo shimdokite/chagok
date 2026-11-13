@@ -1,0 +1,20 @@
+
+> chagok@0.1.0 typecheck
+> npm run typecheck --workspaces --if-present
+
+
+> @chagok/mobile@0.1.0 typecheck
+> tsc --noEmit
+
+
+> @chagok/web@0.1.0 typecheck
+> tsc --noEmit
+
+
+> @chagok/api@0.1.0 typecheck
+> tsc --noEmit
+
+
+> @chagok/contracts@0.1.0 typecheck
+> tsc --noEmit
+

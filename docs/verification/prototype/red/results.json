@@ -1,0 +1,35 @@
+{
+  "at": "2026-11-13T11:47:59.527Z",
+  "url": "http://127.0.0.1:3015/chagok-prototype.html",
+  "browser": "157.0.8103.78",
+  "sourceSha256": "0bf5b8bf4c5391a7c88fc77c7dbd120204bd63e4618b30b4c37d3ff8ddfc4b5d",
+  "results": [
+    {
+      "name": "missing-receipt",
+      "passed": false,
+      "error": "locator.waitFor: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#codex-visualization').contentFrame().locator('#cg-form-error').filter({ hasText: '영수증을 먼저 첨부해 주세요.' }) to be visible\u001b[22m\n",
+      "consoleErrors": [
+        "Blocked form submission to '' because the form's frame is sandboxed and the 'allow-forms' permission is not set."
+      ],
+      "pageErrors": []
+    },
+    {
+      "name": "approve",
+      "passed": false,
+      "error": "locator.waitFor: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#codex-visualization').contentFrame().locator('.cg-success h1').filter({ hasText: '신청이 접수됐어요' }) to be visible\u001b[22m\n",
+      "consoleErrors": [
+        "Blocked form submission to '' because the form's frame is sandboxed and the 'allow-forms' permission is not set."
+      ],
+      "pageErrors": []
+    },
+    {
+      "name": "reject",
+      "passed": false,
+      "error": "locator.waitFor: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#codex-visualization').contentFrame().locator('.cg-success h1').filter({ hasText: '신청이 접수됐어요' }) to be visible\u001b[22m\n",
+      "consoleErrors": [
+        "Blocked form submission to '' because the form's frame is sandboxed and the 'allow-forms' permission is not set."
+      ],
+      "pageErrors": []
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "date": "2026-11-13",
+  "timezone": "Asia/Seoul",
+  "candidateFilesScanned": 199,
+  "credentialPatternHits": [],
+  "excluded": [
+    "apps/mobile/.env.local",
+    "node_modules",
+    "apps/mobile/ios",
+    "snapshots/chagok-day-01-source.tar.gz",
+    ".local-tools"
+  ],
+  "prRequiredSections": 5,
+  "acRows": 18,
+  "commitFormat": "passed",
+  "appSourceManifestMatches": 50,
+  "note": "Pattern scan is not a proof of absence of all sensitive data; human-readable artifact review also performed."
+}

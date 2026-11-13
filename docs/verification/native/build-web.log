@@ -1,0 +1,33 @@
+
+> chagok@0.1.0 build:web
+> npm run build -w @chagok/web
+
+
+> @chagok/web@0.1.0 build
+> next build
+
+▲ Next.js 16.4.6 (Turbopack)
+✓ Running next.config.ts took 89ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 351ms
+  Running TypeScript ...
+  Finished TypeScript in 1403ms ...
+  Collecting page data using 6 workers ...
+  Generating static pages using 6 workers (0/4) ...
+  Generating static pages using 6 workers (1/4) 
+  Generating static pages using 6 workers (2/4) 
+  Generating static pages using 6 workers (3/4) 
+✓ Generating static pages using 6 workers (4/4) in 455ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ƒ /api/trpc/[trpc]
+└ ○ /apply
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+

@@ -1,0 +1,7 @@
+--- chagok-prototype.before.html
++++ docs/design/chagok-prototype.html
+@@ -12,3 +12,3 @@
+ <body>
+-<iframe id="codex-visualization" sandbox="allow-scripts" referrerpolicy="no-referrer" title="Chagok Mvp Prototype" data-srcdoc="&lt;!doctype html&gt;
++<iframe id="codex-visualization" sandbox="allow-scripts allow-forms" referrerpolicy="no-referrer" title="Chagok Mvp Prototype" data-srcdoc="&lt;!doctype html&gt;
+ &lt;html lang=&quot;en&quot; data-visualize-standalone&gt;

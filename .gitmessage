@@ -1,0 +1,16 @@
+<type>(<scope>): <변경 결과를 나타내는 한국어 설명>
+
+배경: <변경이 필요한 이유>
+변경: <핵심 변경과 그 결과>
+검증: <실행 명령·결과 또는 미실행 사유>
+영향: <관련 기능·호환성 영향과 남은 위험>
+
+# 필수 규칙: docs/contributing.md
+# 제목은 72자 이내, 마침표 없이 작성합니다. scope는 명확할 때 사용합니다.
+# type: feat, fix, refactor, perf, docs, test, build, ci, chore, revert
+# <...>는 실제 내용으로 바꾸고 하나의 논리적 변경만 담습니다.
+# 호환성 파괴 시 제목에 ! 추가: feat(api)!: 응답 계약 변경
+# 호환성 파괴가 있을 때 아래 footer를 주석 없이 추가합니다.
+# BREAKING CHANGE: 변경 내용과 소비자가 해야 할 조치
+# 관련 이슈가 있을 때만 footer를 추가합니다: Refs: #123
+# AI가 채운 초안: docs/changes/latest-commit.txt
