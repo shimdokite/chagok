@@ -32,12 +32,13 @@
   "finalSourceManifestSha256": "d62f26c701ae2f39190dd47e422369fa2bdb282ea629e509feae12b167755091",
   "sourceFileCount": 50,
   "day02Started": false,
-  "prOpened": false,
+  "prOpened": true,
   "userFinalAcceptance": {
     "date": "2026-11-13",
     "timezone": "Asia/Seoul",
     "quote": "Device Hub에서 직접 확인했고 화면이랑 스크롤 모두 정상 동작해. 1일차 최종 확인 완료로 기록하고, PR을 올리자.",
     "screenAndScroll": "confirmed",
     "prAuthorized": true
-  }
+  },
+  "prUrl": "https://github.com/shimdokite/chagok/pull/1"
 }

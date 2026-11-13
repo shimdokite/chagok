@@ -2,6 +2,8 @@
 작성일: 2026-11-13 (Asia/Seoul)
 대상 범위: 공개 저장소 shimdokite/chagok의 main → feat/day-01-foundation. main은 비교용 빈 초기 커밋이며 이 PR은 최초 1일차 전체 구현을 포함합니다.
 
+게시: [PR #1](https://github.com/shimdokite/chagok/pull/1), 공개 저장소, 미병합.
+
 ## 요약
 
 앱 소스가 없던 차곡 프로젝트에 React Native 로그인·홈, Next.js 신청 화면, 실제 API 연결 및 WebView 브릿지 측정 기반을 구현했습니다. iOS 시뮬레이터 검증·기준선 측정을 마쳤고, 사용자가 Device Hub 화면·스크롤까지 확인해 1일차를 최종 승인했습니다.

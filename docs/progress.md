@@ -130,3 +130,14 @@ AC15는 원문이 ‘회귀 확인 또는 수동 확인 필요 명시’를 허�
 > “Device Hub에서 직접 확인했고 화면이랑 스크롤 모두 정상 동작해. 1일차 최종 확인 완료로 기록하고, PR을 올리자.”
 
 Device Hub 실제 화면과 정상 스크롤 사용감의 사용자 확인을 완료했습니다. 1일차 최종 인수를 완료로 기록하며 브랜치·push·PR 생성 승인을 받았습니다. 실기기·Android·VoiceOver·웹 본문 Dynamic Type·Release 성능은 추가 범위입니다. 2일차는 시작하지 않습니다.
+
+
+## 1일차 PR 게시 완료 — 2026-11-13 (Asia/Seoul)
+
+- 사용자가 GitHub CLI 인증을 완료하고 공개 저장소 생성을 명시적으로 요청했습니다.
+- 공개 저장소: https://github.com/shimdokite/chagok
+- PR: https://github.com/shimdokite/chagok/pull/1 — feat/day-01-foundation → main, OPEN, 미병합.
+- main은 비교 기준용 빈 초기 커밋, PR은 1일차 전체 구현·검증·학습·저장소 지침입니다.
+- PR 직전 typecheck·33테스트·M08 저장 원본16/16 대조 통과. 읽기 전용 리뷰 Critical0/Important0.
+- 환경 파일·설치 도구·빌드·로컬 압축 백업은 Git 제외. 이번 앱 소스 변경 없음.
+- PR 본문에 사용자 피드백/최종 승인 인용과 AC18행(충족16/제외2)을 포함했습니다. 원격 CI는 설정되어 있지 않아 로컬 검증과 구분합니다. 2일차 미시작.

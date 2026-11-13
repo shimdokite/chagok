@@ -16,3 +16,5 @@ M08 UI 재주입·M09 UI·성능 측정·웹/Xcode/iOS JS export는 이번에 �
 공백 검사: 전체 `git diff --cached --check`는 기존 원본 로그·HTTP 헤더 27개 파일의 CR/말미 공백 때문에 경고했습니다. 원본 증거를 보존했으며 앱·패키지·스크립트·설정·이번 편집 문서 범위의 동일 검사는 exit0입니다. 앱 테스트 실패가 아닙니다.
 
 GitHub 계정 인증 후 사용자가 공개를 명시적으로 요청하여 `https://github.com/shimdokite/chagok` 공개 저장소를 생성했습니다. main은 빈 초기 커밋, feat/day-01-foundation은 전체 1일차 변경으로 비교합니다.
+
+최종 게시: [공개 저장소](https://github.com/shimdokite/chagok), [PR #1](https://github.com/shimdokite/chagok/pull/1). 생성 직후 OPEN·정확한 base/head·본문 일치·MERGEABLE을 API로 확인했습니다. `publication.json`은 문서 후속 커밋 전 게시 시점 스냅샷입니다. 원격 CI는 설정되지 않았습니다. PR은 미병합이며 2일차 미시작입니다.

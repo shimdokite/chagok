@@ -1,0 +1,16 @@
+{
+  "baseRefName": "main",
+  "changedFiles": 200,
+  "headRefName": "feat/day-01-foundation",
+  "headRefOid": "11aac46814abdb40b149ce13d9a3f2b9552123aa",
+  "isDraft": false,
+  "mergeable": "MERGEABLE",
+  "number": 1,
+  "state": "OPEN",
+  "statusCheckRollup": [],
+  "title": "feat(repo): 차곡 1일차 앱·웹·브릿지 기반 구현",
+  "url": "https://github.com/shimdokite/chagok/pull/1",
+  "repositoryVisibility": "PUBLIC",
+  "verifiedAt": "2026-11-13 Asia/Seoul",
+  "note": "Snapshot immediately after initial PR creation; later documentation-only commit records this publication. No remote CI configured."
+}

@@ -80,4 +80,4 @@ npx expo export --platform ios --platform android --output-dir dist
 - [진행 상태](docs/progress.md), [작업별 학습](docs/learning/day-01.md), [측정 상태](docs/metrics/daily/day-01.md)
 - [직접 확인 순서](docs/manual-checks.md), [승인 명세](docs/plans/day-01.md), [기준 시안](docs/design/)
 
-2026-11-13 사용자가 Device Hub 화면·스크롤을 최종 확인하여 1일차 인수와 PR 생성을 승인했습니다. 로컬 Git을 초기화했고 `feat/day-01-foundation`으로 PR을 준비합니다. [PR 설명 초안](docs/pr-draft.md)에 실제 요청 인용과 AC 결과를 기록했습니다. **2일차 구현은 시작하지 않았습니다.**
+2026-11-13 사용자가 Device Hub 화면·스크롤을 최종 확인하여 1일차 인수와 PR 생성을 승인했습니다. 공개 저장소 [shimdokite/chagok](https://github.com/shimdokite/chagok)에 [1일차 PR #1](https://github.com/shimdokite/chagok/pull/1)을 열었습니다. 브랜치는 `feat/day-01-foundation`, 대상은 `main`입니다. [PR 설명 초안](docs/pr-draft.md)에 실제 요청 인용과 AC 결과를 기록했습니다. **2일차 구현은 시작하지 않았습니다.**

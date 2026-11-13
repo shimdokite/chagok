@@ -155,6 +155,7 @@ docs/verification/native/xcodebuild.log
 docs/verification/pr-final/README.md
 docs/verification/pr-final/m08-artifact-validation.log
 docs/verification/pr-final/precommit-check.json
+docs/verification/pr-final/publication.json
 docs/verification/pr-final/review.md
 docs/verification/pr-final/tests.log
 docs/verification/pr-final/typecheck.log

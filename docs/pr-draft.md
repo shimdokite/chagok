@@ -2,7 +2,7 @@
 
 제안 브랜치: `feat/day-01-foundation`
 제안 제목: `feat(repo): 차곡 1일차 앱·웹·브릿지 기반 구현`
-상태: 사용자 화면·스크롤 최종 확인 및 PR 생성 승인. 로컬 Git 초기화 완료, 원격 저장소 생성과 게시 진행. 최신 전체 PR 본문은 `docs/changes/latest-pr.md`.
+상태: 사용자 화면·스크롤 최종 확인 완료. 공개 저장소에 [PR #1](https://github.com/shimdokite/chagok/pull/1) 생성 완료, 미병합. 최신 전체 PR 본문은 `docs/changes/latest-pr.md`.
 
 ## 배경과 사용자 피드백
 
