@@ -1,0 +1,11 @@
+Local markdown link targets: 81 missing: []
+Initial preserved files: 10 mismatches: []
+Source manifest files: 80 mismatches: [] (rechecked after generated next-env restoration)
+Authenticated restore samples: 0 not measured
+Known local secret matches in Git candidates: []
+Scoped diff whitespace exit: 0
+Staged names: (empty)
+New learning ignored: docs/learning/day-02.md
+Tracked learning: docs/learning/day-01.md
+Initial manifest assertion failed only on auto-generated next-env development type paths; restored initial tracked content, rechecked 80/80.
+Final links after result notes: 86, missing 0; source/raw sidecar hashes match; draft required sections valid.

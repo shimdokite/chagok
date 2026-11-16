@@ -1,4 +1,6 @@
 import { useState } from "react";
+import type { WebViewTrace } from "./webview-trace";
+type TraceSnapshot = ReturnType<WebViewTrace["snapshot"]>;
 import { View, Text, Share, ScrollView } from "react-native";
 import { Button } from "../components/ui";
 import { useTheme } from "../theme/tokens";
@@ -10,14 +12,19 @@ export function BridgeDiagnostics({
   run,
   reload,
   probe,
+  trace,
 }: {
   ready: boolean;
   running: boolean;
   result: BenchmarkResult | null;
   run: () => void;
   reload: () => void;
+  trace?: () => TraceSnapshot;
   probe?: { busy: boolean; report: object | null; run: () => void };
 }) {
+  const [traceSnapshot, setTraceSnapshot] = useState<TraceSnapshot | null>(
+    null,
+  );
   const [open, setOpen] = useState(false);
   const [exportError, setExportError] = useState("");
   const c = useTheme();
@@ -94,6 +101,38 @@ export function BridgeDiagnostics({
                   );
                 }}
               />
+            </>
+          ) : null}
+          {trace ? (
+            <>
+              <Button
+                title="웹뷰 이벤트 기록 보기"
+                secondary
+                onPress={() => setTraceSnapshot(trace())}
+              />
+              {traceSnapshot ? (
+                <View style={{ gap: 4 }}>
+                  <Text style={{ color: c.secondary, fontSize: 11 }}>
+                    WVTRACE{" "}
+                    {JSON.stringify({
+                      startedAt: traceSnapshot.startedAt,
+                      dropped: traceSnapshot.dropped,
+                      hiddenInView: Math.max(
+                        0,
+                        traceSnapshot.events.length - 30,
+                      ),
+                    })}
+                  </Text>
+                  {traceSnapshot.events.slice(-30).map((event) => (
+                    <Text
+                      key={event.seq}
+                      style={{ color: c.secondary, fontSize: 11 }}
+                    >
+                      WVTRACE {JSON.stringify(event)}
+                    </Text>
+                  ))}
+                </View>
+              ) : null}
             </>
           ) : null}
           {exportError ? (

@@ -1,0 +1,25 @@
+{
+  "head": "86a95a2574bc08517c145389cb88b41e81deffd9",
+  "status": " M .github/pull_request_template.md\n M AGENTS.md\n M docs/changes/latest-commit.txt\n M docs/changes/latest-pr.md\n M docs/contributing.md\n M docs/learning/day-01.md\n M docs/product.md\n M docs/progress.md\n?? docs/plans/day-02.md\n?? handoff.md\n",
+  "staged": "",
+  "sha256": {
+    ".github/pull_request_template.md": "d5ef66816d006ea565ae429c6c4eaceb08880e983ca72df0d8c5db9264a75d79",
+    "AGENTS.md": "0f444d607ec105e662837cac0df4ad090ee8709d349ca9b4c55c06b76bf54d39",
+    "docs/changes/latest-commit.txt": "f3762df972e48f5345c382a35f74668c2767592a3a4a849fc001b5e5d47b2d8d",
+    "docs/changes/latest-pr.md": "19f9ef7f5463a0f4bec4d1bccddb30f307cf7bbbcf2c8fafbf3504fa8bbd506c",
+    "docs/contributing.md": "f25d0973eca7551ff0976688e66dfc8d23b80c33d46430c6d0e01b38428beb54",
+    "docs/learning/day-01.md": "4ed27786bc0595e9ed341c3647e470b91ba5ef3c38533414e000adba05d20398",
+    "docs/product.md": "3c2fd239af13afef014383f2c92876a60906191b1cba88ab44f149af29a858fe",
+    "docs/progress.md": "f756da9972bfd492f3be73c5c4edf77e4040ec119e7d3d9c0e5cf0a39df22d6f",
+    "handoff.md": "0eca2a3437d8dbc98d925b08b06038dda746d2f2b6c2f17f3f7dac1a740d118b",
+    "docs/plans/day-02.md": "3845d41e1faf4eef1f43a320d0859db87b48d92d188e5afad646fa9cef67f63d"
+  },
+  "preserve_sha256": {
+    "docs/learning/day-01.md": "4ed27786bc0595e9ed341c3647e470b91ba5ef3c38533414e000adba05d20398",
+    "docs/design/chagok-prototype.html": "7dbe5820c520b0d85173edbbe717caab780861615de94ad53ccc47348567740e",
+    "docs/design/chagok-mobile-reference.png": "c5616c10de884704bca0c6feb8aaa59f6cb77de50dccc4bfea21eb26a163b3ad",
+    "docs/design/chagok-admin-reference.png": "8261461e5e7ad4750b343d89504bdd3197cd70cbe50365e2fdb69c55251f1168",
+    "docs/metrics/raw/day-01-bridge.json": "65f16280cf78225c05ad040daf3f0d0f6728a563638d79b93e7f817037f86218",
+    "docs/metrics/raw/day-01-bridge-lifecycle.json": "903497e5e19024bfd5eae8bf7e246af532fd07c6d1e2a120318bfed27445ba57"
+  }
+}

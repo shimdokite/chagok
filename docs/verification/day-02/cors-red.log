@@ -1,0 +1,53 @@
+
+ RUN  v5.1.0 /Users/doyeon/Desktop/chagok
+
+ ❯ packages/api/src/http.test.ts (6 tests | 2 failed) 117ms
+   × allows the separate development preview at http://localhost:8082 15ms
+   × allows the separate development preview at http://127.0.0.1:8082 2ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/api/src/http.test.ts > allows the separate development preview at http://localhost:8082
+AssertionError: expected null to be 'http://localhost:8082' // Object.is equality
+
+- Expected:
+"http://localhost:8082"
+
++ Received:
+null
+
+ ❯ packages/api/src/http.test.ts:29:65
+     27|   async (origin) => {
+     28|     const response = await GET(new Request("http://localhost:3000/api/…
+     29|     expect(response.headers.get("Access-Control-Allow-Origin")).toBe(o…
+       |                                                                 ^
+     30|   },
+     31| );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  packages/api/src/http.test.ts > allows the separate development preview at http://127.0.0.1:8082
+AssertionError: expected null to be 'http://127.0.0.1:8082' // Object.is equality
+
+- Expected:
+"http://127.0.0.1:8082"
+
++ Received:
+null
+
+ ❯ packages/api/src/http.test.ts:29:65
+     27|   async (origin) => {
+     28|     const response = await GET(new Request("http://localhost:3000/api/…
+     29|     expect(response.headers.get("Access-Control-Allow-Origin")).toBe(o…
+       |                                                                 ^
+     30|   },
+     31| );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 4 passed (6)
+   Start at  17:03:12
+   Duration  1.27s (import 70%, transform 16%, tests 13%, worker 1%)
+

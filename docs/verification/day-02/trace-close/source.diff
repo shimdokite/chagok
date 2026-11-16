@@ -1,0 +1,64 @@
+--- ApplyContainer.before.tsx
++++ ApplyContainer.tsx
+@@ -1,4 +1,10 @@
+-import { useCallback, useEffect, useRef, useState } from "react";
++import {
++  useCallback,
++  useEffect,
++  useLayoutEffect,
++  useRef,
++  useState,
++} from "react";
+ import {
+   View,
+   Text,
+@@ -23,6 +29,10 @@
+   const [loading, setLoading] = useState(true);
+   const [error, setError] = useState(false);
+   const [revision, setRevision] = useState(0);
++  const committedRevision = useRef(revision);
++  useLayoutEffect(() => {
++    committedRevision.current = revision;
++  }, [revision]);
+   const trace = useRef<WebViewTrace | null>(null);
+   if (!trace.current) trace.current = new WebViewTrace(__DEV__);
+   const record = useCallback(
+@@ -32,7 +42,7 @@
+   );
+   useEffect(() => {
+     record("mount", 0);
+-    return () => record("unmount", 0);
++    return () => record("unmount", committedRevision.current);
+   }, [record]);
+   useEffect(() => {
+     if (!__DEV__) return;
+@@ -41,11 +51,11 @@
+     );
+     return () => subscription.remove();
+   }, [record, revision]);
+-  const back = useCallback(
+-    () => (router.canGoBack() ? router.back() : router.replace("/home")),
+-    [],
+-  );
+-  const bridge = useWebViewBridge(ref, back);
++  const closeAndGoBack = useCallback(() => {
++    record("close", committedRevision.current);
++    return router.canGoBack() ? router.back() : router.replace("/home");
++  }, [record]);
++  const bridge = useWebViewBridge(ref, closeAndGoBack);
+   const probe = useBoundaryProbe(
+     (script) => ref.current?.injectJavaScript(script),
+     () => ({
+@@ -56,10 +66,9 @@
+     }),
+   );
+   const close = useCallback(() => {
+-    record("close", revision);
+     bridge.reset("close");
+-    back();
+-  }, [bridge.reset, back, record, revision]);
++    closeAndGoBack();
++  }, [bridge.reset, closeAndGoBack]);
+   useEffect(() => {
+     const subscription = BackHandler.addEventListener(
+       "hardwareBackPress",

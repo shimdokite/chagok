@@ -1,0 +1,32 @@
+[
+  {
+    "press": 1,
+    "at": "2026-11-16T13:23:10.316Z",
+    "loading": true,
+    "ready": false
+  },
+  {
+    "press": 2,
+    "at": "2026-11-16T13:23:11.378Z",
+    "loading": true,
+    "ready": false
+  },
+  {
+    "press": 3,
+    "at": "2026-11-16T13:23:12.692Z",
+    "loading": true,
+    "ready": false
+  },
+  {
+    "press": 4,
+    "at": "2026-11-16T13:23:13.877Z",
+    "loading": true,
+    "ready": false
+  },
+  {
+    "press": 5,
+    "at": "2026-11-16T13:23:15.068Z",
+    "loading": true,
+    "ready": false
+  }
+]

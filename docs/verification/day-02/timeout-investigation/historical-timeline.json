@@ -1,0 +1,74 @@
+{
+  "source": ".local-tools/day-02-timeout/historical-app.log",
+  "sha256": "b8dbee34a3226cbf57db05c1def6c2c61a0a1ff588ad8c136c6edd3a10100fd8",
+  "events": [
+    {
+      "line": 21,
+      "text": "2026-11-16 17:15:47.617 Df app[24663:24ed11] [com.apple.WebKit:Loading] 0x1315c9018 - [pageProxyID=24, webPageID=25, PID=0] WebPageProxy::constructor, site isolation enabled 0, site isolation shared process enabled 0"
+    },
+    {
+      "line": 43,
+      "text": "2026-11-16 17:15:48.005 Df app[24663:24ed11] [com.apple.WebKit:Loading] 0x1315c9018 - [pageProxyID=24, webPageID=25, PID=0] WebPageProxy::loadRequest:"
+    },
+    {
+      "line": 50,
+      "text": "2026-11-16 17:15:48.080 Df app[24663:24ed11] [com.apple.WebKit:Loading] 0x1315c8018 - [pageProxyID=9, webPageID=10, PID=25236] WebPageProxy::close:"
+    },
+    {
+      "line": 268,
+      "text": "2026-11-16 17:15:51.297 Df app[24663:24ed11] [com.apple.WebKit:Loading] 0x1315c9018 - [pageProxyID=24, webPageID=25, PID=31254] WebPageProxy::decidePolicyForNavigationAction: listener called: frameID=4294967298, isMainFrame=1, navigationID=30, policyAction=Use, isAppBoundDomain=0, wasNavigationIntercepted=0"
+    },
+    {
+      "line": 279,
+      "text": "2026-11-16 17:15:55.797 Df app[24663:24ed11] [com.apple.WebKit:Loading] 0x1315c9018 - [pageProxyID=24, webPageID=25, PID=31254] WebPageProxy::didStartProvisionalLoadForFrame: frameID=4294967298, isMainFrame=1"
+    },
+    {
+      "line": 303,
+      "text": "2026-11-16 17:15:56.217 Df app[24663:24f513] [com.apple.WebKit:Network] WebContent[31254]: [webPageID=25, frameID=4294967298, resourceID=12] WebResourceLoader::didReceiveResponse: (httpStatusCode=200)"
+    },
+    {
+      "line": 319,
+      "text": "2026-11-16 17:15:56.647 Df app[24663:24ed11] [com.apple.WebKit:Loading] 0x1315c9018 - [pageProxyID=24, webPageID=25, PID=31254] WebPageProxy::didCommitLoadForFrame: frameID=4294967298, isMainFrame=1"
+    },
+    {
+      "line": 580,
+      "text": "2026-11-16 17:16:00.246 Df app[24663:24ed11] [com.apple.WebKit:ViewState] 0x109a06800 (pageProxyID=24) -[WKWebView _didCommitLayerTree:] - finally received commit 12.46s after visible content rect update request; transactionID 1"
+    },
+    {
+      "line": 607,
+      "text": "2026-11-16 17:16:00.737 Df app[24663:24ed11] [com.apple.WebKit:Loading] 0x1315c9018 - [pageProxyID=24, webPageID=25, PID=31254] WebPageProxy::didFinishLoadForFrame: frameID=4294967298, isMainFrame=1"
+    },
+    {
+      "line": 626,
+      "text": "2026-11-16 17:16:01.101 Df app[24663:24ed11] [com.apple.WebKit:Loading] 0x1315c9018 - [pageProxyID=24, webPageID=25, PID=31254] WebPageProxy::close:"
+    },
+    {
+      "line": 765,
+      "text": "2026-11-16 17:16:35.080 Df app[24663:24ed11] [com.apple.WebKit:Loading] 0x1315c9018 - [pageProxyID=37, webPageID=38, PID=0] WebPageProxy::constructor, site isolation enabled 0, site isolation shared process enabled 0"
+    },
+    {
+      "line": 797,
+      "text": "2026-11-16 17:16:35.098 Df app[24663:24ed11] [com.apple.WebKit:Loading] 0x1315c9018 - [pageProxyID=37, webPageID=38, PID=0] WebPageProxy::loadRequest:"
+    },
+    {
+      "line": 918,
+      "text": "2026-11-16 17:16:36.335 Df app[24663:24ed11] [com.apple.WebKit:Loading] 0x1315c9018 - [pageProxyID=37, webPageID=38, PID=31923] WebPageProxy::decidePolicyForNavigationAction: listener called: frameID=4294967299, isMainFrame=1, navigationID=43, policyAction=Use, isAppBoundDomain=0, wasNavigationIntercepted=0"
+    },
+    {
+      "line": 941,
+      "text": "2026-11-16 17:16:39.837 Df app[24663:24ed11] [com.apple.WebKit:Loading] 0x1315c9018 - [pageProxyID=37, webPageID=38, PID=31923] WebPageProxy::didStartProvisionalLoadForFrame: frameID=4294967299, isMainFrame=1"
+    },
+    {
+      "line": 965,
+      "text": "2026-11-16 17:16:39.932 Df app[24663:24ed11] [com.apple.WebKit:Loading] 0x1315c9018 - [pageProxyID=37, webPageID=38, PID=31923] WebPageProxy::didCommitLoadForFrame: frameID=4294967299, isMainFrame=1"
+    },
+    {
+      "line": 1186,
+      "text": "2026-11-16 17:16:40.653 Df app[24663:24ed11] [com.apple.WebKit:ViewState] 0x109a06800 (pageProxyID=37) -[WKWebView _didCommitLayerTree:] - finally received commit 5.56s after visible content rect update request; transactionID 1"
+    },
+    {
+      "line": 1232,
+      "text": "2026-11-16 17:16:40.800 Df app[24663:24ed11] [com.apple.WebKit:Loading] 0x1315c9018 - [pageProxyID=37, webPageID=38, PID=31923] WebPageProxy::didFinishLoadForFrame: frameID=4294967299, isMainFrame=1"
+    }
+  ]
+}

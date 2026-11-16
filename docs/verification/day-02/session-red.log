@@ -1,0 +1,28 @@
+
+> chagok@0.1.0 test
+> vitest run apps/mobile/src/auth/session.test.ts
+
+
+ RUN  v5.1.0 /Users/doyeon/Desktop/chagok
+
+ ❯ apps/mobile/src/auth/session.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/mobile/src/auth/session.test.ts [ apps/mobile/src/auth/session.test.ts ]
+Error: Cannot find module './session' imported from /Users/doyeon/Desktop/chagok/apps/mobile/src/auth/session.test.ts
+ ❯ apps/mobile/src/auth/session.test.ts:2:1
+      1| import {expect,it,vi} from 'vitest';
+      2| import { SessionController, type SessionPorts } from './session';
+       | ^
+      3| const response={token:'a'.repeat(64),user:{id:'user-1'},expiresAt:'202…
+      4| function fixture(overrides:Partial<SessionPorts>={}) {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  16:42:13
+   Duration  122ms (worker 97%, environment 3%)
+

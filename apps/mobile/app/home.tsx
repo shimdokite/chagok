@@ -1,3 +1,6 @@
+import { useSession } from "../src/auth/SessionProvider";
+import { SessionDiagnostics } from "../src/dev/SessionDiagnostics";
+import { Button } from "../src/components/ui";
 import { VisualCheckControls } from "../src/dev/VisualCheckControls";
 import { useVisualCheckScroll } from "../src/dev/useVisualCheckScroll";
 import { useState } from "react";
@@ -10,6 +13,7 @@ import { ServerDiagnostics } from "../src/dev/ServerDiagnostics";
 import { useTheme } from "../src/theme/tokens";
 export default function Home() {
   const c = useTheme();
+  const { state, controller } = useSession();
   const visual = useVisualCheckScroll();
   const [notice, setNotice] = useState("");
   return (
@@ -24,7 +28,9 @@ export default function Home() {
       >
         <View>
           <Text style={{ color: c.secondary, fontSize: 14 }}>
-            도연님, 안녕하세요.
+            {state.status === "authenticated"
+              ? "안녕하세요."
+              : "도연님, 안녕하세요."}
           </Text>
           <Text
             style={{
@@ -63,7 +69,20 @@ export default function Home() {
             {notice}
           </Text>
         ) : null}
-        {__DEV__ ? <ServerDiagnostics /> : null}
+        <Button
+          secondary
+          title={state.status === "demo" ? "데모 나가기" : "로그아웃"}
+          onPress={() => {
+            if (state.status === "demo") controller.leaveDemo();
+            else void controller.signOut();
+          }}
+        />
+        {__DEV__ ? (
+          <>
+            <ServerDiagnostics />
+            <SessionDiagnostics />
+          </>
+        ) : null}
       </ScrollView>
       <View
         style={{

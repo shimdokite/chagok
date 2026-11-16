@@ -1,0 +1,35 @@
+{
+  "checkedAt": "2026-11-16T14:39:03.614Z",
+  "branch": "feat/day-02-auth-session-ui",
+  "head": "86a95a2574bc08517c145389cb88b41e81deffd9",
+  "base": "86a95a2574bc08517c145389cb88b41e81deffd9",
+  "sourceChangesSinceApprovedDraft": [],
+  "learningPreserved": [
+    {
+      "file": "docs/learning/day-02.md",
+      "unchanged": true
+    },
+    {
+      "file": "docs/learning/day-01.md",
+      "unchanged": true
+    }
+  ],
+  "learningTracked": "",
+  "learningDiff": "D\tdocs/learning/day-01.md",
+  "privatePaths": [],
+  "stagedSensitivePatternFindings": [],
+  "whitespace": {
+    "allExit": 2,
+    "nonRawExit": 0,
+    "exceptions": "unchanged raw execution logs and applied Prisma migration trailing blank line"
+  },
+  "tests": {
+    "command": "Node24 vitest run with local CHAGOK_TEST_DATABASE_URL",
+    "files": 12,
+    "passed": 72,
+    "skipped": 0,
+    "exitCode": 0
+  },
+  "ui": "No runtime or UI changes in publishing step; no additional browser verification",
+  "merge": "Pending remote checks after publishing"
+}

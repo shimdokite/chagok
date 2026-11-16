@@ -1,0 +1,238 @@
+{
+  "revisions": [
+    {
+      "revision": 0,
+      "readyAfterTimerMs": 3352.715,
+      "timeoutAfterTimerMs": null,
+      "kinds": [
+        "mount",
+        "timer-armed",
+        "navigation-allowed",
+        "load-start",
+        "load-end",
+        "load-end",
+        "ready",
+        "timer-cleared",
+        "ready",
+        "reload",
+        "unmount",
+        "mount"
+      ]
+    },
+    {
+      "revision": 1,
+      "readyAfterTimerMs": 2866.696,
+      "timeoutAfterTimerMs": null,
+      "kinds": [
+        "timer-armed",
+        "navigation-allowed",
+        "load-start",
+        "load-end",
+        "load-end",
+        "ready",
+        "timer-cleared",
+        "ready",
+        "reload"
+      ]
+    },
+    {
+      "revision": 2,
+      "readyAfterTimerMs": 3234.016,
+      "timeoutAfterTimerMs": null,
+      "kinds": [
+        "timer-armed",
+        "navigation-allowed",
+        "load-start",
+        "load-end",
+        "load-end",
+        "ready",
+        "ready",
+        "timer-cleared",
+        "reload"
+      ]
+    },
+    {
+      "revision": 3,
+      "readyAfterTimerMs": 4343.191,
+      "timeoutAfterTimerMs": null,
+      "kinds": [
+        "timer-armed",
+        "navigation-allowed",
+        "load-start",
+        "load-end",
+        "load-end",
+        "ready",
+        "timer-cleared",
+        "ready",
+        "content-process-terminated",
+        "reload"
+      ]
+    },
+    {
+      "revision": 4,
+      "readyAfterTimerMs": 3990.086,
+      "timeoutAfterTimerMs": null,
+      "kinds": [
+        "timer-armed",
+        "navigation-allowed",
+        "load-start",
+        "load-end",
+        "load-end",
+        "ready",
+        "timer-cleared",
+        "ready",
+        "reload"
+      ]
+    },
+    {
+      "revision": 5,
+      "readyAfterTimerMs": null,
+      "timeoutAfterTimerMs": 15001.894,
+      "kinds": [
+        "timer-armed",
+        "navigation-allowed",
+        "load-start",
+        "ready-timeout",
+        "timer-cleared",
+        "reload"
+      ]
+    },
+    {
+      "revision": 6,
+      "readyAfterTimerMs": 6392.298,
+      "timeoutAfterTimerMs": null,
+      "kinds": [
+        "timer-armed",
+        "navigation-allowed",
+        "load-start",
+        "load-end",
+        "load-end",
+        "ready",
+        "ready",
+        "timer-cleared",
+        "reload"
+      ]
+    },
+    {
+      "revision": 7,
+      "readyAfterTimerMs": 3965.395,
+      "timeoutAfterTimerMs": null,
+      "kinds": [
+        "timer-armed",
+        "navigation-allowed",
+        "load-start",
+        "load-end",
+        "load-end",
+        "ready",
+        "ready",
+        "timer-cleared",
+        "reload"
+      ]
+    },
+    {
+      "revision": 8,
+      "readyAfterTimerMs": 2582.427,
+      "timeoutAfterTimerMs": null,
+      "kinds": [
+        "timer-armed",
+        "navigation-allowed",
+        "load-start",
+        "load-end",
+        "load-end",
+        "ready",
+        "ready",
+        "timer-cleared",
+        "reload"
+      ]
+    },
+    {
+      "revision": 9,
+      "readyAfterTimerMs": 3536.538,
+      "timeoutAfterTimerMs": null,
+      "kinds": [
+        "timer-armed",
+        "navigation-allowed",
+        "load-start",
+        "load-end",
+        "load-end",
+        "ready",
+        "timer-cleared",
+        "ready",
+        "reload"
+      ]
+    },
+    {
+      "revision": 10,
+      "readyAfterTimerMs": 3006.124,
+      "timeoutAfterTimerMs": null,
+      "kinds": [
+        "timer-armed",
+        "navigation-allowed",
+        "load-start",
+        "load-end",
+        "load-end",
+        "ready",
+        "timer-cleared",
+        "ready",
+        "reload"
+      ]
+    },
+    {
+      "revision": 11,
+      "readyAfterTimerMs": 2956.415,
+      "timeoutAfterTimerMs": null,
+      "kinds": [
+        "timer-armed",
+        "navigation-allowed",
+        "load-start",
+        "load-end",
+        "load-end",
+        "ready",
+        "timer-cleared",
+        "ready",
+        "reload"
+      ]
+    },
+    {
+      "revision": 12,
+      "readyAfterTimerMs": null,
+      "timeoutAfterTimerMs": null,
+      "kinds": [
+        "timer-armed",
+        "navigation-allowed",
+        "load-start",
+        "reload",
+        "timer-cleared"
+      ]
+    },
+    {
+      "revision": 13,
+      "readyAfterTimerMs": null,
+      "timeoutAfterTimerMs": null,
+      "kinds": [
+        "timer-armed",
+        "navigation-allowed",
+        "load-start",
+        "reload",
+        "timer-cleared"
+      ]
+    },
+    {
+      "revision": 14,
+      "readyAfterTimerMs": 13637.746,
+      "timeoutAfterTimerMs": null,
+      "kinds": [
+        "timer-armed",
+        "navigation-allowed",
+        "load-start",
+        "load-end",
+        "load-end",
+        "ready",
+        "ready",
+        "timer-cleared"
+      ]
+    }
+  ],
+  "eventCount": 127,
+  "confidence": "Observed callback timings only; does not retroactively identify historical ready-timeout trigger."
+}

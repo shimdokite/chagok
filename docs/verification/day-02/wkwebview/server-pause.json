@@ -1,0 +1,6 @@
+{
+  "pid": 78355,
+  "action": "SIGSTOP",
+  "at": "2026-11-16T13:23:44.520398+00:00",
+  "scope": "local Next apps/web port3000"
+}

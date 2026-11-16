@@ -1,0 +1,25 @@
+env: load .env.local
+env: export EXPO_PUBLIC_BENCHMARK_APP_BUILD EXPO_PUBLIC_BENCHMARK_DEVICE EXPO_PUBLIC_BENCHMARK_SOURCE_REF EXPO_PUBLIC_BENCHMARK_WEB_MODE EXPO_PUBLIC_VISUAL_CHECKS EXPO_PUBLIC_WEB_ORIGIN
+Starting project at /Users/doyeon/Desktop/chagok/apps/mobile
+Expo Autolinking module resolution enabled
+Unable to run simctl:
+Error: xcrun simctl help exited with non-zero code: 72
+Starting Metro Bundler
+
+Waiting on http://localhost:8082
+
+Logs for your project will appear below.
+| (node:16036) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:16036) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:16036) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:16036) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:16036) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:16036) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+Web Bundled 4281ms node_modules/expo-router/entry.js (929 modules)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold

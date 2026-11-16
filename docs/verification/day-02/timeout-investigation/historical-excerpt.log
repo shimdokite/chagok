@@ -1,0 +1,8 @@
+21: 2026-11-16 17:15:47.617 Df app[24663:24ed11] [com.apple.WebKit:Loading] 0x1315c9018 - [pageProxyID=24, webPageID=25, PID=0] WebPageProxy::constructor, site isolation enabled 0, site isolation shared process enabled 0
+43: 2026-11-16 17:15:48.005 Df app[24663:24ed11] [com.apple.WebKit:Loading] 0x1315c9018 - [pageProxyID=24, webPageID=25, PID=0] WebPageProxy::loadRequest:
+279: 2026-11-16 17:15:55.797 Df app[24663:24ed11] [com.apple.WebKit:Loading] 0x1315c9018 - [pageProxyID=24, webPageID=25, PID=31254] WebPageProxy::didStartProvisionalLoadForFrame: frameID=4294967298, isMainFrame=1
+303: 2026-11-16 17:15:56.217 Df app[24663:24f513] [com.apple.WebKit:Network] WebContent[31254]: [webPageID=25, frameID=4294967298, resourceID=12] WebResourceLoader::didReceiveResponse: (httpStatusCode=200)
+319: 2026-11-16 17:15:56.647 Df app[24663:24ed11] [com.apple.WebKit:Loading] 0x1315c9018 - [pageProxyID=24, webPageID=25, PID=31254] WebPageProxy::didCommitLoadForFrame: frameID=4294967298, isMainFrame=1
+580: 2026-11-16 17:16:00.246 Df app[24663:24ed11] [com.apple.WebKit:ViewState] 0x109a06800 (pageProxyID=24) -[WKWebView _didCommitLayerTree:] - finally received commit 12.46s after visible content rect update request; transactionID 1
+607: 2026-11-16 17:16:00.737 Df app[24663:24ed11] [com.apple.WebKit:Loading] 0x1315c9018 - [pageProxyID=24, webPageID=25, PID=31254] WebPageProxy::didFinishLoadForFrame: frameID=4294967298, isMainFrame=1
+626: 2026-11-16 17:16:01.101 Df app[24663:24ed11] [com.apple.WebKit:Loading] 0x1315c9018 - [pageProxyID=24, webPageID=25, PID=31254] WebPageProxy::close:

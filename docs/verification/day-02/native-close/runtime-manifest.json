@@ -1,0 +1,11 @@
+{
+  "environment": "iOS27.2 Simulator / iPhone13 mini / signed Debug / Node24 / Next dev",
+  "simulatorUDID": "802A61DA-1559-48A6-A9EA-328E16CAE45B",
+  "bundleId": "dev.doyeon.chagok",
+  "appPID": 10108,
+  "sourceSha256DuringCapture": {
+    "apps/mobile/src/components/ApplyContainer.tsx": "70f1cac692cbde3cd371a6ca7dcfe51cde8749f70035695ec1e02b5fb12539df",
+    "apps/mobile/src/bridge/useWebViewBridge.ts": "268236ce26bfc1841536ec20dde5905d98de8cc844e8f97c84445b7eadfe2c87",
+    "apps/mobile/src/dev/webview-trace.ts": "d0f6f12f856f07a9c94c0c47def53dd04b7f3e1fee575b800e80e77f566099ee"
+  }
+}

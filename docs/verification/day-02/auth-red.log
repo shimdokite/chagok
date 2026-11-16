@@ -1,0 +1,29 @@
+
+> chagok@0.1.0 test
+> vitest run packages/api/src/auth/service.test.ts
+
+
+ RUN  v5.1.0 /Users/doyeon/Desktop/chagok
+
+ ❯ packages/api/src/auth/service.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/api/src/auth/service.test.ts [ packages/api/src/auth/service.test.ts ]
+Error: Cannot find module './service' imported from /Users/doyeon/Desktop/chagok/packages/api/src/auth/service.test.ts
+ ❯ packages/api/src/auth/service.test.ts:3:1
+      1| import { describe, expect, it } from 'vitest';
+      2| import { createHash } from 'node:crypto';
+      3| import { createAuthService, type AuthStore } from './service';
+       | ^
+      4|
+      5| function setup() {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  16:40:22
+   Duration  123ms (worker 97%, environment 3%)
+

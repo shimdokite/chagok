@@ -1,0 +1,70 @@
+
+> chagok@0.1.0 test
+> vitest run apps/mobile/src/auth/session.test.ts
+
+
+ RUN  v5.1.0 /Users/doyeon/Desktop/chagok
+
+ ❯ apps/mobile/src/auth/session.test.ts (10 tests | 2 failed) 68ms
+   × keeps the current authenticated route behind the busy overlay during foreground validation 8ms
+   × records actual tRPC-wrapped network timeout separately from general failures 49ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/mobile/src/auth/session.test.ts > keeps the current authenticated route behind the busy overlay during foreground validation
+AssertionError: expected undefined to deeply equal { user: { id: 'user-1' }, …(1) }
+
+- Expected:
+{
+  "expiresAt": "2026-11-23T00:00:00Z",
+  "user": {
+    "id": "user-1",
+  },
+}
+
++ Received:
+undefined
+
+ ❯ apps/mobile/src/auth/session.test.ts:167:35
+    165|  const pending=controller.restore('foreground');await Promise.resolve(…
+    166|  expect(controller.state.status).toBe('busy');
+    167|  expect(controller.state.session).toEqual({user:response.user,expiresA…
+       |                                   ^
+    168|  finish(response);await pending;expect(controller.state.status).toBe('…
+    169|  ports.api.session=async()=>{throw {code:'UNAUTHORIZED'};};await contr…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  apps/mobile/src/auth/session.test.ts > records actual tRPC-wrapped network timeout separately from general failures
+AssertionError: expected [ { …(5) } ] to deeply equal [ ObjectContaining{…} ]
+
+- Expected
++ Received
+
+  [
+    {
+-     "status": "timeout",
++     "durationMs": 0,
++     "measuredAt": "2026-11-16T00:00:00.000Z",
++     "runId": "restore-1794787200000-1",
++     "status": "failure",
++     "trigger": "startup",
+    },
+  ]
+
+ ❯ apps/mobile/src/auth/session.test.ts:177:18
+    175|  ports.api.session=async()=>{throw TRPCClientError.from(new DOMExcepti…
+    176|  await controller.restore('startup');
+    177|  expect(metrics).toEqual([expect.objectContaining({status:'timeout'})]…
+       |                  ^
+    178| });
+    179|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 8 passed (10)
+   Start at  16:52:43
+   Duration  385ms (tests 42%, transform 41%, import 11%, worker 6%)
+

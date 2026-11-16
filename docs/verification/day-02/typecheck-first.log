@@ -1,0 +1,29 @@
+
+> chagok@0.1.0 typecheck
+> npm run typecheck --workspaces --if-present
+
+
+> @chagok/mobile@0.1.0 typecheck
+> tsc --noEmit
+
+app/_layout.tsx(13,14): error TS2367: This comparison appears to be unintentional because the types '1' and '0' have no overlap.
+npm error Lifecycle script `typecheck` failed with error:
+npm error code 2
+npm error path /Users/doyeon/Desktop/chagok/apps/mobile
+npm error workspace @chagok/mobile@0.1.0
+npm error location /Users/doyeon/Desktop/chagok/apps/mobile
+npm error command failed
+npm error command sh -c tsc --noEmit
+
+
+> @chagok/web@0.1.0 typecheck
+> tsc --noEmit
+
+
+> @chagok/api@0.1.0 typecheck
+> tsc --noEmit
+
+
+> @chagok/contracts@0.1.0 typecheck
+> tsc --noEmit
+

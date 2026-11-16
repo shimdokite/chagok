@@ -1,0 +1,56 @@
+{
+  "checkedAt": "2026-11-16T13:06:16.093596+00:00",
+  "googleLogin": {
+    "userReported": true,
+    "authenticatedHomeObserved": true,
+    "users": 1,
+    "activeSessions": 1
+  },
+  "authenticatedStartup": {
+    "attempts": 10,
+    "homeRestored": 10,
+    "rawDurationsExported": true
+  },
+  "serverOutage": {
+    "serverStopped": true,
+    "protectedHomeRemoved": true,
+    "retryVisible": true,
+    "recoveryWithoutInteractiveLogin": true,
+    "originalSessionRetained": true
+  },
+  "logout": {
+    "loginScreenObserved": true,
+    "sessionRowsAfter": 0,
+    "userRowsAfter": 1,
+    "relaunchRemainsSignedOut": true
+  },
+  "sameAccountRelogin": {
+    "status": "passed",
+    "userReportedHome": true,
+    "authenticatedHomeObserved": true,
+    "userCountUnchanged": true,
+    "originalUserReused": true,
+    "newSessionCreated": true
+  },
+  "expiration": {
+    "status": "passed",
+    "fixtureChangedRows": 1,
+    "activeSessionsAfter": 0,
+    "reloginMessageObserved": true
+  },
+  "toolIssue": {
+    "coordinateClicks": "noWindowsAvailable",
+    "accessibilityActions": "working",
+    "keyboardAccountSelection": "working",
+    "userActionRequested": "Resolved through user re-login Continue and Copy actions; coordinate tool fault itself remains unresolved"
+  },
+  "metricExport": {
+    "status": "passed",
+    "journalSamples": 17,
+    "selectedStartupSamples": 10,
+    "saveFailed": false,
+    "capacityReached": false,
+    "summaryMatchesIndependentRecalculation": true
+  },
+  "finalAppState": "signedOut, demo exited, keyboard capture off"
+}

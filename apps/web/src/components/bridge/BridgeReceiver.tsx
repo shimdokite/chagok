@@ -1,4 +1,5 @@
 "use client";
+import { Button } from "../ui/button";
 import { useEffect, useState } from "react";
 import { bridgeBase, parseBridgeMessage } from "@chagok/contracts";
 declare global {
@@ -46,8 +47,10 @@ export function BridgeReceiver() {
   return (
     <>
       {native ? (
-        <button
-          className="back"
+        <Button
+          type="button"
+          variant="outline"
+          className="relative mb-2 w-12 text-2xl"
           onClick={() =>
             window.ReactNativeWebView?.postMessage(
               JSON.stringify({ ...bridgeBase, type: "CLOSE_WEBVIEW" }),
@@ -56,9 +59,9 @@ export function BridgeReceiver() {
           aria-label="신청 화면 닫기"
         >
           ‹
-        </button>
+        </Button>
       ) : null}
-      <span className="bridge-note">
+      <span className="block rounded-[10px] bg-muted px-3 py-[10px] text-xs leading-[1.6] text-muted-foreground">
         {native
           ? "신청 기능을 준비하고 있어요."
           : "앱에서 이용할 수 있어요. 신청 기능은 준비 중이에요."}

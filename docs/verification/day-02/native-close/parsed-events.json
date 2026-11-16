@@ -1,0 +1,586 @@
+{
+  "source": "native-events.log",
+  "sha256": "7e68a12972c574ebcf512d63cf7a7521555957525c9e3fc0c3eef36ef391f280",
+  "parseErrors": [],
+  "sessions": {
+    "2026-11-16T14:10:21.726Z": [
+      {
+        "startedAt": "2026-11-16T14:10:21.726Z",
+        "seq": 1,
+        "ms": 28.826,
+        "revision": 0,
+        "kind": "mount",
+        "sourceLine": 3
+      },
+      {
+        "startedAt": "2026-11-16T14:10:21.726Z",
+        "seq": 2,
+        "ms": 31.807,
+        "revision": 0,
+        "kind": "timer-armed",
+        "sourceLine": 4
+      },
+      {
+        "startedAt": "2026-11-16T14:10:21.726Z",
+        "seq": 3,
+        "ms": 2933.784,
+        "revision": 0,
+        "kind": "navigation-allowed",
+        "sourceLine": 5
+      },
+      {
+        "startedAt": "2026-11-16T14:10:21.726Z",
+        "seq": 4,
+        "ms": 2964.595,
+        "revision": 0,
+        "kind": "load-start",
+        "ready": false,
+        "sourceLine": 6
+      },
+      {
+        "startedAt": "2026-11-16T14:10:21.726Z",
+        "seq": 5,
+        "ms": 5764.397,
+        "revision": 0,
+        "kind": "load-end",
+        "sourceLine": 7
+      },
+      {
+        "startedAt": "2026-11-16T14:10:21.726Z",
+        "seq": 6,
+        "ms": 5905.922,
+        "revision": 0,
+        "kind": "load-end",
+        "sourceLine": 8
+      },
+      {
+        "startedAt": "2026-11-16T14:10:21.726Z",
+        "seq": 7,
+        "ms": 5913.853,
+        "revision": 0,
+        "kind": "ready",
+        "sourceLine": 9
+      },
+      {
+        "startedAt": "2026-11-16T14:10:21.726Z",
+        "seq": 8,
+        "ms": 5919.521,
+        "revision": 0,
+        "kind": "timer-cleared",
+        "sourceLine": 10
+      },
+      {
+        "startedAt": "2026-11-16T14:10:21.726Z",
+        "seq": 9,
+        "ms": 5921.584,
+        "revision": 0,
+        "kind": "ready",
+        "sourceLine": 11
+      },
+      {
+        "startedAt": "2026-11-16T14:10:21.726Z",
+        "seq": 10,
+        "ms": 13188.481,
+        "revision": 0,
+        "kind": "reload",
+        "sourceLine": 12
+      },
+      {
+        "startedAt": "2026-11-16T14:10:21.726Z",
+        "seq": 11,
+        "ms": 13205.406,
+        "revision": 1,
+        "kind": "timer-armed",
+        "sourceLine": 13
+      },
+      {
+        "startedAt": "2026-11-16T14:10:21.726Z",
+        "seq": 12,
+        "ms": 13745.787,
+        "revision": 1,
+        "kind": "navigation-allowed",
+        "sourceLine": 14
+      },
+      {
+        "startedAt": "2026-11-16T14:10:21.726Z",
+        "seq": 13,
+        "ms": 13746.629,
+        "revision": 1,
+        "kind": "load-start",
+        "ready": false,
+        "sourceLine": 15
+      },
+      {
+        "startedAt": "2026-11-16T14:10:21.726Z",
+        "seq": 14,
+        "ms": 16375.561,
+        "revision": 1,
+        "kind": "load-end",
+        "sourceLine": 16
+      },
+      {
+        "startedAt": "2026-11-16T14:10:21.726Z",
+        "seq": 15,
+        "ms": 16462.23,
+        "revision": 1,
+        "kind": "load-end",
+        "sourceLine": 17
+      },
+      {
+        "startedAt": "2026-11-16T14:10:21.726Z",
+        "seq": 16,
+        "ms": 16466.778,
+        "revision": 1,
+        "kind": "ready",
+        "sourceLine": 18
+      },
+      {
+        "startedAt": "2026-11-16T14:10:21.726Z",
+        "seq": 17,
+        "ms": 16467.579,
+        "revision": 1,
+        "kind": "ready",
+        "sourceLine": 19
+      },
+      {
+        "startedAt": "2026-11-16T14:10:21.726Z",
+        "seq": 18,
+        "ms": 16476.299,
+        "revision": 1,
+        "kind": "timer-cleared",
+        "sourceLine": 20
+      },
+      {
+        "startedAt": "2026-11-16T14:10:21.726Z",
+        "seq": 19,
+        "ms": 28352.226,
+        "revision": 1,
+        "kind": "reload",
+        "sourceLine": 21
+      },
+      {
+        "startedAt": "2026-11-16T14:10:21.726Z",
+        "seq": 20,
+        "ms": 28367.337,
+        "revision": 2,
+        "kind": "timer-armed",
+        "sourceLine": 22
+      },
+      {
+        "startedAt": "2026-11-16T14:10:21.726Z",
+        "seq": 21,
+        "ms": 28789.773,
+        "revision": 2,
+        "kind": "navigation-allowed",
+        "sourceLine": 23
+      },
+      {
+        "startedAt": "2026-11-16T14:10:21.726Z",
+        "seq": 22,
+        "ms": 28790.249,
+        "revision": 2,
+        "kind": "load-start",
+        "ready": false,
+        "sourceLine": 24
+      },
+      {
+        "startedAt": "2026-11-16T14:10:21.726Z",
+        "seq": 23,
+        "ms": 32001.863,
+        "revision": 2,
+        "kind": "load-end",
+        "sourceLine": 25
+      },
+      {
+        "startedAt": "2026-11-16T14:10:21.726Z",
+        "seq": 24,
+        "ms": 32091.221,
+        "revision": 2,
+        "kind": "load-end",
+        "sourceLine": 26
+      },
+      {
+        "startedAt": "2026-11-16T14:10:21.726Z",
+        "seq": 25,
+        "ms": 32096.761,
+        "revision": 2,
+        "kind": "ready",
+        "sourceLine": 27
+      },
+      {
+        "startedAt": "2026-11-16T14:10:21.726Z",
+        "seq": 26,
+        "ms": 32108.873,
+        "revision": 2,
+        "kind": "timer-cleared",
+        "sourceLine": 28
+      },
+      {
+        "startedAt": "2026-11-16T14:10:21.726Z",
+        "seq": 27,
+        "ms": 32112.169,
+        "revision": 2,
+        "kind": "ready",
+        "sourceLine": 29
+      },
+      {
+        "startedAt": "2026-11-16T14:10:21.726Z",
+        "seq": 28,
+        "ms": 271527.533,
+        "revision": 2,
+        "kind": "close",
+        "sourceLine": 30
+      },
+      {
+        "startedAt": "2026-11-16T14:10:21.726Z",
+        "seq": 29,
+        "ms": 271542.024,
+        "revision": 2,
+        "kind": "timer-armed",
+        "sourceLine": 31
+      },
+      {
+        "startedAt": "2026-11-16T14:10:21.726Z",
+        "seq": 30,
+        "ms": 271556.64,
+        "revision": 2,
+        "kind": "unmount",
+        "sourceLine": 32
+      },
+      {
+        "startedAt": "2026-11-16T14:10:21.726Z",
+        "seq": 31,
+        "ms": 271557.307,
+        "revision": 2,
+        "kind": "timer-cleared",
+        "sourceLine": 33
+      }
+    ],
+    "2026-11-16T14:15:27.101Z": [
+      {
+        "startedAt": "2026-11-16T14:15:27.101Z",
+        "seq": 1,
+        "ms": 17.996,
+        "revision": 0,
+        "kind": "mount",
+        "sourceLine": 34
+      },
+      {
+        "startedAt": "2026-11-16T14:15:27.101Z",
+        "seq": 2,
+        "ms": 19.114,
+        "revision": 0,
+        "kind": "timer-armed",
+        "sourceLine": 35
+      },
+      {
+        "startedAt": "2026-11-16T14:15:27.101Z",
+        "seq": 3,
+        "ms": 1625.825,
+        "revision": 0,
+        "kind": "navigation-allowed",
+        "sourceLine": 36
+      },
+      {
+        "startedAt": "2026-11-16T14:15:27.101Z",
+        "seq": 4,
+        "ms": 1663.265,
+        "revision": 0,
+        "kind": "load-start",
+        "ready": false,
+        "sourceLine": 37
+      },
+      {
+        "startedAt": "2026-11-16T14:15:27.101Z",
+        "seq": 5,
+        "ms": 5525.034,
+        "revision": 0,
+        "kind": "load-end",
+        "sourceLine": 38
+      },
+      {
+        "startedAt": "2026-11-16T14:15:27.101Z",
+        "seq": 6,
+        "ms": 5676.511,
+        "revision": 0,
+        "kind": "load-end",
+        "sourceLine": 39
+      },
+      {
+        "startedAt": "2026-11-16T14:15:27.101Z",
+        "seq": 7,
+        "ms": 5680.37,
+        "revision": 0,
+        "kind": "ready",
+        "sourceLine": 40
+      },
+      {
+        "startedAt": "2026-11-16T14:15:27.101Z",
+        "seq": 8,
+        "ms": 5685.502,
+        "revision": 0,
+        "kind": "timer-cleared",
+        "sourceLine": 41
+      },
+      {
+        "startedAt": "2026-11-16T14:15:27.101Z",
+        "seq": 9,
+        "ms": 5687.891,
+        "revision": 0,
+        "kind": "ready",
+        "sourceLine": 42
+      },
+      {
+        "startedAt": "2026-11-16T14:15:27.101Z",
+        "seq": 10,
+        "ms": 29900.5,
+        "revision": 0,
+        "kind": "reload",
+        "sourceLine": 43
+      },
+      {
+        "startedAt": "2026-11-16T14:15:27.101Z",
+        "seq": 11,
+        "ms": 29914.979,
+        "revision": 1,
+        "kind": "timer-armed",
+        "sourceLine": 44
+      },
+      {
+        "startedAt": "2026-11-16T14:15:27.101Z",
+        "seq": 12,
+        "ms": 30419.8,
+        "revision": 1,
+        "kind": "navigation-allowed",
+        "sourceLine": 45
+      },
+      {
+        "startedAt": "2026-11-16T14:15:27.101Z",
+        "seq": 13,
+        "ms": 30420.413,
+        "revision": 1,
+        "kind": "load-start",
+        "ready": false,
+        "sourceLine": 46
+      },
+      {
+        "startedAt": "2026-11-16T14:15:27.101Z",
+        "seq": 14,
+        "ms": 33132.601,
+        "revision": 1,
+        "kind": "load-end",
+        "sourceLine": 47
+      },
+      {
+        "startedAt": "2026-11-16T14:15:27.101Z",
+        "seq": 15,
+        "ms": 33212.182,
+        "revision": 1,
+        "kind": "load-end",
+        "sourceLine": 48
+      },
+      {
+        "startedAt": "2026-11-16T14:15:27.101Z",
+        "seq": 16,
+        "ms": 33215.453,
+        "revision": 1,
+        "kind": "ready",
+        "sourceLine": 49
+      },
+      {
+        "startedAt": "2026-11-16T14:15:27.101Z",
+        "seq": 17,
+        "ms": 33222.889,
+        "revision": 1,
+        "kind": "timer-cleared",
+        "sourceLine": 50
+      },
+      {
+        "startedAt": "2026-11-16T14:15:27.101Z",
+        "seq": 18,
+        "ms": 33225.484,
+        "revision": 1,
+        "kind": "ready",
+        "sourceLine": 51
+      },
+      {
+        "startedAt": "2026-11-16T14:15:27.101Z",
+        "seq": 19,
+        "ms": 48613.205,
+        "revision": 1,
+        "kind": "reload",
+        "sourceLine": 52
+      },
+      {
+        "startedAt": "2026-11-16T14:15:27.101Z",
+        "seq": 20,
+        "ms": 48629.071,
+        "revision": 2,
+        "kind": "timer-armed",
+        "sourceLine": 53
+      },
+      {
+        "startedAt": "2026-11-16T14:15:27.101Z",
+        "seq": 21,
+        "ms": 50311.558,
+        "revision": 2,
+        "kind": "navigation-allowed",
+        "sourceLine": 54
+      },
+      {
+        "startedAt": "2026-11-16T14:15:27.101Z",
+        "seq": 22,
+        "ms": 50315.204,
+        "revision": 2,
+        "kind": "load-start",
+        "ready": false,
+        "sourceLine": 55
+      },
+      {
+        "startedAt": "2026-11-16T14:15:27.101Z",
+        "seq": 23,
+        "ms": 54129.782,
+        "revision": 2,
+        "kind": "load-end",
+        "sourceLine": 56
+      },
+      {
+        "startedAt": "2026-11-16T14:15:27.101Z",
+        "seq": 24,
+        "ms": 54231.037,
+        "revision": 2,
+        "kind": "load-end",
+        "sourceLine": 57
+      },
+      {
+        "startedAt": "2026-11-16T14:15:27.101Z",
+        "seq": 25,
+        "ms": 54236.873,
+        "revision": 2,
+        "kind": "ready",
+        "sourceLine": 58
+      },
+      {
+        "startedAt": "2026-11-16T14:15:27.101Z",
+        "seq": 26,
+        "ms": 54237.321,
+        "revision": 2,
+        "kind": "ready",
+        "sourceLine": 59
+      },
+      {
+        "startedAt": "2026-11-16T14:15:27.101Z",
+        "seq": 27,
+        "ms": 54246.324,
+        "revision": 2,
+        "kind": "timer-cleared",
+        "sourceLine": 60
+      },
+      {
+        "startedAt": "2026-11-16T14:15:27.101Z",
+        "seq": 28,
+        "ms": 71454.908,
+        "revision": 2,
+        "kind": "reload",
+        "sourceLine": 61
+      },
+      {
+        "startedAt": "2026-11-16T14:15:27.101Z",
+        "seq": 29,
+        "ms": 71468.313,
+        "revision": 3,
+        "kind": "timer-armed",
+        "sourceLine": 62
+      },
+      {
+        "startedAt": "2026-11-16T14:15:27.101Z",
+        "seq": 30,
+        "ms": 72253.82,
+        "revision": 3,
+        "kind": "navigation-allowed",
+        "sourceLine": 63
+      },
+      {
+        "startedAt": "2026-11-16T14:15:27.101Z",
+        "seq": 31,
+        "ms": 72255.139,
+        "revision": 3,
+        "kind": "load-start",
+        "ready": false,
+        "sourceLine": 64
+      },
+      {
+        "startedAt": "2026-11-16T14:15:27.101Z",
+        "seq": 32,
+        "ms": 74990.83,
+        "revision": 3,
+        "kind": "load-end",
+        "sourceLine": 65
+      },
+      {
+        "startedAt": "2026-11-16T14:15:27.101Z",
+        "seq": 33,
+        "ms": 75115.325,
+        "revision": 3,
+        "kind": "load-end",
+        "sourceLine": 66
+      },
+      {
+        "startedAt": "2026-11-16T14:15:27.101Z",
+        "seq": 34,
+        "ms": 75120.06,
+        "revision": 3,
+        "kind": "ready",
+        "sourceLine": 67
+      },
+      {
+        "startedAt": "2026-11-16T14:15:27.101Z",
+        "seq": 35,
+        "ms": 75120.409,
+        "revision": 3,
+        "kind": "ready",
+        "sourceLine": 68
+      },
+      {
+        "startedAt": "2026-11-16T14:15:27.101Z",
+        "seq": 36,
+        "ms": 75130.15,
+        "revision": 3,
+        "kind": "timer-cleared",
+        "sourceLine": 69
+      },
+      {
+        "startedAt": "2026-11-16T14:15:27.101Z",
+        "seq": 37,
+        "ms": 95194.727,
+        "revision": 3,
+        "kind": "close",
+        "sourceLine": 70
+      },
+      {
+        "startedAt": "2026-11-16T14:15:27.101Z",
+        "seq": 38,
+        "ms": 95209.451,
+        "revision": 3,
+        "kind": "timer-armed",
+        "sourceLine": 71
+      },
+      {
+        "startedAt": "2026-11-16T14:15:27.101Z",
+        "seq": 39,
+        "ms": 95219.501,
+        "revision": 3,
+        "kind": "unmount",
+        "sourceLine": 72
+      },
+      {
+        "startedAt": "2026-11-16T14:15:27.101Z",
+        "seq": 40,
+        "ms": 95219.934,
+        "revision": 3,
+        "kind": "timer-cleared",
+        "sourceLine": 73
+      }
+    ]
+  }
+}

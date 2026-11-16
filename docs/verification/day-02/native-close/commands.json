@@ -1,0 +1,25 @@
+{
+  "capturedAt": "2026-11-16T14:19:04.283270+00:00",
+  "nativeCapture": {
+    "command": "DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer xcrun simctl spawn 802A61DA-1559-48A6-A9EA-328E16CAE45B log stream --style compact --level debug --predicate eventMessage CONTAINS WV_NATIVE_CLOSE",
+    "result": "31 web + 40 native events; log collector stopped exit0",
+    "warning": "getpwuid_r did not find a match for uid 501; did not prevent capture"
+  },
+  "appLaunch": {
+    "command": "xcrun simctl launch --terminate-running-process 802A61DA-1559-48A6-A9EA-328E16CAE45B dev.doyeon.chagok",
+    "exitCode": 0,
+    "appPID": 10108
+  },
+  "suite": {
+    "environment": "Node24.22.3, local PostgreSQL",
+    "command": "node --env-file=apps/web/.env.local → spawn node node_modules/vitest/vitest.mjs run with CHAGOK_TEST_DATABASE_URL=DATABASE_URL (values not logged)",
+    "exitCode": 0,
+    "result": "12 files / 71 passed / skip0",
+    "phase": "after temporary sink removed"
+  },
+  "typecheck": {
+    "command": "PATH with Node24 and npm, npm run typecheck",
+    "exitCode": 0,
+    "phase": "after temporary sink removed"
+  }
+}

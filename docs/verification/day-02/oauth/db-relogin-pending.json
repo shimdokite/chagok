@@ -1,0 +1,10 @@
+{
+  "checkedAt": "2026-11-16T09:21:29.950Z",
+  "users": 1,
+  "sessions": 0,
+  "activeSessions": 0,
+  "originalUserStillExists": true,
+  "originalSessionStillExists": false,
+  "allSessionsBelongToOriginalUser": true,
+  "hashesAreSha256": true
+}

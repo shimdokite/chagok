@@ -1,0 +1,43 @@
+
+ RUN  v5.1.0 /Users/doyeon/Desktop/chagok
+
+ ❯ apps/mobile/src/auth/session.test.ts (11 tests | 1 failed) 20ms
+   × preserves failed logout across foreground and demo attempts until revocation succeeds 3ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/mobile/src/auth/session.test.ts > preserves failed logout across foreground and demo attempts until revocation succeeds
+AssertionError: expected { status: 'authenticated', …(1) } to deeply equal { status: 'error', …(2) }
+
+- Expected
++ Received
+
+  {
+-   "message": "로그아웃을 완료하지 못했어요. 연결을 확인하고 다시 시도해 주세요.",
+-   "retry": "signOut",
+-   "status": "error",
++   "session": {
++     "expiresAt": "2026-11-23T00:00:00Z",
++     "user": {
++       "id": "user-1",
++     },
++   },
++   "status": "authenticated",
+  }
+
+ ❯ apps/mobile/src/auth/session.test.ts:141:28
+    139|   expect(failedLogout.retry).toBe("signOut");
+    140|   await controller.restore("foreground");
+    141|   expect(controller.state).toEqual(failedLogout);
+       |                            ^
+    142|   controller.enterDemo();
+    143|   expect(controller.state).toEqual(failedLogout);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 10 passed (11)
+   Start at  23:30:50
+   Duration  131ms (transform 47%, tests 36%, import 13%, worker 4%)
+

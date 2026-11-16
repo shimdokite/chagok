@@ -1,0 +1,118 @@
+Window: "Chagok M09 Mini", App: Device Hub.
+0 standard window Chagok M09 Mini – iOS 27.2, ID: com.apple.dt.DeviceKit.DeviceManagementWindow-AppWindow-1, Secondary Actions: Raise
+	1 split group
+		2 split group com.apple.dt.DeviceKit.DeviceManagementWindow-AppWindow-1, SidebarNavigationSplitView
+			3 scroll area
+				4 list Sidebar
+					5 row (selectable) Expanded
+					6 row (selected) Chagok M09 Mini
+27.2
+Simulator
+					7 row (selectable) iPhone 17
+27.2
+Simulator
+					8 row (selectable) iPhone 18 Pro
+27.2
+Simulator
+					9 row (selectable) Chagok M09 Small
+27.2
+Simulator
+			10 search text field (settable) Search
+				11 button Search
+			12 splitter (settable, float) 239.5
+			13 container
+				14 container
+					15 button Description: 닫기 · 홈으로, Secondary Actions: Cancel
+					16 button Description: 개발 도구 접기, Secondary Actions: Cancel
+					17 text Description: WEB_READY 수신 · 대기, Secondary Actions: Cancel
+					18 button Description: 준비 3회 + 왕복 20회 측정, Secondary Actions: Cancel
+					19 button Description: 웹뷰 다시 로드, Secondary Actions: Cancel
+					20 button Description: M08 경계 검증, Secondary Actions: Cancel
+					21 text Secondary Actions: Cancel, Description: completed · 정상 종료 · {"attempts":20,"success":20,"failure":0,"timeout":0,"cancelled":0,"medianMs":1.360333502292633,"minMs":0.9822079986333847,"maxMs":6.499249994754791}
+					22 button Description: 측정 원본 JSON 공유, Secondary Actions: Cancel
+					23 button Description: 웹뷰 이벤트 기록 보기, Secondary Actions: Cancel
+					24 text Description: WVTRACE {"startedAt":"2026-11-16T13:41:24.436Z","dropped":0,"hiddenInView":97}, Secondary Actions: Cancel
+					25 text Description: WVTRACE {"seq":98,"ms":287692.766,"revision":10,"kind":"timer-cleared"}, Secondary Actions: Cancel
+					26 text Description: WVTRACE {"seq":99,"ms":287695.954,"revision":10,"kind":"ready"}, Secondary Actions: Cancel
+					27 text Description: WVTRACE {"seq":100,"ms":294366.424,"revision":10,"kind":"reload"}, Secondary Actions: Cancel
+					28 text Description: WVTRACE {"seq":101,"ms":294389.842,"revision":11,"kind":"timer-armed"}, Secondary Actions: Cancel
+					29 text Description: WVTRACE {"seq":102,"ms":294936.898,"revision":11,"kind":"navigation-allowed"}, Secondary Actions: Cancel
+					30 text Description: WVTRACE {"seq":103,"ms":294937.407,"revision":11,"kind":"load-start","ready":false}, Secondary Actions: Cancel
+					31 text Description: WVTRACE {"seq":104,"ms":297278.785,"revision":11,"kind":"load-end"}, Secondary Actions: Cancel
+					32 text Description: WVTRACE {"seq":105,"ms":297345.787,"revision":11,"kind":"load-end"}, Secondary Actions: Cancel
+					33 text Description: WVTRACE {"seq":106,"ms":297346.257,"revision":11,"kind":"ready"}, Secondary Actions: Cancel
+					34 text Description: WVTRACE {"seq":107,"ms":297362.957,"revision":11,"kind":"timer-cleared"}, Secondary Actions: Cancel
+					35 text Description: WVTRACE {"seq":108,"ms":297366.054,"revision":11,"kind":"ready"}, Secondary Actions: Cancel
+					36 text Description: WVTRACE {"seq":109,"ms":416625.332,"revision":11,"kind":"reload"}, Secondary Actions: Cancel
+					37 text Description: WVTRACE {"seq":110,"ms":416645.257,"revision":12,"kind":"timer-armed"}, Secondary Actions: Cancel
+					38 text Description: WVTRACE {"seq":111,"ms":417664.604,"revision":12,"kind":"navigation-allowed"}, Secondary Actions: Cancel
+					39 text Description: WVTRACE {"seq":112,"ms":417665.18,"revision":12,"kind":"load-start","ready":false}, Secondary Actions: Cancel
+					40 text Description: WVTRACE {"seq":113,"ms":419938.565,"revision":12,"kind":"reload"}, Secondary Actions: Cancel
+					41 text Description: WVTRACE {"seq":114,"ms":419963.576,"revision":12,"kind":"timer-cleared"}, Secondary Actions: Cancel
+					42 text Description: WVTRACE {"seq":115,"ms":419964.9,"revision":13,"kind":"timer-armed"}, Secondary Actions: Cancel
+					43 text Description: WVTRACE {"seq":116,"ms":420386.134,"revision":13,"kind":"navigation-allowed"}, Secondary Actions: Cancel
+					44 text Description: WVTRACE {"seq":117,"ms":420387.185,"revision":13,"kind":"load-start","ready":false}, Secondary Actions: Cancel
+					45 text Description: WVTRACE {"seq":118,"ms":423323.171,"revision":13,"kind":"reload"}, Secondary Actions: Cancel
+					46 text Description: WVTRACE {"seq":119,"ms":423331.681,"revision":13,"kind":"timer-cleared"}, Secondary Actions: Cancel
+					47 text Description: WVTRACE {"seq":120,"ms":423332.916,"revision":14,"kind":"timer-armed"}, Secondary Actions: Cancel
+					48 text Description: WVTRACE {"seq":121,"ms":424128.264,"revision":14,"kind":"navigation-allowed"}, Secondary Actions: Cancel
+					49 text Description: WVTRACE {"seq":122,"ms":424128.605,"revision":14,"kind":"load-start","ready":false}, Secondary Actions: Cancel
+					50 text Description: WVTRACE {"seq":123,"ms":436914.852,"revision":14,"kind":"load-end"}, Secondary Actions: Cancel
+					51 text Description: WVTRACE {"seq":124,"ms":436968.748,"revision":14,"kind":"load-end"}, Secondary Actions: Cancel
+					52 text Description: WVTRACE {"seq":125,"ms":436970.662,"revision":14,"kind":"ready"}, Secondary Actions: Cancel
+					53 text Description: WVTRACE {"seq":126,"ms":436970.76,"revision":14,"kind":"ready"}, Secondary Actions: Cancel
+					54 text Description: WVTRACE {"seq":127,"ms":436978.232,"revision":14,"kind":"timer-cleared"}, Secondary Actions: Cancel
+					55 image Description: Gear Shape, Filled, ID: gearshape.fill, Secondary Actions: Cancel
+				56 button Help: Home, ID: app.grid.3x3
+				57 button Help: Screenshot, ID: camera.viewfinder
+				58 button Help: Record Screen, ID: record.circle
+				59 button Rotate Left
+		60 splitter (settable, float) 1190
+		61 container
+			62 scroll area Description: Appearance, ID: Inspector.com.apple.devicekit.inspector.appearance
+				63 container
+					64 pop up button Appearance, Value: Light
+					65 slider (settable, float) Liquid Glass, Value: 0.5
+					66 pop up button Color Filter, Value: None
+					67 slider (settable, float) Text Size, Value: 3
+					68 switch Reduce Motion, Value: off
+					69 switch Increase Contrast, Value: off
+					70 switch Show Borders, Value: off
+					71 switch Reduce Transparency, Value: off
+					72 switch VoiceOver, Value: off
+					73 switch Slow Animations, Value: off
+				74 pop up button Location, Value: None
+				75 container
+					76 slider (settable, float) Sound, Value: 0.6
+					77 pop up button Output, Value: System
+					78 pop up button Input, Value: System
+	79 toolbar
+		80 menu button Add Device, ID: plus
+		81 toggle button Description: Filter, Help: Sort and Filter, Value: off
+		82 button Description: Hide Sidebar, Secondary Actions: Increment, Decrement, Delete, Cancel
+		83 toggle button Description: Capture Keyboard, Value: off
+		84 toggle button Description: Resize mode, Help: Enter resize mode, Value: off
+		85 Zoom
+			86 radio button Description: Zoom Out, Value: 0, ID: minus.magnifyingglass
+			87 radio button Description: Up, Right, Down, And Left Triangles In A Magnifying Glass, Help: Zoom to Fit, Value: 0, ID: arrowtriangles.up.right.down.left.magnifyingglass
+			88 radio button Description: Zoom To Actual Size, Help: Physical Size, Value: 1, ID: 1.magnifyingglass
+			89 radio button Description: Zoom In, Value: 0, ID: plus.magnifyingglass
+		90 button Description: Switch to compact window, Secondary Actions: Increment, Decrement, Delete, Cancel, Move previous, Move next, Remove from toolbar
+		91 menu button More Actions, ID: ellipsis
+		92 Inspector Category
+			93 radio button Description: Edit, Help: Settings, Value: 1, ID: slider.horizontal.3
+			94 radio button Description: Text Document, Help: Reports, Value: 0, ID: text.document
+			95 radio button Description: Info, Value: 0, ID: info
+	96 close button
+	97 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	98 minimize button
+	99 text Chagok M09 Mini iOS 27.2
+100 menu bar
+	101 Device Hub
+	102 File
+	103 Edit
+	104 View
+	105 Device
+	106 Controls
+	107 Window
+	108 Help

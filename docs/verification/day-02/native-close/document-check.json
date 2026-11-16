@@ -1,0 +1,78 @@
+{
+  "capturedAt": "2026-11-16T14:20:43.806275+00:00",
+  "environment": "macOS, python3; workspace current working tree",
+  "initialFilesCompared": 396,
+  "changedSinceInitial": [
+    "docs/changes/latest-commit.txt",
+    "docs/changes/latest-pr.md",
+    "docs/learning/day-02.md",
+    "docs/manual-checks.md",
+    "docs/plans/day-02.md",
+    "docs/progress.md",
+    "docs/verification/day-02.md",
+    "docs/verification/day-02/trace-close/result.md"
+  ],
+  "unexpectedChanges": [],
+  "preservedInitialFiles": 388,
+  "manifestHashMismatches": [],
+  "localLinksChecked": 87,
+  "brokenLocalLinks": [],
+  "draftStructureValid": true,
+  "diffCheckFull": {
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exitCode": 2,
+    "stdout": "docs/learning/day-01.md:17: trailing whitespace.\n+React Native(리액트 네이티브, RN)는 `View`, `Text`, `Pressable`로 네이티브 UI를 만듭니다. \ndocs/learning/day-01.md:20: trailing whitespace.\n+차곡은 로그인 데모, 홈, 화면 이동을 RN에, 신청 화면을 Next.js에 두었습니다. \ndocs/learning/day-01.md:37: trailing whitespace.\n+웹 화면 재사용은 쉽지만 준비 상태, 통신 실패, 플랫폼별 렌더링을 별도로 다뤄야 합니다. \ndocs/learning/day-01.md:49: trailing whitespace.\n+흐름은 `웹 수신 함수 등록 → WEB_READY → RN의 PING → 같은 requestId의 PONG`입니다. \ndocs/learning/day-01.md:59: trailing whitespace.\n+[BridgeReceiver.tsx](../../apps/web/src/components/bridge/BridgeReceiver.tsx)는 `window`와 Effect를 사용하므로 `\"use client\"` 경계 안에 있습니다. \ndocs/learning/day-01.md:122: trailing whitespace.\n+`unknown`을 바로 타입 단언하지 않고 파싱 성공 여부부터 확인합니다. 스키마는 `type`으로 구분하는 유니온 >> 이 부분 코드 알려주라.이며 채널, 버전, 빈 payload, requestId 길이를 검사하고 `.strict()`로 추가 필드를 거부합니다. \ndocs/learning/day-01.md:185: trailing whitespace.\n+닫기, 재로드, 언마운트의 `reset`은 대기 요청과 간격 타이머를 취소하고 세션과 `generation`을 바꿉니다. \ndocs/learning/day-01.md:236: trailing whitespace.\n+공고의 REST 데이터 페칭과 연결해 설명하되 이 구현을 REST API라고 부르지는 않습니다. REST는 리소스 URL, HTTP 메서드를, tRPC는 프로시저 호출과 타입 추론을 중심으로 사용합니다. \ndocs/learning/day-01.md:256: trailing whitespace.\n+플랫폼 문제는 **해당 환경 재현 → 원인 분리 → 최소 수정 → 같은 환경 재검증**으로 설명합니다. \n",
+    "stderr": ""
+  },
+  "diffCheckExcludingLocalLearning": {
+    "command": [
+      "git",
+      "diff",
+      "--check",
+      "--",
+      ".",
+      ":(exclude)docs/learning/**"
+    ],
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "staged": {
+    "command": [
+      "git",
+      "diff",
+      "--cached",
+      "--name-status"
+    ],
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "localLearningIgnored": {
+    "command": [
+      "git",
+      "check-ignore",
+      "docs/learning/day-02.md"
+    ],
+    "exitCode": 0,
+    "stdout": "docs/learning/day-02.md\n",
+    "stderr": ""
+  },
+  "secretScan": {
+    "files": 26,
+    "knownEnvValueMatchFiles": [],
+    "tokenOrPrivateKeyPatternFiles": [],
+    "limitation": "known local config values and explicit token/key patterns only; not a complete PII detector"
+  },
+  "day01LearningSha256": "4ed27786bc0595e9ed341c3647e470b91ba5ef3c38533414e000adba05d20398",
+  "day02Learning": "updated locally, ignored, not staged",
+  "checksNotRun": "web production build and native rebuild: no web/build/native dependency change; previous success not counted as new execution",
+  "nativeRawHashMatches": true,
+  "nativeParsedRowsMatch": true,
+  "nativeEventCount": 71,
+  "passed": true
+}

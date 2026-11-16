@@ -1,0 +1,14 @@
+--- webview-trace.before.ts
++++ webview-trace.instrumented.ts
+@@ -57,6 +57,11 @@
+     if (typeof detail.loading === "boolean") event.loading = detail.loading;
+     this.events.push(event);
+     if (this.events.length > 200) this.events.shift();
++    // Temporary native verification sink; removed after evidence capture.
++    if (__DEV__)
++      console.info(
++        "WV_NATIVE_CLOSE " + JSON.stringify({ startedAt: this.startedAt, ...event }),
++      );
+   }
+   snapshot() {
+     return {

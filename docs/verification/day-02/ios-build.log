@@ -1,0 +1,9 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -workspace apps/mobile/ios/chagok.xcworkspace -scheme chagok -configuration Debug -sdk iphonesimulator -destination "platform=iOS Simulator,id=802A61DA-1559-48A6-A9EA-328E16CAE45B" -derivedDataPath .local-tools/DerivedData CODE_SIGNING_ALLOWED=NO build
+
+Build settings from command line:
+    CODE_SIGNING_ALLOWED = NO
+    SDKROOT = iphonesimulator27.2
+
+2026-11-16 16:48:37.476 xcodebuild[5652:2361060] Writing error result bundle to /var/folders/68/qtfc4tks7nx27ngxt_s4rj3h0000gn/T/ResultBundle_2026-16-11_16-48-0037.xcresult
+xcodebuild: error: 'apps/mobile/ios/chagok.xcworkspace' does not exist.

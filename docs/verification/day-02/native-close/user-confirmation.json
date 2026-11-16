@@ -1,0 +1,10 @@
+{
+  "action": "웹 영역의 작은 ‹ 닫기 버튼",
+  "userReply": "웹 닫기 완료",
+  "preparedReloadCount": 2,
+  "expectedRevision": 2,
+  "homeObservedByAssistant": true,
+  "automatedCoordinateClick": "failed: noWindowsAvailable",
+  "keyboardScreenshot": "failed: SCStreamErrorDomain -3811",
+  "keyboardCaptureRestored": "off"
+}
