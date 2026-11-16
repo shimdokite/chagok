@@ -1,0 +1,7 @@
+Original full log retained locally: .local-tools/day-02-full-logs/ios-build-signed.log
+SHA-256: 8dbde94d2fa9c2fab5ed72729997a240b735a25e92c551dadc1480af7c545b0c
+This file contains diagnostic excerpts, not the full command output.
+
+warning: The @ExpoModule class 'CoreModule' (/Users/doyeon/Desktop/chagok/node_modules/expo-modules-core/ios/Core/Modules/CoreModule.swift) is internal, so the generated modules provider cannot reference it. Declare it public to link it automatically, or use a lower access level such as private to opt it out of linking.
+warning: Run script build phase '[Expo Dev Launcher] Strip Local Network Keys for Release' will be run during every build because it does not specify any outputs. To address this issue, either add output dependencies to the script phase, or configure it to run in every build by unchecking "Based on dependency analysis" in the script phase. (in target 'app' from project 'app')
+** BUILD SUCCEEDED **

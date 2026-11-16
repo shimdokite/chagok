@@ -1,0 +1,16 @@
+Loaded Prisma config from packages/api/prisma.config.ts.
+
+Prisma schema loaded from packages/api/prisma/schema.prisma.
+Datasource "db": PostgreSQL database "chagok", schema "public" at "127.0.0.1:55432"
+
+1 migration found in prisma/migrations
+
+Applying migration `20261116000000_auth`
+
+The following migration(s) have been applied:
+
+migrations/
+  └─ 20261116000000_auth/
+    └─ migration.sql
+
+All migrations have been successfully applied.

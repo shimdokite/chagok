@@ -1,0 +1,35 @@
+recorded_date: '2026-11-16'
+timezone: Asia/Seoul
+status: measured
+source_commit: 86a95a2574bc08517c145389cb88b41e81deffd9
+working_tree: modified
+source_manifest: ../../verification/day-02/oauth/source-sha256.json
+source_manifest_sha256: 68d173ceaf87c0d1497cfa6b1f43c5e8130d1a668eba35b554abe57c8cef0514
+source_binding_scope: selected authenticated startup 10 only; full journal also includes earlier exploratory empty runs
+node: 24.22.3
+postgresql: '18.6 (project-local 127.0.0.1:55432)'
+prisma: 7.10.1
+web_mode: Next development
+native_build_mode: Debug Development Build, ad-hoc signed
+native_build_result: ../../verification/day-02/oauth/build-result.json
+device: Chagok M09 Mini (iPhone 13 mini simulator)
+os: iOS 27.2
+actual_authenticated_device_runs: 10
+successful_startup_samples: 10
+warmup_runs: 0
+selection_start_utc: '2026-11-16T09:09:56.359Z'
+selection_end_utc: '2026-11-16T09:14:20.350Z'
+restart_method: terminate process then relaunch; Fast Refresh and foreground excluded from startup group
+network: host-local API and PostgreSQL; not remote or production network
+clock: RN performance.now
+start: SessionController.restore entry
+end: secure storage read and server decision or final error state
+excludes: UI paint, whole-app cold start, Google interactive sign-in
+journal: ../raw/day-02-session-restore-journal.json
+journal_sha256: 80e26d7da01f284f3497ea81aa0802d063c0c4796369393d456802f30e3146f0
+journal_samples: 17
+journal_save_failed: false
+journal_capacity_reached: false
+summary_verification: ../../verification/day-02/oauth/metrics-check.json
+blocker: none for this authenticated startup measurement
+comparison: none; initial local Debug baseline, not a performance improvement claim

@@ -1,0 +1,8 @@
+{
+  "startedAt": "2026-11-16T09:09:56.359Z",
+  "plannedAttempts": 10,
+  "method": "simctl launch --terminate-running-process, each followed by observed authenticated home",
+  "warmup": 0,
+  "endedAt": "2026-11-16T09:14:20.350Z",
+  "observedAuthenticatedHomes": 10
+}

@@ -1,0 +1,9 @@
+{
+  "builtAt": "2026-11-16T08:54:20.009Z",
+  "exitCode": 0,
+  "bundleIdentifier": "dev.doyeon.chagok",
+  "callbackSchemeMatches": true,
+  "applicationIdentifierEntitlement": false,
+  "binarySha256": "6c232ee9694fcb85dd1d679c440ae34ed6dbf107982167c24d990fc0708c5150",
+  "logSha256": "49ea58e1494da6ca586725cc93123b6a303b5684e5091157c66a9655e0a84103"
+}

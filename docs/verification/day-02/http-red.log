@@ -1,0 +1,37 @@
+
+> chagok@0.1.0 test
+> vitest run packages/api/src/http.test.ts
+
+
+ RUN  v5.1.0 /Users/doyeon/Desktop/chagok
+
+ ❯ packages/api/src/http.test.ts (3 tests | 1 failed) 55ms
+   × requires a session on the real HTTP route and never returns stack traces 14ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/api/src/http.test.ts > requires a session on the real HTTP route and never returns stack traces
+AssertionError: expected 500 to be 401 // Object.is equality
+
+- Expected
++ Received
+
+- 401
++ 500
+
+ ❯ packages/api/src/http.test.ts:27:59
+     25| it('requires a session on the real HTTP route and never returns stack …
+     26|  const response=await GET(new Request('http://localhost:3000/api/trpc/…
+     27|  const body=await response.json();expect(response.status).toBe(401);
+       |                                                           ^
+     28|  expect(body.error.data.stack).toBeUndefined();expect(response.headers…
+     29|  expect(JSON.stringify(body)).not.toContain('Database is not configure…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 2 passed (3)
+   Start at  16:47:51
+   Duration  748ms (import 64%, transform 23%, tests 12%, worker 1%)
+

@@ -1,0 +1,58 @@
+{
+  "disabled": [
+    {
+      "disabled": true,
+      "id": "benefit",
+      "tag": "SELECT"
+    },
+    {
+      "disabled": true,
+      "id": "used-date",
+      "tag": "INPUT"
+    },
+    {
+      "disabled": true,
+      "id": "amount",
+      "tag": "INPUT"
+    },
+    {
+      "disabled": true,
+      "id": "description",
+      "tag": "INPUT"
+    },
+    {
+      "disabled": true,
+      "id": "receipt",
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": true,
+      "id": "",
+      "tag": "BUTTON"
+    }
+  ],
+  "labels": [
+    {
+      "for": "benefit",
+      "linked": true
+    },
+    {
+      "for": "used-date",
+      "linked": true
+    },
+    {
+      "for": "amount",
+      "linked": true
+    },
+    {
+      "for": "description",
+      "linked": true
+    },
+    {
+      "for": "receipt",
+      "linked": true
+    }
+  ],
+  "scrollWidth": 511,
+  "width": 511
+}

@@ -1,0 +1,6 @@
+{
+  "at": "2026-11-16T13:48:11.673462+00:00",
+  "pid": 78355,
+  "signal": "SIGSTOP",
+  "purpose": "overlap pending navigation while replacing revisions"
+}

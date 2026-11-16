@@ -1,0 +1,336 @@
+[
+  {
+    "startedAt": "2026-11-16T13:41:24.436Z",
+    "dropped": 0
+  },
+  {
+    "seq": 1,
+    "ms": 11.571,
+    "revision": 0,
+    "kind": "mount"
+  },
+  {
+    "seq": 2,
+    "ms": 11.73,
+    "revision": 0,
+    "kind": "timer-armed"
+  },
+  {
+    "seq": 3,
+    "ms": 1493.376,
+    "revision": 0,
+    "kind": "navigation-allowed"
+  },
+  {
+    "seq": 4,
+    "ms": 1519.005,
+    "revision": 0,
+    "kind": "load-start",
+    "ready": false
+  },
+  {
+    "seq": 5,
+    "ms": 3273.066,
+    "revision": 0,
+    "kind": "load-end"
+  },
+  {
+    "seq": 6,
+    "ms": 3358.342,
+    "revision": 0,
+    "kind": "load-end"
+  },
+  {
+    "seq": 7,
+    "ms": 3364.445,
+    "revision": 0,
+    "kind": "ready"
+  },
+  {
+    "seq": 8,
+    "ms": 3367.332,
+    "revision": 0,
+    "kind": "timer-cleared"
+  },
+  {
+    "seq": 9,
+    "ms": 3368.102,
+    "revision": 0,
+    "kind": "ready"
+  },
+  {
+    "seq": 10,
+    "ms": 33906.418,
+    "revision": 0,
+    "kind": "reload"
+  },
+  {
+    "seq": 11,
+    "ms": 33914.941,
+    "revision": 1,
+    "kind": "timer-armed"
+  },
+  {
+    "seq": 12,
+    "ms": 34426.098,
+    "revision": 1,
+    "kind": "navigation-allowed"
+  },
+  {
+    "seq": 13,
+    "ms": 34426.512,
+    "revision": 1,
+    "kind": "load-start",
+    "ready": false
+  },
+  {
+    "seq": 14,
+    "ms": 36718.573,
+    "revision": 1,
+    "kind": "load-end"
+  },
+  {
+    "seq": 15,
+    "ms": 36777.578,
+    "revision": 1,
+    "kind": "load-end"
+  },
+  {
+    "seq": 16,
+    "ms": 36781.637,
+    "revision": 1,
+    "kind": "ready"
+  },
+  {
+    "seq": 17,
+    "ms": 36788.25,
+    "revision": 1,
+    "kind": "timer-cleared"
+  },
+  {
+    "seq": 18,
+    "ms": 36789.734,
+    "revision": 1,
+    "kind": "ready"
+  },
+  {
+    "seq": 19,
+    "ms": 38014.769,
+    "revision": 1,
+    "kind": "reload"
+  },
+  {
+    "seq": 20,
+    "ms": 38023.396,
+    "revision": 2,
+    "kind": "timer-armed"
+  },
+  {
+    "seq": 21,
+    "ms": 38474.663,
+    "revision": 2,
+    "kind": "navigation-allowed"
+  },
+  {
+    "seq": 22,
+    "ms": 38475.277,
+    "revision": 2,
+    "kind": "load-start",
+    "ready": false
+  },
+  {
+    "seq": 23,
+    "ms": 41188.193,
+    "revision": 2,
+    "kind": "load-end"
+  },
+  {
+    "seq": 24,
+    "ms": 41252.579,
+    "revision": 2,
+    "kind": "load-end"
+  },
+  {
+    "seq": 25,
+    "ms": 41257.412,
+    "revision": 2,
+    "kind": "ready"
+  },
+  {
+    "seq": 26,
+    "ms": 41257.655,
+    "revision": 2,
+    "kind": "ready"
+  },
+  {
+    "seq": 27,
+    "ms": 41269.49,
+    "revision": 2,
+    "kind": "timer-cleared"
+  },
+  {
+    "seq": 28,
+    "ms": 57593.428,
+    "revision": 2,
+    "kind": "reload"
+  },
+  {
+    "seq": 29,
+    "ms": 57606.715,
+    "revision": 3,
+    "kind": "timer-armed"
+  },
+  {
+    "seq": 30,
+    "ms": 58408.923,
+    "revision": 3,
+    "kind": "navigation-allowed"
+  },
+  {
+    "seq": 31,
+    "ms": 58409.547,
+    "revision": 3,
+    "kind": "load-start",
+    "ready": false
+  },
+  {
+    "seq": 32,
+    "ms": 61778.133,
+    "revision": 3,
+    "kind": "load-end"
+  },
+  {
+    "seq": 33,
+    "ms": 61946.72,
+    "revision": 3,
+    "kind": "load-end"
+  },
+  {
+    "seq": 34,
+    "ms": 61949.906,
+    "revision": 3,
+    "kind": "ready"
+  },
+  {
+    "seq": 35,
+    "ms": 61963.05,
+    "revision": 3,
+    "kind": "timer-cleared"
+  },
+  {
+    "seq": 36,
+    "ms": 61965.706,
+    "revision": 3,
+    "kind": "ready"
+  },
+  {
+    "seq": 37,
+    "ms": 97236.986,
+    "revision": 3,
+    "kind": "content-process-terminated"
+  },
+  {
+    "seq": 38,
+    "ms": 113231.471,
+    "revision": 3,
+    "kind": "reload"
+  },
+  {
+    "seq": 39,
+    "ms": 113242.723,
+    "revision": 4,
+    "kind": "timer-armed"
+  },
+  {
+    "seq": 40,
+    "ms": 114280.192,
+    "revision": 4,
+    "kind": "navigation-allowed"
+  },
+  {
+    "seq": 41,
+    "ms": 114281.473,
+    "revision": 4,
+    "kind": "load-start",
+    "ready": false
+  },
+  {
+    "seq": 42,
+    "ms": 117143.468,
+    "revision": 4,
+    "kind": "load-end"
+  },
+  {
+    "seq": 43,
+    "ms": 117230.11,
+    "revision": 4,
+    "kind": "load-end"
+  },
+  {
+    "seq": 44,
+    "ms": 117232.809,
+    "revision": 4,
+    "kind": "ready"
+  },
+  {
+    "seq": 45,
+    "ms": 117244.54,
+    "revision": 4,
+    "kind": "timer-cleared"
+  },
+  {
+    "seq": 46,
+    "ms": 117247.692,
+    "revision": 4,
+    "kind": "ready"
+  },
+  {
+    "seq": 47,
+    "ms": 147140.189,
+    "revision": 0,
+    "kind": "unmount"
+  },
+  {
+    "seq": 48,
+    "ms": 147141.589,
+    "revision": 0,
+    "kind": "mount"
+  },
+  {
+    "seq": 49,
+    "ms": 160026.793,
+    "revision": 4,
+    "kind": "reload"
+  },
+  {
+    "seq": 50,
+    "ms": 160045.576,
+    "revision": 5,
+    "kind": "timer-armed"
+  },
+  {
+    "seq": 51,
+    "ms": 160808.63,
+    "revision": 5,
+    "kind": "navigation-allowed"
+  },
+  {
+    "seq": 52,
+    "ms": 160809.293,
+    "revision": 5,
+    "kind": "load-start",
+    "ready": false
+  },
+  {
+    "seq": 53,
+    "ms": 175047.47,
+    "revision": 5,
+    "kind": "ready-timeout"
+  },
+  {
+    "seq": 54,
+    "ms": 175068.149,
+    "revision": 5,
+    "kind": "timer-cleared"
+  }
+]

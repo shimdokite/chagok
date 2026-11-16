@@ -1,8 +1,20 @@
-import { useCallback, useEffect, useRef, useState } from "react";
-import { View, Text, ActivityIndicator, BackHandler } from "react-native";
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
+import {
+  View,
+  Text,
+  ActivityIndicator,
+  BackHandler,
+  AppState,
+} from "react-native";
 import { WebView } from "react-native-webview";
 import { router } from "expo-router";
-import { isAllowedApplyUrl } from "@chagok/contracts";
+import { isAllowedApplyUrl, parseBridgeMessage } from "@chagok/contracts";
 import { useWebViewBridge } from "../bridge/useWebViewBridge";
 import { webOrigin } from "../lib/trpc";
 import { Page, Button } from "./ui";
@@ -10,17 +22,40 @@ import { BridgeDiagnostics } from "../dev/BridgeDiagnostics";
 import { VisualCheckControls } from "../dev/VisualCheckControls";
 import { useBoundaryProbe } from "../dev/useBoundaryProbe";
 import { useTheme } from "../theme/tokens";
+import { WebViewTrace, type WebViewEventKind } from "../dev/webview-trace";
 export default function ApplyContainer() {
   const c = useTheme();
   const ref = useRef<WebView<object>>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const [revision, setRevision] = useState(0);
-  const back = useCallback(
-    () => (router.canGoBack() ? router.back() : router.replace("/home")),
+  const committedRevision = useRef(revision);
+  useLayoutEffect(() => {
+    committedRevision.current = revision;
+  }, [revision]);
+  const trace = useRef<WebViewTrace | null>(null);
+  if (!trace.current) trace.current = new WebViewTrace(__DEV__);
+  const record = useCallback(
+    (kind: WebViewEventKind, rev: number, detail = {}) =>
+      trace.current!.record(kind, rev, detail),
     [],
   );
-  const bridge = useWebViewBridge(ref, back);
+  useEffect(() => {
+    record("mount", 0);
+    return () => record("unmount", committedRevision.current);
+  }, [record]);
+  useEffect(() => {
+    if (!__DEV__) return;
+    const subscription = AppState.addEventListener("change", (state) =>
+      record(state === "active" ? "app-active" : "app-background", revision),
+    );
+    return () => subscription.remove();
+  }, [record, revision]);
+  const closeAndGoBack = useCallback(() => {
+    record("close", committedRevision.current);
+    return router.canGoBack() ? router.back() : router.replace("/home");
+  }, [record]);
+  const bridge = useWebViewBridge(ref, closeAndGoBack);
   const probe = useBoundaryProbe(
     (script) => ref.current?.injectJavaScript(script),
     () => ({
@@ -32,8 +67,8 @@ export default function ApplyContainer() {
   );
   const close = useCallback(() => {
     bridge.reset("close");
-    back();
-  }, [bridge.reset, back]);
+    closeAndGoBack();
+  }, [bridge.reset, closeAndGoBack]);
   useEffect(() => {
     const subscription = BackHandler.addEventListener(
       "hardwareBackPress",
@@ -46,19 +81,26 @@ export default function ApplyContainer() {
   }, [close]);
   useEffect(() => {
     if (bridge.ready || error) return;
+    record("timer-armed", revision);
     const timer = setTimeout(() => {
+      record("ready-timeout", revision);
       bridge.reset("ready-timeout");
       setError(true);
       setLoading(false);
     }, 15000);
-    return () => clearTimeout(timer);
-  }, [bridge.ready, error, revision, bridge.reset]);
-  const fail = () => {
+    return () => {
+      clearTimeout(timer);
+      record("timer-cleared", revision);
+    };
+  }, [bridge.ready, error, revision, bridge.reset, record]);
+  const fail = (kind: WebViewEventKind, detail = {}) => {
+    record(kind, revision, detail);
     bridge.reset("load-error");
     setError(true);
     setLoading(false);
   };
   const reload = () => {
+    record("reload", revision);
     bridge.reset("reload");
     setError(false);
     setLoading(true);
@@ -91,6 +133,10 @@ export default function ApplyContainer() {
             originWhitelist={["*"]}
             onShouldStartLoadWithRequest={(request) => {
               const allowed = isAllowedApplyUrl(request.url, webOrigin);
+              record(
+                allowed ? "navigation-allowed" : "navigation-blocked",
+                revision,
+              );
               probe.observe("navigation", { url: request.url, allowed });
               return allowed;
             }}
@@ -102,21 +148,42 @@ export default function ApplyContainer() {
             onNavigationStateChange={(state) => {
               if (!isAllowedApplyUrl(state.url, webOrigin)) {
                 ref.current?.stopLoading();
-                fail();
+                fail("navigation-blocked");
               }
             }}
             onLoadStart={() => {
+              record("load-start", revision, { ready: bridge.ready });
               bridge.reset("reload");
               setLoading(true);
             }}
-            onLoadEnd={() => setLoading(false)}
-            onError={fail}
-            onHttpError={fail}
-            onContentProcessDidTerminate={fail}
-            onRenderProcessGone={fail}
+            onLoadEnd={() => {
+              record("load-end", revision);
+              setLoading(false);
+            }}
+            onError={(event) =>
+              fail("load-error", { code: event.nativeEvent.code })
+            }
+            onHttpError={(event) =>
+              fail("http-error", { status: event.nativeEvent.statusCode })
+            }
+            onContentProcessDidTerminate={() =>
+              fail("content-process-terminated")
+            }
+            onRenderProcessGone={() => fail("render-process-gone")}
             onMessage={(event) => {
               const { data, url } = event.nativeEvent;
               const decision = bridge.receive(data, url);
+              if (__DEV__) {
+                const parsed = parseBridgeMessage(data);
+                if (
+                  decision === "accepted" &&
+                  parsed.success &&
+                  parsed.data.type === "WEB_READY"
+                )
+                  record("ready", revision);
+                else if (decision.startsWith("rejected"))
+                  record("message-rejected", revision);
+              }
               probe.observe("message", { data, url, decision });
             }}
             javaScriptEnabled
@@ -153,7 +220,12 @@ export default function ApplyContainer() {
           )
         }
       />
-      <BridgeDiagnostics {...bridge} reload={reload} probe={probe} />
+      <BridgeDiagnostics
+        {...bridge}
+        reload={reload}
+        probe={probe}
+        trace={() => trace.current!.snapshot()}
+      />
     </Page>
   );
 }

@@ -1,11 +1,12 @@
+import { useSession } from "../src/auth/SessionProvider";
 import { VisualCheckControls } from "../src/dev/VisualCheckControls";
 import { useVisualCheckScroll } from "../src/dev/useVisualCheckScroll";
 import { ScrollView, View, Text } from "react-native";
-import { router } from "expo-router";
 import { Page, Header, Icon, Button } from "../src/components/ui";
 import { useTheme } from "../src/theme/tokens";
 export default function Login() {
   const c = useTheme();
+  const { state, controller, googleConfigured } = useSession();
   const visual = useVisualCheckScroll();
   return (
     <Page>
@@ -81,16 +82,42 @@ export default function Login() {
           ))}
         </View>
         <View style={{ gap: 12 }}>
-          <Button title="G  Google로 계속하기" disabled secondary />
+          <Button
+            title="G  Google로 계속하기"
+            disabled={!googleConfigured || state.status === "error"}
+            secondary
+            onPress={() => void controller.signIn()}
+          />
+          {state.status === "error" ? (
+            <Button
+              title={
+                state.retry === "signOut" ? "로그아웃 다시 시도" : "다시 시도"
+              }
+              secondary
+              onPress={() =>
+                void (state.retry === "signOut"
+                  ? controller.signOut()
+                  : state.retry === "signIn"
+                    ? controller.signIn()
+                    : controller.restore("retry"))
+              }
+            />
+          ) : null}
           <Text
             style={{ textAlign: "center", fontSize: 12, color: c.secondary }}
           >
-            로그인 준비 중
+            {state.message ||
+              (googleConfigured
+                ? "Google 계정으로 로그인하세요."
+                : "로그인 설정을 준비하고 있어요. 데모를 이용할 수 있어요.")}
           </Text>
           <Button
             title="데모로 둘러보기"
+            disabled={state.retry === "signOut"}
             secondary
-            onPress={() => router.replace("/home")}
+            onPress={() => {
+              controller.enterDemo();
+            }}
           />
           <Text
             style={{

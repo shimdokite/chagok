@@ -1,0 +1,26 @@
+{
+  "checkedAt": "2026-11-16T13:06:50.865Z",
+  "checkedLocalLinks": 70,
+  "brokenLinks": [],
+  "sourceFileCount": 82,
+  "sourceHashMismatches": [],
+  "day01LearningPreserved": true,
+  "stagedEmpty": true,
+  "scopedDiffCheckExit": 0,
+  "fullDiffCheckExit": 2,
+  "fullDiffCheckIssues": 9,
+  "knownLocalConfigValueMatches": [],
+  "changedSinceStart": [
+    "docs/changes/latest-commit.txt",
+    "docs/changes/latest-pr.md",
+    "docs/manual-checks.md",
+    "docs/metrics/daily/day-02.md",
+    "docs/metrics/environments/day-02.yaml",
+    "docs/metrics/raw/day-02-session-restore.json",
+    "docs/plans/day-02.md",
+    "docs/progress.md",
+    "docs/verification/day-02.md",
+    "docs/verification/day-02/auth-setup.md",
+    "docs/verification/day-02/dev-web.log"
+  ]
+}

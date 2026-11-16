@@ -1,0 +1,38 @@
+apps/mobile/src/auth/api.ts 79ms
+apps/mobile/src/auth/google.ts 17ms
+apps/mobile/src/auth/google.web.ts 7ms
+apps/mobile/src/auth/metrics.ts 10ms
+apps/mobile/src/auth/session.test.ts 32ms
+apps/mobile/src/auth/session.ts 255ms
+apps/mobile/src/auth/SessionProvider.tsx 127ms
+apps/mobile/src/auth/storage.ts 385ms
+apps/mobile/src/auth/storage.web.ts 28ms
+apps/mobile/src/dev/SessionDiagnostics.tsx 10ms
+apps/mobile/app/_layout.tsx 26ms
+apps/mobile/app/index.tsx 228ms
+apps/mobile/app/home.tsx 68ms
+apps/mobile/app.config.ts 7ms
+packages/api/src/auth/context.ts 41ms
+packages/api/src/auth/google.test.ts 24ms
+packages/api/src/auth/google.ts 5ms
+packages/api/src/auth/service.test.ts 130ms
+packages/api/src/auth/service.ts 45ms
+packages/api/src/auth/store.integration.test.ts 18ms
+packages/api/src/auth/store.ts 13ms
+packages/api/src/http.test.ts 10ms
+packages/api/src/index.ts 4ms (unchanged)
+packages/api/src/router.ts 15ms
+packages/api/prisma.config.ts 2ms (unchanged)
+apps/web/src/app/api/trpc/[trpc]/route.ts 7ms (unchanged)
+apps/web/src/app/apply/page.tsx 63ms
+apps/web/src/app/globals.css 49ms
+apps/web/src/app/layout.tsx 10ms (unchanged)
+apps/web/src/app/page.tsx 2ms (unchanged)
+apps/web/src/components/bridge/BridgeReceiver.tsx 13ms (unchanged)
+apps/web/src/components/ui/button.tsx 13ms
+apps/web/src/components/ui/input.tsx 10ms
+apps/web/src/components/ui/label.tsx 4ms
+apps/web/src/lib/utils.ts 2ms
+apps/web/components.json 18ms
+apps/web/postcss.config.mjs 6ms
+apps/web/tsconfig.json 2ms

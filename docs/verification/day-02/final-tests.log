@@ -1,0 +1,12 @@
+
+ RUN  v5.1.0 /Users/doyeon/Desktop/chagok
+
+
+ Test Files  10 passed (10)
+      Tests  60 passed (60)
+   Start at  17:05:16
+   Duration  5.51s (import 50%, tests 24%, transform 21%, worker 6%)
+
+    Isolate  10 workers spawned · ~1.29s startup each (spawn + environment, per file)
+             at least ~553ms faster with isolate: false — reuses workers across files instead of one per file
+

@@ -1,0 +1,13 @@
+
+> chagok@0.1.0 test
+> vitest run apps/mobile/src/dev/webview-trace.test.ts
+
+
+ RUN  v5.1.0 /Users/doyeon/Desktop/chagok
+
+
+ Test Files  1 passed (1)
+      Tests  4 passed (4)
+   Start at  22:39:19
+   Duration  172ms (transform 68%, import 18%, worker 8%, tests 6%)
+

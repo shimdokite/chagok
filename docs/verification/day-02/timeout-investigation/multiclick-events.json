@@ -1,0 +1,190 @@
+[
+  {
+    "startedAt": "2026-11-16T13:41:24.436Z",
+    "dropped": 0,
+    "hiddenInView": 78
+  },
+  {
+    "seq": 79,
+    "ms": 268718.959,
+    "revision": 8,
+    "kind": "ready"
+  },
+  {
+    "seq": 80,
+    "ms": 268719.085,
+    "revision": 8,
+    "kind": "ready"
+  },
+  {
+    "seq": 81,
+    "ms": 268733.317,
+    "revision": 8,
+    "kind": "timer-cleared"
+  },
+  {
+    "seq": 82,
+    "ms": 274777.579,
+    "revision": 8,
+    "kind": "reload"
+  },
+  {
+    "seq": 83,
+    "ms": 274800.523,
+    "revision": 9,
+    "kind": "timer-armed"
+  },
+  {
+    "seq": 84,
+    "ms": 275370.484,
+    "revision": 9,
+    "kind": "navigation-allowed"
+  },
+  {
+    "seq": 85,
+    "ms": 275371.022,
+    "revision": 9,
+    "kind": "load-start",
+    "ready": false
+  },
+  {
+    "seq": 86,
+    "ms": 278172.063,
+    "revision": 9,
+    "kind": "load-end"
+  },
+  {
+    "seq": 87,
+    "ms": 278336.397,
+    "revision": 9,
+    "kind": "load-end"
+  },
+  {
+    "seq": 88,
+    "ms": 278337.061,
+    "revision": 9,
+    "kind": "ready"
+  },
+  {
+    "seq": 89,
+    "ms": 278352.427,
+    "revision": 9,
+    "kind": "timer-cleared"
+  },
+  {
+    "seq": 90,
+    "ms": 278355.396,
+    "revision": 9,
+    "kind": "ready"
+  },
+  {
+    "seq": 91,
+    "ms": 284645.475,
+    "revision": 9,
+    "kind": "reload"
+  },
+  {
+    "seq": 92,
+    "ms": 284668.605,
+    "revision": 10,
+    "kind": "timer-armed"
+  },
+  {
+    "seq": 93,
+    "ms": 285187.204,
+    "revision": 10,
+    "kind": "navigation-allowed"
+  },
+  {
+    "seq": 94,
+    "ms": 285187.542,
+    "revision": 10,
+    "kind": "load-start",
+    "ready": false
+  },
+  {
+    "seq": 95,
+    "ms": 287466.968,
+    "revision": 10,
+    "kind": "load-end"
+  },
+  {
+    "seq": 96,
+    "ms": 287671.902,
+    "revision": 10,
+    "kind": "load-end"
+  },
+  {
+    "seq": 97,
+    "ms": 287674.729,
+    "revision": 10,
+    "kind": "ready"
+  },
+  {
+    "seq": 98,
+    "ms": 287692.766,
+    "revision": 10,
+    "kind": "timer-cleared"
+  },
+  {
+    "seq": 99,
+    "ms": 287695.954,
+    "revision": 10,
+    "kind": "ready"
+  },
+  {
+    "seq": 100,
+    "ms": 294366.424,
+    "revision": 10,
+    "kind": "reload"
+  },
+  {
+    "seq": 101,
+    "ms": 294389.842,
+    "revision": 11,
+    "kind": "timer-armed"
+  },
+  {
+    "seq": 102,
+    "ms": 294936.898,
+    "revision": 11,
+    "kind": "navigation-allowed"
+  },
+  {
+    "seq": 103,
+    "ms": 294937.407,
+    "revision": 11,
+    "kind": "load-start",
+    "ready": false
+  },
+  {
+    "seq": 104,
+    "ms": 297278.785,
+    "revision": 11,
+    "kind": "load-end"
+  },
+  {
+    "seq": 105,
+    "ms": 297345.787,
+    "revision": 11,
+    "kind": "load-end"
+  },
+  {
+    "seq": 106,
+    "ms": 297346.257,
+    "revision": 11,
+    "kind": "ready"
+  },
+  {
+    "seq": 107,
+    "ms": 297362.957,
+    "revision": 11,
+    "kind": "timer-cleared"
+  },
+  {
+    "seq": 108,
+    "ms": 297366.054,
+    "revision": 11,
+    "kind": "ready"
+  }
+]

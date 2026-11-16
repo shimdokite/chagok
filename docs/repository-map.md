@@ -48,3 +48,13 @@
 - `docs/verification/m08-m09/`: 실제 원본, 수정 전후 PNG, 타입/테스트/export 로그, 최종 소스 manifest.
 
 홈/잔액/최근 신청의 최대 글자 표시를 수정했습니다. 제품 신청·저장 기능은 추가하지 않았습니다. 원본 보존 절은 최초 복사 시점 기록이며 이후 사용자의 명시적 요청으로 작업 사본 HTML의 allow-forms만 수정했습니다. 이전 원본은 `verification/prototype/chagok-prototype.before.html`에 보존했습니다.
+
+## 2일차 추가 경계 — 2026-11-16
+
+- `packages/api/src/auth/`: Google ID token 서버 검증, 앱 세션 발급/조회/폐기, Prisma 저장소·컨텍스트와 테스트.
+- `packages/api/prisma/`, `prisma.config.ts`: PostgreSQL 사용자·세션 스키마와 migration. 업무 신청 테이블 없음.
+- `apps/mobile/src/auth/`: 네이티브/웹 분리 Google·SecureStore 어댑터, 세션 상태 머신, 복원 측정 저장. `app/_layout.tsx`가 인증/데모 경로를 관리.
+- `apps/mobile/src/dev/SessionDiagnostics.tsx`: 개인정보 없는 복원 원본 공유(개발 모드).
+- `apps/web/src/components/ui/`, `src/lib/utils.ts`, PostCSS·components.json: 웹 신청 화면에 실제 사용하는 shadcn/Tailwind.
+- `docs/verification/day-02.md`, `docs/verification/day-02/`: 실제 검사·수동 확인 대기·인증 설정 안내. 실계정 검증은 준비 상태에 따라 별도 표시.
+- `docs/verification/day-02/pr-ready/`: 누적 AC·리뷰·최종 자동 검사 및 공개 범위 점검. `docs/learning/`은 로컬 전용이며 PR에는 기존 추적 파일의 1회 삭제만 포함한다.

@@ -1,0 +1,17 @@
+{
+  "ios-build-final.log": {
+    "fullLocalPath": ".local-tools/day-02-full-logs/ios-build-final.log",
+    "sha256": "ba2f67b4803f1e73691ac4e6278feb06af7e11f52331618039847861d915a30d",
+    "bytes": 8491876
+  },
+  "ios-build-signed.log": {
+    "fullLocalPath": ".local-tools/day-02-full-logs/ios-build-signed.log",
+    "sha256": "8dbde94d2fa9c2fab5ed72729997a240b735a25e92c551dadc1480af7c545b0c",
+    "bytes": 932679
+  },
+  "webview-reload-diagnostic.log": {
+    "fullLocalPath": ".local-tools/day-02-full-logs/webview-reload-diagnostic.log",
+    "sha256": "9364c5536a7a82bf417620dbee79bcb01e1b1b67295a024ea4da9c1a0bda9593",
+    "bytes": 17513
+  }
+}

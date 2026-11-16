@@ -1,0 +1,96 @@
+
+ RUN  v5.1.0 /Users/doyeon/Desktop/chagok
+
+ ❯ apps/mobile/src/components/ApplyContainer.test.tsx (7 tests | 3 failed) 14ms
+   ❯ ApplyContainer termination evidence (7)
+     × records one web close at the current revision before navigation 9ms
+     × records final committed revision on unmount without synthetic unmounts on reload 1ms
+     × records one native close and the same revision on final unmount 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/mobile/src/components/ApplyContainer.test.tsx > ApplyContainer termination evidence > records one web close at the current revision before navigation
+AssertionError: expected [] to deeply equal [ ObjectContaining{…} ]
+
+- Expected
++ Received
+
+- [
+-   ObjectContaining {
+-     "kind": "close",
+-     "revision": 2,
+-   },
+- ]
++ []
+
+ ❯ apps/mobile/src/components/ApplyContainer.test.tsx:93:60
+     91|     message(closeMessage);
+     92|     expect(navigation.back).toHaveBeenCalledTimes(1);
+     93|     expect(atNavigation.filter((e) => e.kind === "close")).toEqual([
+       |                                                            ^
+     94|       expect.objectContaining({ revision: 2, kind: "close" }),
+     95|     ]);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  apps/mobile/src/components/ApplyContainer.test.tsx > ApplyContainer termination evidence > records final committed revision on unmount without synthetic unmounts on reload
+AssertionError: expected [ { seq: 12, ms: +0, …(2) } ] to deeply equal [ ObjectContaining{…} ]
+
+- Expected
++ Received
+
+  [
+    {
+      "kind": "unmount",
+-     "revision": 3,
++     "ms": 0,
++     "revision": 0,
++     "seq": 12,
+    },
+  ]
+
+ ❯ apps/mobile/src/components/ApplyContainer.test.tsx:102:85
+    100|     expect(events().filter((e) => e.kind === "unmount")).toEqual([]);
+    101|     host.unmount();
+    102|     expect(snapshot().events.filter((e: { kind: string }) => e.kind ==…
+       |                                                                                     ^
+    103|       expect.objectContaining({ revision: 3, kind: "unmount" }),
+    104|     ]);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  apps/mobile/src/components/ApplyContainer.test.tsx > ApplyContainer termination evidence > records one native close and the same revision on final unmount
+AssertionError: expected [ { seq: 6, ms: +0, …(2) }, …(1) ] to deeply equal [ ObjectContaining{…}, …(1) ]
+
+- Expected
++ Received
+
+@@ -5,8 +5,10 @@
+      "revision": 1,
+      "seq": 6,
+    },
+    {
+      "kind": "unmount",
+-     "revision": 1,
++     "ms": 0,
++     "revision": 0,
++     "seq": 7,
+    },
+  ]
+
+ ❯ apps/mobile/src/components/ApplyContainer.test.tsx:112:102
+    110|     find("Button").props.onPress();
+    111|     host.unmount();
+    112|     expect(snapshot().events.filter((e: { kind: string }) => ["close",…
+       |                                                                                                      ^
+    113|       expect.objectContaining({ kind: "close", revision: 1 }),
+    114|       expect.objectContaining({ kind: "unmount", revision: 1 }),
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  3 failed | 4 passed (7)
+   Start at  23:03:12
+   Duration  202ms (import 49%, transform 38%, tests 11%, worker 2%)
+

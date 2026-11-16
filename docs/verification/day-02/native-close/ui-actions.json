@@ -1,0 +1,38 @@
+[
+  {
+    "at": "2026-11-16T14:10:34.752Z",
+    "action": "web-case reload 1"
+  },
+  {
+    "at": "2026-11-16T14:10:49.943Z",
+    "action": "web-case reload 2"
+  },
+  {
+    "at": "2026-11-16T14:11:00.565Z",
+    "action": "web close coordinate click"
+  },
+  {
+    "at": "2026-11-16T14:11:00.600Z",
+    "error": "Error: Computer Use server error -10005: noWindowsAvailable"
+  },
+  {
+    "at": "2026-11-16T14:15:26.985Z",
+    "action": "user confirmed web close; observed home"
+  },
+  {
+    "at": "2026-11-16T14:15:56.857Z",
+    "action": "native-case reload 1"
+  },
+  {
+    "at": "2026-11-16T14:16:15.590Z",
+    "action": "native-case reload 2"
+  },
+  {
+    "at": "2026-11-16T14:16:38.315Z",
+    "action": "native-case reload 3"
+  },
+  {
+    "at": "2026-11-16T14:17:02.168Z",
+    "action": "native close button"
+  }
+]

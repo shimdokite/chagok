@@ -1,0 +1,395 @@
+
+> chagok@0.1.0 dev:web
+> npm run dev -w @chagok/web
+
+
+> @chagok/web@0.1.0 dev
+> next dev --hostname 0.0.0.0
+
+▲ Next.js 16.4.6 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://0.0.0.0:3000
+✓ Ready in 196ms
+✓ Running next.config.ts took 97ms
+
+  Turbopack has seen frequent file updates and is waiting for the filesystem to settle (0.5s elapsed so far; last modified: "/Users/doyeon/Desktop/chagok/node_modules/@prisma/client/runtime/query_compiler_fast_bg.sqlserver.wasm-base64.js").
+ GET /apply 200 in 294ms (next.js: 63ms, application-code: 231ms)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <InnerScrollHandler scrollRef={{scrollRef:null, ...}} renderTree={{...}}>
+      <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+        <LoadingBoundary name="apply/" loading={null}>
+          <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+            <RedirectBoundary>
+              <RedirectErrorBoundary router={{...}}>
+                <InnerLayoutRouter url="/apply" tree={[...]} params={{}} renderTree={{...}} segmentPath={[...]} ...>
+                  <SegmentViewNode type="page" pagePath="apply/page...">
+                    <SegmentTrieNode>
+                    <Apply>
+                      <main>
+                        <header>
+                        <BridgeReceiver>
+                        <section>
+                        <form>
+                          <fieldset disabled={true}>
+                            <label>
+                            <label>
+                              <input
+                                type="date"
+                                defaultValue="2026-11-13"
+-                               style={{caret-color:"transparent"}}
+                              >
+                            <label>
+                              <div className="amount">
+                                <input
+                                  inputMode="numeric"
+                                  placeholder="0"
+-                                 style={{caret-color:"transparent"}}
+                                >
+                                ...
+                              ...
+                            <label>
+                              <input
+                                placeholder="사용 내용을 입력해 주세요"
+-                               style={{caret-color:"transparent"}}
+                              >
+                            ...
+                        ...
+                  ...
+                ...
+      ...
+ 
+ GET /apply 200 in 53ms (next.js: 2ms, application-code: 51ms)
+  Turbopack has seen frequent file updates and is waiting for the filesystem to settle (0.5s elapsed so far; last modified: "/Users/doyeon/Desktop/chagok/node_modules/pkg-types/node_modules/confbox/dist/jsonc.mjs").
+  Turbopack has seen frequent file updates and is waiting for the filesystem to settle (1.5s elapsed so far; last modified: "/Users/doyeon/Desktop/chagok/node_modules/effect/dist/esm/internal/metric/registry.js.map").
+⨯ ./apps/web/src/components/bridge/BridgeReceiver.tsx:2:1
+Error: Module not found: Can't resolve '../ui/button'
+  [90m1 |[0m [32m"use client"[0m;
+[31m[1m>[0m [90m2 |[0m [36mimport[0m { [33mButton[0m } [36mfrom[0m [32m"../ui/button"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m3 |[0m [36mimport[0m { useEffect, useState } [36mfrom[0m [32m"react"[0m;
+  [90m4 |[0m [36mimport[0m { bridgeBase, parseBridgeMessage } [36mfrom[0m [32m"@chagok/contracts"[0m;
+  [90m5 |[0m declare global {
+
+
+
+Import trace:
+  Server Component:
+    ./apps/web/src/components/bridge/BridgeReceiver.tsx
+    ./apps/web/src/app/apply/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./apps/web/src/components/bridge/BridgeReceiver.tsx:2:1
+Error: Module not found: Can't resolve '../ui/button'
+  [90m1 |[0m [32m"use client"[0m;
+[31m[1m>[0m [90m2 |[0m [36mimport[0m { [33mButton[0m } [36mfrom[0m [32m"../ui/button"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m3 |[0m [36mimport[0m { useEffect, useState } [36mfrom[0m [32m"react"[0m;
+  [90m4 |[0m [36mimport[0m { bridgeBase, parseBridgeMessage } [36mfrom[0m [32m"@chagok/contracts"[0m;
+  [90m5 |[0m declare global {
+
+
+
+Import trace:
+  Server Component:
+    ./apps/web/src/components/bridge/BridgeReceiver.tsx
+    ./apps/web/src/app/apply/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./apps/web/src/components/bridge/BridgeReceiver.tsx:2:1
+Error: Module not found: Can't resolve '../ui/button'
+  [90m1 |[0m [32m"use client"[0m;
+[31m[1m>[0m [90m2 |[0m [36mimport[0m { [33mButton[0m } [36mfrom[0m [32m"../ui/button"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m3 |[0m [36mimport[0m { useEffect, useState } [36mfrom[0m [32m"react"[0m;
+  [90m4 |[0m [36mimport[0m { bridgeBase, parseBridgeMessage } [36mfrom[0m [32m"@chagok/contracts"[0m;
+  [90m5 |[0m declare global {
+
+
+
+Import trace:
+  Server Component:
+    ./apps/web/src/components/bridge/BridgeReceiver.tsx
+    ./apps/web/src/app/apply/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./apps/web/src/components/bridge/BridgeReceiver.tsx:2:1
+Error: Module not found: Can't resolve '../ui/button'
+  [90m1 |[0m [32m"use client"[0m;
+[31m[1m>[0m [90m2 |[0m [36mimport[0m { [33mButton[0m } [36mfrom[0m [32m"../ui/button"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m3 |[0m [36mimport[0m { useEffect, useState } [36mfrom[0m [32m"react"[0m;
+  [90m4 |[0m [36mimport[0m { bridgeBase, parseBridgeMessage } [36mfrom[0m [32m"@chagok/contracts"[0m;
+  [90m5 |[0m declare global {
+
+
+
+Import trace:
+  Server Component:
+    ./apps/web/src/components/bridge/BridgeReceiver.tsx
+    ./apps/web/src/app/apply/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./apps/web/src/app/apply/page.tsx:2:1
+Error: Module not found: Can't resolve '@/components/ui/button'
+  [90m1 |[0m [36mimport[0m { [33mBridgeReceiver[0m } [36mfrom[0m [32m'../../components/bridge/BridgeReceiver'[0m;
+[31m[1m>[0m [90m2 |[0m [36mimport[0m { [33mButton[0m } [36mfrom[0m [32m'@/components/ui/button'[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m3 |[0m [36mimport[0m { [33mInput[0m } [36mfrom[0m [32m'@/components/ui/input'[0m;
+  [90m4 |[0m [36mimport[0m { [33mLabel[0m } [36mfrom[0m [32m'@/components/ui/label'[0m;
+  [90m5 |[0m [36mimport[0m { demoBalance, won } [36mfrom[0m [32m'@chagok/contracts/demo'[0m;
+
+Import map: aliased to relative './src/components/ui/button' inside of [project]/apps/web
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./apps/web/src/app/apply/page.tsx:2:1
+Error: Module not found: Can't resolve '@/components/ui/button'
+  [90m1 |[0m [36mimport[0m { [33mBridgeReceiver[0m } [36mfrom[0m [32m'../../components/bridge/BridgeReceiver'[0m;
+[31m[1m>[0m [90m2 |[0m [36mimport[0m { [33mButton[0m } [36mfrom[0m [32m'@/components/ui/button'[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m3 |[0m [36mimport[0m { [33mInput[0m } [36mfrom[0m [32m'@/components/ui/input'[0m;
+  [90m4 |[0m [36mimport[0m { [33mLabel[0m } [36mfrom[0m [32m'@/components/ui/label'[0m;
+  [90m5 |[0m [36mimport[0m { demoBalance, won } [36mfrom[0m [32m'@chagok/contracts/demo'[0m;
+
+Import map: aliased to relative './src/components/ui/button' inside of [project]/apps/web
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./apps/web/src/app/apply/page.tsx:3:1
+Error: Module not found: Can't resolve '@/components/ui/input'
+  [90m1 |[0m [36mimport[0m { [33mBridgeReceiver[0m } [36mfrom[0m [32m'../../components/bridge/BridgeReceiver'[0m;
+  [90m2 |[0m [36mimport[0m { [33mButton[0m } [36mfrom[0m [32m'@/components/ui/button'[0m;
+[31m[1m>[0m [90m3 |[0m [36mimport[0m { [33mInput[0m } [36mfrom[0m [32m'@/components/ui/input'[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m4 |[0m [36mimport[0m { [33mLabel[0m } [36mfrom[0m [32m'@/components/ui/label'[0m;
+  [90m5 |[0m [36mimport[0m { demoBalance, won } [36mfrom[0m [32m'@chagok/contracts/demo'[0m;
+  [90m6 |[0m [36mconst[0m group=[32m'grid min-w-0 gap-[10px]'[0m;
+
+Import map: aliased to relative './src/components/ui/input' inside of [project]/apps/web
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./apps/web/src/app/apply/page.tsx:3:1
+Error: Module not found: Can't resolve '@/components/ui/input'
+  [90m1 |[0m [36mimport[0m { [33mBridgeReceiver[0m } [36mfrom[0m [32m'../../components/bridge/BridgeReceiver'[0m;
+  [90m2 |[0m [36mimport[0m { [33mButton[0m } [36mfrom[0m [32m'@/components/ui/button'[0m;
+[31m[1m>[0m [90m3 |[0m [36mimport[0m { [33mInput[0m } [36mfrom[0m [32m'@/components/ui/input'[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m4 |[0m [36mimport[0m { [33mLabel[0m } [36mfrom[0m [32m'@/components/ui/label'[0m;
+  [90m5 |[0m [36mimport[0m { demoBalance, won } [36mfrom[0m [32m'@chagok/contracts/demo'[0m;
+  [90m6 |[0m [36mconst[0m group=[32m'grid min-w-0 gap-[10px]'[0m;
+
+Import map: aliased to relative './src/components/ui/input' inside of [project]/apps/web
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./apps/web/src/app/apply/page.tsx:4:1
+Error: Module not found: Can't resolve '@/components/ui/label'
+  [90m2 |[0m [36mimport[0m { [33mButton[0m } [36mfrom[0m [32m'@/components/ui/button'[0m;
+  [90m3 |[0m [36mimport[0m { [33mInput[0m } [36mfrom[0m [32m'@/components/ui/input'[0m;
+[31m[1m>[0m [90m4 |[0m [36mimport[0m { [33mLabel[0m } [36mfrom[0m [32m'@/components/ui/label'[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m5 |[0m [36mimport[0m { demoBalance, won } [36mfrom[0m [32m'@chagok/contracts/demo'[0m;
+  [90m6 |[0m [36mconst[0m group=[32m'grid min-w-0 gap-[10px]'[0m;
+  [90m7 |[0m [36mexport[0m [36mdefault[0m [36mfunction[0m [33mApply[0m(){[36mreturn[0m (
+
+Import map: aliased to relative './src/components/ui/label' inside of [project]/apps/web
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./apps/web/src/app/apply/page.tsx:4:1
+Error: Module not found: Can't resolve '@/components/ui/label'
+  [90m2 |[0m [36mimport[0m { [33mButton[0m } [36mfrom[0m [32m'@/components/ui/button'[0m;
+  [90m3 |[0m [36mimport[0m { [33mInput[0m } [36mfrom[0m [32m'@/components/ui/input'[0m;
+[31m[1m>[0m [90m4 |[0m [36mimport[0m { [33mLabel[0m } [36mfrom[0m [32m'@/components/ui/label'[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m5 |[0m [36mimport[0m { demoBalance, won } [36mfrom[0m [32m'@chagok/contracts/demo'[0m;
+  [90m6 |[0m [36mconst[0m group=[32m'grid min-w-0 gap-[10px]'[0m;
+  [90m7 |[0m [36mexport[0m [36mdefault[0m [36mfunction[0m [33mApply[0m(){[36mreturn[0m (
+
+Import map: aliased to relative './src/components/ui/label' inside of [project]/apps/web
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./apps/web/src/app/apply/page.tsx:3:1
+Error: Module not found: Can't resolve '@/components/ui/input'
+  [90m1 |[0m [36mimport[0m { [33mBridgeReceiver[0m } [36mfrom[0m [32m'../../components/bridge/BridgeReceiver'[0m;
+  [90m2 |[0m [36mimport[0m { [33mButton[0m } [36mfrom[0m [32m'@/components/ui/button'[0m;
+[31m[1m>[0m [90m3 |[0m [36mimport[0m { [33mInput[0m } [36mfrom[0m [32m'@/components/ui/input'[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m4 |[0m [36mimport[0m { [33mLabel[0m } [36mfrom[0m [32m'@/components/ui/label'[0m;
+  [90m5 |[0m [36mimport[0m { demoBalance, won } [36mfrom[0m [32m'@chagok/contracts/demo'[0m;
+  [90m6 |[0m [36mconst[0m group=[32m'grid min-w-0 gap-[10px]'[0m;
+
+Import map: aliased to relative './src/components/ui/input' inside of [project]/apps/web
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./apps/web/src/app/apply/page.tsx:3:1
+Error: Module not found: Can't resolve '@/components/ui/input'
+  [90m1 |[0m [36mimport[0m { [33mBridgeReceiver[0m } [36mfrom[0m [32m'../../components/bridge/BridgeReceiver'[0m;
+  [90m2 |[0m [36mimport[0m { [33mButton[0m } [36mfrom[0m [32m'@/components/ui/button'[0m;
+[31m[1m>[0m [90m3 |[0m [36mimport[0m { [33mInput[0m } [36mfrom[0m [32m'@/components/ui/input'[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m4 |[0m [36mimport[0m { [33mLabel[0m } [36mfrom[0m [32m'@/components/ui/label'[0m;
+  [90m5 |[0m [36mimport[0m { demoBalance, won } [36mfrom[0m [32m'@chagok/contracts/demo'[0m;
+  [90m6 |[0m [36mconst[0m group=[32m'grid min-w-0 gap-[10px]'[0m;
+
+Import map: aliased to relative './src/components/ui/input' inside of [project]/apps/web
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./apps/web/src/app/apply/page.tsx:4:1
+Error: Module not found: Can't resolve '@/components/ui/label'
+  [90m2 |[0m [36mimport[0m { [33mButton[0m } [36mfrom[0m [32m'@/components/ui/button'[0m;
+  [90m3 |[0m [36mimport[0m { [33mInput[0m } [36mfrom[0m [32m'@/components/ui/input'[0m;
+[31m[1m>[0m [90m4 |[0m [36mimport[0m { [33mLabel[0m } [36mfrom[0m [32m'@/components/ui/label'[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m5 |[0m [36mimport[0m { demoBalance, won } [36mfrom[0m [32m'@chagok/contracts/demo'[0m;
+  [90m6 |[0m [36mconst[0m group=[32m'grid min-w-0 gap-[10px]'[0m;
+  [90m7 |[0m [36mexport[0m [36mdefault[0m [36mfunction[0m [33mApply[0m(){[36mreturn[0m (
+
+Import map: aliased to relative './src/components/ui/label' inside of [project]/apps/web
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./apps/web/src/app/apply/page.tsx:4:1
+Error: Module not found: Can't resolve '@/components/ui/label'
+  [90m2 |[0m [36mimport[0m { [33mButton[0m } [36mfrom[0m [32m'@/components/ui/button'[0m;
+  [90m3 |[0m [36mimport[0m { [33mInput[0m } [36mfrom[0m [32m'@/components/ui/input'[0m;
+[31m[1m>[0m [90m4 |[0m [36mimport[0m { [33mLabel[0m } [36mfrom[0m [32m'@/components/ui/label'[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m5 |[0m [36mimport[0m { demoBalance, won } [36mfrom[0m [32m'@chagok/contracts/demo'[0m;
+  [90m6 |[0m [36mconst[0m group=[32m'grid min-w-0 gap-[10px]'[0m;
+  [90m7 |[0m [36mexport[0m [36mdefault[0m [36mfunction[0m [33mApply[0m(){[36mreturn[0m (
+
+Import map: aliased to relative './src/components/ui/label' inside of [project]/apps/web
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./apps/web/src/app/apply/page.tsx:4:1
+Error: Module not found: Can't resolve '@/components/ui/label'
+  [90m2 |[0m [36mimport[0m { [33mButton[0m } [36mfrom[0m [32m'@/components/ui/button'[0m;
+  [90m3 |[0m [36mimport[0m { [33mInput[0m } [36mfrom[0m [32m'@/components/ui/input'[0m;
+[31m[1m>[0m [90m4 |[0m [36mimport[0m { [33mLabel[0m } [36mfrom[0m [32m'@/components/ui/label'[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m5 |[0m [36mimport[0m { demoBalance, won } [36mfrom[0m [32m'@chagok/contracts/demo'[0m;
+  [90m6 |[0m [36mconst[0m group=[32m'grid min-w-0 gap-[10px]'[0m;
+  [90m7 |[0m [36mexport[0m [36mdefault[0m [36mfunction[0m [33mApply[0m(){[36mreturn[0m (
+
+Import map: aliased to relative './src/components/ui/label' inside of [project]/apps/web
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./apps/web/src/app/apply/page.tsx:4:1
+Error: Module not found: Can't resolve '@/components/ui/label'
+  [90m2 |[0m [36mimport[0m { [33mButton[0m } [36mfrom[0m [32m'@/components/ui/button'[0m;
+  [90m3 |[0m [36mimport[0m { [33mInput[0m } [36mfrom[0m [32m'@/components/ui/input'[0m;
+[31m[1m>[0m [90m4 |[0m [36mimport[0m { [33mLabel[0m } [36mfrom[0m [32m'@/components/ui/label'[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m5 |[0m [36mimport[0m { demoBalance, won } [36mfrom[0m [32m'@chagok/contracts/demo'[0m;
+  [90m6 |[0m [36mconst[0m group=[32m'grid min-w-0 gap-[10px]'[0m;
+  [90m7 |[0m [36mexport[0m [36mdefault[0m [36mfunction[0m [33mApply[0m(){[36mreturn[0m (
+
+Import map: aliased to relative './src/components/ui/label' inside of [project]/apps/web
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+✓ Compiled in 51ms
+  Reload env: .env.local
+ GET /apply 200 in 118ms (next.js: 26ms, application-code: 92ms)
+✓ Compiled in 1233ms
+ GET /apply 200 in 143ms (next.js: 55ms, application-code: 89ms)
+ GET /apply 200 in 231ms (next.js: 8ms, application-code: 223ms)
+ GET /apply 200 in 305ms (next.js: 14ms, application-code: 290ms)
+ GET /api/trpc/health.check 200 in 1019ms (next.js: 958ms, application-code: 61ms)
+ GET /api/trpc/health.check 200 in 251ms (next.js: 78ms, application-code: 173ms)
+ GET /apply 200 in 88ms (next.js: 9ms, application-code: 79ms)
+ GET /apply 200 in 103ms (next.js: 6ms, application-code: 97ms)
+ GET /apply 200 in 101ms (next.js: 3ms, application-code: 98ms)
+ GET /apply 200 in 35ms (next.js: 1.2ms, application-code: 34ms)
+ GET /apply 200 in 49ms (next.js: 3ms, application-code: 46ms)
+[?25h
+npm error Lifecycle script `dev` failed with error:
+npm error code 143
+npm error path /Users/doyeon/Desktop/chagok/apps/web
+npm error workspace @chagok/web@0.1.0
+npm error location /Users/doyeon/Desktop/chagok/apps/web
+npm error command failed
+npm error command sh -c next dev --hostname 0.0.0.0
+
+> chagok@0.1.0 dev:web
+> npm run dev -w @chagok/web
+
+
+> @chagok/web@0.1.0 dev
+> next dev --hostname 0.0.0.0
+
+▲ Next.js 16.4.6 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://0.0.0.0:3000
+- Environments: .env.local
+✓ Ready in 669ms
+✓ Running next.config.ts took 139ms
+
+○ Compiling /apply ...
+ GET /apply 200 in 2.3s (next.js: 655ms, application-code: 1672ms)
+ GET /apply 200 in 148ms (next.js: 9ms, application-code: 138ms)
+ GET /apply 200 in 114ms (next.js: 7ms, application-code: 107ms)
+ GET /apply 200 in 81ms (next.js: 9ms, application-code: 72ms)
+ GET / 307 in 342ms (next.js: 28ms, application-code: 313ms)
+ GET /apply 200 in 83ms (next.js: 5ms, application-code: 78ms)
+  Reload env: .env.local
+ GET /apply 200 in 275ms (next.js: 63ms, application-code: 212ms)
+[?25h
+npm error Lifecycle script `dev` failed with error:
+npm error code 143
+npm error path /Users/doyeon/Desktop/chagok/apps/web
+npm error workspace @chagok/web@0.1.0
+npm error location /Users/doyeon/Desktop/chagok/apps/web
+npm error command failed
+npm error command sh -c next dev --hostname 0.0.0.0

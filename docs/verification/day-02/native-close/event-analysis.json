@@ -1,0 +1,50 @@
+[
+  {
+    "startedAt": "2026-11-16T14:10:21.726Z",
+    "eventCount": 31,
+    "reloadCount": 2,
+    "lastReadyRevision": 2,
+    "closeCount": 1,
+    "unmountCount": 1,
+    "closeRevisions": [
+      2
+    ],
+    "unmountRevisions": [
+      2
+    ],
+    "orderedMatchingExit": true,
+    "missingSeq": [],
+    "duplicateSeqCount": 0,
+    "errorKinds": [],
+    "closeSeq": 28,
+    "unmountSeq": 30,
+    "closeToUnmountMs": 29.107,
+    "exitTimerCleared": true,
+    "exitTimerLifetimeMs": 15.283,
+    "unmountToTimerClearedMs": 0.667
+  },
+  {
+    "startedAt": "2026-11-16T14:15:27.101Z",
+    "eventCount": 40,
+    "reloadCount": 3,
+    "lastReadyRevision": 3,
+    "closeCount": 1,
+    "unmountCount": 1,
+    "closeRevisions": [
+      3
+    ],
+    "unmountRevisions": [
+      3
+    ],
+    "orderedMatchingExit": true,
+    "missingSeq": [],
+    "duplicateSeqCount": 0,
+    "errorKinds": [],
+    "closeSeq": 37,
+    "unmountSeq": 39,
+    "closeToUnmountMs": 24.774,
+    "exitTimerCleared": true,
+    "exitTimerLifetimeMs": 10.483,
+    "unmountToTimerClearedMs": 0.433
+  }
+]

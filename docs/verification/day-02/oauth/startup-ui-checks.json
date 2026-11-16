@@ -1,0 +1,52 @@
+[
+  {
+    "attempt": 1,
+    "observedAt": "2026-11-16T09:10:34.541Z",
+    "authenticatedHome": true
+  },
+  {
+    "attempt": 2,
+    "observedAt": "2026-11-16T09:11:07.410Z",
+    "authenticatedHome": true
+  },
+  {
+    "attempt": 3,
+    "observedAt": "2026-11-16T09:11:39.266Z",
+    "authenticatedHome": true
+  },
+  {
+    "attempt": 4,
+    "observedAt": "2026-11-16T09:11:55.584Z",
+    "authenticatedHome": true
+  },
+  {
+    "attempt": 5,
+    "observedAt": "2026-11-16T09:12:13.037Z",
+    "authenticatedHome": true
+  },
+  {
+    "attempt": 6,
+    "observedAt": "2026-11-16T09:12:31.289Z",
+    "authenticatedHome": true
+  },
+  {
+    "attempt": 7,
+    "observedAt": "2026-11-16T09:12:47.752Z",
+    "authenticatedHome": true
+  },
+  {
+    "attempt": 8,
+    "observedAt": "2026-11-16T09:13:08.173Z",
+    "authenticatedHome": true
+  },
+  {
+    "attempt": 9,
+    "observedAt": "2026-11-16T09:13:32.655Z",
+    "authenticatedHome": true
+  },
+  {
+    "attempt": 10,
+    "observedAt": "2026-11-16T09:14:03.697Z",
+    "authenticatedHome": true
+  }
+]

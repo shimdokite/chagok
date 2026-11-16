@@ -1,0 +1,27 @@
+{
+  "recordedAt": "2026-11-16T17:08:00+09:00",
+  "actualSourceManifest": "../../verification/day-02/source-sha256.json",
+  "actualSourceManifestSha256": "ea0ef03d84969ae75733032b768b729bc90c826fa5259f469e29c886a759c1fe",
+  "rawSha256": "683cba48f6fb8b54ab1adf0c08d51a63558be3c60f59baf8e05752a72080c884",
+  "embeddedSourceRefIsStale": true,
+  "reason": "Existing EXPO_PUBLIC measurement source value belongs to day-01 and was preserved. Raw export is unmodified; this sidecar binds the observed run to the current day-02 working tree. No before/after performance claim.",
+  "device": "Chagok M09 Mini / iPhone 13 mini / iOS27.2 simulator",
+  "nativeBuild": "Xcode27.2 simulator Debug ad-hoc signed",
+  "webMode": "Next development",
+  "clock": "RN performance.now",
+  "boundary": "PING send on RN to matching PONG received on RN; one clock",
+  "warmupCount": 3,
+  "sampleCount": 20,
+  "intervalMs": 100,
+  "timeoutMs": 3000,
+  "summaryRecomputed": {
+    "attempts": 20,
+    "success": 20,
+    "failure": 0,
+    "timeout": 0,
+    "cancelled": 0,
+    "medianMs": 1.6881245002150536,
+    "minMs": 1.280791997909546,
+    "maxMs": 13.023874998092651
+  }
+}

@@ -6,12 +6,13 @@
 
 현재 구현된 기능:
 
-- 데모 로그인과 고정 데이터 기반 복지 한도·최근 신청 내역 표시
+- iOS Google 로그인, 서버 사용자 등록·조회, 안전한 세션 저장·복원·만료·로그아웃
+- 데모 진입과 고정 데이터 기반 복지 한도·최근 신청 내역 표시
 - 앱에서 신청 웹 화면 열기·닫기
 - 서버 연결 상태 확인 및 오류 재시도
 - 앱과 웹 사이 메시지 검증·왕복 시간 측정
 
-실제 로그인·영수증 업로드·신청 저장·승인 및 반려는 개발 예정입니다. 현재 앱의 신청 폼은 비활성 상태이며, 별도의 HTML 시안에서 가상 신청 흐름을 확인할 수 있습니다.
+영수증 업로드·신청 저장·승인 및 반려는 개발 예정입니다. 현재 앱의 신청 폼은 비활성 상태이며, 별도의 HTML 시안에서 가상 신청 흐름을 확인할 수 있습니다.
 
 ## 데모
 
@@ -22,8 +23,9 @@
 | 영역 | 기술 |
 | --- | --- |
 | 모바일 | React Native, Expo, Expo Router |
-| 웹 | Next.js, React |
+| 웹 | Next.js, React, Tailwind CSS, shadcn/ui |
 | API·계약 | tRPC, Zod |
+| 인증·저장소 | Google Sign-In, Expo SecureStore, Prisma, PostgreSQL |
 | 언어·구성 | TypeScript, npm workspaces |
 | 테스트 | Vitest |
 
@@ -45,10 +47,11 @@ nvm use # nvm 사용 시. 그 외에는 Node.js 24를 준비합니다.
 npm ci
 ```
 
-처음 설치할 때 모바일 환경 파일을 준비합니다.
+처음 설치할 때 앱과 서버 환경 파일을 준비합니다.
 
 ```sh
 cp apps/mobile/.env.example apps/mobile/.env.local
+cp apps/web/.env.example apps/web/.env.local
 ```
 
 `EXPO_PUBLIC_WEB_ORIGIN`은 앱이 접근할 Next.js 서버 주소입니다. 기본값은 iOS 시뮬레이터용 `http://127.0.0.1:3000`입니다. 환경변수를 변경하면 Metro를 재시작해야 하며, `EXPO_PUBLIC_*`에는 비밀값을 넣지 않습니다. 나머지 설정은 [.env.example](apps/mobile/.env.example)을 참고하세요.
@@ -106,7 +109,7 @@ packages/
   api/          tRPC 라우터
   contracts/    공유 메시지 계약 및 데모 데이터
 scripts/        검증 스크립트
-docs/           기획·개발·검증·학습 문서
+docs/           공개 기획·개발·검증 문서
 ```
 
 ## 프로젝트 문서
@@ -115,8 +118,10 @@ docs/           기획·개발·검증·학습 문서
 - [코드 구조](docs/repository-map.md)
 - [진행 기록](docs/progress.md)
 - [검증 결과](docs/verification/day-01.md) · [수동 확인 절차](docs/manual-checks.md)
-- [측정 기록](docs/metrics/daily/day-01.md) · [학습 기록](docs/learning/day-01.md)
+- [1일차 측정 기록](docs/metrics/daily/day-01.md) · [2일차 측정 기록](docs/metrics/daily/day-02.md)
 - [기준 시안](docs/design/)
+
+학습 파일은 로컬 전용으로 보존하고 Git·PR에 포함하지 않습니다.
 
 ## 기여 방법
 
@@ -129,3 +134,13 @@ docs/           기획·개발·검증·학습 문서
 ## 라이선스
 
 채울 예정
+
+## 2일차 개발 상태
+
+iOS 시뮬레이터의 실제 Google 로그인·세션 복원·만료·로그아웃과 WKWebView 재로드·닫기를 검증했습니다. 신청 화면은 Tailwind/shadcn으로 구성하며 홈의 금액·내역은 계속 데모, 입력·첨부·제출은 비활성입니다. 물리 iPhone·Android·Release 검증과 사용자 전체 UI 인수는 남아 있습니다. 누적 AC와 최신 자동 검사 결과는 [PR 준비 점검](docs/verification/day-02/pr-ready/result.md)을 따릅니다.
+
+- [2일차 인증 설정·DB·재빌드 절차](docs/verification/day-02/auth-setup.md)
+- [2일차 검증과 사용자 확인](docs/verification/day-02.md)
+- [2일차 측정 상태](docs/metrics/daily/day-02.md)
+
+`npm ci` 후 API workspace의 postinstall이 Prisma Client를 생성합니다. 별도 생성은 `npm run db:generate -w @chagok/api`입니다. 서버 전용 `DATABASE_URL`·`GOOGLE_WEB_CLIENT_ID`는 `apps/web/.env.local`에, 공개 OAuth client ID는 기존 모바일 `.env.local`에 설정합니다. 비밀값을 공개 앱 환경변수에 넣지 않습니다.

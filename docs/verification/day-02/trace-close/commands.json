@@ -1,0 +1,27 @@
+{
+  "environment": "Node24.22.3 / Vitest5.1.0 / local PostgreSQL",
+  "target": {
+    "command": ".local-tools/node24/node_modules/.bin/node node_modules/vitest/vitest.mjs run apps/mobile/src/components/ApplyContainer.test.tsx",
+    "red": "3 failed / 4 passed",
+    "green": "7 passed, exit0"
+  },
+  "suite": {
+    "command": "node --env-file=apps/web/.env.local → spawn node node_modules/vitest/vitest.mjs run with CHAGOK_TEST_DATABASE_URL=DATABASE_URL (values not logged)",
+    "result": "12 files / 71 passed / skipped0",
+    "exitCode": 0
+  },
+  "typecheck": {
+    "command": "PATH with Node24 and npm, npm run typecheck",
+    "exitCode": 0
+  },
+  "format": {
+    "command": "node node_modules/prettier/bin/prettier.cjs --check apps/mobile/src/components/ApplyContainer.tsx apps/mobile/src/components/ApplyContainer.test.tsx",
+    "result": "see format.log"
+  },
+  "sourceSha256": {
+    "apps/mobile/src/components/ApplyContainer.tsx": "70f1cac692cbde3cd371a6ca7dcfe51cde8749f70035695ec1e02b5fb12539df",
+    "apps/mobile/src/components/ApplyContainer.test.tsx": "f9a73875af495a207241d586826e8b401a43d07b9a9a728f0ecfae2433e7f372",
+    "apps/mobile/src/bridge/useWebViewBridge.ts": "268236ce26bfc1841536ec20dde5905d98de8cc844e8f97c84445b7eadfe2c87",
+    "apps/mobile/src/dev/webview-trace.ts": "f934969649a113ce2e7048ce1e4e79adc0a555669b73ae194886db3d1372e574"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "checkedAt": "2026-11-16T13:06:16.093596+00:00",
+  "method": "Independent Python statistics recomputation from full journal using predeclared startup window",
+  "journalSamples": 17,
+  "selectedAttempts": 10,
+  "success": 10,
+  "uniqueRunIds": true,
+  "saveFailed": false,
+  "capacityReached": false,
+  "exportedFieldsContainNoAccountOrToken": true,
+  "summaryMatches": true,
+  "medianMs": 225.97695850208402,
+  "minMs": 140.14224999397993,
+  "maxMs": 858.8681249991059,
+  "journalSha256": "80e26d7da01f284f3497ea81aa0802d063c0c4796369393d456802f30e3146f0",
+  "sourceManifestSha256": "68d173ceaf87c0d1497cfa6b1f43c5e8130d1a668eba35b554abe57c8cef0514",
+  "derivedRawSha256": "31cbf03170b6c1e3448e0cd5f1d4a90886c7ac80152fb91e821f66f33b81fe53"
+}

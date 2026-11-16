@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "metric": "session-restore",
+  "status": "measured",
+  "unit": "ms",
+  "boundary": "restore entry through secure storage read and server decision; excludes UI paint",
+  "selection": {
+    "trigger": "startup",
+    "startedAt": "2026-11-16T09:09:56.359Z",
+    "endedAt": "2026-11-16T09:14:20.350Z",
+    "warmup": 0,
+    "reason": "Predeclared normal authenticated process restarts; includes every startup result in the window regardless of status"
+  },
+  "samples": [
+    {
+      "runId": "restore-1794820217966-1",
+      "trigger": "startup",
+      "status": "success",
+      "durationMs": 858.8681249991059,
+      "measuredAt": "2026-11-16T09:10:17.966Z"
+    },
+    {
+      "runId": "restore-1794820253613-1",
+      "trigger": "startup",
+      "status": "success",
+      "durationMs": 420.0759589970112,
+      "measuredAt": "2026-11-16T09:10:53.613Z"
+    },
+    {
+      "runId": "restore-1794820294581-1",
+      "trigger": "startup",
+      "status": "success",
+      "durationMs": 319.65012499690056,
+      "measuredAt": "2026-11-16T09:11:34.581Z"
+    },
+    {
+      "runId": "restore-1794820310940-1",
+      "trigger": "startup",
+      "status": "success",
+      "durationMs": 177.9836670011282,
+      "measuredAt": "2026-11-16T09:11:50.940Z"
+    },
+    {
+      "runId": "restore-1794820328074-1",
+      "trigger": "startup",
+      "status": "success",
+      "durationMs": 153.76058299839497,
+      "measuredAt": "2026-11-16T09:12:08.074Z"
+    },
+    {
+      "runId": "restore-1794820346604-1",
+      "trigger": "startup",
+      "status": "success",
+      "durationMs": 185.4392499998212,
+      "measuredAt": "2026-11-16T09:12:26.604Z"
+    },
+    {
+      "runId": "restore-1794820362953-1",
+      "trigger": "startup",
+      "status": "success",
+      "durationMs": 198.17420800030231,
+      "measuredAt": "2026-11-16T09:12:42.953Z"
+    },
+    {
+      "runId": "restore-1794820381945-1",
+      "trigger": "startup",
+      "status": "success",
+      "durationMs": 253.77970900386572,
+      "measuredAt": "2026-11-16T09:13:01.945Z"
+    },
+    {
+      "runId": "restore-1794820402189-1",
+      "trigger": "startup",
+      "status": "success",
+      "durationMs": 140.14224999397993,
+      "measuredAt": "2026-11-16T09:13:22.189Z"
+    },
+    {
+      "runId": "restore-1794820433687-1",
+      "trigger": "startup",
+      "status": "success",
+      "durationMs": 364.3902499973774,
+      "measuredAt": "2026-11-16T09:13:53.687Z"
+    }
+  ],
+  "summary": {
+    "attempts": 10,
+    "success": 10,
+    "empty": 0,
+    "expired": 0,
+    "failure": 0,
+    "timeout": 0,
+    "cancelled": 0,
+    "medianMs": 225.97695850208402,
+    "minMs": 140.14224999397993,
+    "maxMs": 858.8681249991059
+  },
+  "journal": "day-02-session-restore-journal.json",
+  "journalSha256": "80e26d7da01f284f3497ea81aa0802d063c0c4796369393d456802f30e3146f0",
+  "journalSampleCount": 17,
+  "journalStatusCounts": {
+    "empty": 4,
+    "success": 11,
+    "failure": 1,
+    "expired": 1
+  },
+  "sourceManifest": "../../verification/day-02/oauth/source-sha256.json",
+  "environment": "../environments/day-02.yaml"
+}

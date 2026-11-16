@@ -1,0 +1,28 @@
+
+> chagok@0.1.0 test
+> vitest run apps/mobile/src/auth/metric-journal.test.ts
+
+
+ RUN  v5.1.0 /Users/doyeon/Desktop/chagok
+
+ ❯ apps/mobile/src/auth/metric-journal.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/mobile/src/auth/metric-journal.test.ts [ apps/mobile/src/auth/metric-journal.test.ts ]
+Error: Cannot find module './metric-journal' imported from /Users/doyeon/Desktop/chagok/apps/mobile/src/auth/metric-journal.test.ts
+ ❯ apps/mobile/src/auth/metric-journal.test.ts:2:1
+      1| import {expect,it} from 'vitest';
+      2| import {createMetricJournal} from './metric-journal';
+       | ^
+      3| it('retains startup and failure samples beyond ten writes and across j…
+      4|  const data=new Map<string,string>();const storage={get:async(k:string…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  16:55:24
+   Duration  352ms (worker 97%, environment 3%)
+

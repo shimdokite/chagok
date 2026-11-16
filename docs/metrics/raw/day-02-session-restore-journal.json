@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "metric": "session-restore",
+  "unit": "ms",
+  "boundary": "restore entry through secure storage read and server decision; excludes UI paint",
+  "saveFailed": false,
+  "capacity": 100,
+  "capacityReached": false,
+  "samples": [
+    {
+      "runId": "restore-1794816397137-1",
+      "trigger": "startup",
+      "status": "empty",
+      "durationMs": 413.0321249961853,
+      "measuredAt": "2026-11-16T08:06:37.137Z"
+    },
+    {
+      "runId": "restore-1794819285058-1",
+      "trigger": "startup",
+      "status": "empty",
+      "durationMs": 89.11183299869299,
+      "measuredAt": "2026-11-16T08:54:45.058Z"
+    },
+    {
+      "runId": "restore-1794819355558-3",
+      "trigger": "foreground",
+      "status": "empty",
+      "durationMs": 26.233917005360126,
+      "measuredAt": "2026-11-16T08:55:55.558Z"
+    },
+    {
+      "runId": "restore-1794820217966-1",
+      "trigger": "startup",
+      "status": "success",
+      "durationMs": 858.8681249991059,
+      "measuredAt": "2026-11-16T09:10:17.966Z"
+    },
+    {
+      "runId": "restore-1794820253613-1",
+      "trigger": "startup",
+      "status": "success",
+      "durationMs": 420.0759589970112,
+      "measuredAt": "2026-11-16T09:10:53.613Z"
+    },
+    {
+      "runId": "restore-1794820294581-1",
+      "trigger": "startup",
+      "status": "success",
+      "durationMs": 319.65012499690056,
+      "measuredAt": "2026-11-16T09:11:34.581Z"
+    },
+    {
+      "runId": "restore-1794820310940-1",
+      "trigger": "startup",
+      "status": "success",
+      "durationMs": 177.9836670011282,
+      "measuredAt": "2026-11-16T09:11:50.940Z"
+    },
+    {
+      "runId": "restore-1794820328074-1",
+      "trigger": "startup",
+      "status": "success",
+      "durationMs": 153.76058299839497,
+      "measuredAt": "2026-11-16T09:12:08.074Z"
+    },
+    {
+      "runId": "restore-1794820346604-1",
+      "trigger": "startup",
+      "status": "success",
+      "durationMs": 185.4392499998212,
+      "measuredAt": "2026-11-16T09:12:26.604Z"
+    },
+    {
+      "runId": "restore-1794820362953-1",
+      "trigger": "startup",
+      "status": "success",
+      "durationMs": 198.17420800030231,
+      "measuredAt": "2026-11-16T09:12:42.953Z"
+    },
+    {
+      "runId": "restore-1794820381945-1",
+      "trigger": "startup",
+      "status": "success",
+      "durationMs": 253.77970900386572,
+      "measuredAt": "2026-11-16T09:13:01.945Z"
+    },
+    {
+      "runId": "restore-1794820402189-1",
+      "trigger": "startup",
+      "status": "success",
+      "durationMs": 140.14224999397993,
+      "measuredAt": "2026-11-16T09:13:22.189Z"
+    },
+    {
+      "runId": "restore-1794820433687-1",
+      "trigger": "startup",
+      "status": "success",
+      "durationMs": 364.3902499973774,
+      "measuredAt": "2026-11-16T09:13:53.687Z"
+    },
+    {
+      "runId": "restore-1794820480289-1",
+      "trigger": "startup",
+      "status": "failure",
+      "durationMs": 243.39054200053215,
+      "measuredAt": "2026-11-16T09:14:40.289Z"
+    },
+    {
+      "runId": "restore-1794820515696-2",
+      "trigger": "retry",
+      "status": "success",
+      "durationMs": 877.7456670030951,
+      "measuredAt": "2026-11-16T09:15:15.696Z"
+    },
+    {
+      "runId": "restore-1794820558881-1",
+      "trigger": "startup",
+      "status": "empty",
+      "durationMs": 99.69445800036192,
+      "measuredAt": "2026-11-16T09:15:58.881Z"
+    },
+    {
+      "runId": "restore-1794821612983-1",
+      "trigger": "startup",
+      "status": "expired",
+      "durationMs": 83.49204199761152,
+      "measuredAt": "2026-11-16T09:33:32.983Z"
+    }
+  ]
+}

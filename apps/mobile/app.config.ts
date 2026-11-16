@@ -12,7 +12,24 @@ const config: ExpoConfig = {
     infoPlist: { NSAppTransportSecurity: { NSAllowsLocalNetworking: true } },
   },
   android: { package: "dev.doyeon.chagok" },
-  plugins: ["expo-router"],
+  plugins: [
+    "expo-router",
+    "expo-secure-store",
+    ...(process.env.EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID
+      ? [
+          [
+            "@react-native-google-signin/google-signin",
+            {
+              iosUrlScheme: process.env.EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID.split(
+                ".",
+              )
+                .reverse()
+                .join("."),
+            },
+          ] as [string, Record<string, string>],
+        ]
+      : []),
+  ],
   web: { bundler: "metro", output: "single" },
 };
 export default config;

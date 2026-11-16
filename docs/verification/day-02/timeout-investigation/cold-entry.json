@@ -1,0 +1,61 @@
+[
+  {
+    "startedAt": "2026-11-16T13:41:24.436Z",
+    "dropped": 0
+  },
+  {
+    "seq": 1,
+    "ms": 11.571,
+    "revision": 0,
+    "kind": "mount"
+  },
+  {
+    "seq": 2,
+    "ms": 11.73,
+    "revision": 0,
+    "kind": "timer-armed"
+  },
+  {
+    "seq": 3,
+    "ms": 1493.376,
+    "revision": 0,
+    "kind": "navigation-allowed"
+  },
+  {
+    "seq": 4,
+    "ms": 1519.005,
+    "revision": 0,
+    "kind": "load-start",
+    "ready": false
+  },
+  {
+    "seq": 5,
+    "ms": 3273.066,
+    "revision": 0,
+    "kind": "load-end"
+  },
+  {
+    "seq": 6,
+    "ms": 3358.342,
+    "revision": 0,
+    "kind": "load-end"
+  },
+  {
+    "seq": 7,
+    "ms": 3364.445,
+    "revision": 0,
+    "kind": "ready"
+  },
+  {
+    "seq": 8,
+    "ms": 3367.332,
+    "revision": 0,
+    "kind": "timer-cleared"
+  },
+  {
+    "seq": 9,
+    "ms": 3368.102,
+    "revision": 0,
+    "kind": "ready"
+  }
+]

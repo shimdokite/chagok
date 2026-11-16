@@ -1,0 +1,34 @@
+
+> chagok@0.1.0 dev:mobile
+> npm run dev -w @chagok/mobile
+
+
+> @chagok/mobile@0.1.0 dev
+> expo start --dev-client
+
+env: load .env.local
+env: export EXPO_PUBLIC_BENCHMARK_APP_BUILD EXPO_PUBLIC_BENCHMARK_DEVICE EXPO_PUBLIC_BENCHMARK_SOURCE_REF EXPO_PUBLIC_BENCHMARK_WEB_MODE EXPO_PUBLIC_VISUAL_CHECKS EXPO_PUBLIC_WEB_ORIGIN
+Starting project at /Users/doyeon/Desktop/chagok/apps/mobile
+Expo Autolinking module resolution enabled
+Unable to run simctl:
+Error: xcrun simctl help exited with non-zero code: 72
+Starting Metro Bundler
+
+Waiting on http://localhost:8081
+
+Logs for your project will appear below.
+| (node:15711) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:15711) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:15711) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:15711) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:15711) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:15711) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+iOS Bundled 3193ms node_modules/expo-router/entry.js (1571 modules)
+iOS Bundled 233ms node_modules/expo-router/entry.js (1 module)
+iOS Bundled 209ms node_modules/expo-router/entry.js (1 module)

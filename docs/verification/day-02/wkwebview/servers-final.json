@@ -1,0 +1,17 @@
+{
+  "at": "2026-11-16T13:27:03.056691+00:00",
+  "checks": [
+    {
+      "url": "http://localhost:3000/apply",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:8081/status",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:8082/",
+      "status": 200
+    }
+  ]
+}

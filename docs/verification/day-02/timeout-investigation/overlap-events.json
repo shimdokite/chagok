@@ -1,0 +1,191 @@
+[
+  {
+    "startedAt": "2026-11-16T13:41:24.436Z",
+    "dropped": 0,
+    "hiddenInView": 97
+  },
+  {
+    "seq": 98,
+    "ms": 287692.766,
+    "revision": 10,
+    "kind": "timer-cleared"
+  },
+  {
+    "seq": 99,
+    "ms": 287695.954,
+    "revision": 10,
+    "kind": "ready"
+  },
+  {
+    "seq": 100,
+    "ms": 294366.424,
+    "revision": 10,
+    "kind": "reload"
+  },
+  {
+    "seq": 101,
+    "ms": 294389.842,
+    "revision": 11,
+    "kind": "timer-armed"
+  },
+  {
+    "seq": 102,
+    "ms": 294936.898,
+    "revision": 11,
+    "kind": "navigation-allowed"
+  },
+  {
+    "seq": 103,
+    "ms": 294937.407,
+    "revision": 11,
+    "kind": "load-start",
+    "ready": false
+  },
+  {
+    "seq": 104,
+    "ms": 297278.785,
+    "revision": 11,
+    "kind": "load-end"
+  },
+  {
+    "seq": 105,
+    "ms": 297345.787,
+    "revision": 11,
+    "kind": "load-end"
+  },
+  {
+    "seq": 106,
+    "ms": 297346.257,
+    "revision": 11,
+    "kind": "ready"
+  },
+  {
+    "seq": 107,
+    "ms": 297362.957,
+    "revision": 11,
+    "kind": "timer-cleared"
+  },
+  {
+    "seq": 108,
+    "ms": 297366.054,
+    "revision": 11,
+    "kind": "ready"
+  },
+  {
+    "seq": 109,
+    "ms": 416625.332,
+    "revision": 11,
+    "kind": "reload"
+  },
+  {
+    "seq": 110,
+    "ms": 416645.257,
+    "revision": 12,
+    "kind": "timer-armed"
+  },
+  {
+    "seq": 111,
+    "ms": 417664.604,
+    "revision": 12,
+    "kind": "navigation-allowed"
+  },
+  {
+    "seq": 112,
+    "ms": 417665.18,
+    "revision": 12,
+    "kind": "load-start",
+    "ready": false
+  },
+  {
+    "seq": 113,
+    "ms": 419938.565,
+    "revision": 12,
+    "kind": "reload"
+  },
+  {
+    "seq": 114,
+    "ms": 419963.576,
+    "revision": 12,
+    "kind": "timer-cleared"
+  },
+  {
+    "seq": 115,
+    "ms": 419964.9,
+    "revision": 13,
+    "kind": "timer-armed"
+  },
+  {
+    "seq": 116,
+    "ms": 420386.134,
+    "revision": 13,
+    "kind": "navigation-allowed"
+  },
+  {
+    "seq": 117,
+    "ms": 420387.185,
+    "revision": 13,
+    "kind": "load-start",
+    "ready": false
+  },
+  {
+    "seq": 118,
+    "ms": 423323.171,
+    "revision": 13,
+    "kind": "reload"
+  },
+  {
+    "seq": 119,
+    "ms": 423331.681,
+    "revision": 13,
+    "kind": "timer-cleared"
+  },
+  {
+    "seq": 120,
+    "ms": 423332.916,
+    "revision": 14,
+    "kind": "timer-armed"
+  },
+  {
+    "seq": 121,
+    "ms": 424128.264,
+    "revision": 14,
+    "kind": "navigation-allowed"
+  },
+  {
+    "seq": 122,
+    "ms": 424128.605,
+    "revision": 14,
+    "kind": "load-start",
+    "ready": false
+  },
+  {
+    "seq": 123,
+    "ms": 436914.852,
+    "revision": 14,
+    "kind": "load-end"
+  },
+  {
+    "seq": 124,
+    "ms": 436968.748,
+    "revision": 14,
+    "kind": "load-end"
+  },
+  {
+    "seq": 125,
+    "ms": 436970.662,
+    "revision": 14,
+    "kind": "ready"
+  },
+  {
+    "seq": 126,
+    "ms": 436970.76,
+    "revision": 14,
+    "kind": "ready"
+  },
+  {
+    "seq": 127,
+    "ms": 436978.232,
+    "revision": 14,
+    "kind": "timer-cleared"
+  }
+]
