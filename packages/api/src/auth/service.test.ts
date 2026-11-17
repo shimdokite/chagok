@@ -16,16 +16,20 @@ function setup() {
       sessions.set(hash, { userId: user.id, expiresAt });
       return user;
     },
+
     async findSession(hash) {
       return sessions.get(hash) ?? null;
     },
+
     async deleteSession(hash) {
       sessions.delete(hash);
     },
   };
   const service = createAuthService({
     store,
+
     now: () => now,
+
     verifyGoogle: async (token) => {
       if (token !== "valid-google-token")
         throw new Error("secret provider detail");
@@ -36,11 +40,13 @@ function setup() {
     service,
     users,
     sessions,
+
     advance: (ms: number) => {
       now += ms;
     },
   };
 }
+
 describe("authentication service", () => {
   it("reuses a Google subject and stores only hashes of distinct random sessions", async () => {
     const { service, users, sessions } = setup();

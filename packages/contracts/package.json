@@ -4,7 +4,8 @@
   "private": true,
   "exports": {
     ".": "./src/bridge.ts",
-    "./demo": "./src/demo.ts"
+    "./demo": "./src/demo.ts",
+    "./benefits": "./src/benefits.ts"
   },
   "scripts": {
     "typecheck": "tsc --noEmit"

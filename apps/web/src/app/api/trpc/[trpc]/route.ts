@@ -1,6 +1,8 @@
 import { fetchRequestHandler } from "@trpc/server/adapters/fetch";
 import { appRouter, createApiContext } from "@chagok/api";
+
 export const runtime = "nodejs";
+
 function previewHeaders(req: Request) {
   const headers = new Headers();
   const origin = req.headers.get("origin");
@@ -21,11 +23,13 @@ function previewHeaders(req: Request) {
   }
   return headers;
 }
+
 async function handler(req: Request) {
   const response = await fetchRequestHandler({
     endpoint: "/api/trpc",
     req,
     router: appRouter,
+
     createContext: () => createApiContext(req),
   });
   response.headers.set("Cache-Control", "no-store");
@@ -34,7 +38,9 @@ async function handler(req: Request) {
   );
   return response;
 }
+
 export function OPTIONS(req: Request) {
   return new Response(null, { status: 204, headers: previewHeaders(req) });
 }
+
 export { handler as GET, handler as POST };

@@ -12,6 +12,7 @@ import {
 } from "../metrics/bridge-benchmark";
 import { runRecordedBenchmark } from "../metrics/benchmark-history";
 import { webOrigin } from "../lib/trpc";
+
 export function useWebViewBridge(
   webview: React.RefObject<WebView<object> | null>,
   onClose: () => void,
@@ -40,10 +41,12 @@ export function useWebViewBridge(
           process.env.EXPO_PUBLIC_BENCHMARK_SOURCE_REF ?? "day-01 working-tree",
       },
     );
+
   const reset = useCallback((reason: string) => {
     engine.current!.reset(reason);
     setReady(false);
   }, []);
+
   useEffect(() => {
     mounted.current = true;
     return () => {
@@ -51,6 +54,7 @@ export function useWebViewBridge(
       engine.current!.reset("unmount");
     };
   }, []);
+
   const receive = (data: string, url: string) => {
     if (!isAllowedApplyUrl(url, webOrigin)) return "rejected-origin";
     const parsed = parseBridgeMessage(data);
@@ -67,6 +71,7 @@ export function useWebViewBridge(
     setReady(engine.current!.ready);
     return "accepted";
   };
+
   const run = async () => {
     if (engine.current!.running || !engine.current!.ready) return;
     setRunning(true);
@@ -81,5 +86,6 @@ export function useWebViewBridge(
       if (mounted.current) setRunning(false);
     }
   };
+
   return { ready, running, result, receive, reset, run };
 }

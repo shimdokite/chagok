@@ -1,6 +1,7 @@
 import { OAuth2Client } from "google-auth-library";
 
 const client = new OAuth2Client();
+
 // The SDK verifies the signature against Google's rotating keys, issuer,
 // audience, and expiry. Never trust a client-decoded JWT or a client user id.
 export async function verifyGoogle(idToken: string) {

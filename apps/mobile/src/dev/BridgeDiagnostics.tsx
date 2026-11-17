@@ -1,10 +1,12 @@
 import { useState } from "react";
 import type { WebViewTrace } from "./webview-trace";
+
 type TraceSnapshot = ReturnType<WebViewTrace["snapshot"]>;
 import { View, Text, Share, ScrollView } from "react-native";
 import { Button } from "../components/ui";
 import { useTheme } from "../theme/tokens";
 import type { BenchmarkResult } from "../metrics/bridge-benchmark";
+
 export function BridgeDiagnostics({
   ready,
   running,

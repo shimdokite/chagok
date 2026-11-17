@@ -1,6 +1,8 @@
 # 1일차 실행 기록 — 2026-11-13 KST
 
-최신 2일차 누적 상태: [PR 준비 점검·AC·수동 확인](verification/day-02/pr-ready/result.md). 이전 항목은 당시 실행 기록이며, 게시 승인은 아직 대기 중이다.
+최신 상태(2026-11-17): [3일차 구현·AC·수동 확인](verification/day-03.md). commit·push·PR 없음. 아래 2일차 게시 대기 문구는 당시 기록이며 현재 HEAD는 PR #4 병합 이후다.
+
+이전 2일차 누적 상태: [PR 준비 점검·AC·수동 확인](verification/day-02/pr-ready/result.md). 이전 항목은 당시 실행 기록이며, 게시 승인은 아직 대기 중이다.
 
 계획: `docs/plans/day-01.md`. 작업 위치: `/Users/doyeon/Desktop/chagok`.
 
@@ -193,3 +195,25 @@ Device Hub 실제 화면과 정상 스크롤 사용감의 사용자 확인을 �
 ## iOS 종료 실측 완료 — 2026-11-16
 
 Simulator 실제 native app/WKWebView에서 웹 재로드2회 후 close2→unmount2, native 재로드3회 후 close3→unmount3을 각각1회 확인했다. 웹 클릭은 도구 오류로 사용자가 수행했고 로그/홈 상태는 도구로 검증했다. native 클릭은 도구로 수행했다. 종료 직후 준비 timer도 해제됐으며 이벤트 누락·중복/오류는 없다. 임시 로그 sink를 제거하고 앱/패키지82파일 시작 해시 일치, 최종 타입/실제 DB71테스트 통과. [원본·AC·한계](verification/day-02/native-close/result.md). 물리 iPhone/Release/모든 동시성 검증은 아니며 과거 타임아웃 분기 미확정은 유지한다. 추가 사용자 조작 대기는 없다.
+
+
+## 3일차 — 2026-11-17
+
+- 승인 범위를 docs/plans/day-03.md에 작성하고 기존 코드 컨벤션을 적용했다. 기존 컨벤션 변경/handoff/학습/과거 자료 보존, 현재 폴더에서 작업, staging/commit/push/PR 없음.
+- Task1: 회사·소속·월 정책·신청 스키마, 실제 세션 검증 읽기 API, 로컬 seed/link 및 통합 테스트 구현. 두 마이그레이션 적용·기존 데이터 보존.
+- Task2: TanStack Query5.107.1, 서버 세션의 회사ID를 키에 포함, 30초 메모리 캐시/취소/세션 및 회사 변경 정리.
+- Task3: 실제 홈·월/상태 내역·상세 반려 사유·정책 안내, 명시적 상태·재시도, 익명 데모와 개발용 DB 샘플 구분. 비활성 신청 유지.
+- Task4: 타입·스타일·실DB 포함130테스트·webpack 빌드·양 플랫폼 JS export, 브라우저 및 iOS 데모 탐색·WebView 열기/닫기, 실제 HTTP1→0→1/1002B 측정. 최초 에이전트 기본 Turbopack 실행은 포트 EPERM으로 실패했으며, 후속 사용자 일반 터미널 실행 로그에서 성공 확인.
+- 독립 리뷰 P2 두 건: 소속 변경 시 과거 신청 cascade, 내역 페이지 company 변화 미반영. RED 확인→ON UPDATE RESTRICT와 응답 소속 검증/캐시 초기화→GREEN. 상세 오류 시 오래된 본문도 숨긴다.
+- 결정: auth 응답에 companyId를 추가해 별도 소속 API 없이 안전한 캐시 키를 구성했다. 소속 이동 기능은 만들지 않고 이력이 있는 소속의 회사 변경은 거부한다. 과거 이력 이전이 필요하면 별도 모델 설계 비용이 든다.
+- 후속 확인: 실제 Google 계정·명시적 그로브 연결 후 조회/네트워크 복구는 개발자 확인, 계정 전환 정보 격리·최대 글자 홈/반려 상세/복지안내·카테고리 여백·Light/3 복원 후 홈은 사용자 확인 완료. 기본 Turbopack 성공은 사용자 제공 로그로 확인. [근거](verification/day-03/followup/user-confirmation.md).
+- 승인된 AC: D3-07 포함8개 충족. 원래 기준은 회귀·타입·스타일·빌드와 브라우저/iOS 화면 확인이며 Android 실제 실행을 필수로 요구하지 않는다. 별도 플랫폼 검증: Android 휴대폰·에뮬레이터 부재로 실제 실행 미검증 유지. 이번 문서 정리에서 코드 변경·앱 테스트 재실행·staging·commit·push·PR 없음.
+
+
+## 3일차 PR 준비 — 2026-11-17
+
+- 원격 main과 HEAD 4be4ffb 일치 확인. 기존 누적 구현·컨벤션·카테고리 변경과 신규 파일을 함께 리뷰했다.
+- P2 상세 NOT_FOUND→세션 복원→재활성화 반복을 재현하고 한 번만 확인하도록 수정했다. 이후 UNAUTHORIZED 인증 복구는 항상 수행하며 두 실패 경로의 RED→GREEN 및 독립 재검토를 완료했다.
+- 최종 실제 DB 포함156개·타입4개 workspace·간격88파일·webpack·iOS/Android JS export 통과. 에이전트 기본 Turbopack은 포트 EPERM으로 실패했고 이전 사용자 일반 터미널 성공과 구분한다.
+- 학습 파일은 이미 2일차 PR #4에서 추적 제거가 병합돼 추가 git rm이 필요 없었다. 로컬3개 해시 보존·tracked0·제외 규칙 확인. handoff와 학습 본문은 게시 후보에 포함하지 않는다.
+- [최종 점검](verification/day-03/pr-ready/result.md), [누적 PR 초안](changes/latest-pr.md), [커밋 초안](changes/latest-commit.txt). 예정 브랜치 feat/day-03-benefits → main, 현재 main 유지. staging·commit·push·PR 생성 없이 사용자 최종 검토를 기다린다. D3-01~08 충족, Android 실행은 별도 미검증.

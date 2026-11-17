@@ -3,13 +3,15 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { demoBalance, won } from "@chagok/contracts/demo";
+
 const group = "grid min-w-0 gap-[10px]";
+
 export default function Apply() {
   return (
     <main className="mx-auto min-h-dvh max-w-[520px] px-[23px] pb-[30px] max-[340px]:px-[18px] max-[340px]:pb-6">
       <header className="flex min-h-[76px] items-center justify-between gap-3">
         <strong className="text-[17px] font-semibold">복지비 신청</strong>
-        <span className="text-xs text-muted-foreground">▥ 그로브</span>
+        <span className="text-xs text-muted-foreground">▥ 신청 예시</span>
       </header>
       <BridgeReceiver />
       <section className="my-[30px]">
@@ -63,7 +65,7 @@ export default function Apply() {
               id="amount-hint"
               className="text-xs leading-normal font-normal text-muted-foreground"
             >
-              현재 {won(demoBalance.available)}원까지 신청할 수 있어요.
+              샘플 한도 {won(demoBalance.available)}원 · 실제 계정 잔액은 홈에서 확인하세요.
             </small>
           </div>
           <div className={group}>

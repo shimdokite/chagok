@@ -1,7 +1,14 @@
 import { initTRPC, TRPCError } from "@trpc/server";
 import { z } from "zod";
 import type { AuthService } from "./auth/service";
-type Context = { token?: string; getAuth: () => AuthService };
+import type { BenefitsService } from "./benefits/service";
+import { historyInput, monthSchema } from "@chagok/contracts/benefits";
+
+type Context = {
+  token?: string;
+  getAuth: () => AuthService;
+  getBenefits: () => BenefitsService;
+};
 const t = initTRPC.context<Context>().create({
   errorFormatter({ shape, error }) {
     return {
@@ -22,7 +29,31 @@ const sessionProcedure = t.procedure.use(({ ctx, next }) => {
     });
   return next();
 });
+const employeeProcedure = sessionProcedure.use(async ({ ctx, next }) => {
+  const session = await ctx.getAuth().session(ctx.token);
+  return next({ ctx: { ...ctx, userId: session.user.id } });
+});
 export const appRouter = t.router({
+  benefits: t.router({
+    home: employeeProcedure
+      .input(z.object({ month: monthSchema }).strict())
+      .query(({ ctx, input }) =>
+        ctx.getBenefits().home(ctx.userId, input.month),
+      ),
+    history: employeeProcedure
+      .input(historyInput)
+      .query(({ ctx, input }) => ctx.getBenefits().history(ctx.userId, input)),
+    detail: employeeProcedure
+      .input(z.object({ id: z.string().min(1).max(100) }).strict())
+      .query(({ ctx, input }) =>
+        ctx.getBenefits().detail(ctx.userId, input.id),
+      ),
+    policy: employeeProcedure
+      .input(z.object({ month: monthSchema }).strict())
+      .query(({ ctx, input }) =>
+        ctx.getBenefits().policy(ctx.userId, input.month),
+      ),
+  }),
   auth: t.router({
     signIn: t.procedure
       .input(z.object({ idToken: z.string().min(1).max(8192) }).strict())

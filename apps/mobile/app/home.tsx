@@ -1,24 +1,38 @@
+import { useState } from "react";
+import { ScrollView, View, Text } from "react-native";
 import { useSession } from "../src/auth/SessionProvider";
 import { SessionDiagnostics } from "../src/dev/SessionDiagnostics";
-import { Button } from "../src/components/ui";
 import { VisualCheckControls } from "../src/dev/VisualCheckControls";
 import { useVisualCheckScroll } from "../src/dev/useVisualCheckScroll";
-import { useState } from "react";
-import { ScrollView, View, Text, Pressable } from "react-native";
-import { Page, Header, Icon, styles } from "../src/components/ui";
+import { Page, Header, Button, styles } from "../src/components/ui";
 import { BenefitBalanceCard } from "../src/components/BenefitBalanceCard";
 import { BenefitCategoryList } from "../src/components/BenefitCategoryList";
 import { RecentRequestList } from "../src/components/RecentRequestList";
 import { ServerDiagnostics } from "../src/dev/ServerDiagnostics";
 import { useTheme } from "../src/theme/tokens";
+import { currentMonth } from "@chagok/contracts/benefits";
+import { useHome } from "../src/benefits/queries";
+import {
+  BenefitNavigation,
+  Message,
+  MonthControl,
+  QueryFeedback,
+} from "../src/benefits/screen";
+
 export default function Home() {
   const c = useTheme();
   const { state, controller } = useSession();
   const visual = useVisualCheckScroll();
-  const [notice, setNotice] = useState("");
+  const [month, setMonth] = useState(() =>
+    state.status === "demo" ? "2026-11" : currentMonth(),
+  );
+  const query = useHome(month);
+  const data = query.data;
+  const company = data && data.kind !== "unassigned" ? data.company : undefined;
+  const isDemo = state.status === "demo";
   return (
     <Page>
-      <Header />
+      <Header company={company?.name} />
       <ScrollView
         ref={visual.ref}
         onLayout={visual.onLayout}
@@ -26,11 +40,9 @@ export default function Home() {
         scrollEventThrottle={16}
         contentContainerStyle={styles.content}
       >
-        <View>
+        <View style={{ gap: 12 }}>
           <Text style={{ color: c.secondary, fontSize: 14 }}>
-            {state.status === "authenticated"
-              ? "안녕하세요."
-              : "도연님, 안녕하세요."}
+            {isDemo ? "도연님, 안녕하세요." : "안녕하세요."}
           </Text>
           <Text
             style={{
@@ -38,42 +50,46 @@ export default function Home() {
               fontSize: 26,
               lineHeight: 36,
               fontWeight: "600",
-              marginTop: 10,
             }}
           >
             나를 위한 복지,{"\n"}차곡차곡 누려요.
           </Text>
-          <Text
-            style={{
-              alignSelf: "flex-start",
-              backgroundColor: c.soft,
-              color: c.accent,
-              fontSize: 10,
-              paddingVertical: 4,
-              paddingHorizontal: 8,
-              borderRadius: 6,
-              marginTop: 12,
-            }}
-          >
-            데모 데이터 · 2026년 11월
-          </Text>
+          {isDemo ? <Message>익명 데모 · 가상 데이터</Message> : null}
+          {!isDemo && company?.isSample ? (
+            <Message>개발용 샘플 회사 · DB 조회 데이터</Message>
+          ) : null}
         </View>
-        <BenefitBalanceCard />
-        <BenefitCategoryList />
-        <RecentRequestList />
-        {notice ? (
-          <Text
-            accessibilityLiveRegion="polite"
-            style={{ color: c.secondary, fontSize: 13 }}
-          >
-            {notice}
-          </Text>
+        <MonthControl month={month} onChange={setMonth} />
+        <QueryFeedback
+          pending={query.isPending}
+          error={query.isError}
+          fetching={query.isFetching}
+          retry={() => void query.refetch()}
+        />
+        {data?.kind === "unassigned" ? (
+          <Message>
+            아직 회사에 연결되지 않았어요. 회사 담당자에게 소속 등록을 요청해
+            주세요.
+          </Message>
+        ) : null}
+        {data?.kind === "noPolicy" ? (
+          <Message>
+            이 달의 복지 정책이 아직 등록되지 않았어요. 다른 달을 확인하거나
+            담당자에게 문의해 주세요.
+          </Message>
+        ) : null}
+        {data?.kind === "ready" ? (
+          <>
+            <BenefitBalanceCard amounts={data.amounts} month={month} />
+            <BenefitCategoryList categories={data.policy.categories} />
+            <RecentRequestList items={data.recent} />
+          </>
         ) : null}
         <Button
           secondary
-          title={state.status === "demo" ? "데모 나가기" : "로그아웃"}
+          title={isDemo ? "데모 나가기" : "로그아웃"}
           onPress={() => {
-            if (state.status === "demo") controller.leaveDemo();
+            if (isDemo) controller.leaveDemo();
             else void controller.signOut();
           }}
         />
@@ -84,43 +100,7 @@ export default function Home() {
           </>
         ) : null}
       </ScrollView>
-      <View
-        style={{
-          flexDirection: "row",
-          borderTopWidth: 1,
-          borderColor: c.line,
-          backgroundColor: c.surface,
-          paddingVertical: 10,
-        }}
-      >
-        {[
-          ["home", "홈"],
-          ["list", "신청 내역"],
-          ["info", "복지 안내"],
-        ].map(([icon, label], i) => (
-          <Pressable
-            key={label}
-            accessibilityRole="button"
-            onPress={() =>
-              setNotice(i === 0 ? "" : `${label} 기능은 준비 중이에요.`)
-            }
-            style={{ flex: 1, alignItems: "center", gap: 4, minHeight: 44 }}
-          >
-            <Icon name={icon} color={i === 0 ? c.accent : c.secondary} />
-            <Text
-              style={{
-                fontSize: 10,
-                color: i === 0 ? c.accent : c.secondary,
-                width: "100%",
-                paddingHorizontal: 4,
-                textAlign: "center",
-              }}
-            >
-              {label}
-            </Text>
-          </Pressable>
-        ))}
-      </View>
+      <BenefitNavigation />
       <VisualCheckControls move={visual.move} />
     </Page>
   );

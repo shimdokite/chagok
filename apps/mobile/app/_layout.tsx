@@ -1,3 +1,4 @@
+import { BenefitsProvider } from "../src/benefits/BenefitsProvider";
 import { Text, View, ActivityIndicator } from "react-native";
 import { Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
@@ -5,13 +6,17 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 import { SessionProvider, useSession } from "../src/auth/SessionProvider";
 import { useTheme } from "../src/theme/tokens";
 import { canAccessApp } from "../src/auth/session";
+
 export default function Layout() {
   return (
     <SessionProvider>
-      <Navigation />
+      <BenefitsProvider>
+        <Navigation />
+      </BenefitsProvider>
     </SessionProvider>
   );
 }
+
 function Navigation() {
   const c = useTheme();
   const { state } = useSession();
@@ -32,6 +37,9 @@ function Navigation() {
           <Stack.Protected guard={allowed}>
             <Stack.Screen name="home" />
             <Stack.Screen name="apply" />
+            <Stack.Screen name="history" />
+            <Stack.Screen name="policy" />
+            <Stack.Screen name="requests/[id]" />
           </Stack.Protected>
         </Stack>
         {state.status === "busy" ? (

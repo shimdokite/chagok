@@ -1,10 +1,21 @@
 import { View, Text } from "react-native";
 import { router } from "expo-router";
-import { demoBalance, won } from "../fixtures/demo-benefits";
+import type { Amounts } from "@chagok/contracts/benefits";
+import { won } from "../fixtures/demo-benefits";
 import { useTheme } from "../theme/tokens";
 import { Button, Icon, styles } from "./ui";
-export function BenefitBalanceCard() {
+
+export function BenefitBalanceCard({
+  amounts,
+  month,
+}: {
+  amounts: Amounts;
+  month: string;
+}) {
   const c = useTheme();
+  const used = amounts.submitted + amounts.approved;
+  const progress =
+    amounts.total > 0 ? Math.min(100, (used / amounts.total) * 100) : 0;
   return (
     <View
       style={{
@@ -16,7 +27,7 @@ export function BenefitBalanceCard() {
     >
       <View style={styles.row}>
         <Text style={{ color: c.text, fontSize: 12 }}>
-          11월 사용 가능한 복지비
+          {Number(month.slice(5))}월 사용 가능한 복지비
         </Text>
         <Icon name="leaf" size={18} />
       </View>
@@ -26,12 +37,16 @@ export function BenefitBalanceCard() {
         minimumFontScale={0.4}
         style={{ fontSize: 36, color: c.text, fontWeight: "500" }}
       >
-        {won(demoBalance.available)} <Text style={{ fontSize: 16 }}>원</Text>
+        {won(amounts.available)} <Text style={{ fontSize: 16 }}>원</Text>
       </Text>
       <View>
         <View
           accessibilityRole="progressbar"
-          accessibilityValue={{ min: 0, max: 100000, now: 35000 }}
+          accessibilityValue={{
+            min: 0,
+            max: amounts.total,
+            now: Math.min(used, amounts.total),
+          }}
           style={{
             height: 5,
             borderRadius: 4,
@@ -42,7 +57,7 @@ export function BenefitBalanceCard() {
           <View
             style={{
               height: 5,
-              width: `${(demoBalance.used / demoBalance.total) * 100}%`,
+              width: `${progress}%`,
               backgroundColor: c.accent,
               borderRadius: 4,
             }}
@@ -50,15 +65,15 @@ export function BenefitBalanceCard() {
         </View>
         <View style={[styles.row, { marginTop: 10, flexWrap: "wrap", gap: 4 }]}>
           <Text style={{ color: c.secondary, fontSize: 11 }}>
-            신청·승인 {won(demoBalance.used)}원
+            검토 중 {won(amounts.submitted)}원 · 승인 {won(amounts.approved)}원
           </Text>
           <Text style={{ color: c.text, fontSize: 11 }}>
-            총 {won(demoBalance.total)}원
+            총 {won(amounts.total)}원
           </Text>
         </View>
       </View>
       <Button
-        title="복지비 신청하기  ↗"
+        title="신청 화면 미리보기  ↗"
         onPress={() => router.push("/apply")}
       />
     </View>

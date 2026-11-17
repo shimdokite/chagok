@@ -1,16 +1,20 @@
 import type { RestoreMetric } from "./session";
+
 type Store = {
   get(key: string): Promise<string | null>;
   set(key: string, value: string): Promise<void>;
 };
+
 // One small SecureStore entry per sample avoids large native storage values.
 // Evidence is never rotated silently; 100 records require export/reset for a new experiment.
 export function createMetricJournal(store: Store) {
   let pending = Promise.resolve();
   let saveFailed = false;
+
   async function count() {
     return Number((await store.get("count")) ?? "0");
   }
+
   return {
     record(metric: RestoreMetric) {
       pending = pending
@@ -27,6 +31,7 @@ export function createMetricJournal(store: Store) {
           saveFailed = true;
         });
     },
+
     async read() {
       await pending;
       const n = await count();

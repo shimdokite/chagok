@@ -23,6 +23,7 @@ import { VisualCheckControls } from "../dev/VisualCheckControls";
 import { useBoundaryProbe } from "../dev/useBoundaryProbe";
 import { useTheme } from "../theme/tokens";
 import { WebViewTrace, type WebViewEventKind } from "../dev/webview-trace";
+
 export default function ApplyContainer() {
   const c = useTheme();
   const ref = useRef<WebView<object>>(null);
@@ -35,11 +36,13 @@ export default function ApplyContainer() {
   }, [revision]);
   const trace = useRef<WebViewTrace | null>(null);
   if (!trace.current) trace.current = new WebViewTrace(__DEV__);
+
   const record = useCallback(
     (kind: WebViewEventKind, rev: number, detail = {}) =>
       trace.current!.record(kind, rev, detail),
     [],
   );
+
   useEffect(() => {
     record("mount", 0);
     return () => record("unmount", committedRevision.current);
@@ -51,10 +54,12 @@ export default function ApplyContainer() {
     );
     return () => subscription.remove();
   }, [record, revision]);
+
   const closeAndGoBack = useCallback(() => {
     record("close", committedRevision.current);
     return router.canGoBack() ? router.back() : router.replace("/home");
   }, [record]);
+
   const bridge = useWebViewBridge(ref, closeAndGoBack);
   const probe = useBoundaryProbe(
     (script) => ref.current?.injectJavaScript(script),
@@ -65,10 +70,12 @@ export default function ApplyContainer() {
       error,
     }),
   );
+
   const close = useCallback(() => {
     bridge.reset("close");
     closeAndGoBack();
   }, [bridge.reset, closeAndGoBack]);
+
   useEffect(() => {
     const subscription = BackHandler.addEventListener(
       "hardwareBackPress",
@@ -93,12 +100,14 @@ export default function ApplyContainer() {
       record("timer-cleared", revision);
     };
   }, [bridge.ready, error, revision, bridge.reset, record]);
+
   const fail = (kind: WebViewEventKind, detail = {}) => {
     record(kind, revision, detail);
     bridge.reset("load-error");
     setError(true);
     setLoading(false);
   };
+
   const reload = () => {
     record("reload", revision);
     bridge.reset("reload");
@@ -106,6 +115,7 @@ export default function ApplyContainer() {
     setLoading(true);
     setRevision((x) => x + 1);
   };
+
   return (
     <Page>
       <View style={{ paddingHorizontal: 23, paddingVertical: 10 }}>

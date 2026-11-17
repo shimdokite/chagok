@@ -1,0 +1,80 @@
+
+> chagok@0.1.0 pretest
+> npm run style:check
+
+
+> chagok@0.1.0 style:check
+> node scripts/check-function-spacing.mjs
+
+코드 간격: 87개 파일 검사, 위반 0건
+
+> chagok@0.1.0 test
+> vitest run
+
+
+ RUN  v5.1.0 /Users/doyeon/Desktop/chagok
+
+ ❯ packages/api/src/auth/store.integration.test.ts (1 test | 1 failed) 255ms
+   × PostgreSQL enforces one user under concurrent login and revokes sessions 252ms
+ ❯ packages/api/src/benefits/benefits.integration.test.ts (1 test | 1 failed) 227ms
+   × DB 소속·월·페이지·실제 세션·seed 재실행을 검증한다 225ms
+
+ Test Files  2 failed | 15 passed (17)
+      Tests  2 failed | 151 passed (153)
+   Start at  17:32:46
+   Duration  2.25s (import 51%, tests 32%, transform 14%, worker 3%)
+
+    Isolate  17 workers spawned · ~253ms startup each (spawn + environment, per file)
+             at least ~362ms faster with isolate: false — reuses workers across files instead of one per file
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/api/src/auth/store.integration.test.ts > PostgreSQL enforces one user under concurrent login and revokes sessions
+PrismaClientKnownRequestError: 
+Invalid `db.user.deleteMany()` invocation in
+/Users/doyeon/Desktop/chagok/packages/api/src/auth/store.integration.test.ts:51:21
+
+  48     code: "UNAUTHORIZED",
+  49   });
+  50 } finally {
+→ 51   await db.user.deleteMany(
+connect EPERM 127.0.0.1:55432 - Local (0.0.0.0:0)
+ ❯ vn.handleRequestError node_modules/@prisma/client/src/runtime/RequestHandler.ts:238:13
+ ❯ vn.handleAndLogRequestError node_modules/@prisma/client/src/runtime/RequestHandler.ts:184:12
+ ❯ vn.request node_modules/@prisma/client/src/runtime/RequestHandler.ts:153:12
+ ❯ a node_modules/@prisma/client/src/runtime/getPrismaClient.ts:1012:24
+ ❯ packages/api/src/auth/store.integration.test.ts:51:7
+     49|       });
+     50|     } finally {
+     51|       await db.user.deleteMany({ where: { googleSub: sub } });
+       |       ^
+     52|       await db.$disconnect();
+     53|     }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  packages/api/src/benefits/benefits.integration.test.ts > DB 소속·월·페이지·실제 세션·seed 재실행을 검증한다
+PrismaClientKnownRequestError: 
+Invalid `db.user.deleteMany()` invocation in
+/Users/doyeon/Desktop/chagok/packages/api/src/benefits/benefits.integration.test.ts:188:21
+
+  185     caller(b.token).benefits.history({ month: "2026-11" }),
+  186   ).rejects.toMatchObject({ code: "UNAUTHORIZED" });
+  187 } finally {
+→ 188   await db.user.deleteMany(
+connect EPERM 127.0.0.1:55432 - Local (0.0.0.0:0)
+ ❯ vn.handleRequestError node_modules/@prisma/client/src/runtime/RequestHandler.ts:238:13
+ ❯ vn.handleAndLogRequestError node_modules/@prisma/client/src/runtime/RequestHandler.ts:184:12
+ ❯ vn.request node_modules/@prisma/client/src/runtime/RequestHandler.ts:153:12
+ ❯ a node_modules/@prisma/client/src/runtime/getPrismaClient.ts:1012:24
+ ❯ packages/api/src/benefits/benefits.integration.test.ts:188:7
+    186|       ).rejects.toMatchObject({ code: "UNAUTHORIZED" });
+    187|     } finally {
+    188|       await db.user.deleteMany({
+       |       ^
+    189|         where: { id: { in: users }, googleSub: { startsWith: prefix } …
+    190|       });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+

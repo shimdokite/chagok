@@ -4,6 +4,7 @@ import { useVisualCheckScroll } from "../src/dev/useVisualCheckScroll";
 import { ScrollView, View, Text } from "react-native";
 import { Page, Header, Icon, Button } from "../src/components/ui";
 import { useTheme } from "../src/theme/tokens";
+
 export default function Login() {
   const c = useTheme();
   const { state, controller, googleConfigured } = useSession();

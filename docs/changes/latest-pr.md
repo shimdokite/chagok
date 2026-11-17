@@ -1,26 +1,25 @@
 ## 요약
 
-데모 진입만 가능하던 앱에 Google 인증과 서버 사용자·세션 관리를 추가하고, 비활성 신청 화면을 Tailwind CSS·shadcn/ui로 전환했다. 세션 복원·만료·로그아웃과 WKWebView 재로드 후 닫기를 검증하고 진단 기록 누락을 수정했다.
+고정 데모 중심의 복지 화면을 회사별 월 정책과 본인 신청의 실제 DB 조회로 연결했다. 홈·신청 내역·상세·복지안내에 계정별 캐시와 오류 복구를 적용하고 익명 데모를 분리했다.
 
 ## 내용
 
-사용자 피드백 “재로드 후 웹·네이티브 닫기에서 close와 unmount 세대가 맞는지 확인”에 따라 두 종료 경로의 실제 iOS 증거를 추가했다. 홈·내역은 데모를 유지하며 신청 저장·첨부·승인은 이후 범위다.
+회사·본인 조회 범위는 서버 세션과 현재 소속으로 결정한다. 사용자 피드백 “도서비, 운동비가 간격이 없어져”에 따라 큰 글자에서 카드가 다음 행으로 배치되도록 여백을 보완했다. 신청 생성·첨부·승인은 이후 범위다.
 
 ## 변경
 
-- Google ID token 서버 검증, sub 기반 사용자 재사용, PostgreSQL/Prisma migration, 해시 기반 앱 세션과 SecureStore 저장·복원·만료·폐기를 구현했다.
-- foreground 검증 중 화면을 보존하고 늦은 응답을 차단한다. 로그아웃 실패 시 자동 복원·데모 진입이 재시도 상태를 덮지 않도록 수정했다.
-- 신청 UI에 Button/Input/Label·Tailwind 테마를 적용하고 입력·첨부·제출 비활성을 유지했다. 개발용 WebView 원인 계측 및 웹/네이티브 close·unmount 세대 기록을 보완했다.
-- 검증·측정·설정 안내를 갱신했다. 로컬 학습 두 파일은 보존하고 기존 `docs/learning/day-01.md`의 Git 추적만 제거했으며 공개 안내 링크를 정리했다.
+- 회사·소속·월 정책·신청 스키마와 두 migration, 세션 검증 조회 API, 상태별 잔액·사용월·안정 커서 페이지, 로컬 샘플 준비와 명시적 소속 연결을 추가했다.
+- 실제 조회 화면, 사용자·회사·월·필터별 30초 캐시, 계정 전환 취소·삭제와 소속 응답 검증을 구현했다. 없는 상세의 세션 재확인 반복을 막고 이후 인증 거부 복구를 유지했다.
+- import 뒤·함수 앞뒤 간격 및 가독성 컨벤션과 자동 검사를 적용하고 테스트·측정·검증 기록을 정리했다. 학습 자료는 기존 추적 제외 상태와 로컬 원본을 보존했다.
 
 ## 검증
 
-- PR 준비에서 Node24 실제 PostgreSQL 포함 **12파일72테스트·skip0**, 전체 workspace 타입 검사, 웹 production build 통과. 게시 직전에도 동일 소스로 전체72테스트를 재실행해 통과했다. 로그아웃 회귀는 RED→GREEN 및 독립 재검토 완료. [게시 직전 점검](https://github.com/shimdokite/chagok/blob/feat/day-02-auth-session-ui/docs/verification/day-02/pr-ready/publish-check.json).
-- 이전 실제 iOS Simulator Debug 검증: Google 로그인·동일 사용자 재사용·복원10/10·만료·로그아웃·서버 장애 복구. 복원 중앙값225.98ms는 원본17개 중 정상 startup10개이며 이번에 재계산했다. UI paint/전체 cold start는 제외한다.
-- 이전 WKWebView 검증: 사용자 Option+Tab/Space 닫기, 정상 재로드10/10·장애 복구. 웹2회 재로드 rev2와 네이티브3회 rev3에서 close→unmount 각각1회·동일 세대·홈 복귀 확인.
-- D2-01~D2-09 및 준비 P1~P6 충족(기록된 환경·한계 내). [AC·명령·미검증 항목](https://github.com/shimdokite/chagok/blob/feat/day-02-auth-session-ui/docs/verification/day-02/pr-ready/result.md), [누적 리뷰](https://github.com/shimdokite/chagok/blob/feat/day-02-auth-session-ui/docs/verification/day-02/pr-ready/review.md). 로컬 학습 해시 동일·tracked0·예정 diff는 삭제만, 비밀값 패턴 발견0·신규 링크 오류0. 전체 공백 검사는 원본 로그/적용된 migration의 공백으로 exit2, 이들 제외 코드·문서는 exit0. 원본 Day01 이미지 링크2개도 보존했다.
-- 로그인 미리보기 `http://localhost:8082/`를 열었고 신청 화면은 `http://localhost:3000/apply`에서 확인 가능하다. 이번 로그아웃 실패→foreground 수정의 실제 iOS 재실행과 사용자 전체 UI 인수는 미검증이다.
+- 게시 직전 재실행(Node24.18.0): 실제 DB 포함 **18파일156개 테스트**, **4개 workspace 타입 검사**, **88파일 간격 검사** 통과. 상세 오류 반복·후속 인증 거부 RED→GREEN, 독립 재검토 추가 지적 없음.
+- PR 준비 단계에서 webpack production·iOS/Android JS export·DB migration 상태 검사 통과. 게시 직전 소스 해시89개가 해당 검증본과 일치해 빌드·export를 반복하지 않았다. 준비 단계 기본 Turbopack 재실행은 에이전트 포트 권한 EPERM으로 실패했고 사용자 일반 터미널의 기존 성공 로그와 구분했다.
+- 실제 계정 조회·시간 초과 복구, 사용자 계정 전환 정보 격리·최대 글자 읽기/스크롤·기본 설정 복원 확인. 수정 후 iOS 정상 상세와 브라우저 데모도 확인했다. 없는 상세 반복은 통합 회귀로 검증했다.
+- 승인된 **D3-01~08 충족**. 홈 측정 원본은 요청1→0→1·응답1002바이트이며 각 조건1회·렌더링 제외라는 한계를 보존했다. [AC·명령·리뷰·공개 범위](https://github.com/shimdokite/chagok/blob/feat/day-03-benefits/docs/verification/day-03/pr-ready/result.md).
+- 누적 diff·문서 링크·초안 형식·비밀값 패턴·학습 제외/원본 보존 검사 통과. 원본 실행 로그의 끝 공백8줄과 파일 끝 빈 줄은 보존했다. [게시 직전 재검증](https://github.com/shimdokite/chagok/blob/feat/day-03-benefits/docs/verification/day-03/publish/result.md). Android 실제 실행은 기기·에뮬레이터 부재로 별도 미검증이다.
 
 ## 사이드이펙트 검토
 
-최초 실행에 PostgreSQL migration·두 로컬 env·Google URL scheme을 포함한 native 재빌드가 필요하다. 업무 신청 API는 추가하지 않았고 bridge 계약·개발 모드 진단 경계를 유지했다. 실제 인증은 iOS 시뮬레이터 범위이며 물리 iPhone·Android·Release·스크린리더·모든 callback 경합은 미검증이다. 과거 자발적 timeout의 최종 JS 분기는 미확정이다. 실패한 로그아웃 의도는 프로세스 재시작까지 영속화하지 않는다. 원격 학습 폴더 삭제는 병합 후 적용되고 과거 Git 이력은 유지한다.
+배포 전 Prisma generate·migration·서버 재시작이 필요하다. 소속의 회사 변경은 기존 신청이 있으면 제한되며 운영용 삭제·이력 보존은 별도 설계다. 캐시는 실시간 갱신이 아니고 큰 글자에서는 스크롤 길이가 늘어난다. Android·물리 iPhone·스크린리더·Release 성능으로 검증을 확대 해석하지 않는다. 로컬 학습 파일과 handoff는 게시 대상에서 제외한다.

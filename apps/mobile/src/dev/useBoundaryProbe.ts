@@ -22,6 +22,7 @@ export function useBoundaryProbe(
     },
     [],
   );
+
   const observe = (kind: string, detail: object) => {
     if (__DEV__ && active.current)
       events.current.push({
@@ -31,6 +32,7 @@ export function useBoundaryProbe(
         at: new Date().toISOString(),
       });
   };
+
   const run = () => {
     if (!__DEV__ || active.current) return;
     const base = {
@@ -87,6 +89,7 @@ export function useBoundaryProbe(
     setBusy(true);
     setReport(null);
     let index = 0;
+
     const next = () => {
       if (!active.current) return;
       if (index === cases.length) {
@@ -109,7 +112,9 @@ export function useBoundaryProbe(
       inject(script);
       timer.current = setTimeout(next, 600);
     };
+
     next();
   };
+
   return { busy, report, run, observe };
 }

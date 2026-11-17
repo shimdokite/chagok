@@ -14,6 +14,8 @@
     "dev:preview": "npm run web -w @chagok/mobile",
     "dev:web": "npm run dev -w @chagok/web",
     "typecheck": "npm run typecheck --workspaces --if-present",
+    "style:check": "node scripts/check-function-spacing.mjs",
+    "pretest": "npm run style:check",
     "test": "vitest run",
     "build:web": "npm run build -w @chagok/web"
   },

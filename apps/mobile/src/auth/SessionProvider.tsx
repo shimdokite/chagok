@@ -12,7 +12,9 @@ import { storage } from "./storage";
 import { google, googleConfigured } from "./google";
 import { authApi } from "./api";
 import { recordRestore } from "./metrics";
+
 const Context = createContext<SessionController | null>(null);
+
 export function SessionProvider({ children }: { children: ReactNode }) {
   const [controller] = useState(
     () =>
@@ -20,7 +22,9 @@ export function SessionProvider({ children }: { children: ReactNode }) {
         storage,
         google,
         api: authApi,
+
         now: () => performance.now(),
+
         wallNow: Date.now,
         onMeasurement: recordRestore,
       }),
@@ -48,6 +52,7 @@ export function SessionProvider({ children }: { children: ReactNode }) {
   }, [controller, state]);
   return <Context.Provider value={controller}>{children}</Context.Provider>;
 }
+
 export function useSession() {
   const controller = useContext(Context);
   if (!controller) throw new Error("SessionProvider missing");

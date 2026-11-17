@@ -1,4 +1,5 @@
 export type ClaimStatus = "SUBMITTED" | "APPROVED" | "REJECTED";
+
 export function balance(
   requests: readonly { amount: number; status: ClaimStatus }[],
   total: number,
@@ -9,6 +10,7 @@ export function balance(
   );
   return { total, used, available: total - used };
 }
+
 export const demo = {
   company: "그로브",
   name: "도연",
@@ -42,4 +44,5 @@ export const demo = {
   ],
 } as const;
 export const demoBalance = balance(demo.requests, demo.total);
+
 export const won = (amount: number) => amount.toLocaleString("ko-KR");

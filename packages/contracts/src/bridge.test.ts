@@ -1,5 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { parseBridgeMessage, isAllowedApplyUrl, injectionFor } from "./bridge";
+
 const base = { channel: "chagok.bridge", version: 1, payload: {} };
 describe("untrusted bridge input", () => {
   it.each(["WEB_READY", "CLOSE_WEBVIEW", "PING", "PONG"])(

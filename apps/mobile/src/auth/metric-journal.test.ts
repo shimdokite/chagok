@@ -1,9 +1,11 @@
 import { expect, it } from "vitest";
 import { createMetricJournal } from "./metric-journal";
+
 it("retains startup and failure samples beyond ten writes and across journal instances", async () => {
   const data = new Map<string, string>();
   const storage = {
     get: async (k: string) => data.get(k) ?? null,
+
     set: async (k: string, v: string) => {
       data.set(k, v);
     },
@@ -25,6 +27,7 @@ it("retains startup and failure samples beyond ten writes and across journal ins
 it("reports storage errors rather than returning apparently complete evidence", async () => {
   const journal = createMetricJournal({
     get: async () => null,
+
     set: async () => {
       throw new Error("disk");
     },

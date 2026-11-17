@@ -2,12 +2,14 @@
 import { Button } from "../ui/button";
 import { useEffect, useState } from "react";
 import { bridgeBase, parseBridgeMessage } from "@chagok/contracts";
+
 declare global {
   interface Window {
     ReactNativeWebView?: { postMessage: (data: string) => void };
     __CHAGOK_BRIDGE__?: { receive: (value: unknown) => void };
   }
 }
+
 export function BridgeReceiver() {
   const [native, setNative] = useState(false);
   useEffect(() => {
@@ -34,10 +36,12 @@ export function BridgeReceiver() {
     };
     window.__CHAGOK_BRIDGE__ = receiver;
     host.postMessage(JSON.stringify({ ...bridgeBase, type: "WEB_READY" }));
+
     const cleanup = () => {
       if (window.__CHAGOK_BRIDGE__ === receiver)
         delete window.__CHAGOK_BRIDGE__;
     };
+
     window.addEventListener("pagehide", cleanup);
     return () => {
       window.removeEventListener("pagehide", cleanup);

@@ -1,0 +1,43 @@
+
+> chagok@0.1.0 pretest
+> npm run style:check
+
+
+> chagok@0.1.0 style:check
+> node scripts/check-function-spacing.mjs
+
+코드 간격: 88개 파일 검사, 위반 0건
+
+> chagok@0.1.0 test
+> vitest run apps/mobile/src/benefits/queries.test.ts
+
+
+ RUN  v5.1.0 /Users/doyeon/Desktop/chagok
+
+ ❯ apps/mobile/src/benefits/queries.test.ts (3 tests | 1 failed) 100ms
+   × 없는 상세를 확인한 뒤 세션이 만료돼도 인증 복구를 생략하지 않는다 16ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/mobile/src/benefits/queries.test.ts > 없는 상세를 확인한 뒤 세션이 만료돼도 인증 복구를 생략하지 않는다
+AssertionError: expected 'authenticated' to be 'signedOut' // Object.is equality
+
+Expected: "signedOut"
+Received: "authenticated"
+
+ ❯ apps/mobile/src/benefits/queries.test.ts:163:44
+    161|   await vi.advanceTimersByTimeAsync(100);
+    162|   await retry;
+    163|   expect(run.controller.snapshot().status).toBe("signedOut");
+       |                                            ^
+    164|   expect(run.counts()).toEqual({ requests: 3, sessionChecks: 2 });
+    165| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 2 passed (3)
+   Start at  17:38:26
+   Duration  665ms (import 38%, transform 34%, tests 26%, worker 2%)
+

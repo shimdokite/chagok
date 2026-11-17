@@ -11,20 +11,24 @@ const output = process.argv[3] || 'docs/verification/prototype/green';
 await mkdir(output, { recursive: true });
 const browser = await chromium.launch({ channel: 'chrome', headless: true });
 const results = [];
+
 async function textIs(locator, expected) {
   await locator.filter({ hasText: expected }).waitFor({ state: 'visible', timeout: 5000 });
   assert.equal((await locator.innerText()).trim(), expected);
 }
+
 async function home(frame, amount) {
   await frame.locator('[data-screen="home"]').click();
   await textIs(frame.locator('.cg-amount'), `${amount}원`);
 }
+
 async function apply(frame, title) {
   await frame.locator('[data-screen="apply"]').click();
   await frame.locator('#cg-date').fill('2026-11-13');
   await frame.locator('#cg-amount').fill('20000');
   await frame.locator('#cg-title').fill(title);
 }
+
 async function submit(frame) {
   await frame.locator('[data-action="attach"]').click();
   await textIs(frame.locator('[data-action="attach"]'), '영수증 첨부 완료 · 샘플 이미지');
@@ -32,6 +36,7 @@ async function submit(frame) {
   await textIs(frame.locator('.cg-success h1'), '신청이 접수됐어요');
   await textIs(frame.locator('.cg-note strong'), '45,000원');
 }
+
 const scenarios = {
   'missing-receipt': async (frame, page) => {
     await home(frame, '65,000');
@@ -42,6 +47,7 @@ const scenarios = {
     await home(frame, '65,000');
     return { balance: 65000, message: '영수증을 먼저 첨부해 주세요.' };
   },
+
   approve: async (frame, page) => {
     const title = 'AC15 승인 테스트';
     await home(frame, '65,000');
@@ -60,6 +66,7 @@ const scenarios = {
     await textIs(frame.locator('.cg-row').filter({ hasText: title }).locator('.cg-badge'), '승인 완료');
     return { balances: [65000, 45000, 45000], employeeStatus: '승인 완료' };
   },
+
   reject: async (frame, page) => {
     const title = 'AC15 반려 테스트';
     const reason = '영수증 사용일을 확인해 주세요.';

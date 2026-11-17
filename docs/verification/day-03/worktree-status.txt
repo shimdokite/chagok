@@ -1,0 +1,74 @@
+ M AGENTS.md
+ M README.md
+ M apps/mobile/app/_layout.tsx
+ M apps/mobile/app/home.tsx
+ M apps/mobile/package.json
+ M apps/mobile/src/auth/SessionProvider.tsx
+ M apps/mobile/src/auth/api.ts
+ M apps/mobile/src/auth/google.ts
+ M apps/mobile/src/auth/google.web.ts
+ M apps/mobile/src/auth/metric-journal.test.ts
+ M apps/mobile/src/auth/metric-journal.ts
+ M apps/mobile/src/auth/metrics.ts
+ M apps/mobile/src/auth/session.test.ts
+ M apps/mobile/src/auth/session.ts
+ M apps/mobile/src/auth/storage.ts
+ M apps/mobile/src/auth/storage.web.ts
+ M apps/mobile/src/bridge/useWebViewBridge.ts
+ M apps/mobile/src/components/ApplyContainer.test.tsx
+ M apps/mobile/src/components/ApplyContainer.tsx
+ M apps/mobile/src/components/BenefitBalanceCard.tsx
+ M apps/mobile/src/components/BenefitCategoryList.tsx
+ M apps/mobile/src/components/RecentRequestList.tsx
+ M apps/mobile/src/components/ui.tsx
+ M apps/mobile/src/dev/ServerDiagnostics.tsx
+ M apps/mobile/src/dev/useBoundaryProbe.ts
+ M apps/mobile/src/dev/useVisualCheckScroll.ts
+ M apps/mobile/src/dev/webview-trace.ts
+ M apps/mobile/src/metrics/benchmark-history.ts
+ M apps/mobile/src/metrics/bridge-benchmark.test.ts
+ M apps/mobile/src/metrics/bridge-benchmark.ts
+ M apps/web/src/app/api/trpc/[trpc]/route.ts
+ M apps/web/src/app/apply/page.tsx
+ M apps/web/src/components/bridge/BridgeReceiver.tsx
+ M apps/web/src/components/ui/button.tsx
+ M apps/web/src/components/ui/input.tsx
+ M apps/web/src/components/ui/label.tsx
+ M docs/changes/latest-commit.txt
+ M docs/changes/latest-pr.md
+ M docs/contributing.md
+ M docs/manual-checks.md
+ M docs/product.md
+ M docs/progress.md
+ M docs/repository-map.md
+ M package-lock.json
+ M package.json
+ M packages/api/package.json
+ M packages/api/prisma/schema.prisma
+ M packages/api/src/auth/context.ts
+ M packages/api/src/auth/service.test.ts
+ M packages/api/src/auth/service.ts
+ M packages/api/src/auth/store.ts
+ M packages/api/src/http.test.ts
+ M packages/api/src/router.ts
+ M packages/contracts/package.json
+ M packages/contracts/src/bridge.ts
+ M packages/contracts/src/demo.ts
+ M scripts/verify-prototype.mjs
+?? apps/mobile/app/history.tsx
+?? apps/mobile/app/policy.tsx
+?? apps/mobile/app/requests/
+?? apps/mobile/src/benefits/
+?? docs/code-style.md
+?? docs/metrics/daily/day-03.md
+?? docs/plans/day-03.md
+?? docs/verification/day-03.md
+?? docs/verification/day-03/
+?? handoff.md
+?? packages/api/prisma/migrations/20261117000000_benefits/
+?? packages/api/prisma/migrations/20261117010000_claim_membership_restrict/
+?? packages/api/scripts/
+?? packages/api/src/benefits/
+?? packages/contracts/src/benefits.ts
+?? scripts/check-function-spacing.mjs
+?? scripts/check-function-spacing.test.ts

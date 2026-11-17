@@ -1,8 +1,17 @@
-import { View, Text, useWindowDimensions } from "react-native";
-import { demo, won } from "../fixtures/demo-benefits";
+import { View, Text, Pressable, useWindowDimensions } from "react-native";
+import { router } from "expo-router";
+import { statusLabels, type ClaimItem } from "@chagok/contracts/benefits";
+import { won } from "../fixtures/demo-benefits";
 import { useTheme } from "../theme/tokens";
 import { Icon, styles } from "./ui";
-export function RecentRequestList() {
+
+export function RecentRequestList({
+  items,
+  title = "최근 신청",
+}: {
+  items: ClaimItem[];
+  title?: string;
+}) {
   const c = useTheme();
   const { fontScale } = useWindowDimensions();
   const stacked = fontScale > 1.5;
@@ -16,10 +25,17 @@ export function RecentRequestList() {
           marginBottom: 12,
         }}
       >
-        최근 신청
+        {title}
       </Text>
-      {demo.requests.slice(0, 2).map((x) => (
-        <View
+      {items.length === 0 ? (
+        <Text style={{ color: c.secondary }}>신청 내역이 없어요.</Text>
+      ) : null}
+      {items.map((x) => (
+        <Pressable
+          accessibilityRole="button"
+          onPress={() =>
+            router.push({ pathname: "/requests/[id]", params: { id: x.id } })
+          }
           key={x.id}
           style={{
             flexDirection: stacked ? "column" : "row",
@@ -53,7 +69,7 @@ export function RecentRequestList() {
           >
             <Text style={{ color: c.text, fontSize: 13 }}>{x.title}</Text>
             <Text style={{ color: c.secondary, fontSize: 11 }}>
-              {x.category} · {x.date}
+              {x.category} · {x.usedOn}
             </Text>
           </View>
           <View
@@ -73,10 +89,10 @@ export function RecentRequestList() {
                   x.status === "SUBMITTED" ? c.warningBg : c.soft,
               }}
             >
-              {x.status === "SUBMITTED" ? "검토 중" : "승인 완료"}
+              {statusLabels[x.status]}
             </Text>
           </View>
-        </View>
+        </Pressable>
       ))}
     </View>
   );
