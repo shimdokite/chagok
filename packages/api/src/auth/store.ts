@@ -3,6 +3,7 @@ import { PrismaPg } from "@prisma/adapter-pg";
 import type { AuthStore } from "./service";
 
 const globalDb = globalThis as unknown as { chagokDb?: PrismaClient };
+
 export function getDb() {
   if (!process.env.DATABASE_URL) throw new Error("Database is not configured");
   return (globalDb.chagokDb ??= new PrismaClient({
@@ -12,6 +13,7 @@ export function getDb() {
     }),
   }));
 }
+
 export function prismaAuthStore(db: PrismaClient): AuthStore {
   return {
     async createSession(sub, tokenHash, expiresAt) {
@@ -25,15 +27,30 @@ export function prismaAuthStore(db: PrismaClient): AuthStore {
         await tx.session.create({
           data: { tokenHash, expiresAt, userId: user.id },
         });
-        return { id: user.id };
+        const member = await tx.membership.findUnique({
+          where: { userId: user.id },
+        });
+        return { id: user.id, companyId: member?.companyId ?? null };
       });
     },
-    findSession(tokenHash) {
-      return db.session.findUnique({
+
+    async findSession(tokenHash) {
+      const session = await db.session.findUnique({
         where: { tokenHash },
-        select: { userId: true, expiresAt: true },
+        select: {
+          userId: true,
+          expiresAt: true,
+          user: { select: { membership: { select: { companyId: true } } } },
+        },
       });
+      if (!session) return null;
+      return {
+        userId: session.userId,
+        expiresAt: session.expiresAt,
+        companyId: session.user.membership?.companyId ?? null,
+      };
     },
+
     async deleteSession(tokenHash) {
       await db.session.deleteMany({ where: { tokenHash } });
     },

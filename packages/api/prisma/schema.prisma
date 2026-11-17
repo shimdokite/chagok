@@ -11,6 +11,7 @@ model User {
   googleSub String    @unique
   createdAt DateTime  @default(now())
   sessions  Session[]
+  membership Membership?
 }
 
 model Session {
@@ -23,4 +24,58 @@ model Session {
 
   @@index([userId])
   @@index([expiresAt])
+}
+
+model Company {
+  id String @id @default(uuid())
+  slug String @unique
+  name String
+  isSample Boolean @default(false)
+  memberships Membership[]
+  policies BenefitPolicy[]
+}
+
+model Membership {
+  userId String @id
+  companyId String
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  company Company @relation(fields: [companyId], references: [id], onDelete: Restrict)
+  claims Claim[]
+
+  @@unique([userId, companyId])
+  @@index([companyId])
+}
+
+model BenefitPolicy {
+  id String @id @default(uuid())
+  companyId String
+  company Company @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  month String
+  allowance Int
+  categories String[]
+  guidance String
+
+  @@unique([companyId, month])
+}
+
+enum ClaimStatus {
+  SUBMITTED
+  APPROVED
+  REJECTED
+}
+
+model Claim {
+  id String @id @default(uuid())
+  companyId String
+  userId String
+  membership Membership @relation(fields: [userId, companyId], references: [userId, companyId], onDelete: Cascade, onUpdate: Restrict)
+  title String
+  category String
+  amount Int
+  status ClaimStatus
+  usedOn String
+  submittedAt DateTime @default(now())
+  rejectionReason String?
+
+  @@index([userId, companyId, usedOn, submittedAt, id])
 }

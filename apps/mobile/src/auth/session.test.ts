@@ -1,49 +1,62 @@
 import { expect, it, vi } from "vitest";
 import { SessionController, type SessionPorts } from "./session";
+
 const response = {
   token: "a".repeat(64),
   user: { id: "user-1" },
   expiresAt: "2026-11-23T00:00:00Z",
 };
+
 function fixture(overrides: Partial<SessionPorts> = {}) {
   let stored: string | null = response.token;
   const metrics: unknown[] = [];
   const ports: SessionPorts = {
     storage: {
       get: async () => stored,
+
       set: async (v) => {
         stored = v;
       },
+
       remove: async () => {
         stored = null;
       },
     },
     api: {
       signIn: async () => response,
+
       session: async () => ({
         user: response.user,
         expiresAt: response.expiresAt,
       }),
+
       signOut: async () => {},
     },
     google: {
       signIn: async () => ({ type: "success", idToken: "google-token" }),
+
       signOut: async () => {},
     },
+
     now: () => 100,
+
     wallNow: () => Date.parse("2026-11-16T00:00:00Z"),
+
     onMeasurement: (m) => {
       metrics.push(m);
     },
+
     ...overrides,
   };
   return {
     controller: new SessionController(ports),
     ports,
     metrics,
+
     stored: () => stored,
   };
 }
+
 it("restores only after server validation and records anonymous duration", async () => {
   const { controller, metrics } = fixture();
   await controller.restore("startup");
@@ -63,9 +76,11 @@ it("clears rejected sessions but keeps network failures for retry", async () => 
     const { controller, stored } = fixture({
       api: {
         signIn: async () => response,
+
         session: async () => {
           throw { code };
         },
+
         signOut: async () => {},
       },
     });
@@ -81,6 +96,7 @@ it("leaves cancellation signed out and never exchanges a token", async () => {
   const { controller, ports } = fixture({
     google: {
       signIn: async () => ({ type: "cancelled" }),
+
       signOut: async () => {},
     },
   });
@@ -161,6 +177,7 @@ it("blocks duplicate login attempts", async () => {
           finish = r;
         });
       },
+
       signOut: async () => {},
     },
   });

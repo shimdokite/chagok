@@ -3,6 +3,7 @@ import { router } from "expo-router";
 import { Page, Button } from "./ui";
 import { useTheme } from "../theme/tokens";
 import { webOrigin } from "../lib/trpc";
+
 export default function ApplyContainer() {
   const c = useTheme();
   return (

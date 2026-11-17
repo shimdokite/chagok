@@ -2,6 +2,7 @@ import { expect, it } from "vitest";
 import { randomUUID } from "node:crypto";
 import { getDb, prismaAuthStore } from "./store";
 import { createAuthService } from "./service";
+
 // Opt-in: never connect to or clear an unspecified database.
 it.skipIf(!process.env.CHAGOK_TEST_DATABASE_URL)(
   "PostgreSQL enforces one user under concurrent login and revokes sessions",
@@ -17,6 +18,7 @@ it.skipIf(!process.env.CHAGOK_TEST_DATABASE_URL)(
     const sub = `integration-${randomUUID()}`;
     const service = createAuthService({
       store: prismaAuthStore(db),
+
       verifyGoogle: async () => ({ sub }),
     });
     try {

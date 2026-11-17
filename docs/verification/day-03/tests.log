@@ -1,0 +1,22 @@
+
+> chagok@0.1.0 pretest
+> npm run style:check
+
+
+> chagok@0.1.0 style:check
+> node scripts/check-function-spacing.mjs
+
+함수 간격: 87개 파일 검사, 위반 0건
+
+> chagok@0.1.0 test
+> vitest run
+
+
+ RUN  v5.1.0 /Users/doyeon/Desktop/chagok
+
+
+ Test Files  17 passed (17)
+      Tests  130 passed (130)
+   Start at  15:42:36
+   Duration  1.57s (tests 50%, import 34%, transform 13%, worker 2%)
+

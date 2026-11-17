@@ -1,0 +1,137 @@
+{
+  "candidateFiles": 147,
+  "localLinksChecked": 122,
+  "secretMatches": 0,
+  "sourceFilesHashed": 89,
+  "learningFilesPreserved": 3,
+  "learningTracked": 0,
+  "stagedDiffEmpty": true,
+  "handoffPreserved": true,
+  "measurementOriginalPreserved": true,
+  "sourceChangesDuringPreparation": [
+    "apps/mobile/src/benefits/queries.ts",
+    "apps/mobile/src/benefits/api.ts",
+    "apps/mobile/src/benefits/queries.test.ts"
+  ],
+  "draftFormat": "pass",
+  "trackedDiffWhitespace": "pass",
+  "candidateNonLogWhitespace": "pass",
+  "rawLogTrailingWhitespace": [
+    [
+      "docs/verification/day-03/build-webpack.log",
+      15
+    ],
+    [
+      "docs/verification/day-03/build-webpack.log",
+      16
+    ],
+    [
+      "docs/verification/day-03/build-webpack.log",
+      17
+    ],
+    [
+      "docs/verification/day-03/pr-ready/build-webpack.log",
+      15
+    ],
+    [
+      "docs/verification/day-03/pr-ready/build-webpack.log",
+      16
+    ],
+    [
+      "docs/verification/day-03/pr-ready/build-webpack.log",
+      17
+    ],
+    [
+      "docs/verification/day-03/pr-ready/tests-sandbox-failed.log",
+      34
+    ],
+    [
+      "docs/verification/day-03/pr-ready/tests-sandbox-failed.log",
+      58
+    ]
+  ],
+  "testFiles": 18,
+  "testsPassed": 156,
+  "testsSkipped": 0,
+  "typecheckWorkspaces": 4,
+  "styleFiles": 88,
+  "defaultBuildThisRun": "EPERM failure",
+  "webpackBuild": "pass",
+  "mobileExport": "ios/android pass",
+  "migrations": "up to date",
+  "review": "no remaining required fixes",
+  "commitPushPR": "not performed",
+  "newFileDiffCheckExceptions": [
+    {
+      "file": "docs/verification/day-03/build-webpack.log",
+      "exit": 3,
+      "output": "docs/verification/day-03/build-webpack.log:15: trailing whitespace.\n+  Generating static pages using 6 workers (1/4) \ndocs/verification/day-03/build-webpack.log:16: trailing whitespace.\n+  Generating static pages using 6 workers (2/4) \ndocs/verification/day-03/build-webpack.log:17: trailing whitespace.\n+  Generating static pages using 6 workers (3/4) \ndocs/verification/day-03/build-webpack.log:31: new blank line at EOF.\n"
+    },
+    {
+      "file": "docs/verification/day-03/followup/grove-benefits-tests.log",
+      "exit": 3,
+      "output": "docs/verification/day-03/followup/grove-benefits-tests.log:22: new blank line at EOF.\n"
+    },
+    {
+      "file": "docs/verification/day-03/followup/tests.log",
+      "exit": 3,
+      "output": "docs/verification/day-03/followup/tests.log:22: new blank line at EOF.\n"
+    },
+    {
+      "file": "docs/verification/day-03/followup/typecheck.log",
+      "exit": 3,
+      "output": "docs/verification/day-03/followup/typecheck.log:20: new blank line at EOF.\n"
+    },
+    {
+      "file": "docs/verification/day-03/pr-ready/build-webpack.log",
+      "exit": 3,
+      "output": "docs/verification/day-03/pr-ready/build-webpack.log:15: trailing whitespace.\n+  Generating static pages using 6 workers (1/4) \ndocs/verification/day-03/pr-ready/build-webpack.log:16: trailing whitespace.\n+  Generating static pages using 6 workers (2/4) \ndocs/verification/day-03/pr-ready/build-webpack.log:17: trailing whitespace.\n+  Generating static pages using 6 workers (3/4) \ndocs/verification/day-03/pr-ready/build-webpack.log:31: new blank line at EOF.\n"
+    },
+    {
+      "file": "docs/verification/day-03/pr-ready/detail-auth-red.log",
+      "exit": 3,
+      "output": "docs/verification/day-03/pr-ready/detail-auth-red.log:43: new blank line at EOF.\n"
+    },
+    {
+      "file": "docs/verification/day-03/pr-ready/detail-regression-green.log",
+      "exit": 3,
+      "output": "docs/verification/day-03/pr-ready/detail-regression-green.log:22: new blank line at EOF.\n"
+    },
+    {
+      "file": "docs/verification/day-03/pr-ready/detail-regression-red.log",
+      "exit": 3,
+      "output": "docs/verification/day-03/pr-ready/detail-regression-red.log:43: new blank line at EOF.\n"
+    },
+    {
+      "file": "docs/verification/day-03/pr-ready/tests-before-review.log",
+      "exit": 3,
+      "output": "docs/verification/day-03/pr-ready/tests-before-review.log:25: new blank line at EOF.\n"
+    },
+    {
+      "file": "docs/verification/day-03/pr-ready/tests-sandbox-failed.log",
+      "exit": 3,
+      "output": "docs/verification/day-03/pr-ready/tests-sandbox-failed.log:34: trailing whitespace.\n+PrismaClientKnownRequestError: \ndocs/verification/day-03/pr-ready/tests-sandbox-failed.log:58: trailing whitespace.\n+PrismaClientKnownRequestError: \ndocs/verification/day-03/pr-ready/tests-sandbox-failed.log:80: new blank line at EOF.\n"
+    },
+    {
+      "file": "docs/verification/day-03/pr-ready/tests.log",
+      "exit": 3,
+      "output": "docs/verification/day-03/pr-ready/tests.log:25: new blank line at EOF.\n"
+    },
+    {
+      "file": "docs/verification/day-03/pr-ready/typecheck.log",
+      "exit": 3,
+      "output": "docs/verification/day-03/pr-ready/typecheck.log:20: new blank line at EOF.\n"
+    },
+    {
+      "file": "docs/verification/day-03/tests.log",
+      "exit": 3,
+      "output": "docs/verification/day-03/tests.log:22: new blank line at EOF.\n"
+    },
+    {
+      "file": "docs/verification/day-03/typecheck.log",
+      "exit": 3,
+      "output": "docs/verification/day-03/typecheck.log:20: new blank line at EOF.\n"
+    }
+  ],
+  "newFileDiffCheckNote": "--no-index exit1 means differing files, not whitespace failure; raw log trailing spaces and EOF blank lines preserved"
+}

@@ -1,6 +1,7 @@
 import { expect, it } from "vitest";
 import { BridgeBenchmark } from "./bridge-benchmark";
 import { getBenchmarkHistory, runRecordedBenchmark } from "./benchmark-history";
+
 it("retains cancelled experiment after the originating screen engine is discarded", async () => {
   const environment = {
     device: "unit-test",

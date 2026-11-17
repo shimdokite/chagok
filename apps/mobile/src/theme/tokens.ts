@@ -1,4 +1,5 @@
 import { useColorScheme } from "react-native";
+
 export const colors = {
   light: {
     accent: "#286347",
@@ -26,5 +27,6 @@ export const colors = {
   },
 };
 export const spacing = { page: 23, card: 20, button: 13 };
+
 export const useTheme = () =>
   colors[useColorScheme() === "dark" ? "dark" : "light"];

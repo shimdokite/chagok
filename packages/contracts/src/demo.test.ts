@@ -1,5 +1,6 @@
 import { expect, it } from "vitest";
 import { demo, balance } from "./demo";
+
 it("reserves submitted and approved amounts, excluding rejected claims", () => {
   expect(balance(demo.requests, 100000)).toEqual({
     total: 100000,

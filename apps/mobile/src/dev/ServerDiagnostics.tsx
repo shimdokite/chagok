@@ -7,6 +7,7 @@ import {
   getBenchmarkHistory,
   subscribeBenchmarkHistory,
 } from "../metrics/benchmark-history";
+
 export function ServerDiagnostics() {
   const c = useTheme();
   const history = useSyncExternalStore(
@@ -19,6 +20,7 @@ export function ServerDiagnostics() {
   const [busy, setBusy] = useState(false);
   const abort = useRef<AbortController | null>(null);
   useEffect(() => () => abort.current?.abort(), []);
+
   const check = async () => {
     if (abort.current) return;
     const controller = new AbortController();
@@ -41,6 +43,7 @@ export function ServerDiagnostics() {
       setBusy(false);
     }
   };
+
   if (!__DEV__) return null;
   return (
     <View style={{ gap: 8 }}>

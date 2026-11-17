@@ -1,0 +1,28 @@
+{
+  "measuredAt": "2026-11-17T06:39:38.408Z",
+  "environment": "Node v24.22.3, localhost Next dev, PostgreSQL, synthetic session, no browser/RN render measurement",
+  "metric": "uncompressed HTTP JSON bytes; home query only (auth.session excluded)",
+  "records": [
+    {
+      "scenario": "cold",
+      "requests": 1,
+      "responseBytes": 1002,
+      "durationMs": 121.254208,
+      "status": 200
+    },
+    {
+      "scenario": "within-30s",
+      "requests": 0,
+      "responseBytes": 0,
+      "durationMs": 0.05883300000004965,
+      "status": 200
+    },
+    {
+      "scenario": "manual-refresh",
+      "requests": 1,
+      "responseBytes": 1002,
+      "durationMs": 24.78837500000003,
+      "status": 200
+    }
+  ]
+}

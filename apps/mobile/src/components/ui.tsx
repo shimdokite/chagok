@@ -9,6 +9,7 @@ import {
 import { SafeAreaView } from "react-native-safe-area-context";
 import Svg, { Path, Rect } from "react-native-svg";
 import { useTheme } from "../theme/tokens";
+
 export function Icon({
   name,
   size = 22,
@@ -47,6 +48,7 @@ export function Icon({
     </Svg>
   );
 }
+
 export function Brand() {
   const c = useTheme();
   return (
@@ -71,6 +73,7 @@ export function Brand() {
     </View>
   );
 }
+
 export function Page({ children }: PropsWithChildren) {
   const c = useTheme();
   return (
@@ -83,18 +86,20 @@ export function Page({ children }: PropsWithChildren) {
     </SafeAreaView>
   );
 }
-export function Header() {
+
+export function Header({ company = "우리 회사 복지" }: { company?: string }) {
   const c = useTheme();
   return (
     <View style={styles.header}>
       <Brand />
       <View style={{ flexDirection: "row", gap: 5, alignItems: "center" }}>
         <Icon name="building" size={15} color={c.secondary} />
-        <Text style={{ color: c.secondary, fontSize: 12 }}>그로브</Text>
+        <Text style={{ color: c.secondary, fontSize: 12 }}>{company}</Text>
       </View>
     </View>
   );
 }
+
 export function Button({
   title,
   onPress,
@@ -143,6 +148,7 @@ export function Button({
     </Pressable>
   );
 }
+
 export const styles = StyleSheet.create({
   header: {
     paddingHorizontal: 23,

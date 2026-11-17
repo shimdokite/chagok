@@ -7,7 +7,9 @@
 현재 구현된 기능:
 
 - iOS Google 로그인, 서버 사용자 등록·조회, 안전한 세션 저장·복원·만료·로그아웃
-- 데모 진입과 고정 데이터 기반 복지 한도·최근 신청 내역 표시
+- 회사별 월 정책·실제 DB 복지 한도·최근 신청, 월/상태별 내역·상세·반려 사유
+- 30초 메모리 조회 캐시와 로그아웃/소속 변경 시 캐시 삭제
+- 로그인 없이 별도로 이용하는 고정 데이터 데모
 - 앱에서 신청 웹 화면 열기·닫기
 - 서버 연결 상태 확인 및 오류 재시도
 - 앱과 웹 사이 메시지 검증·왕복 시간 측정
@@ -16,7 +18,7 @@
 
 ## 데모
 
-채울 예정
+웹 미리보기에서 “데모로 둘러보기”로 홈·내역·복지 안내를 확인합니다. 실제 Google 로그인은 iOS Development Build에서 지원합니다. [3일차 계획](docs/plans/day-03.md), [검증 결과·남은 확인](docs/verification/day-03.md), [샘플 DB 준비](docs/manual-checks.md#3일차-직접-확인--2026-11-17)를 참고하세요.
 
 ## 기술 스택
 
@@ -24,7 +26,7 @@
 | --- | --- |
 | 모바일 | React Native, Expo, Expo Router |
 | 웹 | Next.js, React, Tailwind CSS, shadcn/ui |
-| API·계약 | tRPC, Zod |
+| API·계약·캐시 | tRPC, Zod, TanStack Query |
 | 인증·저장소 | Google Sign-In, Expo SecureStore, Prisma, PostgreSQL |
 | 언어·구성 | TypeScript, npm workspaces |
 | 테스트 | Vitest |

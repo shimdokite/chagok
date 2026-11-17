@@ -1,6 +1,7 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { BridgeBenchmark } from "./bridge-benchmark";
 import type { BridgeMessage } from "@chagok/contracts";
+
 const environment = {
   device: "unit-test",
   OS: "test",
@@ -19,6 +20,7 @@ afterEach(() => {
   engine.reset("unmount");
   vi.useRealTimers();
 });
+
 const pong = (id: string) => ({
   channel: "chagok.bridge",
   version: 1,
@@ -26,6 +28,7 @@ const pong = (id: string) => ({
   requestId: id,
   payload: {},
 });
+
 const ready = () =>
   engine.receive({
     channel: "chagok.bridge",
@@ -33,6 +36,7 @@ const ready = () =>
     type: "WEB_READY",
     payload: {},
   });
+
 describe("benchmark lifecycle", () => {
   it("does not send before WEB_READY", async () => {
     await expect(

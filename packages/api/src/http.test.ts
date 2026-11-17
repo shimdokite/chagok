@@ -1,5 +1,6 @@
 import { expect, it, vi } from "vitest";
 import { GET } from "../../../apps/web/src/app/api/trpc/[trpc]/route";
+
 it("returns actual health data and allows the local RN Web preview origin", async () => {
   const response = await GET(
     new Request("http://localhost:3000/api/trpc/health.check", {
@@ -55,4 +56,21 @@ it("requires a session on the real HTTP route and never returns stack traces", a
   expect(body.error.data.stack).toBeUndefined();
   expect(response.headers.get("Cache-Control")).toBe("no-store");
   expect(JSON.stringify(body)).not.toContain("Database is not configured");
+});
+
+it.each([
+  ["benefits.home", { month: "2026-11" }],
+  ["benefits.history", { month: "2026-11" }],
+  ["benefits.policy", { month: "2026-11" }],
+  ["benefits.detail", { id: "another-user-claim" }],
+])("%s HTTP는 무세션 접근을 차단하고 저장하지 않는다", async (path, input) => {
+  const response = await GET(
+    new Request(
+      `http://localhost:3000/api/trpc/${path}?input=${encodeURIComponent(JSON.stringify(input))}`,
+    ),
+  );
+  expect(response.status).toBe(401);
+  expect(response.headers.get("Cache-Control")).toBe("no-store");
+  const body = await response.json();
+  expect(body.error.data.stack).toBeUndefined();
 });

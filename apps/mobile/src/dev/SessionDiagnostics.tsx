@@ -3,6 +3,7 @@ import { Share, Text, View } from "react-native";
 import { Button } from "../components/ui";
 import { restoreMetrics } from "../auth/metrics";
 import { useTheme } from "../theme/tokens";
+
 export function SessionDiagnostics() {
   const c = useTheme();
   const [message, setMessage] = useState("");

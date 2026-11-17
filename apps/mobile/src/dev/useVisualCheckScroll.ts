@@ -7,12 +7,15 @@ export function useVisualCheckScroll() {
   const offset = useRef(0);
   return {
     ref,
+
     onLayout: (event: { nativeEvent: { layout: { height: number } } }) => {
       viewport.current = event.nativeEvent.layout.height;
     },
+
     onScroll: (event: { nativeEvent: { contentOffset: { y: number } } }) => {
       offset.current = event.nativeEvent.contentOffset.y;
     },
+
     move: (direction: "top" | "next" | "end") => {
       if (!__DEV__ || process.env.EXPO_PUBLIC_VISUAL_CHECKS !== "1") return;
       if (direction === "end") ref.current?.scrollToEnd({ animated: false });

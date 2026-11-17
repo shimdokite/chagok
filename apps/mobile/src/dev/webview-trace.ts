@@ -37,12 +37,14 @@ export class WebViewTrace {
   private readonly started: number;
   private sequence = 0;
   private events: TraceEvent[] = [];
+
   constructor(
     private readonly enabled: boolean,
     private readonly clock = () => performance.now(),
   ) {
     this.started = clock();
   }
+
   record(kind: WebViewEventKind, revision: number, detail: Detail = {}) {
     if (!this.enabled) return;
     const event: TraceEvent = {
@@ -58,6 +60,7 @@ export class WebViewTrace {
     this.events.push(event);
     if (this.events.length > 200) this.events.shift();
   }
+
   snapshot() {
     return {
       startedAt: this.startedAt,

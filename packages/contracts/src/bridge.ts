@@ -1,4 +1,5 @@
 import { z } from "zod";
+
 const base = {
   channel: z.literal("chagok.bridge"),
   version: z.literal(1),
@@ -12,6 +13,7 @@ export const bridgeSchema = z.discriminatedUnion("type", [
   z.object({ ...base, type: z.literal("PONG"), requestId }).strict(),
 ]);
 export type BridgeMessage = z.infer<typeof bridgeSchema>;
+
 export function parseBridgeMessage(value: unknown) {
   try {
     return bridgeSchema.safeParse(
@@ -21,6 +23,7 @@ export function parseBridgeMessage(value: unknown) {
     return bridgeSchema.safeParse(undefined);
   }
 }
+
 export function isAllowedApplyUrl(value: string, origin: string) {
   try {
     const url = new URL(value);
@@ -36,12 +39,14 @@ export function isAllowedApplyUrl(value: string, origin: string) {
     return false;
   }
 }
+
 export function injectionFor(message: BridgeMessage) {
   const json = JSON.stringify(bridgeSchema.parse(message))
     .replace(/\u2028/g, "\\u2028")
     .replace(/\u2029/g, "\\u2029");
   return `window.__CHAGOK_BRIDGE__ && window.__CHAGOK_BRIDGE__.receive(${json}); true;`;
 }
+
 export const bridgeBase = {
   channel: "chagok.bridge",
   version: 1,

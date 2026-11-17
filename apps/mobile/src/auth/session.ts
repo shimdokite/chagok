@@ -1,4 +1,4 @@
-export type Session = { user: { id: string }; expiresAt: string };
+export type Session = { user: { id: string; companyId?: string | null }; expiresAt: string };
 export type RestoreMetric = {
   runId: string;
   trigger: "startup" | "foreground" | "retry";
@@ -33,6 +33,7 @@ export interface SessionPorts {
   wallNow(): number;
   onMeasurement(metric: RestoreMetric): void;
 }
+
 function errorCode(error: unknown): string | undefined {
   let current = error;
   for (
@@ -53,6 +54,7 @@ function errorCode(error: unknown): string | undefined {
   }
   return undefined;
 }
+
 export function canAccessApp(state: AuthState) {
   return (
     state.status === "authenticated" ||
@@ -60,24 +62,30 @@ export function canAccessApp(state: AuthState) {
     (state.status === "busy" && !!state.session)
   );
 }
+
 export class SessionController {
   state: AuthState = { status: "busy" };
   private listeners = new Set<() => void>();
   private epoch = 0;
   private busy = false;
   private active: Promise<void> = Promise.resolve();
+
   constructor(private ports: SessionPorts) {}
+
   subscribe = (fn: () => void) => {
     this.listeners.add(fn);
     return () => {
       this.listeners.delete(fn);
     };
   };
+
   snapshot = () => this.state;
+
   private set(state: AuthState) {
     this.state = state;
     this.listeners.forEach((fn) => fn());
   }
+
   private run(action: (epoch: number) => Promise<void>) {
     if (this.busy) return this.active;
     this.busy = true;
@@ -87,6 +95,7 @@ export class SessionController {
     });
     return this.active;
   }
+
   restore(trigger: RestoreMetric["trigger"]) {
     // A failed revocation must remain retryable instead of signing back in.
     if (this.state.status === "demo" || this.state.retry === "signOut")
@@ -159,6 +168,7 @@ export class SessionController {
       }
     });
   }
+
   signIn() {
     return this.run(async (epoch) => {
       this.set({ status: "busy" });
@@ -198,6 +208,7 @@ export class SessionController {
       }
     });
   }
+
   async signOut() {
     if (this.state.status === "busy" && this.state.retry === "signOut")
       return this.active;
@@ -231,13 +242,16 @@ export class SessionController {
     })();
     return this.active;
   }
+
   enterDemo() {
     if (this.busy || this.state.retry === "signOut") return;
     this.set({ status: "demo" });
   }
+
   leaveDemo() {
     this.set({ status: "signedOut" });
   }
+
   expire() {
     if (this.state.status === "authenticated") void this.restore("foreground");
   }

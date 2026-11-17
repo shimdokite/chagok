@@ -1,6 +1,7 @@
 import { createTRPCClient, httpLink } from "@trpc/client";
 import type { AppRouter } from "@chagok/api";
 import { Platform } from "react-native";
+
 export const webOrigin =
   process.env.EXPO_PUBLIC_WEB_ORIGIN ||
   (Platform.OS === "android"
@@ -10,6 +11,7 @@ export const trpc = createTRPCClient<AppRouter>({
   links: [
     httpLink({
       url: `${webOrigin}/api/trpc`,
+
       fetch: (url, options) =>
         fetch(url, {
           ...options,

@@ -3,6 +3,7 @@ import {
   parseBridgeMessage,
   type BridgeMessage,
 } from "@chagok/contracts";
+
 export type Environment = {
   device: string;
   OS: string;
@@ -22,6 +23,7 @@ export type Sample = Environment & {
   reason: string | null;
   measuredAtKst: string;
 };
+
 export function summarize(samples: Sample[]) {
   const values = samples
     .filter((s) => s.status === "success")
@@ -41,6 +43,7 @@ export function summarize(samples: Sample[]) {
     maxMs: n ? values[n - 1] : null,
   };
 }
+
 export type BenchmarkResult = {
   experimentId: string;
   status: "completed" | "cancelled";
@@ -55,9 +58,12 @@ export type BenchmarkResult = {
   summary: ReturnType<typeof summarize>;
 };
 let sequence = 0;
+
 const uniqueId = () => `${Date.now().toString(36)}-${++sequence}`;
+
 const kstNow = () =>
   new Date(Date.now() + 9 * 3600000).toISOString().replace("Z", "+09:00");
+
 export class BridgeBenchmark {
   ready = false;
   running = false;
@@ -69,11 +75,13 @@ export class BridgeBenchmark {
     (status: Sample["status"], reason?: string) => void
   >();
   private cancelSleep: (() => void) | undefined;
+
   constructor(
     private send: (message: BridgeMessage) => void,
     private environment: Environment,
     private now = () => performance.now(),
   ) {}
+
   receive(value: unknown): boolean {
     const result = parseBridgeMessage(value);
     if (!result.success) return false;
@@ -88,6 +96,7 @@ export class BridgeBenchmark {
     }
     return false;
   }
+
   reset(reason: string) {
     if (this.running && this.cancellationReason === null)
       this.cancellationReason = reason;
@@ -98,6 +107,7 @@ export class BridgeBenchmark {
     this.cancelSleep?.();
     this.cancelSleep = undefined;
   }
+
   private sample(
     experimentId: string,
     sampleId: string,
@@ -119,6 +129,7 @@ export class BridgeBenchmark {
         () => finish("timeout", "response-timeout"),
         timeoutMs,
       );
+
       const finish = (status: Sample["status"], reason?: string) => {
         if (!this.pending.has(requestId)) return;
         const receivedAtMonotonicMs = status === "success" ? this.now() : null;
@@ -142,6 +153,7 @@ export class BridgeBenchmark {
               : receivedAtMonotonicMs - sentAtMonotonicMs,
         });
       };
+
       this.pending.set(requestId, finish);
       try {
         this.send({ ...bridgeBase, type: "PING", requestId });
@@ -150,6 +162,7 @@ export class BridgeBenchmark {
       }
     });
   }
+
   async runBridgeBenchmark({
     count = 20,
     intervalMs = 100,

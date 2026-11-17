@@ -1,4 +1,5 @@
 import type { ExpoConfig } from "expo/config";
+
 const config: ExpoConfig = {
   name: "차곡",
   slug: "chagok",

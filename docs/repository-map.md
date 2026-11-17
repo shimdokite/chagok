@@ -57,4 +57,14 @@
 - `apps/mobile/src/dev/SessionDiagnostics.tsx`: 개인정보 없는 복원 원본 공유(개발 모드).
 - `apps/web/src/components/ui/`, `src/lib/utils.ts`, PostCSS·components.json: 웹 신청 화면에 실제 사용하는 shadcn/Tailwind.
 - `docs/verification/day-02.md`, `docs/verification/day-02/`: 실제 검사·수동 확인 대기·인증 설정 안내. 실계정 검증은 준비 상태에 따라 별도 표시.
-- `docs/verification/day-02/pr-ready/`: 누적 AC·리뷰·최종 자동 검사 및 공개 범위 점검. `docs/learning/`은 로컬 전용이며 PR에는 기존 추적 파일의 1회 삭제만 포함한다.
+- `docs/verification/day-02/pr-ready/`: 누적 AC·리뷰·최종 자동 검사 및 공개 범위 점검. `docs/learning/`은 로컬 전용이다. 기존 추적 파일의 1회 삭제는 2일차 PR #4에 반영됐으며 이후 PR에는 학습 파일을 포함하지 않는다.
+
+
+## 3일차 추가 경계 — 2026-11-17
+
+- `packages/contracts/src/benefits.ts`: 월/상태 입력과 직렬화 응답, KST 월 유틸리티.
+- `packages/api/src/benefits/`: Prisma 읽기 서비스, 로컬 seed/link, 단위/실DB 테스트. `auth`의 세션 결과에는 서버 소속ID가 추가된다.
+- `packages/api/prisma/`: Company/Membership/BenefitPolicy/Claim 및 복합 소속 FK. `scripts/benefits-seed.ts`와 `measure-benefits.ts`는 명시 실행하는 로컬 전용 스크립트다.
+- `apps/mobile/src/benefits/`: 인증별 QueryClient, 조회 취소/소속 응답 검증, tRPC 요청, 데모 변환, 공통 탐색/상태 UI.
+- `apps/mobile/app/{home,history,policy}.tsx`, `requests/[id].tsx`: 홈·내역·안내·상세. 기존 components는 실제 데이터 props를 받는다.
+- `docs/plans/day-03.md`, `verification/day-03.md`, `verification/day-03/`, `metrics/daily/day-03.md`: 승인 범위·AC·현재 실행 증거. 학습 자료는 별도 로컬 영역으로 유지한다.
