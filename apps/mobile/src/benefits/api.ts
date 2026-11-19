@@ -12,11 +12,19 @@ export async function benefitsClient(signal: AbortSignal) {
         url: `${webOrigin}/api/trpc`,
         headers: token ? { Authorization: `Bearer ${token}` } : {},
 
-        fetch: (url, options) =>
-          fetch(url, {
+        fetch: (url, options) => {
+          signal.throwIfAborted();
+          const timeout = AbortSignal.timeout(8000);
+          // Sent writes can commit after closing the screen. Wait for their
+          // result so cache invalidation happens after settlement, not on close.
+          return fetch(url, {
             ...options,
-            signal: AbortSignal.any([signal, AbortSignal.timeout(8000)]),
-          }),
+            signal:
+              options?.method === "POST"
+                ? timeout
+                : AbortSignal.any([signal, timeout]),
+          });
+        },
       }),
     ],
   });

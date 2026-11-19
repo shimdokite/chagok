@@ -1,0 +1,8 @@
+Datasource "db": PostgreSQL database "chagok", schema "public" at "127.0.0.1:55432"
+
+4 migrations found in prisma/migrations
+
+Database schema is up to date!
+Loaded Prisma config from packages/api/prisma.config.ts.
+
+Prisma schema loaded from packages/api/prisma/schema.prisma.

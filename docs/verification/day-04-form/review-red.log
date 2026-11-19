@@ -1,0 +1,126 @@
+
+ RUN  v5.1.0 /Users/doyeon/Desktop/chagok
+
+ ❯ apps/web/src/components/apply/request-id.test.ts (0 test)
+ ❯ apps/mobile/src/bridge/claim-host.test.ts (10 tests | 2 failed) 22ms
+   × preserves the same usable identity during foreground session validation 5ms
+   × invalidates possibly committed writes even after a transport failure 4ms
+ ❯ apps/web/src/components/apply/form-client.test.ts (8 tests | 4 failed) 100ms
+   ❯ claim form state (5)
+     × allows correction only on a definitive server rejection 28ms
+   × does not allow another create after authentication rejection 3ms
+   × times out an old host that never initializes the form 1ms
+   × blocks a resumed uncertain document until history is checked 0ms
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/web/src/components/apply/request-id.test.ts [ apps/web/src/components/apply/request-id.test.ts ]
+Error: Cannot find module './request-id' imported from /Users/doyeon/Desktop/chagok/apps/web/src/components/apply/request-id.test.ts
+ ❯ apps/web/src/components/apply/request-id.test.ts:2:1
+      1| import { afterEach, expect, it, vi } from "vitest";
+      2| import { requestId } from "./request-id";
+       | ^
+      3|
+      4| afterEach(() => vi.unstubAllGlobals());
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/7]⎯
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 6 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/mobile/src/bridge/claim-host.test.ts > preserves the same usable identity during foreground session validation
+TypeError: claimAccess is not a function
+ ❯ apps/mobile/src/bridge/claim-host.test.ts:134:10
+    132| it("preserves the same usable identity during foreground session valid…
+    133|   const session = { user: { id: "a", companyId: "company-a" }, expires…
+    134|   expect(claimAccess({ status: "busy", session })).toEqual(claimAccess…
+       |          ^
+    135|   expect(claimAccess({ status: "busy" }).mode).toBe("unavailable");
+    136| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/7]⎯
+
+ FAIL  apps/mobile/src/bridge/claim-host.test.ts > invalidates possibly committed writes even after a transport failure
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ apps/mobile/src/bridge/claim-host.test.ts:140:70
+    138|   const s = setup(async () => { throw new Error("response lost"); });
+    139|   await s.host.receive(s.request, `${origin}/apply`);
+    140|   expect(s.cache.getQueryState(["benefits", "home"])?.isInvalidated).t…
+       |                                                                      ^
+    141|   expect(s.cache.getQueryState(["benefits", "history"])?.isInvalidated…
+    142|   expect(s.output.at(-1)).toMatchObject({ type: "FORM_ERROR", payload:…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/7]⎯
+
+ FAIL  apps/web/src/components/apply/form-client.test.ts > claim form state > allows correction only on a definitive server rejection
+AssertionError: expected 'ready' to be 'loading' // Object.is equality
+
+Expected: "loading"
+Received: "ready"
+
+ ❯ apps/web/src/components/apply/form-client.test.ts:99:39
+     97|       payload: { code: "BAD_REQUEST" },
+     98|     });
+     99|     expect(s.client.snapshot().phase).toBe("loading");
+       |                                       ^
+    100|     const load = s.messages.at(-1);
+    101|     if (load?.type !== "FORM_LOAD") throw new Error("Expected refresh"…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/7]⎯
+
+ FAIL  apps/web/src/components/apply/form-client.test.ts > does not allow another create after authentication rejection
+AssertionError: expected [ …(2) ] to have a length of 1 but got 2
+
+- Expected
++ Received
+
+- 1
++ 2
+
+ ❯ apps/web/src/components/apply/form-client.test.ts:139:63
+    137|   s.client.receive({ ...request, type: "FORM_ERROR", payload: { code: …
+    138|   s.client.submit(draft);
+    139|   expect(s.messages.filter((m) => m.type === "CLAIM_SUBMIT")).toHaveLe…
+       |                                                               ^
+    140| });
+    141| it("times out an old host that never initializes the form", () => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/7]⎯
+
+ FAIL  apps/web/src/components/apply/form-client.test.ts > times out an old host that never initializes the form
+TypeError: client.start is not a function
+ ❯ apps/web/src/components/apply/form-client.test.ts:145:10
+    143|   const client = new FormClient(() => {}, "2026-11");
+    144|   clients.push(client);
+    145|   client.start();
+       |          ^
+    146|   vi.advanceTimersByTime(12000);
+    147|   expect(client.snapshot().phase).toBe("error");
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/7]⎯
+
+ FAIL  apps/web/src/components/apply/form-client.test.ts > blocks a resumed uncertain document until history is checked
+TypeError: s.client.start is not a function
+ ❯ apps/web/src/components/apply/form-client.test.ts:153:12
+    151|   s.client.submit(draft);
+    152|   s.client.dispose();
+    153|   s.client.start();
+       |            ^
+    154|   s.client.receive({ ...bridgeBase, type: "FORM_INIT", connectionId: "…
+    155|   s.client.submit(draft);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/7]⎯
+
+
+ Test Files  3 failed (3)
+      Tests  6 failed | 12 passed (18)
+   Start at  18:10:32
+   Duration  327ms (import 40%, tests 33%, transform 25%, worker 2%)
+

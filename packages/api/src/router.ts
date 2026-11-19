@@ -2,7 +2,11 @@ import { initTRPC, TRPCError } from "@trpc/server";
 import { z } from "zod";
 import type { AuthService } from "./auth/service";
 import type { BenefitsService } from "./benefits/service";
-import { historyInput, monthSchema } from "@chagok/contracts/benefits";
+import {
+  createClaimInput,
+  historyInput,
+  monthSchema,
+} from "@chagok/contracts/benefits";
 
 type Context = {
   token?: string;
@@ -35,6 +39,11 @@ const employeeProcedure = sessionProcedure.use(async ({ ctx, next }) => {
 });
 export const appRouter = t.router({
   benefits: t.router({
+    create: employeeProcedure
+      .input(createClaimInput)
+      .mutation(({ ctx, input }) =>
+        ctx.getBenefits().create(ctx.userId, input),
+      ),
     home: employeeProcedure
       .input(z.object({ month: monthSchema }).strict())
       .query(({ ctx, input }) =>

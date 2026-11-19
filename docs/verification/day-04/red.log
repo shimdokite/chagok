@@ -1,0 +1,153 @@
+
+> chagok@0.1.0 pretest
+> npm run style:check
+
+
+> chagok@0.1.0 style:check
+> node scripts/check-function-spacing.mjs
+
+코드 간격: 90개 파일 검사, 위반 0건
+
+> chagok@0.1.0 test
+> vitest run packages/contracts/src/claim-input.test.ts packages/api/src/http.test.ts
+
+
+ RUN  v5.1.0 /Users/doyeon/Desktop/chagok
+
+ ❯ packages/contracts/src/claim-input.test.ts (25 tests | 25 failed) 6ms
+   ❯ 신청 입력 경계 (25)
+     × 공백과 UUID 표기를 정규화한다 3ms
+     × 금액 0 거부 0ms
+     × 금액 -1 거부 0ms
+     × 금액 0.5 거부 0ms
+     × 금액 2147483648 거부 0ms
+     × 금액 NaN 거부 0ms
+     × 금액 Infinity 거부 0ms
+     × 금액 12000 거부 0ms
+     × 날짜 2026-02-29 거부 0ms
+     × 날짜 2026-04-31 거부 0ms
+     × 날짜 2026-13-01 거부 0ms
+     × 날짜 2026-1-01 거부 0ms
+     × 날짜 1999-12-31 거부 0ms
+     × 날짜 2100-01-01 거부 0ms
+     × 날짜 2026-11-01T00:00:00Z 거부 0ms
+     × 입력 {"title":" "} 거부 0ms
+     × 입력 {"title":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"} 거부 0ms
+     × 입력 {"category":" "} 거부 0ms
+     × 입력 {"category":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"} 거부 0ms
+     × 입력 {"requestId":"bad"} 거부 0ms
+     × 입력 {"userId":"forged"} 거부 0ms
+     × 입력 {"companyId":"forged"} 거부 0ms
+     × 입력 {"status":"APPROVED"} 거부 0ms
+     × 정수 원 경계 1 허용 0ms
+     × 정수 원 경계 2147483647 허용 0ms
+ ❯ packages/api/src/http.test.ts (11 tests | 1 failed) 22ms
+   × 신청 생성 HTTP POST는 인증 없이는 저장할 수 없다 17ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 26 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/api/src/http.test.ts > 신청 생성 HTTP POST는 인증 없이는 저장할 수 없다
+AssertionError: expected 404 to be 401 // Object.is equality
+
+- Expected
++ Received
+
+- 401
++ 404
+
+ ❯ packages/api/src/http.test.ts:18:27
+     16|     }),
+     17|   );
+     18|   expect(response.status).toBe(401);
+       |                           ^
+     19|   expect(response.headers.get("Cache-Control")).toBe("no-store");
+     20|   expect((await response.json()).error.data.stack).toBeUndefined();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/26]⎯
+
+ FAIL  packages/contracts/src/claim-input.test.ts > 신청 입력 경계 > 공백과 UUID 표기를 정규화한다
+TypeError: Cannot read properties of undefined (reading 'parse')
+ ❯ packages/contracts/src/claim-input.test.ts:14:29
+     12| describe("신청 입력 경계", () => {
+     13|   it("공백과 UUID 표기를 정규화한다", () => {
+     14|     expect(createClaimInput.parse(input)).toEqual({
+       |                             ^
+     15|       ...input,
+     16|       requestId: "a2d745a9-044f-4d8e-b831-e838e44aa123",
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/26]⎯
+
+ FAIL  packages/contracts/src/claim-input.test.ts > 신청 입력 경계 > 금액 0 거부
+ FAIL  packages/contracts/src/claim-input.test.ts > 신청 입력 경계 > 금액 -1 거부
+ FAIL  packages/contracts/src/claim-input.test.ts > 신청 입력 경계 > 금액 0.5 거부
+ FAIL  packages/contracts/src/claim-input.test.ts > 신청 입력 경계 > 금액 2147483648 거부
+ FAIL  packages/contracts/src/claim-input.test.ts > 신청 입력 경계 > 금액 NaN 거부
+ FAIL  packages/contracts/src/claim-input.test.ts > 신청 입력 경계 > 금액 Infinity 거부
+ FAIL  packages/contracts/src/claim-input.test.ts > 신청 입력 경계 > 금액 12000 거부
+TypeError: Cannot read properties of undefined (reading 'safeParse')
+ ❯ packages/contracts/src/claim-input.test.ts:24:31
+     22|     "금액 %s 거부",
+     23|     (amount) => {
+     24|       expect(createClaimInput.safeParse({ ...input, amount }).success)…
+       |                               ^
+     25|         false,
+     26|       );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/26]⎯
+
+ FAIL  packages/contracts/src/claim-input.test.ts > 신청 입력 경계 > 날짜 2026-02-29 거부
+ FAIL  packages/contracts/src/claim-input.test.ts > 신청 입력 경계 > 날짜 2026-04-31 거부
+ FAIL  packages/contracts/src/claim-input.test.ts > 신청 입력 경계 > 날짜 2026-13-01 거부
+ FAIL  packages/contracts/src/claim-input.test.ts > 신청 입력 경계 > 날짜 2026-1-01 거부
+ FAIL  packages/contracts/src/claim-input.test.ts > 신청 입력 경계 > 날짜 1999-12-31 거부
+ FAIL  packages/contracts/src/claim-input.test.ts > 신청 입력 경계 > 날짜 2100-01-01 거부
+ FAIL  packages/contracts/src/claim-input.test.ts > 신청 입력 경계 > 날짜 2026-11-01T00:00:00Z 거부
+TypeError: Cannot read properties of undefined (reading 'safeParse')
+ ❯ packages/contracts/src/claim-input.test.ts:38:29
+     36|     "2026-11-01T00:00:00Z",
+     37|   ])("날짜 %s 거부", (usedOn) => {
+     38|     expect(createClaimInput.safeParse({ ...input, usedOn }).success).t…
+       |                             ^
+     39|       false,
+     40|     );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/26]⎯
+
+ FAIL  packages/contracts/src/claim-input.test.ts > 신청 입력 경계 > 입력 {"title":" "} 거부
+ FAIL  packages/contracts/src/claim-input.test.ts > 신청 입력 경계 > 입력 {"title":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"} 거부
+ FAIL  packages/contracts/src/claim-input.test.ts > 신청 입력 경계 > 입력 {"category":" "} 거부
+ FAIL  packages/contracts/src/claim-input.test.ts > 신청 입력 경계 > 입력 {"category":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"} 거부
+ FAIL  packages/contracts/src/claim-input.test.ts > 신청 입력 경계 > 입력 {"requestId":"bad"} 거부
+ FAIL  packages/contracts/src/claim-input.test.ts > 신청 입력 경계 > 입력 {"userId":"forged"} 거부
+ FAIL  packages/contracts/src/claim-input.test.ts > 신청 입력 경계 > 입력 {"companyId":"forged"} 거부
+ FAIL  packages/contracts/src/claim-input.test.ts > 신청 입력 경계 > 입력 {"status":"APPROVED"} 거부
+TypeError: Cannot read properties of undefined (reading 'safeParse')
+ ❯ packages/contracts/src/claim-input.test.ts:52:29
+     50|     { status: "APPROVED" },
+     51|   ])("입력 %j 거부", (change) => {
+     52|     expect(createClaimInput.safeParse({ ...input, ...change }).success…
+       |                             ^
+     53|       false,
+     54|     );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/26]⎯
+
+ FAIL  packages/contracts/src/claim-input.test.ts > 신청 입력 경계 > 정수 원 경계 1 허용
+ FAIL  packages/contracts/src/claim-input.test.ts > 신청 입력 경계 > 정수 원 경계 2147483647 허용
+TypeError: Cannot read properties of undefined (reading 'safeParse')
+ ❯ packages/contracts/src/claim-input.test.ts:57:29
+     55|   });
+     56|   it.each([1, 2147483647])("정수 원 경계 %s 허용", (amount) => {
+     57|     expect(createClaimInput.safeParse({ ...input, amount }).success).t…
+       |                             ^
+     58|   });
+     59| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/26]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  26 failed | 10 passed (36)
+   Start at  17:40:47
+   Duration  394ms (import 53%, transform 38%, tests 7%, worker 2%)
+

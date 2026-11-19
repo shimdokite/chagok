@@ -1,0 +1,138 @@
+{
+  "records": [
+    {
+      "index": 0,
+      "warmup": true,
+      "status": "success",
+      "measuredAt": "2026-11-19T09:25:09.673Z",
+      "nativeLoadStartMs": 154737410.392375,
+      "nativeFormReadyMs": 154741249.686625,
+      "formReadyDurationMs": 3839.294250011444,
+      "webSubmitStartMs": 1737,
+      "webSubmitEndMs": 1773,
+      "submitDurationMs": 36
+    },
+    {
+      "index": 1,
+      "warmup": false,
+      "status": "success",
+      "measuredAt": "2026-11-19T09:25:16.860Z",
+      "nativeLoadStartMs": 154743778.507791,
+      "nativeFormReadyMs": 154745979.164125,
+      "formReadyDurationMs": 2200.6563339829445,
+      "webSubmitStartMs": 647,
+      "webSubmitEndMs": 668,
+      "submitDurationMs": 21
+    },
+    {
+      "index": 2,
+      "warmup": false,
+      "status": "success",
+      "measuredAt": "2026-11-19T09:25:21.007Z",
+      "nativeLoadStartMs": 154747479.478333,
+      "nativeFormReadyMs": 154750689.413375,
+      "formReadyDurationMs": 3209.9350419938564,
+      "webSubmitStartMs": 1180,
+      "webSubmitEndMs": 1370,
+      "submitDurationMs": 190
+    },
+    {
+      "index": 3,
+      "warmup": false,
+      "status": "success",
+      "measuredAt": "2026-11-19T09:25:25.785Z",
+      "nativeLoadStartMs": 154752308.042416,
+      "nativeFormReadyMs": 154755151.9465,
+      "formReadyDurationMs": 2843.904083997011,
+      "webSubmitStartMs": 791,
+      "webSubmitEndMs": 829,
+      "submitDurationMs": 38
+    },
+    {
+      "index": 4,
+      "warmup": false,
+      "status": "success",
+      "measuredAt": "2026-11-19T09:25:30.181Z",
+      "nativeLoadStartMs": 154756794.792,
+      "nativeFormReadyMs": 154761250.574125,
+      "formReadyDurationMs": 4455.782124996185,
+      "webSubmitStartMs": 1505,
+      "webSubmitEndMs": 1628,
+      "submitDurationMs": 123
+    },
+    {
+      "index": 5,
+      "warmup": false,
+      "status": "success",
+      "measuredAt": "2026-11-19T09:25:36.418Z",
+      "nativeLoadStartMs": 154763769.5635,
+      "nativeFormReadyMs": 154766957.817666,
+      "formReadyDurationMs": 3188.254166007042,
+      "webSubmitStartMs": 623,
+      "webSubmitEndMs": 654,
+      "submitDurationMs": 31
+    },
+    {
+      "index": 6,
+      "warmup": false,
+      "status": "success",
+      "measuredAt": "2026-11-19T09:25:41.968Z",
+      "nativeLoadStartMs": 154768286.846791,
+      "nativeFormReadyMs": 154770684.111125,
+      "formReadyDurationMs": 2397.2643339931965,
+      "webSubmitStartMs": 1556,
+      "webSubmitEndMs": 1661,
+      "submitDurationMs": 105
+    },
+    {
+      "index": 7,
+      "warmup": false,
+      "status": "success",
+      "measuredAt": "2026-11-19T09:25:46.225Z",
+      "nativeLoadStartMs": 154772560.979125,
+      "nativeFormReadyMs": 154774471.47675,
+      "formReadyDurationMs": 1910.4976249933243,
+      "webSubmitStartMs": 478,
+      "webSubmitEndMs": 501,
+      "submitDurationMs": 23
+    },
+    {
+      "index": 8,
+      "warmup": false,
+      "status": "success",
+      "measuredAt": "2026-11-19T09:25:49.435Z",
+      "nativeLoadStartMs": 154775813.419666,
+      "nativeFormReadyMs": 154778240.498291,
+      "formReadyDurationMs": 2427.0786249935627,
+      "webSubmitStartMs": 1137,
+      "webSubmitEndMs": 1157,
+      "submitDurationMs": 20
+    },
+    {
+      "index": 9,
+      "warmup": false,
+      "status": "success",
+      "measuredAt": "2026-11-19T09:25:53.265Z",
+      "nativeLoadStartMs": 154779527.025958,
+      "nativeFormReadyMs": 154781813.628458,
+      "formReadyDurationMs": 2286.6024999916553,
+      "webSubmitStartMs": 626,
+      "webSubmitEndMs": 658,
+      "submitDurationMs": 32
+    },
+    {
+      "index": 10,
+      "warmup": false,
+      "status": "success",
+      "measuredAt": "2026-11-19T09:25:56.793Z",
+      "nativeLoadStartMs": 154783243.373875,
+      "nativeFormReadyMs": 154785984.833916,
+      "formReadyDurationMs": 2741.4600410163403,
+      "webSubmitStartMs": 1374,
+      "webSubmitEndMs": 1448,
+      "submitDurationMs": 74
+    }
+  ],
+  "restored": true,
+  "fixtureCleaned": true
+}

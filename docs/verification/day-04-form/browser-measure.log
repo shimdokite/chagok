@@ -1,0 +1,36 @@
+(node:60624) ExperimentalWarning: Transform Types is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:60624) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/doyeon/Desktop/chagok/apps/mobile/src/bridge/claim-host.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/doyeon/Desktop/chagok/apps/mobile/package.json.
+(node:60624) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/doyeon/Desktop/chagok/packages/contracts/src/bridge.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/doyeon/Desktop/chagok/packages/contracts/package.json.
+(node:60624) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/doyeon/Desktop/chagok/packages/api/src/auth/store.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/doyeon/Desktop/chagok/packages/api/package.json.
+{
+  "checks": [
+    "anonymous preview disabled; 320px no horizontal overflow",
+    "missing policy, excess amount, whitespace title rejected before create",
+    "11 real saves (1 warmup + 10 samples), home/history cache invalidated and real HTTP/DB verified",
+    "lost result: actual DB commit, client 12s timeout, same UUID retry, still 12 rows",
+    "actual expired DB session rejected with visible error; no new row"
+  ],
+  "samples": 13,
+  "summary": {
+    "formReady": {
+      "n": 10,
+      "medianMs": 141,
+      "minMs": 111,
+      "maxMs": 243.30000001192093
+    },
+    "submit": {
+      "n": 10,
+      "medianMs": 23.05000001192093,
+      "minMs": 18.19999998807907,
+      "maxMs": 48.900000005960464
+    }
+  },
+  "fixtureCleaned": true
+}

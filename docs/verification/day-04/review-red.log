@@ -1,0 +1,51 @@
+
+> chagok@0.1.0 pretest
+> npm run style:check
+
+
+> chagok@0.1.0 style:check
+> node scripts/check-function-spacing.mjs
+
+코드 간격: 91개 파일 검사, 위반 0건
+
+> chagok@0.1.0 test
+> vitest run packages/contracts/src/claim-input.test.ts
+
+
+ RUN  v5.1.0 /Users/doyeon/Desktop/chagok
+
+ ❯ packages/contracts/src/claim-input.test.ts (29 tests | 3 failed) 10ms
+   ❯ 신청 입력 경계 (29)
+     × 저장할 수 없는 문자 "점\u0000심" 거부 6ms
+     × 저장할 수 없는 문자 "점\ud800심" 거부 1ms
+     × 저장할 수 없는 문자 "점\udfff심" 거부 0ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/contracts/src/claim-input.test.ts > 신청 입력 경계 > 저장할 수 없는 문자 "점\u0000심" 거부
+ FAIL  packages/contracts/src/claim-input.test.ts > 신청 입력 경계 > 저장할 수 없는 문자 "점\ud800심" 거부
+ FAIL  packages/contracts/src/claim-input.test.ts > 신청 입력 경계 > 저장할 수 없는 문자 "점\udfff심" 거부
+AssertionError: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ packages/contracts/src/claim-input.test.ts:18:9
+     16|       expect(
+     17|         createClaimInput.safeParse({ ...input, title: text }).success,
+     18|       ).toBe(false);
+       |         ^
+     19|       expect(
+     20|         createClaimInput.safeParse({ ...input, category: text }).succe…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  3 failed | 26 passed (29)
+   Start at  17:45:22
+   Duration  207ms (import 57%, transform 29%, tests 11%, worker 3%)
+

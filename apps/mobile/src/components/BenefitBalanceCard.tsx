@@ -8,9 +8,11 @@ import { Button, Icon, styles } from "./ui";
 export function BenefitBalanceCard({
   amounts,
   month,
+  isDemo = false,
 }: {
   amounts: Amounts;
   month: string;
+  isDemo?: boolean;
 }) {
   const c = useTheme();
   const used = amounts.submitted + amounts.approved;
@@ -73,7 +75,7 @@ export function BenefitBalanceCard({
         </View>
       </View>
       <Button
-        title="신청 화면 미리보기  ↗"
+        title={isDemo ? "신청 화면 미리보기  ↗" : "복지비 신청하기  ↗"}
         onPress={() => router.push("/apply")}
       />
     </View>

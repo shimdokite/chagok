@@ -1,0 +1,12 @@
+PASS: 30 preserved local-file hashes unchanged (learning, handoff, next-env)
+PASS: learning ignored, untracked, absent from staged and PR history diff
+INFO: full diff whitespace warnings only in preserved raw logs: 44
+PASS: code and documents whitespace check (raw logs excluded explicitly)
+PASS: staged exact selection; only next-env tracked change remains unstaged
+PASS: explicit file selection and commit template 109 files
+PASS: 103 current source hashes
+PASS: previous measured source differs only in the documented two native files
+PASS: updated local document links
+PASS: PR five sections and full-scope commit format
+PASS: no local private config values or GitHub credentials in selected artifacts
+PASS: historical measurements kept; no new performance claim; no learning content copied

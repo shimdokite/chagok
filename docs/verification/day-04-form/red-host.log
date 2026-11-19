@@ -1,0 +1,25 @@
+
+ RUN  v5.1.0 /Users/doyeon/Desktop/chagok
+
+ ❯ apps/mobile/src/bridge/claim-host.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/mobile/src/bridge/claim-host.test.ts [ apps/mobile/src/bridge/claim-host.test.ts ]
+Error: Cannot find module './claim-host' imported from /Users/doyeon/Desktop/chagok/apps/mobile/src/bridge/claim-host.test.ts
+ ❯ apps/mobile/src/bridge/claim-host.test.ts:4:1
+      2| import { QueryClient } from "@tanstack/react-query";
+      3| import { bridgeBase, type BridgeMessage } from "@chagok/contracts";
+      4| import { ClaimHost } from "./claim-host";
+       | ^
+      5|
+      6| const origin = "http://localhost:3000";
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  18:01:26
+   Duration  236ms (worker 97%, environment 3%)
+

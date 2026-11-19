@@ -59,6 +59,23 @@ export const historyInput = z
   })
   .strict();
 export type HistoryInput = z.input<typeof historyInput>;
+// PostgreSQL text rejects NUL; lone surrogates cannot round-trip through UTF-8.
+const claimText = z
+  .string()
+  .trim()
+  .min(1)
+  .regex(/^[^\u0000\uD800-\uDFFF]*$/u);
+export const createClaimInput = z
+  .object({
+    requestId: z.uuid().toLowerCase(),
+    expectedCompanyId: z.string().min(1).max(100).optional(),
+    title: claimText.max(100),
+    category: claimText.max(50),
+    amount: z.number().int().min(1).max(2147483647),
+    usedOn: z.iso.date().regex(/^20\d{2}-/),
+  })
+  .strict();
+export type CreateClaimInput = z.infer<typeof createClaimInput>;
 
 export function currentMonth(now = new Date()) {
   return new Date(now.getTime() + 9 * 60 * 60 * 1000).toISOString().slice(0, 7);

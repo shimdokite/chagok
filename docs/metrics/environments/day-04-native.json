@@ -1,0 +1,18 @@
+{
+  "measuredAt": "2026-11-19T09:26:03.852Z",
+  "platform": "iOS 27.2 Simulator iPhone 17",
+  "app": "existing Debug development client + current Metro bundle",
+  "web": "Next development Turbopack",
+  "database": "local PostgreSQL, isolated real DB session",
+  "formClock": "RN performance.now on actual load reset to received FORM_READY",
+  "submitClock": "WebView performance.now submit handler to success effect; different clock from RN, no clock subtraction across runtimes",
+  "input": "debugger-triggered native router and injected DOM events, actual RN WebView/host/HTTP/DB; not manual taps",
+  "conditions": "1 warmup then 10 warm opens; server already running",
+  "source": {
+    "apps/mobile/src/bridge/useClaimHost.ts": "610ab038f7e945afecdd254f4769deb697ea52dd27f0e8f412194093121edbab",
+    "apps/mobile/src/bridge/claim-host.ts": "788d4ac02c457c2b5cf7226a826708f97f6b03715c0cb069c3a164bbca4afb90",
+    "apps/mobile/src/components/ApplyContainer.tsx": "45eb8433b62b95b16d54c12ad8654d7c4c67d4ea5b027e048b65508ac8277afb",
+    "apps/web/src/components/apply/ApplyForm.tsx": "26dcdee3d6f1a2f27b525ef4c522eedd21813e7a7ef44cb33ae95ad61f09c6b8",
+    "packages/api/scripts/verify-claim-native.mjs": "a7efcea6cf57301486e9cf03b1b929a7965149246f6511c3de624ef4133922d0"
+  }
+}

@@ -1,0 +1,143 @@
+{
+  "records": [
+    {
+      "index": 0,
+      "warmup": true,
+      "status": "success",
+      "measuredAt": "2026-11-19T09:22:19.860Z",
+      "nativeLoadStartMs": 154569055.383416,
+      "nativeFormReadyMs": 154574506.139291,
+      "formReadyDurationMs": 5450.755874991417,
+      "webSubmitStartMs": 3843,
+      "webSubmitEndMs": 3889,
+      "submitDurationMs": 46
+    },
+    {
+      "index": 1,
+      "warmup": false,
+      "status": "success",
+      "measuredAt": "2026-11-19T09:22:30.647Z",
+      "nativeLoadStartMs": 154577475.519708,
+      "nativeFormReadyMs": 154581296.655958,
+      "formReadyDurationMs": 3821.136249989271,
+      "webSubmitStartMs": 1564,
+      "webSubmitEndMs": 1695,
+      "submitDurationMs": 131
+    },
+    {
+      "index": 2,
+      "warmup": false,
+      "status": "success",
+      "measuredAt": "2026-11-19T09:22:36.804Z",
+      "nativeLoadStartMs": 154583744.92775,
+      "nativeFormReadyMs": 154587280.466166,
+      "formReadyDurationMs": 3535.5384159982204,
+      "webSubmitStartMs": 1063,
+      "webSubmitEndMs": 1097,
+      "submitDurationMs": 34
+    },
+    {
+      "index": 3,
+      "warmup": false,
+      "status": "success",
+      "measuredAt": "2026-11-19T09:22:42.335Z",
+      "nativeLoadStartMs": 154589615.623708,
+      "nativeFormReadyMs": 154593855.433583,
+      "formReadyDurationMs": 4239.809874981642,
+      "webSubmitStartMs": 1770,
+      "webSubmitEndMs": 1802,
+      "submitDurationMs": 32
+    },
+    {
+      "index": 4,
+      "warmup": false,
+      "status": "success",
+      "measuredAt": "2026-11-19T09:22:49.017Z",
+      "nativeLoadStartMs": 154595395.283416,
+      "nativeFormReadyMs": 154597284.8365,
+      "formReadyDurationMs": 1889.553083986044,
+      "webSubmitStartMs": 571,
+      "webSubmitEndMs": 591,
+      "submitDurationMs": 20
+    },
+    {
+      "index": 5,
+      "warmup": false,
+      "status": "success",
+      "measuredAt": "2026-11-19T09:22:52.330Z",
+      "nativeLoadStartMs": 154598613.9275,
+      "nativeFormReadyMs": 154601090.440458,
+      "formReadyDurationMs": 2476.5129579901695,
+      "webSubmitStartMs": 1014,
+      "webSubmitEndMs": 1038,
+      "submitDurationMs": 24
+    },
+    {
+      "index": 6,
+      "warmup": false,
+      "status": "success",
+      "measuredAt": "2026-11-19T09:22:56.050Z",
+      "nativeLoadStartMs": 154602353.36075,
+      "nativeFormReadyMs": 154604459.35525,
+      "formReadyDurationMs": 2105.9945000112057,
+      "webSubmitStartMs": 546,
+      "webSubmitEndMs": 606,
+      "submitDurationMs": 60
+    },
+    {
+      "index": 7,
+      "warmup": false,
+      "status": "success",
+      "measuredAt": "2026-11-19T09:22:59.497Z",
+      "nativeLoadStartMs": 154606292.660666,
+      "nativeFormReadyMs": 154609103.9305,
+      "formReadyDurationMs": 2811.269834011793,
+      "webSubmitStartMs": 1160,
+      "webSubmitEndMs": 1249,
+      "submitDurationMs": 89
+    },
+    {
+      "index": 8,
+      "warmup": false,
+      "status": "success",
+      "measuredAt": "2026-11-19T09:23:04.247Z",
+      "nativeLoadStartMs": 154610724.425208,
+      "nativeFormReadyMs": 154612607.317,
+      "formReadyDurationMs": 1882.89179199934,
+      "webSubmitStartMs": 574,
+      "webSubmitEndMs": 595,
+      "submitDurationMs": 21
+    },
+    {
+      "index": 9,
+      "warmup": false,
+      "status": "success",
+      "measuredAt": "2026-11-19T09:23:07.658Z",
+      "nativeLoadStartMs": 154614271.349041,
+      "nativeFormReadyMs": 154618033.199416,
+      "formReadyDurationMs": 3761.8503750264645,
+      "webSubmitStartMs": 1784,
+      "webSubmitEndMs": 1806,
+      "submitDurationMs": 22
+    },
+    {
+      "index": 10,
+      "warmup": false,
+      "status": "success",
+      "measuredAt": "2026-11-19T09:23:13.071Z",
+      "nativeLoadStartMs": 154619554.246041,
+      "nativeFormReadyMs": 154621978.468958,
+      "formReadyDurationMs": 2424.2229169905186,
+      "webSubmitStartMs": 679,
+      "webSubmitEndMs": 712,
+      "submitDurationMs": 33
+    }
+  ],
+  "restored": {
+    "_A": null,
+    "_x": 0,
+    "_y": 0,
+    "_z": null
+  },
+  "fixtureCleaned": true
+}

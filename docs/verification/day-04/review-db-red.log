@@ -1,0 +1,52 @@
+
+> chagok@0.1.0 pretest
+> npm run style:check
+
+
+> chagok@0.1.0 style:check
+> node scripts/check-function-spacing.mjs
+
+코드 간격: 91개 파일 검사, 위반 0건
+
+> chagok@0.1.0 test
+> vitest run packages/api/src/benefits/create-claim.integration.test.ts -t 저장 불가능한
+
+
+ RUN  v5.1.0 /Users/doyeon/Desktop/chagok
+
+ ❯ packages/api/src/benefits/create-claim.integration.test.ts (14 tests | 1 failed | 13 skipped) 165ms
+   ❯ 신청 생성 실제 DB (14)
+     × 저장 불가능한 문자는 BAD_REQUEST이며 정상 이모지는 재전송할 수 있다 160ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/api/src/benefits/create-claim.integration.test.ts > 신청 생성 실제 DB > 저장 불가능한 문자는 BAD_REQUEST이며 정상 이모지는 재전송할 수 있다
+AssertionError: expected TRPCError: 
+Invalid `tx.claim.create()` i… { code: '…' } to match object { code: 'BAD_REQUEST' }
+(6 matching properties omitted from actual)
+
+- Expected
++ Received
+
+- {
+-   "code": "BAD_REQUEST",
++ TRPCError {
++   "code": "INTERNAL_SERVER_ERROR",
+  }
+
+ ❯ packages/api/src/benefits/create-claim.integration.test.ts:163:10
+    161|         await expect(
+    162|           caller(a.token).benefits.create(input({ title })),
+    163|         ).rejects.toMatchObject({ code: "BAD_REQUEST" });
+       |          ^
+    164|       }
+    165|       expect(await db.claim.count({ where: { userId: a.user.id } })).t…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 13 skipped (14)
+   Start at  17:45:34
+   Duration  407ms (tests 56%, import 30%, transform 13%, worker 1%)
+

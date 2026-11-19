@@ -15,6 +15,7 @@ import {
 import { WebView } from "react-native-webview";
 import { router } from "expo-router";
 import { isAllowedApplyUrl, parseBridgeMessage } from "@chagok/contracts";
+import { useClaimHost } from "../bridge/useClaimHost";
 import { useWebViewBridge } from "../bridge/useWebViewBridge";
 import { webOrigin } from "../lib/trpc";
 import { Page, Button } from "./ui";
@@ -60,7 +61,18 @@ export default function ApplyContainer() {
     return router.canGoBack() ? router.back() : router.replace("/home");
   }, [record]);
 
-  const bridge = useWebViewBridge(ref, closeAndGoBack);
+  const claimHost = useClaimHost(ref);
+  const baseBridge = useWebViewBridge(ref, closeAndGoBack);
+
+  const reset = useCallback(
+    (reason: string) => {
+      claimHost.reset();
+      baseBridge.reset(reason);
+    },
+    [claimHost, baseBridge.reset],
+  );
+
+  const bridge = { ...baseBridge, reset };
   const probe = useBoundaryProbe(
     (script) => ref.current?.injectJavaScript(script),
     () => ({
@@ -182,7 +194,10 @@ export default function ApplyContainer() {
             onRenderProcessGone={() => fail("render-process-gone")}
             onMessage={(event) => {
               const { data, url } = event.nativeEvent;
+              if (revision !== committedRevision.current) return;
               const decision = bridge.receive(data, url);
+              if (decision === "closed") claimHost.reset();
+              if (decision === "accepted") void claimHost.receive(data, url);
               if (__DEV__) {
                 const parsed = parseBridgeMessage(data);
                 if (
@@ -194,7 +209,7 @@ export default function ApplyContainer() {
                 else if (decision.startsWith("rejected"))
                   record("message-rejected", revision);
               }
-              probe.observe("message", { data, url, decision });
+              probe.observe("message", { url, decision });
             }}
             javaScriptEnabled
             allowFileAccess={false}

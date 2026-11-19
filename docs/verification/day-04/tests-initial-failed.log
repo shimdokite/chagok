@@ -1,0 +1,55 @@
+
+> chagok@0.1.0 pretest
+> npm run style:check
+
+
+> chagok@0.1.0 style:check
+> node scripts/check-function-spacing.mjs
+
+코드 간격: 91개 파일 검사, 위반 0건
+
+> chagok@0.1.0 test
+> vitest run
+
+
+ RUN  v5.1.0 /Users/doyeon/Desktop/chagok
+
+ ❯ packages/api/src/benefits/create-claim.integration.test.ts (13 tests | 1 failed) 1154ms
+   ❯ 신청 생성 실제 DB (13)
+     × 대기/승인만 차감하고 사용월 경계와 정확한 잔액을 적용한다 54ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/api/src/benefits/create-claim.integration.test.ts > 신청 생성 실제 DB > 대기/승인만 차감하고 사용월 경계와 정확한 잔액을 적용한다
+PrismaClientKnownRequestError: 
+Invalid `db.claim.createMany()` invocation in
+/Users/doyeon/Desktop/chagok/packages/api/src/benefits/create-claim.integration.test.ts:178:22
+
+  175   expect(await db.claim.count({ where: { userId: a.user.id } })).toBe(0);
+  176 });
+  177 it("대기/승인만 차감하고 사용월 경계와 정확한 잔액을 적용한다", async () => {
+→ 178   await db.claim.createMany(
+Database error. Code: `23514`. Message: `new row for relation "Claim" violates check constraint "Claim_check"`
+ ❯ vn.handleRequestError node_modules/@prisma/client/src/runtime/RequestHandler.ts:238:13
+ ❯ vn.handleAndLogRequestError node_modules/@prisma/client/src/runtime/RequestHandler.ts:184:12
+ ❯ vn.request node_modules/@prisma/client/src/runtime/RequestHandler.ts:153:12
+ ❯ a node_modules/@prisma/client/src/runtime/getPrismaClient.ts:1012:24
+ ❯ packages/api/src/benefits/create-claim.integration.test.ts:178:7
+    176|     });
+    177|     it("대기/승인만 차감하고 사용월 경계와 정확한 잔액을 적용한다", async () => {
+    178|       await db.claim.createMany({
+       |       ^
+    179|         data: [
+    180|           { status: "SUBMITTED" as const, amount: 15000, usedOn: "2026…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 19 passed (20)
+      Tests  1 failed | 194 passed (195)
+   Start at  17:43:37
+   Duration  2.06s (tests 52%, import 32%, transform 15%, worker 1%)
+
+    Isolate  20 workers spawned · ~165ms startup each (spawn + environment, per file)
+             at least ~307ms faster with isolate: false — reuses workers across files instead of one per file
+
