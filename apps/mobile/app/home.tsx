@@ -80,7 +80,11 @@ export default function Home() {
         ) : null}
         {data?.kind === "ready" ? (
           <>
-            <BenefitBalanceCard amounts={data.amounts} month={month} />
+            <BenefitBalanceCard
+              amounts={data.amounts}
+              month={month}
+              isDemo={isDemo}
+            />
             <BenefitCategoryList categories={data.policy.categories} />
             <RecentRequestList items={data.recent} />
           </>

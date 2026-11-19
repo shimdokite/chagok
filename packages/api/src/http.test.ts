@@ -1,5 +1,24 @@
 import { expect, it, vi } from "vitest";
-import { GET } from "../../../apps/web/src/app/api/trpc/[trpc]/route";
+import { GET, POST } from "../../../apps/web/src/app/api/trpc/[trpc]/route";
+
+it("신청 생성 HTTP POST는 인증 없이는 저장할 수 없다", async () => {
+  const response = await POST(
+    new Request("http://localhost:3000/api/trpc/benefits.create", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        requestId: "a2d745a9-044f-4d8e-b831-e838e44aa123",
+        title: "점심",
+        category: "식비",
+        amount: 10000,
+        usedOn: "2026-11-19",
+      }),
+    }),
+  );
+  expect(response.status).toBe(401);
+  expect(response.headers.get("Cache-Control")).toBe("no-store");
+  expect((await response.json()).error.data.stack).toBeUndefined();
+});
 
 it("returns actual health data and allows the local RN Web preview origin", async () => {
   const response = await GET(

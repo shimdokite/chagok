@@ -1,0 +1,266 @@
+
+> chagok@0.1.0 pretest
+> npm run style:check
+
+
+> chagok@0.1.0 style:check
+> node scripts/check-function-spacing.mjs
+
+코드 간격: 90개 파일 검사, 위반 0건
+
+> chagok@0.1.0 test
+> vitest run packages/api/src/benefits/create-claim.integration.test.ts
+
+
+ RUN  v5.1.0 /Users/doyeon/Desktop/chagok
+
+ ❯ packages/api/src/benefits/create-claim.integration.test.ts (13 tests | 13 failed) 255ms
+   ❯ 신청 생성 실제 DB (13)
+     × 서버 소속과 SUBMITTED로 저장하고 기존 조회에서 확인한다 135ms
+     × 무세션, 위조, 만료, 로그아웃 및 무소속은 저장하지 않는다 11ms
+     × 회사/사용자/상태 위조와 잘못된 입력은 저장하지 않는다 9ms
+     × 다른 회사 정책은 사용하지 않고 없는 월/미지원 항목을 거부한다 7ms
+     × 대기/승인만 차감하고 사용월 경계와 정확한 잔액을 적용한다 22ms
+     × 한도가 0원이면 양수 신청을 거부한다 10ms
+     × 연말 사용일은 제출일과 무관하게 해당 월 정책을 쓴다 7ms
+     × 같은 키/정규화 입력은 정책 변경 및 잔액 소진 후에도 기존 id를 반환한다 7ms
+     × 같은 키의 다른 내용은 거부하고 기존 신청을 보존한다 6ms
+     × 동일 키의 동시 재전송 8개는 한 건만 저장한다 6ms
+     × 서로 다른 키의 동시 요청 8개도 월 한도를 넘지 않는다 12ms
+     × 別 사용자 같은 키는 별도로 저장하고 같은 회사 동료의 한도도 분리한다 9ms
+     × DB unique 제약도 동일 사용자 요청 키 중복을 차단한다 7ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 13 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/api/src/benefits/create-claim.integration.test.ts > 신청 생성 실제 DB > 서버 소속과 SUBMITTED로 저장하고 기존 조회에서 확인한다
+TRPCError: No procedure found on path "benefits,create"
+ ❯ node_modules/@trpc/server/src/unstable-core-do-not-import/router.ts:542:21
+ ❯ packages/api/src/benefits/create-claim.integration.test.ts:97:22
+     95|
+     96|     it("서버 소속과 SUBMITTED로 저장하고 기존 조회에서 확인한다", async () => {
+     97|       const result = await caller(a.token).benefits.create(input());
+       |                      ^
+     98|       expect(
+     99|         await db.claim.findUniqueOrThrow({ where: { id: result.id } }),
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/13]⎯
+
+ FAIL  packages/api/src/benefits/create-claim.integration.test.ts > 신청 생성 실제 DB > 무세션, 위조, 만료, 로그아웃 및 무소속은 저장하지 않는다
+AssertionError: expected TRPCError: No procedure found on path "be… { code: '…' } to match object { code: 'UNAUTHORIZED' }
+(2 matching properties omitted from actual)
+
+- Expected
++ Received
+
+- {
+-   "code": "UNAUTHORIZED",
++ TRPCError {
++   "code": "NOT_FOUND",
+  }
+
+ ❯ packages/api/src/benefits/create-claim.integration.test.ts:125:10
+    123|         await expect(
+    124|           caller(token).benefits.create(input()),
+    125|         ).rejects.toMatchObject({ code: "UNAUTHORIZED" });
+       |          ^
+    126|       }
+    127|       await expect(
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/13]⎯
+
+ FAIL  packages/api/src/benefits/create-claim.integration.test.ts > 신청 생성 실제 DB > 회사/사용자/상태 위조와 잘못된 입력은 저장하지 않는다
+AssertionError: expected TRPCError: No procedure found on path "be… { code: '…' } to match object { code: 'BAD_REQUEST' }
+(2 matching properties omitted from actual)
+
+- Expected
++ Received
+
+- {
+-   "code": "BAD_REQUEST",
++ TRPCError {
++   "code": "NOT_FOUND",
+  }
+
+ ❯ packages/api/src/benefits/create-claim.integration.test.ts:155:10
+    153|         await expect(
+    154|           caller(a.token).benefits.create(input(change)),
+    155|         ).rejects.toMatchObject({ code: "BAD_REQUEST" });
+       |          ^
+    156|       }
+    157|       expect(await db.claim.count({ where: { userId: a.user.id } })).t…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/13]⎯
+
+ FAIL  packages/api/src/benefits/create-claim.integration.test.ts > 신청 생성 실제 DB > 다른 회사 정책은 사용하지 않고 없는 월/미지원 항목을 거부한다
+AssertionError: expected TRPCError: No procedure found on path "be… { code: '…' } to match object { code: 'PRECONDITION_FAILED' }
+(2 matching properties omitted from actual)
+
+- Expected
++ Received
+
+- {
+-   "code": "PRECONDITION_FAILED",
++ TRPCError {
++   "code": "NOT_FOUND",
+  }
+
+ ❯ packages/api/src/benefits/create-claim.integration.test.ts:171:8
+    169|       await expect(
+    170|         caller(a.token).benefits.create(input({ usedOn: "2026-12-01" }…
+    171|       ).rejects.toMatchObject({ code: "PRECONDITION_FAILED" });
+       |        ^
+    172|       await expect(
+    173|         caller(a.token).benefits.create(input({ category: "도서비" })),
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/13]⎯
+
+ FAIL  packages/api/src/benefits/create-claim.integration.test.ts > 신청 생성 실제 DB > 대기/승인만 차감하고 사용월 경계와 정확한 잔액을 적용한다
+PrismaClientKnownRequestError: 
+Invalid `db.claim.createMany()` invocation in
+/Users/doyeon/Desktop/chagok/packages/api/src/benefits/create-claim.integration.test.ts:178:22
+
+  175   expect(await db.claim.count({ where: { userId: a.user.id } })).toBe(0);
+  176 });
+  177 it("대기/승인만 차감하고 사용월 경계와 정확한 잔액을 적용한다", async () => {
+→ 178   await db.claim.createMany(
+Database error. Code: `23514`. Message: `new row for relation "Claim" violates check constraint "Claim_check"`
+ ❯ vn.handleRequestError node_modules/@prisma/client/src/runtime/RequestHandler.ts:238:13
+ ❯ vn.handleAndLogRequestError node_modules/@prisma/client/src/runtime/RequestHandler.ts:184:12
+ ❯ vn.request node_modules/@prisma/client/src/runtime/RequestHandler.ts:153:12
+ ❯ a node_modules/@prisma/client/src/runtime/getPrismaClient.ts:1012:24
+ ❯ packages/api/src/benefits/create-claim.integration.test.ts:178:7
+    176|     });
+    177|     it("대기/승인만 차감하고 사용월 경계와 정확한 잔액을 적용한다", async () => {
+    178|       await db.claim.createMany({
+       |       ^
+    179|         data: [
+    180|           { status: "SUBMITTED" as const, amount: 15000, usedOn: "2026…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/13]⎯
+
+ FAIL  packages/api/src/benefits/create-claim.integration.test.ts > 신청 생성 실제 DB > 한도가 0원이면 양수 신청을 거부한다
+AssertionError: expected TRPCError: No procedure found on path "be… { code: '…' } to match object { code: 'BAD_REQUEST' }
+(2 matching properties omitted from actual)
+
+- Expected
++ Received
+
+- {
+-   "code": "BAD_REQUEST",
++ TRPCError {
++   "code": "NOT_FOUND",
+  }
+
+ ❯ packages/api/src/benefits/create-claim.integration.test.ts:217:8
+    215|       await expect(
+    216|         caller(a.token).benefits.create(input({ amount: 1 })),
+    217|       ).rejects.toMatchObject({ code: "BAD_REQUEST" });
+       |        ^
+    218|       expect(await db.claim.count({ where: { userId: a.user.id } })).t…
+    219|     });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/13]⎯
+
+ FAIL  packages/api/src/benefits/create-claim.integration.test.ts > 신청 생성 실제 DB > 연말 사용일은 제출일과 무관하게 해당 월 정책을 쓴다
+TRPCError: No procedure found on path "benefits,create"
+ ❯ node_modules/@trpc/server/src/unstable-core-do-not-import/router.ts:542:21
+ ❯ packages/api/src/benefits/create-claim.integration.test.ts:230:7
+    228|         },
+    229|       });
+    230|       await caller(a.token).benefits.create(
+       |       ^
+    231|         input({ usedOn: "2025-12-31", amount: 1 }),
+    232|       );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/13]⎯
+
+ FAIL  packages/api/src/benefits/create-claim.integration.test.ts > 신청 생성 실제 DB > 같은 키/정규화 입력은 정책 변경 및 잔액 소진 후에도 기존 id를 반환한다
+TRPCError: No procedure found on path "benefits,create"
+ ❯ node_modules/@trpc/server/src/unstable-core-do-not-import/router.ts:542:21
+ ❯ packages/api/src/benefits/create-claim.integration.test.ts:242:21
+    240|     it("같은 키/정규화 입력은 정책 변경 및 잔액 소진 후에도 기존 id를 반환한다", async () => {
+    241|       const request = input({ amount: 100000 });
+    242|       const first = await caller(a.token).benefits.create(request);
+       |                     ^
+    243|       await db.benefitPolicy.updateMany({
+    244|         where: { companyId: companies[0] },
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/13]⎯
+
+ FAIL  packages/api/src/benefits/create-claim.integration.test.ts > 신청 생성 실제 DB > 같은 키의 다른 내용은 거부하고 기존 신청을 보존한다
+TRPCError: No procedure found on path "benefits,create"
+ ❯ node_modules/@trpc/server/src/unstable-core-do-not-import/router.ts:542:21
+ ❯ packages/api/src/benefits/create-claim.integration.test.ts:258:21
+    256|     it("같은 키의 다른 내용은 거부하고 기존 신청을 보존한다", async () => {
+    257|       const request = input();
+    258|       const first = await caller(a.token).benefits.create(request);
+       |                     ^
+    259|       for (const change of [
+    260|         { title: "저녁" },
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/13]⎯
+
+ FAIL  packages/api/src/benefits/create-claim.integration.test.ts > 신청 생성 실제 DB > 동일 키의 동시 재전송 8개는 한 건만 저장한다
+TRPCError: No procedure found on path "benefits,create"
+ ❯ node_modules/@trpc/server/src/unstable-core-do-not-import/router.ts:542:21
+ ❯ packages/api/src/benefits/create-claim.integration.test.ts:276:23
+    274|     it("동일 키의 동시 재전송 8개는 한 건만 저장한다", async () => {
+    275|       const request = input();
+    276|       const results = await Promise.all(
+       |                       ^
+    277|         Array.from({ length: 8 }, () =>
+    278|           caller(a.token).benefits.create(request),
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/13]⎯
+
+ FAIL  packages/api/src/benefits/create-claim.integration.test.ts > 신청 생성 실제 DB > 서로 다른 키의 동시 요청 8개도 월 한도를 넘지 않는다
+AssertionError: expected [] to have a length of 3 but got +0
+
+- Expected
++ Received
+
+- 3
++ 0
+
+ ❯ packages/api/src/benefits/create-claim.integration.test.ts:292:9
+    290|       expect(
+    291|         results.filter((result) => result.status === "fulfilled"),
+    292|       ).toHaveLength(3);
+       |         ^
+    293|       const failed = results.filter((result) => result.status === "rej…
+    294|       expect(failed).toHaveLength(5);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/13]⎯
+
+ FAIL  packages/api/src/benefits/create-claim.integration.test.ts > 신청 생성 실제 DB > 別 사용자 같은 키는 별도로 저장하고 같은 회사 동료의 한도도 분리한다
+TRPCError: No procedure found on path "benefits,create"
+ ❯ node_modules/@trpc/server/src/unstable-core-do-not-import/router.ts:542:21
+ ❯ packages/api/src/benefits/create-claim.integration.test.ts:311:21
+    309|       });
+    310|       const request = input({ amount: 100000 });
+    311|       const first = await caller(a.token).benefits.create(request);
+       |                     ^
+    312|       const second = await caller(b.token).benefits.create(request);
+    313|       expect(first.id).not.toBe(second.id);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/13]⎯
+
+ FAIL  packages/api/src/benefits/create-claim.integration.test.ts > 신청 생성 실제 DB > DB unique 제약도 동일 사용자 요청 키 중복을 차단한다
+TRPCError: No procedure found on path "benefits,create"
+ ❯ node_modules/@trpc/server/src/unstable-core-do-not-import/router.ts:542:21
+ ❯ packages/api/src/benefits/create-claim.integration.test.ts:320:7
+    318|     it("DB unique 제약도 동일 사용자 요청 키 중복을 차단한다", async () => {
+    319|       const request = input();
+    320|       await caller(a.token).benefits.create(request);
+       |       ^
+    321|       await expect(
+    322|         db.claim.create({
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/13]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  13 failed (13)
+   Start at  17:42:15
+   Duration  470ms (tests 72%, import 23%, transform 5%, worker 1%)
+

@@ -1,0 +1,147 @@
+{
+  "environment": "../environments/day-04-form.json",
+  "records": [
+    {
+      "index": 0,
+      "warmup": true,
+      "measuredAt": "2026-11-19T09:20:33.094Z",
+      "status": "success",
+      "formReadyMs": 244.2000000178814,
+      "submitStartedMs": 363.40000000596046,
+      "submitEndedMs": 400.40000000596046,
+      "submitDurationMs": 37
+    },
+    {
+      "index": 1,
+      "warmup": false,
+      "measuredAt": "2026-11-19T09:20:33.603Z",
+      "status": "success",
+      "formReadyMs": 175.5,
+      "submitStartedMs": 340.59999999403954,
+      "submitEndedMs": 389.5,
+      "submitDurationMs": 48.900000005960464
+    },
+    {
+      "index": 2,
+      "warmup": false,
+      "measuredAt": "2026-11-19T09:20:34.141Z",
+      "status": "success",
+      "formReadyMs": 205.7000000178814,
+      "submitStartedMs": 299,
+      "submitEndedMs": 327,
+      "submitDurationMs": 28
+    },
+    {
+      "index": 3,
+      "warmup": false,
+      "measuredAt": "2026-11-19T09:20:34.521Z",
+      "status": "success",
+      "formReadyMs": 243.30000001192093,
+      "submitStartedMs": 317.2000000178814,
+      "submitEndedMs": 340.80000001192093,
+      "submitDurationMs": 23.599999994039536
+    },
+    {
+      "index": 4,
+      "warmup": false,
+      "measuredAt": "2026-11-19T09:20:34.904Z",
+      "status": "success",
+      "formReadyMs": 145.40000000596046,
+      "submitStartedMs": 218.90000000596046,
+      "submitEndedMs": 240,
+      "submitDurationMs": 21.099999994039536
+    },
+    {
+      "index": 5,
+      "warmup": false,
+      "measuredAt": "2026-11-19T09:20:35.182Z",
+      "status": "success",
+      "formReadyMs": 128.19999998807907,
+      "submitStartedMs": 209.09999999403954,
+      "submitEndedMs": 232.59999999403954,
+      "submitDurationMs": 23.5
+    },
+    {
+      "index": 6,
+      "warmup": false,
+      "measuredAt": "2026-11-19T09:20:35.458Z",
+      "status": "success",
+      "formReadyMs": 193.40000000596046,
+      "submitStartedMs": 265.2999999821186,
+      "submitEndedMs": 287,
+      "submitDurationMs": 21.700000017881393
+    },
+    {
+      "index": 7,
+      "warmup": false,
+      "measuredAt": "2026-11-19T09:20:35.786Z",
+      "status": "success",
+      "formReadyMs": 136.59999999403954,
+      "submitStartedMs": 204.5,
+      "submitEndedMs": 222.69999998807907,
+      "submitDurationMs": 18.19999998807907
+    },
+    {
+      "index": 8,
+      "warmup": false,
+      "measuredAt": "2026-11-19T09:20:36.056Z",
+      "status": "success",
+      "formReadyMs": 111,
+      "submitStartedMs": 184.69999998807907,
+      "submitEndedMs": 208.19999998807907,
+      "submitDurationMs": 23.5
+    },
+    {
+      "index": 9,
+      "warmup": false,
+      "measuredAt": "2026-11-19T09:20:36.305Z",
+      "status": "success",
+      "formReadyMs": 134.80000001192093,
+      "submitStartedMs": 218.19999998807907,
+      "submitEndedMs": 240.80000001192093,
+      "submitDurationMs": 22.600000023841858
+    },
+    {
+      "index": 10,
+      "warmup": false,
+      "measuredAt": "2026-11-19T09:20:36.582Z",
+      "status": "success",
+      "formReadyMs": 125.69999998807907,
+      "submitStartedMs": 207.59999999403954,
+      "submitEndedMs": 226.69999998807907,
+      "submitDurationMs": 19.099999994039536
+    },
+    {
+      "scenario": "lost-result-first-attempt",
+      "status": "timeout",
+      "reason": "test intentionally dropped committed result; separate from warm series"
+    },
+    {
+      "scenario": "lost-result-retry",
+      "status": "success",
+      "reason": "same UUID, no new row"
+    }
+  ],
+  "summary": {
+    "formReady": {
+      "n": 10,
+      "medianMs": 141,
+      "minMs": 111,
+      "maxMs": 243.30000001192093
+    },
+    "submit": {
+      "n": 10,
+      "medianMs": 23.05000001192093,
+      "minMs": 18.19999998807907,
+      "maxMs": 48.900000005960464
+    }
+  },
+  "checks": [
+    "anonymous preview disabled; 320px no horizontal overflow",
+    "missing policy, excess amount, whitespace title rejected before create",
+    "11 real saves (1 warmup + 10 samples), home/history cache invalidated and real HTTP/DB verified",
+    "lost result: actual DB commit, client 12s timeout, same UUID retry, still 12 rows",
+    "actual expired DB session rejected with visible error; no new row"
+  ],
+  "fixtureCleaned": true
+}

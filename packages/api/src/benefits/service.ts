@@ -1,7 +1,9 @@
 import type { Prisma, PrismaClient } from "@prisma/client";
 import { TRPCError } from "@trpc/server";
+import { createClaim } from "./create-claim";
 import {
   monthBounds,
+  type CreateClaimInput,
   type Amounts,
   type ClaimItem,
   type ClaimStatus,
@@ -78,6 +80,10 @@ function policyFor(
 
 export function createBenefitsService(db: PrismaClient) {
   return {
+    create(userId: string, input: CreateClaimInput) {
+      return createClaim(db, userId, input);
+    },
+
     home(userId: string, month: string): Promise<HomeData> {
       return db.$transaction(
         async (tx) => {

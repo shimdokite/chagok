@@ -1,0 +1,76 @@
+
+ RUN  v5.1.0 /Users/doyeon/Desktop/chagok
+
+ ❯ apps/mobile/src/benefits/api.test.ts (4 tests | 2 failed) 1041ms
+   × refreshes an active home after a sent claim commits beyond screen close 1034ms
+   × does not send a claim when its screen closed before dispatch 5ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/mobile/src/benefits/api.test.ts > refreshes an active home after a sent claim commits beyond screen close
+AssertionError: expected 65000 to be 64000 // Object.is equality
+
+- Expected
++ Received
+
+- 64000
++ 65000
+
+ ❯ apps/mobile/src/benefits/api.test.ts:98:60
+     96|     transport.commit();
+     97|     await pending;
+     98|     await vi.waitFor(() => expect(cache.getQueryData(key)).toBe(64000)…
+       |                                                            ^
+     99|     expect(output).toHaveLength(1);
+    100|   } finally {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  apps/mobile/src/benefits/api.test.ts > does not send a claim when its screen closed before dispatch
+AssertionError: expected "vi.fn()" to not be called at all, but actually been called 1 times
+
+Received:
+
+  1st vi.fn() call:
+
+    Array [
+      "http://localhost:3000/api/trpc/benefits.create",
+      Object {
+        "body": "{"requestId":"123e4567-e89b-42d3-a456-426614174000","title":"식사","category":"식비","amount":1000,"usedOn":"2026-11-19"}",
+        "headers": Object {
+          "Authorization": "Bearer test-session",
+          "content-type": "application/json",
+        },
+        "method": "POST",
+        "signal": AbortSignal {
+          Symbol(kEvents): Map {},
+          Symbol(events.maxEventTargetListeners): 0,
+          Symbol(events.maxEventTargetListenersWarned): false,
+          Symbol(kHandlers): Map {},
+          Symbol(kAborted): true,
+          Symbol(kReason): [AbortError: This operation was aborted],
+          Symbol(kComposite): true,
+          Symbol(kSourceSignals): Set {},
+        },
+      },
+    ]
+
+
+Number of calls: 1
+
+ ❯ apps/mobile/src/benefits/api.test.ts:113:21
+    111|   abort.abort();
+    112|   await expect(client.benefits.create.mutate(input)).rejects.toThrow();
+    113|   expect(fetch).not.toHaveBeenCalled();
+       |                     ^
+    114| });
+    115|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 2 passed (4)
+   Start at  18:42:08
+   Duration  1.21s (tests 92%, import 6%, transform 3%)
+

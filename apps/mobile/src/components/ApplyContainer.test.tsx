@@ -62,7 +62,8 @@ const host = vi.hoisted(() => {
 
     useState(value: unknown) {
       const s = next();
-      if (!("value" in s)) s.value = value;
+      if (!("value" in s))
+        s.value = typeof value === "function" ? value() : value;
       return [
         s.value,
         (v: any) => {
@@ -118,8 +119,27 @@ vi.mock("../dev/BridgeDiagnostics", () => ({
 vi.mock("../dev/VisualCheckControls", () => ({
   VisualCheckControls: "VisualControls",
 }));
+const probeEvents = vi.hoisted(() => ({ observe: vi.fn() }));
 vi.mock("../dev/useBoundaryProbe", () => ({
-  useBoundaryProbe: () => ({ observe() {} }),
+  useBoundaryProbe: () => probeEvents,
+}));
+
+vi.mock("../auth/SessionProvider", () => ({
+  useSession: () => ({
+    controller: {
+      snapshot: () => ({ status: "demo" }),
+
+      subscribe: () => () => {},
+    },
+  }),
+}));
+vi.mock("@tanstack/react-query", () => ({
+  useQueryClient: () => ({ invalidateQueries: async () => {} }),
+}));
+vi.mock("../benefits/api", () => ({
+  benefitsClient: async () => {
+    throw new Error("Unexpected API use");
+  },
 }));
 
 import ApplyContainer from "./ApplyContainer";
@@ -242,4 +262,26 @@ describe("ApplyContainer termination evidence", () => {
     expect(navigation.back).toHaveBeenCalledTimes(1);
     expect(snapshot().events).toEqual([]);
   });
+});
+
+it("does not export form payloads through the boundary probe", () => {
+  message(
+    JSON.stringify({
+      ...bridgeBase,
+      type: "CLAIM_SUBMIT",
+      connectionId: "x",
+      requestId: "rpc",
+      payload: {
+        requestId: "123e4567-e89b-42d3-a456-426614174000",
+        title: "private expense",
+        amount: 1234,
+        category: "식비",
+        usedOn: "2026-11-19",
+      },
+    }),
+  );
+  const report = JSON.stringify(probeEvents.observe.mock.calls);
+  expect(report).not.toContain("private expense");
+  expect(report).not.toContain("1234");
+  expect(report).toContain("accepted");
 });

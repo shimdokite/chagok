@@ -1,0 +1,25 @@
+
+ RUN  v5.1.0 /Users/doyeon/Desktop/chagok
+
+ ❯ apps/mobile/src/components/ApplyContainer.test.tsx (8 tests | 1 failed | 7 skipped) 12ms
+   × does not export form payloads through the boundary probe 12ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/mobile/src/components/ApplyContainer.test.tsx > does not export form payloads through the boundary probe
+AssertionError: expected '[["message",{"data":"{\"channel\":\"c…' not to contain 'private expense'
+
+Expected: "private expense"
+Received: "[["message",{"data":"{\"channel\":\"chagok.bridge\",\"version\":1,\"payload\":{\"requestId\":\"123e4567-e89b-42d3-a456-426614174000\",\"title\":\"private expense\",\"amount\":1234,\"category\":\"식비\",\"usedOn\":\"2026-11-19\"},\"type\":\"CLAIM_SUBMIT\",\"connectionId\":\"x\",\"requestId\":\"rpc\"}","url":"http://localhost:3000/apply","decision":"accepted"}]]"
+
+ ❯ apps/mobile/src/components/ApplyContainer.test.tsx:270:22
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 7 skipped (8)
+   Start at  18:12:20
+   Duration  242ms (import 48%, transform 42%, tests 8%, worker 2%)
+

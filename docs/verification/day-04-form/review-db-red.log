@@ -1,0 +1,40 @@
+
+ RUN  v5.1.0 /Users/doyeon/Desktop/chagok
+
+ ❯ packages/api/src/benefits/create-claim.integration.test.ts (15 tests | 1 failed | 14 skipped) 141ms
+   ❯ 신청 생성 실제 DB (15)
+     × rejects company changes after opening the form inside the write lock 137ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/api/src/benefits/create-claim.integration.test.ts > 신청 생성 실제 DB > rejects company changes after opening the form inside the write lock
+AssertionError: expected TRPCError: [
+  {
+    "code": "unrecognize… { code: '…' } to match object { code: 'FORBIDDEN' }
+(4 matching properties omitted from actual)
+
+- Expected
++ Received
+
+- {
+-   "code": "FORBIDDEN",
++ TRPCError {
++   "code": "BAD_REQUEST",
+  }
+
+ ❯ packages/api/src/benefits/create-claim.integration.test.ts:94:96
+     92|     it("rejects company changes after opening the form inside the writ…
+     93|       await db.membership.update({ where: { userId: a.user.id }, data:…
+     94|       await expect(caller(a.token).benefits.create(input({ expectedCom…
+       |                                                                                                ^
+     95|       expect(await db.claim.count({ where: { userId: a.user.id } })).t…
+     96|       await expect(caller(a.token).benefits.create(input({ expectedCom…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 14 skipped (15)
+   Start at  18:10:37
+   Duration  335ms (tests 58%, import 29%, transform 13%, worker 1%)
+

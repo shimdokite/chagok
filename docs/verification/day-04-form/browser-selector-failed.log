@@ -1,0 +1,48 @@
+(node:54527) ExperimentalWarning: Transform Types is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:54527) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/doyeon/Desktop/chagok/apps/mobile/src/bridge/claim-host.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/doyeon/Desktop/chagok/apps/mobile/package.json.
+(node:54527) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/doyeon/Desktop/chagok/packages/contracts/src/bridge.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/doyeon/Desktop/chagok/packages/contracts/package.json.
+(node:54527) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/doyeon/Desktop/chagok/packages/api/src/auth/store.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/doyeon/Desktop/chagok/packages/api/package.json.
+{
+  "checks": [
+    "anonymous preview disabled; 320px no horizontal overflow"
+  ],
+  "samples": 0,
+  "summary": {
+    "formReady": {
+      "n": 0,
+      "medianMs": null,
+      "minMs": null,
+      "maxMs": null
+    },
+    "submit": {
+      "n": 0,
+      "medianMs": null,
+      "minMs": null,
+      "maxMs": null
+    }
+  },
+  "fixtureCleaned": true
+}
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+locator.waitFor: Error: strict mode violation: getByRole('alert') resolved to 2 elements:
+    1) <div role="alert" tabindex="-1" aria-live="polite" class="mb-4 text-sm leading-relaxed">…</div> aka getByRole('alert').filter({ hasText: '사용일, 항목, 내용과 신청 가능한 금액을 확인해 주세요' })
+    2) <div role="alert" aria-live="assertive" id="__next-route-announcer__"></div> aka locator('[id="__next-route-announcer__"]')
+
+Call log:
+[2m  - waiting for getByRole('alert') to be visible[22m
+
+    at /Users/doyeon/Desktop/chagok/packages/api/scripts/measure-claim-form.mjs:230:33 {
+  log: [ "  - waiting for getByRole('alert') to be visible" ]
+}
+
+Node.js v24.18.0

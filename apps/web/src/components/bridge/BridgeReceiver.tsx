@@ -1,7 +1,8 @@
 "use client";
-import { Button } from "../ui/button";
-import { useEffect, useState } from "react";
-import { bridgeBase, parseBridgeMessage } from "@chagok/contracts";
+import { useEffect } from "react";
+import { requestId } from "../apply/request-id";
+import { bridgeBase } from "@chagok/contracts";
+import type { FormClient } from "../apply/form-client";
 
 declare global {
   interface Window {
@@ -10,66 +11,41 @@ declare global {
   }
 }
 
-export function BridgeReceiver() {
-  const [native, setNative] = useState(false);
+export function BridgeReceiver({ client }: { client: FormClient }) {
   useEffect(() => {
-    const host = window.ReactNativeWebView;
-    if (!host) return;
-    setNative(true);
-    const receiver = {
-      receive(value: unknown) {
-        const parsed = parseBridgeMessage(value);
-        if (!parsed.success) {
-          if (process.env.NODE_ENV === "development")
-            console.debug("[bridge] invalid-message");
-          return;
-        }
-        if (parsed.data.type === "PING")
-          host.postMessage(
-            JSON.stringify({
-              ...bridgeBase,
-              type: "PONG",
-              requestId: parsed.data.requestId,
-            }),
-          );
-      },
+    const receiver = { receive: (value: unknown) => client.receive(value) };
+
+    const connect = () => {
+      window.__CHAGOK_BRIDGE__ = receiver;
+      client.start();
+      if (!window.ReactNativeWebView)
+        client.receive({
+          ...bridgeBase,
+          type: "FORM_INIT",
+          connectionId: requestId(),
+          payload: { mode: "demo" },
+        });
     };
-    window.__CHAGOK_BRIDGE__ = receiver;
-    host.postMessage(JSON.stringify({ ...bridgeBase, type: "WEB_READY" }));
+
+    const resume = (event: PageTransitionEvent) => {
+      if (event.persisted) connect();
+    };
+
+    connect();
 
     const cleanup = () => {
+      client.dispose();
       if (window.__CHAGOK_BRIDGE__ === receiver)
         delete window.__CHAGOK_BRIDGE__;
     };
 
     window.addEventListener("pagehide", cleanup);
+    window.addEventListener("pageshow", resume);
     return () => {
       window.removeEventListener("pagehide", cleanup);
+      window.removeEventListener("pageshow", resume);
       cleanup();
     };
-  }, []);
-  return (
-    <>
-      {native ? (
-        <Button
-          type="button"
-          variant="outline"
-          className="relative mb-2 w-12 text-2xl"
-          onClick={() =>
-            window.ReactNativeWebView?.postMessage(
-              JSON.stringify({ ...bridgeBase, type: "CLOSE_WEBVIEW" }),
-            )
-          }
-          aria-label="신청 화면 닫기"
-        >
-          ‹
-        </Button>
-      ) : null}
-      <span className="block rounded-[10px] bg-muted px-3 py-[10px] text-xs leading-[1.6] text-muted-foreground">
-        {native
-          ? "신청 기능을 준비하고 있어요."
-          : "앱에서 이용할 수 있어요. 신청 기능은 준비 중이에요."}
-      </span>
-    </>
-  );
+  }, [client]);
+  return null;
 }

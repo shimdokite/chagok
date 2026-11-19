@@ -1,5 +1,7 @@
 # 1일차 실행 기록 — 2026-11-13 KST
 
+현재 최신 상태(2026-11-19): 사용자 결과 확인 후 [4일차 전체 PR 검토·검증](verification/day-04-pr.md). 아래 기록은 각 작업 당시의 상태다.
+
 최신 상태(2026-11-17): [3일차 구현·AC·수동 확인](verification/day-03.md). commit·push·PR 없음. 아래 2일차 게시 대기 문구는 당시 기록이며 현재 HEAD는 PR #4 병합 이후다.
 
 이전 2일차 누적 상태: [PR 준비 점검·AC·수동 확인](verification/day-02/pr-ready/result.md). 이전 항목은 당시 실행 기록이며, 게시 승인은 아직 대기 중이다.
@@ -217,3 +219,26 @@ Simulator 실제 native app/WKWebView에서 웹 재로드2회 후 close2→unmou
 - 최종 실제 DB 포함156개·타입4개 workspace·간격88파일·webpack·iOS/Android JS export 통과. 에이전트 기본 Turbopack은 포트 EPERM으로 실패했고 이전 사용자 일반 터미널 성공과 구분한다.
 - 학습 파일은 이미 2일차 PR #4에서 추적 제거가 병합돼 추가 git rm이 필요 없었다. 로컬3개 해시 보존·tracked0·제외 규칙 확인. handoff와 학습 본문은 게시 후보에 포함하지 않는다.
 - [최종 점검](verification/day-03/pr-ready/result.md), [누적 PR 초안](changes/latest-pr.md), [커밋 초안](changes/latest-commit.txt). 예정 브랜치 feat/day-03-benefits → main, 현재 main 유지. staging·commit·push·PR 생성 없이 사용자 최종 검토를 기다린다. D3-01~08 충족, Android 실행은 별도 미검증.
+
+## 4일차 서버 단계 — 2026-11-19
+
+- 사용자 선택1에 따라 서버 단계만 완료했다. [상세 계획](plans/day-04.md), [AC와 실제 검증](verification/day-04.md). 폼 연결과 실측은 다음 단계이며 4일차 전체 완료가 아니다.
+- `benefits.create`에 세션/소속 기반 권한, 월 정책/정수 금액/실제 날짜 검증, 소속 행 잠금과 한도 확인·저장 트랜잭션, 사용자별 요청 키 재전송 처리를 추가했다. nullable 키와 unique index migration으로 기존 행을 유지했다.
+- 실제 DB 포함20파일200테스트 skip0, 스타일91파일 위반0, 4개 workspace 타입, webpack production 빌드 통과. 환경 접속 실패/DB 정지, 반려 fixture 사유 누락, 리뷰에서 찾은 특수 문자 입력 문제를 구분해 재현·수정·재검증했다.
+- DB6개 테이블 기존 행 해시 일치. 빌드가 변경한 next-env는 시작 바이트로 보존했다. 기존 학습/인계 자료를 유지하고 로컬 학습을 추가했다. 초안 두 파일 갱신, commit/push/PR 없음.
+- [측정은 표본0·미실행](metrics/daily/day-04.md). 다음 시작점: `/apply`와 RN 인증/브릿지 연결 설계 → 초안당 요청 키 유지 → 성공 후 Query 갱신 → 브라우저/iOS 확인 → FORM_READY 정의와 실측. 사진은5일차, 승인/반려는6일차에 남긴다.
+
+
+## 4일차 폼 연결과 실측 — 2026-11-19
+
+- 기존 서버 단계 뒤 사용자 요청으로 남은 폼을 연결했다. 앱이 보안 저장소 인증으로 API를 호출하며 웹에는 토큰을 전달하지 않는다. 정책/잔액/입력 확인, 제출/불명확 재시도/성공, 홈과 내역 갱신을 구현했다.
+- 독립 리뷰의 회사 전환 경계, foreground 동일 세션, HTTP UUID, 과거 정책 재조회, 불명확 저장 캐시, 진단 본문 노출을 RED→GREEN으로 수정했다. 초기 연결 timeout과 복원된 미확정 문서도 안내한다.
+- 최종 실제 DB24파일228테스트 skip0, style102파일 위반0, 타입4개 workspace와 webpack production 빌드 통과. [AC와 실제 실행](verification/day-04-form.md).
+- 브라우저와 실제 iOS WebView에서 각각 준비1회+본10회 저장 성공. [측정 원본/환경/한계](metrics/daily/day-04.md). 결과 유실 재시도는 별도 장애 실험으로 기록했다. 최종 가상 데이터 삭제와 iOS 기존 로그인 저장값 재조회 복구를 확인했다.
+- 로컬 학습을 확장하고 서버 단계의 기존 근거와 답변을 보존했다. PR/커밋 초안 갱신, staging/commit/push/PR 없음. 개발 서버와 신청 미리보기 탭을 제공했다.
+- 사용자 수동 화면 확인 대기. 영수증은5일차, Android/실기기/Release와 실제 OS BFCache 및 키보드 전체 흐름은 별도 검증이다. 과거 서버 단계의 표본0을 현재 상태로 오해하지 않도록 후속 링크를 연결했다.
+
+
+## 4일차 전체 PR 준비
+
+사용자 확인 후 서버·폼 전체 범위를 검토했다. 독립 리뷰에서 발견한 화면 종료와 저장 후 캐시 갱신 경합을 수정하고 실제 DB232테스트·스타일103파일·타입4개 통과, 웹 빌드·migration 최신을 확인했다. 학습/인계/생성 타입 경로는 로컬 보존하며 제외한다. feat/day-04-claim-flow에서 승인된 commit·push·PR을 진행하고 실제 게시 결과는 완료 응답으로 제공한다. [전체 검증](verification/day-04-pr.md).

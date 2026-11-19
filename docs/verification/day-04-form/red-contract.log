@@ -1,0 +1,54 @@
+
+ RUN  v5.1.0 /Users/doyeon/Desktop/chagok
+
+ ❯ packages/contracts/src/form-bridge.test.ts (7 tests | 2 failed) 7ms
+   ❯ claim bridge boundary (7)
+     × accepts a correlated create without credentials 5ms
+     × requires connection identity for FORM_READY 0ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/contracts/src/form-bridge.test.ts > claim bridge boundary > accepts a correlated create without credentials
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ packages/contracts/src/form-bridge.test.ts:8:48
+      6| describe("claim bridge boundary", () => {
+      7|   it("accepts a correlated create without credentials", () => {
+      8|     expect(parseBridgeMessage(submit).success).toBe(true);
+       |                                                ^
+      9|   });
+     10|   it.each([
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  packages/contracts/src/form-bridge.test.ts > claim bridge boundary > requires connection identity for FORM_READY
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ packages/contracts/src/form-bridge.test.ts:20:103
+     18|   });
+     19|   it("requires connection identity for FORM_READY", () => {
+     20|     expect(parseBridgeMessage({ ...bridgeBase, type: "FORM_READY", con…
+       |                                                                                                       ^
+     21|     expect(parseBridgeMessage({ ...bridgeBase, type: "FORM_READY" }).s…
+     22|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 5 passed (7)
+   Start at  18:00:40
+   Duration  203ms (import 61%, transform 29%, tests 7%, worker 3%)
+

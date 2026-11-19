@@ -66,6 +66,7 @@ enum ClaimStatus {
 
 model Claim {
   id String @id @default(uuid())
+  requestId String?
   companyId String
   userId String
   membership Membership @relation(fields: [userId, companyId], references: [userId, companyId], onDelete: Cascade, onUpdate: Restrict)
@@ -78,4 +79,5 @@ model Claim {
   rejectionReason String?
 
   @@index([userId, companyId, usedOn, submittedAt, id])
+  @@unique([userId, requestId])
 }

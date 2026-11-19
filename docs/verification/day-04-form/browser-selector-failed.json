@@ -1,0 +1,22 @@
+{
+  "environment": "../environments/day-04-form.json",
+  "records": [],
+  "summary": {
+    "formReady": {
+      "n": 0,
+      "medianMs": null,
+      "minMs": null,
+      "maxMs": null
+    },
+    "submit": {
+      "n": 0,
+      "medianMs": null,
+      "minMs": null,
+      "maxMs": null
+    }
+  },
+  "checks": [
+    "anonymous preview disabled; 320px no horizontal overflow"
+  ],
+  "fixtureCleaned": true
+}
