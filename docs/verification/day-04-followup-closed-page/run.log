@@ -1,0 +1,20 @@
+(node:1595) ExperimentalWarning: Transform Types is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:1595) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/doyeon/Desktop/chagok/apps/mobile/src/bridge/claim-host.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/doyeon/Desktop/chagok/apps/mobile/package.json.
+(node:1595) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/doyeon/Desktop/chagok/packages/contracts/src/bridge.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/doyeon/Desktop/chagok/packages/contracts/package.json.
+(node:1595) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/doyeon/Desktop/chagok/packages/api/src/auth/store.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/doyeon/Desktop/chagok/packages/api/package.json.
+{"completed":false,"fixtureCleaned":true,"cleanupErrors":[],"checks":["anonymous preview disabled; 320px no horizontal overflow",{"name":"diagnostics","unavailable":"page closed or inaccessible"}]}
+file:///Users/doyeon/Desktop/chagok/packages/api/scripts/verify-claim-restore.mjs:163
+    throw new Error("Injected page closure before cleanup");
+          ^
+
+Error: Injected page closure before cleanup
+    at file:///Users/doyeon/Desktop/chagok/packages/api/scripts/verify-claim-restore.mjs:163:11
+
+Node.js v24.18.0

@@ -1,0 +1,140 @@
+{
+  "records": [
+    {
+      "index": 0,
+      "warmup": true,
+      "status": "success",
+      "measuredAt": "2026-11-20T05:57:44.990Z",
+      "nativeLoadStartMs": 166146790.349333,
+      "nativeFormReadyMs": 166153929.270375,
+      "formReadyDurationMs": 7138.921042025089,
+      "webSubmitStartMs": 4391,
+      "webSubmitEndMs": 4437,
+      "submitDurationMs": 46
+    },
+    {
+      "index": 1,
+      "warmup": false,
+      "status": "success",
+      "measuredAt": "2026-11-20T05:57:57.013Z",
+      "nativeLoadStartMs": 166157035.377041,
+      "nativeFormReadyMs": 166160740.932208,
+      "formReadyDurationMs": 3705.555166989565,
+      "webSubmitStartMs": 958,
+      "webSubmitEndMs": 995,
+      "submitDurationMs": 37
+    },
+    {
+      "index": 2,
+      "warmup": false,
+      "status": "success",
+      "measuredAt": "2026-11-20T05:58:03.015Z",
+      "nativeLoadStartMs": 166162309.24725,
+      "nativeFormReadyMs": 166166073.298708,
+      "formReadyDurationMs": 3764.051458001137,
+      "webSubmitStartMs": 1909,
+      "webSubmitEndMs": 1942,
+      "submitDurationMs": 33
+    },
+    {
+      "index": 3,
+      "warmup": false,
+      "status": "success",
+      "measuredAt": "2026-11-20T05:58:08.405Z",
+      "nativeLoadStartMs": 166167930.639541,
+      "nativeFormReadyMs": 166173470.660041,
+      "formReadyDurationMs": 5540.0205000042915,
+      "webSubmitStartMs": 2418,
+      "webSubmitEndMs": 2444,
+      "submitDurationMs": 26
+    },
+    {
+      "index": 4,
+      "warmup": false,
+      "status": "success",
+      "measuredAt": "2026-11-20T05:58:15.792Z",
+      "nativeLoadStartMs": 166174963.217958,
+      "nativeFormReadyMs": 166177472.556916,
+      "formReadyDurationMs": 2509.3389579951763,
+      "webSubmitStartMs": 634,
+      "webSubmitEndMs": 673,
+      "submitDurationMs": 39
+    },
+    {
+      "index": 5,
+      "warmup": false,
+      "status": "success",
+      "measuredAt": "2026-11-20T05:58:19.762Z",
+      "nativeLoadStartMs": 166179089.060041,
+      "nativeFormReadyMs": 166181537.433291,
+      "formReadyDurationMs": 2448.373249977827,
+      "webSubmitStartMs": 664,
+      "webSubmitEndMs": 697,
+      "submitDurationMs": 33
+    },
+    {
+      "index": 6,
+      "warmup": false,
+      "status": "success",
+      "measuredAt": "2026-11-20T05:58:23.804Z",
+      "nativeLoadStartMs": 166182906.641208,
+      "nativeFormReadyMs": 166185766.952208,
+      "formReadyDurationMs": 2860.311000019312,
+      "webSubmitStartMs": 1181,
+      "webSubmitEndMs": 1257,
+      "submitDurationMs": 76
+    },
+    {
+      "index": 7,
+      "warmup": false,
+      "status": "success",
+      "measuredAt": "2026-11-20T05:58:28.144Z",
+      "nativeLoadStartMs": 166187725.020041,
+      "nativeFormReadyMs": 166190808.680708,
+      "formReadyDurationMs": 3083.660667002201,
+      "webSubmitStartMs": 739,
+      "webSubmitEndMs": 767,
+      "submitDurationMs": 28
+    },
+    {
+      "index": 8,
+      "warmup": false,
+      "status": "success",
+      "measuredAt": "2026-11-20T05:58:33.102Z",
+      "nativeLoadStartMs": 166192264.094833,
+      "nativeFormReadyMs": 166194592.495083,
+      "formReadyDurationMs": 2328.400250017643,
+      "webSubmitStartMs": 618,
+      "webSubmitEndMs": 649,
+      "submitDurationMs": 31
+    },
+    {
+      "index": 9,
+      "warmup": false,
+      "status": "success",
+      "measuredAt": "2026-11-20T05:58:36.837Z",
+      "nativeLoadStartMs": 166196375.634083,
+      "nativeFormReadyMs": 166199967.0755,
+      "formReadyDurationMs": 3591.4414170086384,
+      "webSubmitStartMs": 1502,
+      "webSubmitEndMs": 1528,
+      "submitDurationMs": 26
+    },
+    {
+      "index": 10,
+      "warmup": false,
+      "status": "success",
+      "measuredAt": "2026-11-20T05:58:42.300Z",
+      "nativeLoadStartMs": 166201432.936291,
+      "nativeFormReadyMs": 166203820.373791,
+      "formReadyDurationMs": 2387.4375,
+      "webSubmitStartMs": 726,
+      "webSubmitEndMs": 755,
+      "submitDurationMs": 29
+    }
+  ],
+  "checks": [],
+  "completed": false,
+  "restored": true,
+  "fixtureCleaned": true
+}

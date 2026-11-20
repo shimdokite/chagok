@@ -3,7 +3,7 @@
 import assert from "node:assert/strict";
 import { randomBytes, createHash, randomUUID } from "node:crypto";
 import { registerHooks } from "node:module";
-import { writeFileSync, readFileSync } from "node:fs";
+import { writeFileSync, readFileSync, mkdirSync, existsSync } from "node:fs";
 import { execFileSync } from "node:child_process";
 import WebSocket from "ws";
 
@@ -115,10 +115,28 @@ const modules = JSON.parse(
 const storage = modules.find((m) => m.name === "src/auth/storage.ts").id;
 const hook = modules.find((m) => m.name === "src/bridge/useClaimHost.ts").id;
 const router = modules.find((m) => m.name.includes("expo-router")).id;
+const queries = JSON.parse(
+  await evaluate(
+    `JSON.stringify(Array.from(__r.getModules()).filter(([id,m])=>m.verboseName==='src/benefits/queries.ts').map(([id])=>id))`,
+  ),
+)[0];
 const db = getDb();
 const month = new Date(Date.now() + 9 * 3600000).toISOString().slice(0, 7);
 const token = randomBytes(32).toString("hex");
+const followup = process.env.DAY04_FOLLOWUP === "1";
+const artifact =
+  process.env.DAY04_ARTIFACT ??
+  (followup ? "day-04-followup" : "day-04-native");
+assert.match(artifact, /^day-04-[a-z0-9-]+$/);
+const dir = followup
+  ? `docs/verification/${artifact}`
+  : "docs/verification/day-04-form";
+mkdirSync(dir, { recursive: true });
 const records = [];
+const checks = [];
+let completed = false;
+let releaseLock;
+let lockTask;
 let user;
 let company;
 let prepared = false;
@@ -162,13 +180,16 @@ try {
   prepared = true;
   await evaluate(`(async()=>{
     const storage=__r(${storage}).storage;
-    globalThis.__day04={previous:await storage.get(),events:[],ref:null,started:null,original:__r(${hook}).useClaimHost};
+    globalThis.__day04={previous:await storage.get(),events:[],ref:null,started:null,original:__r(${hook}).useClaimHost, originalHome:__r(${queries}).useHome, results:0};
     await storage.set(${JSON.stringify(token)});
+    __r(${queries}).useHome=function(...args){const result=__day04.originalHome(...args);__day04.home=result.data?.amounts;return result;};
     const original=__day04.original;
     __r(${hook}).useClaimHost=function(ref){
       const host=original(ref); __day04.ref=ref;
       if(!host.__day04Observed){
         host.__day04Observed=true;
+        const send=host.ports.send;
+        host.ports.send=function(m){if(m.type==='CLAIM_RESULT')__day04.results++;return send(m);};
         const reset=host.reset.bind(host), receive=host.receive.bind(host);
         host.reset=function(){ __day04.started=performance.now(); return reset(); };
         host.receive=function(value,url){
@@ -213,13 +234,7 @@ try {
     if (i === 0)
       execFileSync(
         "/usr/bin/xcrun",
-        [
-          "simctl",
-          "io",
-          device.udid,
-          "screenshot",
-          "docs/verification/day-04-form/ios-ready.png",
-        ],
+        ["simctl", "io", device.udid, "screenshot", `${dir}/ios-ready.png`],
         {
           env: {
             ...process.env,
@@ -248,13 +263,7 @@ try {
     if (i === 10)
       execFileSync(
         "/usr/bin/xcrun",
-        [
-          "simctl",
-          "io",
-          device.udid,
-          "screenshot",
-          "docs/verification/day-04-form/ios-success.png",
-        ],
+        ["simctl", "io", device.udid, "screenshot", `${dir}/ios-success.png`],
         {
           env: {
             ...process.env,
@@ -266,16 +275,107 @@ try {
     await evaluate(`__r(${router}).router.back(); true`);
     await wait(250);
   }
+  if (followup) {
+    await until(`__day04.home?.available===89000`);
+    await evaluate(
+      `__day04.events=[]; __r(${router}).router.push('/apply'); true`,
+    );
+    await until(`__day04.events.some(e=>e.kind==='ready')`);
+    await inject(
+      `(()=>{for(const [id,value] of [['amount','1000'],['description','지연 저장 검증']]){const input=document.getElementById(id);Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value').set.call(input,value);input.dispatchEvent(new Event('input',{bubbles:true}));}})()`,
+    );
+    await wait(150);
+    let locked;
+    let lockFailed;
+    let lockError;
+    const acquired = new Promise((resolve, reject) => {
+      locked = resolve;
+      lockFailed = reject;
+    });
+    const gate = new Promise((resolve) => {
+      releaseLock = resolve;
+    });
+    lockTask = db
+      .$transaction(
+        async (tx) => {
+          if (process.env.DAY04_NATIVE_FAULT === "lock")
+            throw new Error("Injected lock acquisition failure");
+          const [backend] = await tx.$queryRaw`SELECT pg_backend_pid() AS pid`;
+          await tx.$queryRaw`SELECT "userId" FROM "Membership" WHERE "userId"=${user.id} FOR UPDATE`;
+          locked(backend.pid);
+          await gate;
+        },
+        { timeout: 15000 },
+      )
+      .catch((error) => {
+        lockError = error;
+        lockFailed(error);
+      });
+    const locker = await acquired;
+    await inject(`document.querySelector('form').requestSubmit()`);
+    const started = Date.now();
+    let blocked = false;
+    while (Date.now() - started < 5000) {
+      const rows =
+        await db.$queryRaw`SELECT pid FROM pg_stat_activity WHERE ${locker} = ANY(pg_blocking_pids(pid))`;
+      if (rows.length) {
+        blocked = true;
+        break;
+      }
+      await wait(50);
+    }
+    assert.ok(
+      blocked,
+      "Actual API transaction must be waiting on the fixture membership lock",
+    );
+    const replies = await evaluate(`__day04.results`);
+    await evaluate(`__r(${router}).router.back(); true`);
+    await wait(500);
+    assert.equal(await db.claim.count({ where: { userId: user.id } }), 11);
+    const before = await evaluate(`__day04.home.available`);
+    assert.equal(before, 89000);
+    releaseLock();
+    await lockTask;
+    if (lockError) throw lockError;
+    await until(`__day04.home?.available===88000`);
+    assert.equal(await db.claim.count({ where: { userId: user.id } }), 12);
+    assert.equal(await evaluate(`__day04.results`), replies);
+    checks.push({
+      name: "close-before-commit",
+      blockedBeforeClose: blocked,
+      before,
+      after: 88000,
+      claims: 12,
+      lateReplyDropped: true,
+    });
+    if (process.env.DAY04_MANUAL_GATE) {
+      await evaluate(
+        `__day04.events=[]; __r(${router}).router.push('/apply'); true`,
+      );
+      await until(`__day04.events.some(e=>e.kind==='ready')`);
+      console.log("MANUAL_READY: isolated iOS form; awaiting gate file");
+      const deadline = Date.now() + 15 * 60000;
+      while (
+        !existsSync(process.env.DAY04_MANUAL_GATE) &&
+        Date.now() < deadline
+      )
+        await wait(500);
+      assert.ok(
+        existsSync(process.env.DAY04_MANUAL_GATE),
+        "Manual gate timeout",
+      );
+      const count = await db.claim.count({ where: { userId: user.id } });
+      checks.push({ name: "manual-ui-fixture", claimsAfterUI: count });
+    }
+  }
+  // Ensure the evidence is the mounted home even when the manual gate leaves the form open.
+  await evaluate(`__r(${router}).router.replace('/home'); true`);
+  const claimCount = await db.claim.count({ where: { userId: user.id } });
+  await until(`__day04.home?.available===${100000 - claimCount * 1000}`);
   // Native cache refresh is visible after returning to the mounted home.
   execFileSync(
     "/usr/bin/xcrun",
-    [
-      "simctl",
-      "io",
-      device.udid,
-      "screenshot",
-      "docs/verification/day-04-form/ios-home.png",
-    ],
+    ["simctl", "io", device.udid, "screenshot", `${dir}/ios-home.png`],
     {
       env: {
         ...process.env,
@@ -284,18 +384,21 @@ try {
       stdio: "ignore",
     },
   );
+  completed = true;
 } catch (error) {
   const last = records.at(-1);
   if (last && last.status !== "success")
     last.status = /timeout/i.test(error.message) ? "timeout" : "failure";
   throw error;
 } finally {
+  releaseLock?.();
+  if (lockTask) await lockTask.catch(() => {});
   let cleanupError;
   let fixtureCleaned = false;
   try {
     if (prepared) {
       await evaluate(
-        `globalThis.__day04Cleanup=false;(async()=>{if(!globalThis.__day04){globalThis.__day04Cleanup=true;return;}__r(${hook}).useClaimHost=__day04.original;__r(${router}).router.replace('/home');if(__day04.previous)await __r(${storage}).storage.set(__day04.previous);else await __r(${storage}).storage.remove();if(await __r(${storage}).storage.get()!==__day04.previous)return;delete globalThis.__day04;globalThis.__day04Cleanup=true;})()`,
+        `globalThis.__day04Cleanup=false;(async()=>{if(!globalThis.__day04){globalThis.__day04Cleanup=true;return;}__r(${hook}).useClaimHost=__day04.original;__r(${queries}).useHome=__day04.originalHome;__r(${router}).router.replace('/home');if(__day04.previous)await __r(${storage}).storage.set(__day04.previous);else await __r(${storage}).storage.remove();if(await __r(${storage}).storage.get()!==__day04.previous)return;delete globalThis.__day04;globalThis.__day04Cleanup=true;})()`,
       );
       await until(`globalThis.__day04Cleanup===true`);
       restored = true;
@@ -333,6 +436,7 @@ try {
     conditions: "1 warmup then 10 warm opens; server already running",
     source: Object.fromEntries(
       [
+        "apps/mobile/src/benefits/api.ts",
         "apps/mobile/src/bridge/useClaimHost.ts",
         "apps/mobile/src/bridge/claim-host.ts",
         "apps/mobile/src/components/ApplyContainer.tsx",
@@ -345,12 +449,12 @@ try {
     ),
   };
   writeFileSync(
-    "docs/metrics/environments/day-04-native.json",
+    `docs/metrics/environments/${artifact}.json`,
     `${JSON.stringify(environment, null, 2)}\n`,
   );
   writeFileSync(
-    "docs/metrics/raw/day-04-native.json",
-    `${JSON.stringify({ records, restored, fixtureCleaned }, null, 2)}\n`,
+    `docs/metrics/raw/${artifact}.json`,
+    `${JSON.stringify({ records, checks, completed, restored, fixtureCleaned }, null, 2)}\n`,
   );
   if (cleanupError) console.error(cleanupError.message);
   console.log(

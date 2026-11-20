@@ -1,0 +1,143 @@
+{
+  "environment": {
+    "measuredAt": "2026-11-20T05:56:01.219Z",
+    "node": "v24.18.0",
+    "browser": "157.0.8103.79",
+    "platform": "darwin/arm64",
+    "viewport": "390x844 CSS px",
+    "web": "Next production webpack",
+    "database": "local PostgreSQL",
+    "transport": "Chromium + actual ClaimHost via Node adapter + authenticated HTTP; NOT iOS WKWebView",
+    "clock": "web performance.now; navigationStart=0",
+    "condition": "actual history navigation; no synthetic pageshow; local server",
+    "count": 2,
+    "source": {
+      "packages/contracts/src/bridge.ts": "131f75291b92e2bbe6c009176d3c54a23d1d1e2e2d5a5884cb8cb5af7cf6b613",
+      "apps/mobile/src/bridge/claim-host.ts": "788d4ac02c457c2b5cf7226a826708f97f6b03715c0cb069c3a164bbca4afb90",
+      "apps/web/src/components/apply/form-client.ts": "8bb5033737602ce233c0ea34fb1e10a2825d453c708dec7f664cdeb0e70f60a3",
+      "apps/web/src/components/apply/ApplyForm.tsx": "26dcdee3d6f1a2f27b525ef4c522eedd21813e7a7ef44cb33ae95ad61f09c6b8",
+      "apps/web/src/components/bridge/BridgeReceiver.tsx": "73990a1cb5ce2e3c0cecb853b550795dc1f2a733b5de6937b13249dafce32632",
+      "apps/web/src/app/apply/page.tsx": "bcefcefc99df660c63aef2060fadbd660dc86bd3a747d6f5857a48fe46c90719",
+      "packages/api/scripts/verify-claim-restore.mjs": "b727e115b49381873f788f36a0880c7661c8ba746b20ee2fab7f97e55b276366"
+    }
+  },
+  "checks": [
+    "anonymous preview disabled; 320px no horizontal overflow",
+    {
+      "name": "ready-history-return",
+      "persisted": true,
+      "events": [
+        {
+          "type": "pageshow",
+          "persisted": false
+        },
+        {
+          "type": "pagehide",
+          "persisted": true
+        },
+        {
+          "type": "pageshow",
+          "persisted": true
+        }
+      ],
+      "notRestored": []
+    },
+    {
+      "name": "pending-history-return",
+      "persisted": true,
+      "events": [
+        {
+          "type": "pageshow",
+          "persisted": false
+        },
+        {
+          "type": "pagehide",
+          "persisted": true
+        },
+        {
+          "type": "pageshow",
+          "persisted": true
+        },
+        {
+          "type": "pagehide",
+          "persisted": true
+        },
+        {
+          "type": "pageshow",
+          "persisted": true
+        }
+      ],
+      "claims": 1,
+      "resubmitDisabled": true
+    },
+    {
+      "name": "diagnostics",
+      "creates": 1,
+      "trace": [
+        {
+          "direction": "web-to-native",
+          "type": "WEB_READY"
+        },
+        {
+          "direction": "native-to-web",
+          "type": "FORM_INIT"
+        },
+        {
+          "direction": "web-to-native",
+          "type": "FORM_LOAD"
+        },
+        {
+          "direction": "native-to-web",
+          "type": "FORM_CONTEXT"
+        },
+        {
+          "direction": "web-to-native",
+          "type": "FORM_READY"
+        },
+        {
+          "direction": "web-to-native",
+          "type": "WEB_READY"
+        },
+        {
+          "direction": "native-to-web",
+          "type": "FORM_INIT"
+        },
+        {
+          "direction": "web-to-native",
+          "type": "FORM_LOAD"
+        },
+        {
+          "direction": "native-to-web",
+          "type": "FORM_CONTEXT"
+        },
+        {
+          "direction": "web-to-native",
+          "type": "FORM_READY"
+        },
+        {
+          "direction": "web-to-native",
+          "type": "CLAIM_SUBMIT"
+        },
+        {
+          "direction": "native-to-web",
+          "type": "CLAIM_RESULT"
+        },
+        {
+          "direction": "web-to-native",
+          "type": "WEB_READY"
+        },
+        {
+          "direction": "native-to-web",
+          "type": "FORM_INIT"
+        }
+      ],
+      "status": [
+        "이전 신청 결과가 아직 확인되지 않았어요. 화면을 닫고 신청 내역부터 확인해 주세요.",
+        ""
+      ]
+    }
+  ],
+  "completed": true,
+  "fixtureCleaned": true,
+  "cleanupErrors": []
+}

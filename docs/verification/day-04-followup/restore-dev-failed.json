@@ -1,0 +1,104 @@
+{
+  "environment": {
+    "measuredAt": "2026-11-20T05:50:17.919Z",
+    "node": "v24.18.0",
+    "browser": "157.0.8103.79",
+    "platform": "darwin/arm64",
+    "viewport": "390x844 CSS px",
+    "web": "Next development Turbopack",
+    "database": "local PostgreSQL",
+    "transport": "Chromium + actual ClaimHost via Node adapter + authenticated HTTP; NOT iOS WKWebView",
+    "clock": "web performance.now; navigationStart=0",
+    "condition": "actual history navigation; no synthetic pageshow; developer server",
+    "count": 2,
+    "source": {
+      "packages/contracts/src/bridge.ts": "131f75291b92e2bbe6c009176d3c54a23d1d1e2e2d5a5884cb8cb5af7cf6b613",
+      "apps/mobile/src/bridge/claim-host.ts": "788d4ac02c457c2b5cf7226a826708f97f6b03715c0cb069c3a164bbca4afb90",
+      "apps/web/src/components/apply/form-client.ts": "8bb5033737602ce233c0ea34fb1e10a2825d453c708dec7f664cdeb0e70f60a3",
+      "apps/web/src/components/apply/ApplyForm.tsx": "26dcdee3d6f1a2f27b525ef4c522eedd21813e7a7ef44cb33ae95ad61f09c6b8",
+      "apps/web/src/components/bridge/BridgeReceiver.tsx": "73990a1cb5ce2e3c0cecb853b550795dc1f2a733b5de6937b13249dafce32632",
+      "apps/web/src/app/apply/page.tsx": "bcefcefc99df660c63aef2060fadbd660dc86bd3a747d6f5857a48fe46c90719",
+      "packages/api/scripts/verify-claim-restore.mjs": "e006a25c1900b608cb37b8768383c0f5746a558887a12dbdd7bf466e5f30ca7a"
+    }
+  },
+  "checks": [
+    "anonymous preview disabled; 320px no horizontal overflow",
+    {
+      "name": "ready-history-return",
+      "persisted": false,
+      "events": [
+        {
+          "type": "pageshow",
+          "persisted": false
+        }
+      ],
+      "notRestored": [
+        {
+          "loaderId": "A821FB71A4E609422FCD2057E8AB2D76",
+          "frameId": "4827180499720FFFBDA4963EF92E98D5",
+          "notRestoredExplanations": [
+            {
+              "type": "Circumstantial",
+              "reason": "MainResourceHasCacheControlNoStore"
+            },
+            {
+              "type": "Circumstantial",
+              "reason": "WebSocketUsedWithCCNS",
+              "details": [
+                {
+                  "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_client_1165-soo5tfpf._.js",
+                  "function": "init",
+                  "lineNumber": 16233,
+                  "columnNumber": 29
+                },
+                {
+                  "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_client_1165-soo5tfpf._.js",
+                  "function": "init",
+                  "lineNumber": 16233,
+                  "columnNumber": 29
+                },
+                {
+                  "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_client_1165-soo5tfpf._.js",
+                  "function": "init",
+                  "lineNumber": 16233,
+                  "columnNumber": 29
+                }
+              ]
+            },
+            {
+              "type": "Circumstantial",
+              "reason": "BrowsingInstanceNotSwapped"
+            }
+          ],
+          "notRestoredExplanationsTree": {
+            "url": "http://127.0.0.1:3000/apply",
+            "explanations": [
+              {
+                "type": "Circumstantial",
+                "reason": "MainResourceHasCacheControlNoStore"
+              },
+              {
+                "type": "Circumstantial",
+                "reason": "WebSocketUsedWithCCNS",
+                "details": [
+                  {
+                    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_client_1165-soo5tfpf._.js",
+                    "function": "init",
+                    "lineNumber": 16233,
+                    "columnNumber": 29
+                  }
+                ]
+              },
+              {
+                "type": "Circumstantial",
+                "reason": "BrowsingInstanceNotSwapped"
+              }
+            ],
+            "children": []
+          }
+        }
+      ]
+    }
+  ],
+  "fixtureCleaned": true
+}
