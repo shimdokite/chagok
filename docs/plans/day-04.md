@@ -138,3 +138,20 @@
 리뷰에서 화면 종료→fetch abort→조기 캐시 갱신→늦은 저장 경합을 재현했다. `apps/mobile/src/benefits/api.ts`, `useClaimHost.ts`, 새 `api.test.ts`로 발송 전 취소를 유지하면서 발송한 mutation은8초 제한 내 완료 후 갱신하도록 보정한다. AC는 닫힌 화면 응답 폐기/늦은 저장 뒤 홈 갱신/조회·발송 전 취소 및 timeout 유지다. RED→GREEN과 전체232개, 타입·스타일로 확인했다. 서버·웹 코드의 추가 변경은 없다.
 
 PR용 최신 초안은 전체 API·migration·폼·측정 자료를 다루며 이번 검증과 과거 실측을 구분한다. [전체 AC와 결과](../verification/day-04-pr.md).
+
+## 병합 후 보완 검증 — 2026-11-20
+
+PR #6은 2026-11-19 병합됐고 main은 0a66a38이다. 사용자 승인한 후속 범위는 최종 iOS 재실측, 실제 입력/복원 확인, 최신 상태 문서 정리다.
+
+- AC1: 준비1+본10 iOS 표본을 별도 보존하고, 실제 DB 잠금 중 제출→화면 종료→잠금 해제→홈 잔액 갱신을 확인한다.
+- AC2: 가능한 실제 UI 키보드 입력과 history 복원을 확인한다. pageshow.persisted 증거 없는 경우 BFCache 성공으로 기록하지 않는다.
+- AC3: 병합과 최신 검증을 진행/측정/검증/초안 문서에 반영하며 기존 사용자 변경과 학습/과거 원본을 보존한다.
+- 변경 파일: packages/api/scripts/verify-claim-native.mjs, 별도 복원 검증 스크립트가 필요하면 packages/api/scripts/verify-claim-restore.mjs, docs/verification/day-04-followup.md와 증거 폴더, docs/metrics/raw 및 environments의 별도 followup JSON, docs/metrics/daily/day-04.md, docs/progress.md, 최신 PR/커밋 초안.
+- 검증 묶음: iOS 정상 재측정, 실제 지연 저장 후 갱신, UI 입력/복원, 전체 테스트 및 스타일, 문서/보존 검사, 최종 독립 검토.
+- Ruling: 이번은 기존 병합 코드의 검증 작업이며 실행 중인 서버/Metro와 현재 폴더를 유지한다. 새 커밋/push/PR은 승인 전 수행하지 않는다. 과거 원본은 덮어쓰지 않는다. 잘못 적용하면 검증 대상/기록이 섞일 수 있어 소스 해시와 별도 출력 경로로 확인한다.
+
+- AC1 완료: iOS 본10개 성공, 실제 DB 지연 저장 후 홈 갱신과 늦은 응답 폐기, 원래 세션/fixture 정리 확인.
+- AC2 완료(환경 범위): 사용자 직접 키보드 입력·제출·홈87,000원 확인 및 DB13건. production Chrome 실제 BFCache ready/pending 왕복2회 확인. WKWebView BFCache 자체는 미검증이며 Chrome 결과로 대체 주장하지 않는다.
+- AC3 완료: PR #6 병합 완료를 최신 진행 요약에 반영, 원본 분리, 검증과 최신 초안 작성, 기존 자료 해시/Git 제외 검사.
+- Ruling: 개발 HMR 때문에 실제 BFCache가 차단돼 같은 소스의 webpack production 서버3100을 사용했다. 제품 캐시 정책을 바꾸지 않았다. 이 결과를 개발 모드나 WKWebView로 일반화하면 잘못된 보장이 되므로 환경을 명시한다.
+- 최종 리뷰: 검증 도구의 정리 경로2건을 보강하고 실제 페이지 종료/DB 잠금 실패 주입에서 복구·fixture 정리true 확인. 경미한 실행 주석/사용하지 않는 helper/홈 캡처 혼동도 해당 도구 정리에 함께 반영했다. 제품 코드 변화 없음. [검증](../verification/day-04-followup.md).

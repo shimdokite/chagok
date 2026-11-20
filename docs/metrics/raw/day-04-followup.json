@@ -1,0 +1,152 @@
+{
+  "records": [
+    {
+      "index": 0,
+      "warmup": true,
+      "status": "success",
+      "measuredAt": "2026-11-20T05:47:43.744Z",
+      "nativeLoadStartMs": 165543995.557666,
+      "nativeFormReadyMs": 165548821.867666,
+      "formReadyDurationMs": 4826.310000002384,
+      "webSubmitStartMs": 2740,
+      "webSubmitEndMs": 2781,
+      "submitDurationMs": 41
+    },
+    {
+      "index": 1,
+      "warmup": false,
+      "status": "success",
+      "measuredAt": "2026-11-20T05:47:51.789Z",
+      "nativeLoadStartMs": 165551592.87775,
+      "nativeFormReadyMs": 165554162.544916,
+      "formReadyDurationMs": 2569.667165994644,
+      "webSubmitStartMs": 918,
+      "webSubmitEndMs": 944,
+      "submitDurationMs": 26
+    },
+    {
+      "index": 2,
+      "warmup": false,
+      "status": "success",
+      "measuredAt": "2026-11-20T05:47:56.472Z",
+      "nativeLoadStartMs": 165555678.474416,
+      "nativeFormReadyMs": 165558699.059541,
+      "formReadyDurationMs": 3020.5851249992847,
+      "webSubmitStartMs": 1651,
+      "webSubmitEndMs": 1713,
+      "submitDurationMs": 62
+    },
+    {
+      "index": 3,
+      "warmup": false,
+      "status": "success",
+      "measuredAt": "2026-11-20T05:48:01.160Z",
+      "nativeLoadStartMs": 165560304.610666,
+      "nativeFormReadyMs": 165562384.815791,
+      "formReadyDurationMs": 2080.205125004053,
+      "webSubmitStartMs": 619,
+      "webSubmitEndMs": 639,
+      "submitDurationMs": 20
+    },
+    {
+      "index": 4,
+      "warmup": false,
+      "status": "success",
+      "measuredAt": "2026-11-20T05:48:04.672Z",
+      "nativeLoadStartMs": 165564008.229041,
+      "nativeFormReadyMs": 165566005.992166,
+      "formReadyDurationMs": 1997.7631250023842,
+      "webSubmitStartMs": 645,
+      "webSubmitEndMs": 682,
+      "submitDurationMs": 37
+    },
+    {
+      "index": 5,
+      "warmup": false,
+      "status": "success",
+      "measuredAt": "2026-11-20T05:48:08.292Z",
+      "nativeLoadStartMs": 165567551.904583,
+      "nativeFormReadyMs": 165569780.605541,
+      "formReadyDurationMs": 2228.700957983732,
+      "webSubmitStartMs": 1030,
+      "webSubmitEndMs": 1110,
+      "submitDurationMs": 80
+    },
+    {
+      "index": 6,
+      "warmup": false,
+      "status": "success",
+      "measuredAt": "2026-11-20T05:48:12.189Z",
+      "nativeLoadStartMs": 165571273.781416,
+      "nativeFormReadyMs": 165572958.267833,
+      "formReadyDurationMs": 1684.4864169955254,
+      "webSubmitStartMs": 512,
+      "webSubmitEndMs": 542,
+      "submitDurationMs": 30
+    },
+    {
+      "index": 7,
+      "warmup": false,
+      "status": "success",
+      "measuredAt": "2026-11-20T05:48:15.290Z",
+      "nativeLoadStartMs": 165574570.343333,
+      "nativeFormReadyMs": 165577314.937125,
+      "formReadyDurationMs": 2744.5937919914722,
+      "webSubmitStartMs": 1362,
+      "webSubmitEndMs": 1464,
+      "submitDurationMs": 102
+    },
+    {
+      "index": 8,
+      "warmup": false,
+      "status": "success",
+      "measuredAt": "2026-11-20T05:48:19.929Z",
+      "nativeLoadStartMs": 165579163.459125,
+      "nativeFormReadyMs": 165581144.088541,
+      "formReadyDurationMs": 1980.6294159889221,
+      "webSubmitStartMs": 576,
+      "webSubmitEndMs": 612,
+      "submitDurationMs": 36
+    },
+    {
+      "index": 9,
+      "warmup": false,
+      "status": "success",
+      "measuredAt": "2026-11-20T05:48:23.435Z",
+      "nativeLoadStartMs": 165582591.035,
+      "nativeFormReadyMs": 165584676.125583,
+      "formReadyDurationMs": 2085.090582996607,
+      "webSubmitStartMs": 675,
+      "webSubmitEndMs": 696,
+      "submitDurationMs": 21
+    },
+    {
+      "index": 10,
+      "warmup": false,
+      "status": "success",
+      "measuredAt": "2026-11-20T05:48:26.914Z",
+      "nativeLoadStartMs": 165586067.307958,
+      "nativeFormReadyMs": 165588585.488166,
+      "formReadyDurationMs": 2518.1802079975605,
+      "webSubmitStartMs": 1275,
+      "webSubmitEndMs": 1294,
+      "submitDurationMs": 19
+    }
+  ],
+  "checks": [
+    {
+      "name": "close-before-commit",
+      "blockedBeforeClose": true,
+      "before": 89000,
+      "after": 88000,
+      "claims": 12,
+      "lateReplyDropped": true
+    },
+    {
+      "name": "manual-ui-fixture",
+      "claimsAfterUI": 13
+    }
+  ],
+  "restored": true,
+  "fixtureCleaned": true
+}

@@ -1,0 +1,27 @@
+(node:97059) ExperimentalWarning: Transform Types is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:97059) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/doyeon/Desktop/chagok/apps/mobile/src/bridge/claim-host.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/doyeon/Desktop/chagok/apps/mobile/package.json.
+(node:97059) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/doyeon/Desktop/chagok/packages/contracts/src/bridge.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/doyeon/Desktop/chagok/packages/contracts/package.json.
+(node:97059) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/doyeon/Desktop/chagok/packages/api/src/auth/store.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/doyeon/Desktop/chagok/packages/api/package.json.
+["anonymous preview disabled; 320px no horizontal overflow",{"name":"ready-history-return","persisted":false,"events":[{"type":"pageshow","persisted":false}],"notRestored":[{"loaderId":"A821FB71A4E609422FCD2057E8AB2D76","frameId":"4827180499720FFFBDA4963EF92E98D5","notRestoredExplanations":[{"type":"Circumstantial","reason":"MainResourceHasCacheControlNoStore"},{"type":"Circumstantial","reason":"WebSocketUsedWithCCNS","details":[{"url":"http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_client_1165-soo5tfpf._.js","function":"init","lineNumber":16233,"columnNumber":29},{"url":"http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_client_1165-soo5tfpf._.js","function":"init","lineNumber":16233,"columnNumber":29},{"url":"http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_client_1165-soo5tfpf._.js","function":"init","lineNumber":16233,"columnNumber":29}]},{"type":"Circumstantial","reason":"BrowsingInstanceNotSwapped"}],"notRestoredExplanationsTree":{"url":"http://127.0.0.1:3000/apply","explanations":[{"type":"Circumstantial","reason":"MainResourceHasCacheControlNoStore"},{"type":"Circumstantial","reason":"WebSocketUsedWithCCNS","details":[{"url":"http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_client_1165-soo5tfpf._.js","function":"init","lineNumber":16233,"columnNumber":29}]},{"type":"Circumstantial","reason":"BrowsingInstanceNotSwapped"}],"children":[]}}]}]
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Browser must actually restore from BFCache to claim coverage
+    at file:///Users/doyeon/Desktop/chagok/packages/api/scripts/verify-claim-restore.mjs:248:10 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
+
+Node.js v24.18.0

@@ -1,0 +1,7 @@
+PASS: original user changes, learning and historical evidence: 68 files unchanged
+PASS: main merge commit unchanged; learning untracked; staging empty
+PASS: native normal samples, late commit refresh and user UI claim count; session/fixture cleanup
+PASS: measured product sources unchanged; executed harness archive matches source hash
+PASS: actual production BFCache returns, final harness source and fixture cleanup
+PASS: injected closed-page and lock failures report failure and still clean up
+PASS: document links, PR sections, commit structure

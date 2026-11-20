@@ -36,3 +36,18 @@ node --env-file=apps/web/.env.local --experimental-transform-types packages/api/
 ## PR 준비 시 적용 범위
 
 이 수치는 폼 연결 완료 당시 원본이다. 이후 [PR 리뷰](../../verification/day-04-pr.md)에서 native HTTP의 화면 종료 취소 수명을 보정했다. 보정 후 실측은 재실행하지 않았고 기존 raw/environment/source hash를 수정하지 않았다. 정상 제출 수치를 보정 후 성능 증거로 확대하지 않는다.
+
+## 병합 후 최종 제품 코드 재측정 — 2026-11-20
+
+PR #6의 취소 수명 보정이 반영된 main `0a66a38`에서 iOS를 다시 측정했다. 제품 코드 변경은 없으며 이전 원본과 별도 저장했다.
+
+| 경계 | 본 표본 | 성공 | 중앙값 | 최소~최대 |
+| --- | ---: | ---: | ---: | ---: |
+| iOS RN load reset → FORM_READY 수신 | 10 | 10 | 2156.9ms | 1684.5~3020.6ms |
+| iOS 웹 submit 핸들러 → 성공 Effect | 10 | 10 | 33.0ms | 19.0~102.0ms |
+
+준비1회는 통계에서 제외했다. iOS27.2/iPhone17 시뮬레이터, 기존 Debug 개발 클라이언트·현재 Metro, Next 개발 서버·로컬 DB warm 조건이다. 본 표본 실패/timeout/취소0. 시작점과 시계는 기존 iOS 정의를 유지하며 독립 날짜의 작은 개발 표본으로 성능 개선율이나 운영 p95를 주장하지 않는다.
+
+[원본](../raw/day-04-followup.json), [환경/제품 소스 해시](../environments/day-04-followup.json), [실행 로그](../../verification/day-04-followup/native.log). 실측 이후 검증 도구 자체의 실패 정리를 보강했으므로 실행 당시 스크립트도 [별도 보존](../../verification/day-04-followup/native-executed.mjs)했고 환경 JSON의 스크립트 해시와 대조한다. 제품 소스 해시는 현행과 같다.
+
+별도 장애 검증: 실제 DB 행 잠금 중 제출하고 화면을 닫은 뒤 저장 해제→홈 잔액89,000→88,000원, 저장12건, 종료 화면의 늦은 응답 폐기 확인. 이후 사용자 직접 키보드 입력/제출→홈87,000원 및13건 확인. 이2건은 정상 제출10개 통계에 섞지 않았다. 원래 SecureStore 복구와 가상 DB 자료 정리 모두true. [전체 검증](../../verification/day-04-followup.md).
