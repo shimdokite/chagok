@@ -1,0 +1,170 @@
+{
+  "runId": "supabase-receipts-8d097dfa-cf69-4278-a901-24f550d2c0c6",
+  "node": "v24.22.3",
+  "measuredAt": "2026-11-25T07:59:03.372Z",
+  "boundary": "Next POST invocation through local DB and remote Storage to parsed response; subsequent download excluded",
+  "samples": [
+    {
+      "format": "jpeg",
+      "bytes": 47843,
+      "warmup": true,
+      "elapsedMs": 320.39295800000014,
+      "status": 201
+    },
+    {
+      "format": "jpeg",
+      "bytes": 47843,
+      "warmup": false,
+      "elapsedMs": 279.21079199999986,
+      "status": 201
+    },
+    {
+      "format": "jpeg",
+      "bytes": 47843,
+      "warmup": false,
+      "elapsedMs": 393.5444159999997,
+      "status": 201
+    },
+    {
+      "format": "jpeg",
+      "bytes": 47843,
+      "warmup": false,
+      "elapsedMs": 635.3946660000001,
+      "status": 201
+    },
+    {
+      "format": "jpeg",
+      "bytes": 47843,
+      "warmup": false,
+      "elapsedMs": 284.53820799999994,
+      "status": 201
+    },
+    {
+      "format": "jpeg",
+      "bytes": 47843,
+      "warmup": false,
+      "elapsedMs": 237.80312499999945,
+      "status": 201
+    },
+    {
+      "format": "jpeg",
+      "bytes": 47843,
+      "warmup": false,
+      "elapsedMs": 520.0242090000002,
+      "status": 201
+    },
+    {
+      "format": "jpeg",
+      "bytes": 47843,
+      "warmup": false,
+      "elapsedMs": 241.86104199999954,
+      "status": 201
+    },
+    {
+      "format": "jpeg",
+      "bytes": 47843,
+      "warmup": false,
+      "elapsedMs": 295.601666999999,
+      "status": 201
+    },
+    {
+      "format": "jpeg",
+      "bytes": 47843,
+      "warmup": false,
+      "elapsedMs": 261.3109999999997,
+      "status": 201
+    },
+    {
+      "format": "jpeg",
+      "bytes": 47843,
+      "warmup": false,
+      "elapsedMs": 248.5722910000004,
+      "status": 201
+    },
+    {
+      "format": "png",
+      "bytes": 44888,
+      "warmup": true,
+      "elapsedMs": 300.3772919999992,
+      "status": 201
+    },
+    {
+      "format": "png",
+      "bytes": 44888,
+      "warmup": false,
+      "elapsedMs": 330.9904999999999,
+      "status": 201
+    },
+    {
+      "format": "png",
+      "bytes": 44888,
+      "warmup": false,
+      "elapsedMs": 270.4089589999985,
+      "status": 201
+    },
+    {
+      "format": "png",
+      "bytes": 44888,
+      "warmup": false,
+      "elapsedMs": 269.1971250000006,
+      "status": 201
+    },
+    {
+      "format": "png",
+      "bytes": 44888,
+      "warmup": false,
+      "elapsedMs": 347.02220899999884,
+      "status": 201
+    },
+    {
+      "format": "png",
+      "bytes": 44888,
+      "warmup": false,
+      "elapsedMs": 289.95537500000137,
+      "status": 201
+    },
+    {
+      "format": "png",
+      "bytes": 44888,
+      "warmup": false,
+      "elapsedMs": 385.17370800000026,
+      "status": 201
+    },
+    {
+      "format": "png",
+      "bytes": 44888,
+      "warmup": false,
+      "elapsedMs": 338.8635839999988,
+      "status": 201
+    },
+    {
+      "format": "png",
+      "bytes": 44888,
+      "warmup": false,
+      "elapsedMs": 403.3990410000006,
+      "status": 201
+    },
+    {
+      "format": "png",
+      "bytes": 44888,
+      "warmup": false,
+      "elapsedMs": 1023.9753329999985,
+      "status": 201
+    },
+    {
+      "format": "png",
+      "bytes": 44888,
+      "warmup": false,
+      "elapsedMs": 393.317417000002,
+      "status": 201
+    }
+  ],
+  "checks": {
+    "privateBucket": true,
+    "originalsMatched": 22,
+    "anonymousHttp": 400,
+    "unlinkedRemoved": 21,
+    "linkedPreserved": true,
+    "fixtureCleanup": true
+  }
+}

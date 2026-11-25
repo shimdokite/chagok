@@ -54,7 +54,13 @@ export function createReceiptService(
             message: "회사 소속을 다시 확인해 주세요.",
           });
         return tx.attachment.create({
-          data: { id, userId, companyId: member.companyId, ...metadata },
+          data: {
+            id,
+            userId,
+            companyId: member.companyId,
+            storageLocation: storage.location,
+            ...metadata,
+          },
         });
       });
       // Persist the ledger BEFORE the object write; even a lost write reply is cleanable.
@@ -80,6 +86,7 @@ export function createReceiptService(
       const cutoff = new Date(now.getTime() - RECEIPT_TTL_MS);
       const expired = await db.attachment.findMany({
         where: {
+          storageLocation: storage.location,
           id: ids ? { in: ids } : undefined,
           OR: [
             { state: { in: ["PENDING", "READY"] }, createdAt: { lte: cutoff } },
@@ -97,6 +104,7 @@ export function createReceiptService(
         const claimed = await db.attachment.updateMany({
           where: {
             id,
+            storageLocation: storage.location,
             OR: [
               {
                 state: { in: ["PENDING", "READY"] },

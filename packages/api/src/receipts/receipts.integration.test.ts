@@ -289,6 +289,42 @@ describe.skipIf(!process.env.CHAGOK_TEST_DATABASE_URL)(
       expect(results.filter((r) => r.status === "fulfilled")).toHaveLength(1);
       expect(await db.claim.count({ where: { companyId } })).toBe(1);
     });
+    it("records the storage location and cleans only objects in the selected store", async () => {
+      const otherStorage = {
+        ...localReceiptStorage(dir),
+        location: "https://fixture.supabase.co/receipts",
+      };
+      const remote = createReceiptService(db, otherStorage);
+      const localFile = await service.upload(
+        userId,
+        companyId,
+        bytes,
+        "image/png",
+      );
+      const remoteFile = await remote.upload(
+        userId,
+        companyId,
+        bytes,
+        "image/png",
+      );
+      expect(
+        await db.attachment.findUnique({
+          where: { id: remoteFile.attachmentId },
+        }),
+      ).toMatchObject({ storageLocation: otherStorage.location });
+      const ids = [localFile.attachmentId, remoteFile.attachmentId];
+      const future = new Date(Date.now() + 86400001);
+      expect(await remote.cleanup(future, ids)).toEqual({
+        deleted: 1,
+        failed: 0,
+      });
+      expect(await readdir(dir)).toEqual([localFile.attachmentId]);
+      expect(await service.cleanup(future, ids)).toEqual({
+        deleted: 1,
+        failed: 0,
+      });
+    });
+
     it("cleans at 24h, preserves linked and younger files, and retries failed deletion", async () => {
       const old = await service.upload(userId, companyId, bytes, "image/png");
       const young = await service.upload(userId, companyId, bytes, "image/png");
