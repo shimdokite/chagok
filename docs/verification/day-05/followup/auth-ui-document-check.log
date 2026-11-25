@@ -1,0 +1,15 @@
+2026-11-23 KST: authenticated UI follow-up document verification
+PASS: baseline 744 existing files; changed 7 allowed documents; unchanged 737
+PASS: 99 local document links (this log target excluded)
+PASS: git diff --check; staged diff empty; learning tracked/staged/base diff empty; local learning exists and ignored
+PASS: PR five headings and commit four fields present
+NOT RUN: automated tests/typecheck/style/build; no product code changes
+PASS: separate read-only DB assertion verified 3 fixture-equal files, mode600, READY/READY/LINKED and exactly1 test claim
+Changed documents:
+docs/changes/latest-commit.txt
+docs/changes/latest-pr.md
+docs/learning/day-05.md
+docs/plans/day-05.md
+docs/progress.md
+docs/verification/day-05.md
+docs/verification/day-05/followup/result.md

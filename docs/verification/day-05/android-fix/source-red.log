@@ -1,0 +1,53 @@
+
+> chagok@0.1.0 pretest
+> npm run style:check
+
+
+> chagok@0.1.0 style:check
+> node scripts/check-function-spacing.mjs
+
+코드 간격: 131개 파일 검사, 위반 0건
+
+> chagok@0.1.0 test
+> vitest run apps/mobile/src/bridge/message-source.test.ts
+
+
+ RUN  v5.1.0 /Users/doyeon/Desktop/chagok
+
+ ❯ apps/mobile/src/bridge/message-source.test.ts (19 tests | 4 failed) 10ms
+   ❯ message source and active apply document (19)
+     × accepts android source http://localhost:3000 only in the loaded apply document 6ms
+     × accepts android source http://localhost:3000/ only in the loaded apply document 1ms
+     × accepts android source http://localhost:3000/apply only in the loaded apply document 0ms
+     × accepts ios source http://localhost:3000/apply only in the loaded apply document 0ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/mobile/src/bridge/message-source.test.ts > message source and active apply document > accepts android source http://localhost:3000 only in the loaded apply document
+ FAIL  apps/mobile/src/bridge/message-source.test.ts > message source and active apply document > accepts android source http://localhost:3000/ only in the loaded apply document
+ FAIL  apps/mobile/src/bridge/message-source.test.ts > message source and active apply document > accepts android source http://localhost:3000/apply only in the loaded apply document
+ FAIL  apps/mobile/src/bridge/message-source.test.ts > message source and active apply document > accepts ios source http://localhost:3000/apply only in the loaded apply document
+AssertionError: expected null to be 'http://localhost:3000/apply' // Object.is equality
+
+- Expected:
+"http://localhost:3000/apply"
+
++ Received:
+null
+
+ ❯ apps/mobile/src/bridge/message-source.test.ts:14:68
+     12|     ["ios", documentUrl],
+     13|   ])("accepts %s source %s only in the loaded apply document", (platfo…
+     14|     expect(applyMessageUrl(source, documentUrl, origin, platform)).toB…
+       |                                                                    ^
+     15|   });
+     16|   it.each([
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  4 failed | 15 passed (19)
+   Start at  14:16:36
+   Duration  428ms (transform 48%, import 38%, tests 9%, worker 4%)
+

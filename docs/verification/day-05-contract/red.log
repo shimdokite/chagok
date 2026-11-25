@@ -1,0 +1,39 @@
+
+> chagok@0.1.0 pretest
+> npm run style:check
+
+
+> chagok@0.1.0 style:check
+> node scripts/check-function-spacing.mjs
+
+코드 간격: 105개 파일 검사, 위반 0건
+
+> chagok@0.1.0 test
+> vitest run packages/contracts/src/receipts.test.ts
+
+
+ RUN  v5.1.0 /Users/doyeon/Desktop/chagok
+
+ ❯ packages/contracts/src/receipts.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/contracts/src/receipts.test.ts [ packages/contracts/src/receipts.test.ts ]
+Error: "./receipts" is not exported under the conditions ["node", "development", "import"] from package /Users/doyeon/Desktop/chagok/packages/contracts (see exports field in /Users/doyeon/Desktop/chagok/packages/contracts/package.json)
+  Plugin: builtin:vite-resolve
+ ❯ EnvironmentPluginContainer.resolveId node_modules/vite/dist/node/chunks/node.js:8552:19
+ ❯ TransformPluginContext.resolve node_modules/vite/dist/node/chunks/node.js:8795:13
+ ❯ resolveId node_modules/vite/dist/node/chunks/node.js:26544:22
+ ❯ node_modules/vite/dist/node/chunks/node.js:26651:23
+ ❯ TransformPluginContext.transform node_modules/vite/dist/node/chunks/node.js:26624:4
+ ❯ EnvironmentPluginContainer.transform node_modules/vite/dist/node/chunks/node.js:8636:14
+ ❯ loadAndTransform node_modules/vite/dist/node/chunks/node.js:20112:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  15:58:57
+   Duration  115ms (worker 97%, environment 3%)
+

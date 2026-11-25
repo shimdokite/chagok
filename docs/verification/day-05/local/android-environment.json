@@ -1,0 +1,22 @@
+{
+  "date": "2026-11-24 KST",
+  "tools": {
+    "adb": null,
+    "emulator": null,
+    "java": "/usr/bin/java"
+  },
+  "sdkLocations": [
+    {
+      "path": "/Users/doyeon/Library/Android/sdk",
+      "exists": false,
+      "adb": false,
+      "emulator": false
+    },
+    {
+      "path": "/opt/homebrew/share/android-commandlinetools",
+      "exists": false,
+      "adb": false,
+      "emulator": false
+    }
+  ]
+}

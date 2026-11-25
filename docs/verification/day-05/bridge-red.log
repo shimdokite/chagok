@@ -1,0 +1,86 @@
+
+> chagok@0.1.0 pretest
+> npm run style:check
+
+
+> chagok@0.1.0 style:check
+> node scripts/check-function-spacing.mjs
+
+코드 간격: 113개 파일 검사, 위반 0건
+
+> chagok@0.1.0 test
+> vitest run apps/web/src/components/apply/form-client.test.ts apps/mobile/src/bridge/claim-host.test.ts
+
+
+ RUN  v5.1.0 /Users/doyeon/Desktop/chagok
+
+ ❯ apps/web/src/components/apply/form-client.test.ts (11 tests | 3 failed) 20ms
+   ❯ receipt form lifecycle (3)
+     × blocks submission and duplicate picker while uploading, then includes the receipt 3ms
+     × preserves existing receipt on cancellation/failure and drops late results 0ms
+     × preserves the attachment across a policy reload, clears it across sessions 0ms
+ ❯ apps/mobile/src/bridge/claim-host.test.ts (11 tests | 1 failed) 16ms
+   × suppresses receipt completion after cancellation, reload and scope change 4ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/mobile/src/bridge/claim-host.test.ts > suppresses receipt completion after cancellation, reload and scope change
+AssertionError: expected undefined to be type of 'function'
+
+Expected: "function"
+Received: "undefined"
+
+ ❯ apps/mobile/src/bridge/claim-host.test.ts:191:20
+    189|     };
+    190|     const pending = host.receive(request, `${origin}/apply`);
+    191|     expect(finish).toBeTypeOf("function");
+       |                    ^
+    192|     if (end === "reset") host.reset();
+    193|     else if (end === "scope") scope = "b";
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  apps/web/src/components/apply/form-client.test.ts > receipt form lifecycle > blocks submission and duplicate picker while uploading, then includes the receipt
+TypeError: s.client.pickReceipt is not a function
+ ❯ apps/web/src/components/apply/form-client.test.ts:191:14
+    189|   it("blocks submission and duplicate picker while uploading, then inc…
+    190|     const s = setup();
+    191|     s.client.pickReceipt("library");
+       |              ^
+    192|     s.client.pickReceipt("camera");
+    193|     s.client.submit(draft);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  apps/web/src/components/apply/form-client.test.ts > receipt form lifecycle > preserves existing receipt on cancellation/failure and drops late results
+TypeError: s.client.pickReceipt is not a function
+ ❯ attach apps/web/src/components/apply/form-client.test.ts:181:14
+    179|
+    180|   function attach(s: ReturnType<typeof setup>) {
+    181|     s.client.pickReceipt("library");
+       |              ^
+    182|     s.client.receive({
+    183|       ...s.messages.at(-1),
+ ❯ apps/web/src/components/apply/form-client.test.ts:209:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+ FAIL  apps/web/src/components/apply/form-client.test.ts > receipt form lifecycle > preserves the attachment across a policy reload, clears it across sessions
+TypeError: s.client.pickReceipt is not a function
+ ❯ attach apps/web/src/components/apply/form-client.test.ts:181:14
+    179|
+    180|   function attach(s: ReturnType<typeof setup>) {
+    181|     s.client.pickReceipt("library");
+       |              ^
+    182|     s.client.receive({
+    183|       ...s.messages.at(-1),
+ ❯ apps/web/src/components/apply/form-client.test.ts:232:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  4 failed | 18 passed (22)
+   Start at  16:20:18
+   Duration  557ms (import 57%, transform 38%, tests 4%, worker 1%)
+

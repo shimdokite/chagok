@@ -1,0 +1,30 @@
+{
+  "method": "temporary development-only POST handler; all samples are synthetic JPEG",
+  "requests": [
+    {
+      "at": "2026-11-24T05:38:54.892Z",
+      "status": 401,
+      "byteSize": 47843
+    },
+    {
+      "at": "2026-11-24T05:39:15.326Z",
+      "status": 403,
+      "byteSize": 47843
+    },
+    {
+      "at": "2026-11-24T05:39:29.921Z",
+      "status": 413,
+      "byteSize": 47843
+    },
+    {
+      "at": "2026-11-24T05:39:45.158Z",
+      "status": 500,
+      "byteSize": 47843
+    },
+    {
+      "at": "2026-11-24T05:39:59.836Z",
+      "status": 503,
+      "byteSize": 47843
+    }
+  ]
+}

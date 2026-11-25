@@ -1,0 +1,15 @@
+{
+  "clean": {
+    "exitCode": 0,
+    "output": "patch-package 8.0.1\nApplying patches...\nreact-native-webview@14.0.1 ✔\n"
+  },
+  "idempotent": {
+    "exitCode": 0,
+    "output": "patch-package 8.0.1\nApplying patches...\nreact-native-webview@14.0.1 ✔\n"
+  },
+  "incompatible": {
+    "exitCode": 1,
+    "output": "patch-package 8.0.1\nApplying patches...\n\n**ERROR** Failed to apply patch for package react-native-webview at path\n  \n    node_modules/react-native-webview\n\n  This error was caused because patch-package cannot apply the following patch file:\n\n    patches/react-native-webview+14.0.1.patch\n\n  Try removing node_modules and trying again. If that doesn't work, maybe there was\n  an accidental change made to the patch file? Try recreating it by manually\n  editing the appropriate files and running:\n  \n    patch-package react-native-webview\n  \n  If that doesn't work, then it's a bug in patch-package, so please submit a bug\n  report. Thanks!\n\n    https://github.com/ds300/patch-package/issues\n    \n\n---\npatch-package finished with 1 error(s).\n"
+  },
+  "matchesInstalled": true
+}

@@ -96,6 +96,7 @@ const navigation = vi.hoisted(() => ({
 
   canGoBack: () => true,
 }));
+const platform = vi.hoisted(() => ({ OS: "ios", Version: "test" }));
 vi.mock("react", async (original) => ({
   ...(await original<object>()),
   ...host,
@@ -104,7 +105,7 @@ vi.mock("react-native", () => ({
   View: "View",
   Text: "Text",
   ActivityIndicator: "ActivityIndicator",
-  Platform: { OS: "ios", Version: "test" },
+  Platform: platform,
   BackHandler: { addEventListener: () => ({ remove() {} }) },
   AppState: { addEventListener: () => ({ remove() {} }) },
 }));
@@ -135,6 +136,11 @@ vi.mock("../auth/SessionProvider", () => ({
 }));
 vi.mock("@tanstack/react-query", () => ({
   useQueryClient: () => ({ invalidateQueries: async () => {} }),
+}));
+vi.mock("../receipts/native", () => ({
+  pickAndUploadReceipt: async () => {
+    throw new Error("Unexpected native picker use");
+  },
 }));
 vi.mock("../benefits/api", () => ({
   benefitsClient: async () => {
@@ -172,10 +178,14 @@ const events = () =>
   (find("Diagnostics").props.trace() as ReturnType<WebViewTrace["snapshot"]>)
     .events;
 
-function reload(count: number) {
+function reload(count: number, load = true) {
   for (let n = 0; n < count; n++) {
     find("Diagnostics").props.reload();
     render();
+    if (load)
+      find("WebView").props.onLoadStart({
+        nativeEvent: { url: "http://localhost:3000/apply" },
+      });
   }
 }
 
@@ -187,10 +197,14 @@ const closeMessage = JSON.stringify({ ...bridgeBase, type: "CLOSE_WEBVIEW" });
 
 beforeEach(() => {
   host.clear();
+  platform.OS = "ios";
   vi.resetAllMocks();
   vi.useFakeTimers();
   vi.stubGlobal("__DEV__", true);
   render();
+  find("WebView").props.onLoadStart({
+    nativeEvent: { url: "http://localhost:3000/apply" },
+  });
 });
 afterEach(() => {
   host.unmount();
@@ -284,4 +298,66 @@ it("does not export form payloads through the boundary probe", () => {
   expect(report).not.toContain("private expense");
   expect(report).not.toContain("1234");
   expect(report).toContain("accepted");
+});
+
+vi.mock("../receipts/metrics-native", () => ({
+  startReceiptMeasurement: () => undefined,
+}));
+
+describe("Android message origins", () => {
+  it("initializes the form from an origin-only event on the loaded apply document", () => {
+    platform.OS = "android";
+    const webview = find("WebView");
+    const injectJavaScript = vi.fn();
+    webview.props.ref.current = { injectJavaScript };
+    webview.props.onLoadStart({
+      nativeEvent: { url: "http://localhost:3000/apply" },
+    });
+    message(
+      JSON.stringify({ ...bridgeBase, type: "WEB_READY" }),
+      "http://localhost:3000",
+    );
+    render();
+    expect(find("Diagnostics").props.ready).toBe(true);
+    expect(injectJavaScript).toHaveBeenCalledWith(
+      expect.stringContaining('"type":"FORM_INIT"'),
+    );
+    expect(injectJavaScript).toHaveBeenCalledWith(
+      expect.stringContaining('"mode":"demo"'),
+    );
+    vi.advanceTimersByTime(16000);
+    render();
+    expect(find("WebView")).toBeDefined();
+  });
+  it("closes from Android origin events only while the apply document is active", () => {
+    platform.OS = "android";
+    reload(1, false);
+    message(closeMessage, "http://localhost:3000");
+    expect(navigation.back).not.toHaveBeenCalled();
+    find("WebView").props.onLoadStart({
+      nativeEvent: { url: "http://localhost:3000/apply" },
+    });
+    message(closeMessage, "http://localhost:3000");
+    expect(navigation.back).toHaveBeenCalledTimes(1);
+    message(closeMessage, "http://localhost:3000");
+    expect(navigation.back).toHaveBeenCalledTimes(1);
+  });
+  it("rejects events from a prior WebView after retry and requires a fresh load", () => {
+    platform.OS = "android";
+    const old = find("WebView");
+    old.props.onLoadStart({
+      nativeEvent: { url: "http://localhost:3000/apply" },
+    });
+    reload(1, false);
+    old.props.onMessage({
+      nativeEvent: { data: closeMessage, url: "http://localhost:3000" },
+    });
+    message(closeMessage, "http://localhost:3000");
+    expect(navigation.back).not.toHaveBeenCalled();
+    find("WebView").props.onLoadStart({
+      nativeEvent: { url: "http://localhost:3000/apply" },
+    });
+    message(closeMessage, "http://localhost:3000");
+    expect(navigation.back).toHaveBeenCalledTimes(1);
+  });
 });

@@ -1,0 +1,39 @@
+
+> chagok@0.1.0 pretest
+> npm run style:check
+
+
+> chagok@0.1.0 style:check
+> node scripts/check-function-spacing.mjs
+
+코드 간격: 118개 파일 검사, 위반 0건
+
+> chagok@0.1.0 test
+> vitest run
+
+
+ RUN  v5.1.0 /Users/doyeon/Desktop/chagok
+
+Sourcemap for "/Users/doyeon/Desktop/chagok/node_modules/expo/build/Expo.js" points to missing source files
+Sourcemap for "/Users/doyeon/Desktop/chagok/node_modules/expo/build/Expo.fx.js" points to missing source files
+Sourcemap for "/Users/doyeon/Desktop/chagok/node_modules/expo/build/winter/index.js" points to missing source files
+Sourcemap for "/Users/doyeon/Desktop/chagok/node_modules/expo/build/winter/runtime.js" points to missing source files
+ ❯ apps/mobile/src/components/ApplyContainer.test.tsx (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/mobile/src/components/ApplyContainer.test.tsx [ apps/mobile/src/components/ApplyContainer.test.tsx ]
+ReferenceError: __DEV__ is not defined
+ ❯ Object.<anonymous> node_modules/expo/build/async-require/async-require/setup.ts:5:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 28 passed (29)
+      Tests  272 passed (272)
+   Start at  16:23:35
+   Duration  1.84s (tests 56%, import 28%, transform 15%, worker 1%)
+
+    Isolate  29 workers spawned · ~109ms startup each (spawn + environment, per file)
+             at least ~344ms faster with isolate: false — reuses workers across files instead of one per file
+

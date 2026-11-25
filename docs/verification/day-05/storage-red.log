@@ -1,0 +1,38 @@
+
+> chagok@0.1.0 pretest
+> npm run style:check
+
+
+> chagok@0.1.0 style:check
+> node scripts/check-function-spacing.mjs
+
+코드 간격: 110개 파일 검사, 위반 0건
+
+> chagok@0.1.0 test
+> vitest run packages/api/src/receipts/receipts.integration.test.ts
+
+
+ RUN  v5.1.0 /Users/doyeon/Desktop/chagok
+
+ ❯ packages/api/src/receipts/receipts.integration.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/api/src/receipts/receipts.integration.test.ts [ packages/api/src/receipts/receipts.integration.test.ts ]
+Error: Cannot find module './service' imported from /Users/doyeon/Desktop/chagok/packages/api/src/receipts/receipts.integration.test.ts
+ ❯ packages/api/src/receipts/receipts.integration.test.ts:19:1
+     17| import { assertLocalDatabase } from "../benefits/seed";
+     18| import { createClaim } from "../benefits/create-claim";
+     19| import { createReceiptService } from "./service";
+       | ^
+     20| import { localReceiptStorage } from "./storage";
+     21| import { handleReceiptUpload } from "./http";
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  16:17:35
+   Duration  261ms (worker 97%, environment 3%)
+

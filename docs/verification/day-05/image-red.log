@@ -1,0 +1,38 @@
+
+> chagok@0.1.0 pretest
+> npm run style:check
+
+
+> chagok@0.1.0 style:check
+> node scripts/check-function-spacing.mjs
+
+코드 간격: 107개 파일 검사, 위반 0건
+
+> chagok@0.1.0 test
+> vitest run packages/api/src/receipts/image.test.ts
+
+
+ RUN  v5.1.0 /Users/doyeon/Desktop/chagok
+
+ ❯ packages/api/src/receipts/image.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/api/src/receipts/image.test.ts [ packages/api/src/receipts/image.test.ts ]
+Error: Cannot find module './image' imported from /Users/doyeon/Desktop/chagok/packages/api/src/receipts/image.test.ts
+ ❯ packages/api/src/receipts/image.test.ts:3:1
+      1| import { describe, expect, it } from "vitest";
+      2| import sharp from "sharp";
+      3| import { validateImage } from "./image";
+       | ^
+      4| import { readReceiptBody } from "./body";
+      5| import { MAX_RECEIPT_BYTES } from "@chagok/contracts/receipts";
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  16:15:43
+   Duration  189ms (worker 97%, environment 3%)
+

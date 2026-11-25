@@ -1,0 +1,9 @@
+{
+  "serverPid": 42178,
+  "command": "next-server (v16.4.6)",
+  "startedAt": 1795585817.1748009,
+  "pausedHttp": "timeout",
+  "errorUi": true,
+  "restoredHttp": 200,
+  "endedAt": 1795585839.486474
+}

@@ -1,0 +1,103 @@
+{
+  "runId": "receipt-ui-1795426328923",
+  "snapshot": "receipt-ui-1795426328923-recovery",
+  "rawSha256": "153a0e933340989f64e3a1bd9609e548eb11db8befcc2ddf82e55e1e1e29a2bd",
+  "priorSamples": 23,
+  "currentSamples": 7,
+  "uploaded": 4,
+  "error": 1,
+  "interrupted": 2,
+  "pending": 0,
+  "dropped": 0,
+  "saveFailed": false,
+  "note": "Full 30-sample journal copied unchanged. Samples1-23 belong to previous timing task; only24-30 are this recovery verification. Interrupted traces have no uploadMs because completion was not awaited; do not interpret omission as zero. No aggregate performance comparison.",
+  "samples": [
+    {
+      "sourceIndex1Based": 24,
+      "scenario": "baseline-jpeg",
+      "source": "library",
+      "pickerMs": 7770.128000020981,
+      "prepareMs": 4.079499989748001,
+      "mimeType": "image/jpeg",
+      "byteSize": 47843,
+      "uploadMs": 71.91187500953674,
+      "outcome": "uploaded",
+      "bridgeAckMs": 2.9886249899864197,
+      "delivery": "acked"
+    },
+    {
+      "sourceIndex1Based": 25,
+      "scenario": "timeout-png",
+      "source": "library",
+      "pickerMs": 24645.74375000596,
+      "prepareMs": 2.619125008583069,
+      "mimeType": "image/png",
+      "byteSize": 44888,
+      "uploadMs": 35319.87458398938,
+      "outcome": "error",
+      "bridgeAckMs": 5.372124999761581,
+      "delivery": "acked"
+    },
+    {
+      "sourceIndex1Based": 26,
+      "scenario": "retry-png",
+      "source": "library",
+      "pickerMs": 7209.6209580004215,
+      "prepareMs": 4.586750000715256,
+      "mimeType": "image/png",
+      "byteSize": 44888,
+      "uploadMs": 93.27833300828934,
+      "outcome": "uploaded",
+      "bridgeAckMs": 1.4013749957084656,
+      "delivery": "acked"
+    },
+    {
+      "sourceIndex1Based": 27,
+      "scenario": "close-during-jpeg",
+      "source": "library",
+      "pickerMs": 22741.612082988024,
+      "prepareMs": 3.0167919993400574,
+      "mimeType": "image/jpeg",
+      "byteSize": 47843,
+      "outcome": "interrupted",
+      "delivery": "aborted"
+    },
+    {
+      "sourceIndex1Based": 28,
+      "scenario": "after-close-jpeg",
+      "source": "library",
+      "pickerMs": 6674.947125017643,
+      "prepareMs": 2.6389999985694885,
+      "mimeType": "image/jpeg",
+      "byteSize": 47843,
+      "uploadMs": 34.28929099440575,
+      "outcome": "uploaded",
+      "bridgeAckMs": 3.1013749837875366,
+      "delivery": "acked"
+    },
+    {
+      "sourceIndex1Based": 29,
+      "scenario": "reload-during-png",
+      "source": "library",
+      "pickerMs": 19941.568000018597,
+      "prepareMs": 3.5640420019626617,
+      "mimeType": "image/png",
+      "byteSize": 44888,
+      "outcome": "interrupted",
+      "delivery": "aborted"
+    },
+    {
+      "sourceIndex1Based": 30,
+      "scenario": "after-reload-png",
+      "source": "library",
+      "pickerMs": 8066.970625013113,
+      "prepareMs": 4.5149169862270355,
+      "mimeType": "image/png",
+      "byteSize": 44888,
+      "uploadMs": 67.76083400845528,
+      "outcome": "uploaded",
+      "bridgeAckMs": 3.811125010251999,
+      "delivery": "acked"
+    }
+  ]
+}

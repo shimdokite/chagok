@@ -1,0 +1,30 @@
+
+> chagok@0.1.0 typecheck
+> npm run typecheck --workspaces --if-present
+
+
+> @chagok/mobile@0.1.0 typecheck
+> tsc --noEmit
+
+
+> @chagok/web@0.1.0 typecheck
+> tsc --noEmit
+
+
+> @chagok/api@0.1.0 typecheck
+> tsc --noEmit
+
+src/receipts/receipts.integration.test.ts(147,34): error TS2554: Expected 3 arguments, but got 2.
+src/receipts/receipts.integration.test.ts(257,25): error TS2554: Expected 3 arguments, but got 2.
+npm error Lifecycle script `typecheck` failed with error:
+npm error code 2
+npm error path /Users/doyeon/Desktop/chagok/packages/api
+npm error workspace @chagok/api@0.1.0
+npm error location /Users/doyeon/Desktop/chagok/packages/api
+npm error command failed
+npm error command sh -c tsc --noEmit
+
+
+> @chagok/contracts@0.1.0 typecheck
+> tsc --noEmit
+

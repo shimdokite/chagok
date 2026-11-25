@@ -1,0 +1,20 @@
+
+> @chagok/api@0.1.0 db:migrate
+> prisma migrate deploy
+
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma/schema.prisma.
+Datasource "db": PostgreSQL database "chagok", schema "public" at "127.0.0.1:55432"
+
+5 migrations found in prisma/migrations
+
+Applying migration `20261120080000_receipt_attachments`
+
+The following migration(s) have been applied:
+
+migrations/
+  └─ 20261120080000_receipt_attachments/
+    └─ migration.sql
+
+All migrations have been successfully applied.

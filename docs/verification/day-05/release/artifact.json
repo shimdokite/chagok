@@ -1,0 +1,32 @@
+{
+  "buildExitCode": 0,
+  "configuration": "Release",
+  "platform": "iphonesimulator",
+  "codeSigningAllowed": true,
+  "codeSignIdentity": "-",
+  "appPath": "/tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/app.app",
+  "installedPath": "/Users/doyeon/Library/Developer/CoreSimulator/Devices/ECA59080-35A7-42E0-BE0C-7E4C4A4BEFEA/data/Containers/Bundle/Application/95ED653A-1EF0-44E0-9E1E-63A0BB51D540/app.app",
+  "artifacts": [
+    {
+      "name": "app",
+      "sha256": "959f551c92f5469b611efa5c87ab99e04afeff398a70050051d3ac2b6f1c560c",
+      "size": 28670864,
+      "installedMatches": true
+    },
+    {
+      "name": "main.jsbundle",
+      "sha256": "2eb6e226bc531631d22020cfa01bddbb6fed62dc9e20b829b0165525d68d6cf1",
+      "size": 3972975,
+      "installedMatches": true
+    },
+    {
+      "name": "Info.plist",
+      "sha256": "2a4c2350e7e805de3a8e5e0ddc6bad8268a3dd8516c38f30d4081982c0239a39",
+      "size": 4558,
+      "installedMatches": true
+    }
+  ],
+  "signature": "Executable=/private/tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/app.app/app\nIdentifier=dev.doyeon.chagok\nFormat=app bundle with Mach-O universal (x86_64 arm64)\nCodeDirectory v=20400 size=27882 flags=0x2(adhoc) hashes=861+7 location=embedded\nHash type=sha256 size=32\nCandidateCDHash sha256=e5c995c7628ec58c6e95c3bc2d5df7445e4f6fe0\nCandidateCDHashFull sha256=e5c995c7628ec58c6e95c3bc2d5df7445e4f6fe00ba76f626d5b3952ecf02f17\nHash choices=sha256\nCMSDigest=e5c995c7628ec58c6e95c3bc2d5df7445e4f6fe00ba76f626d5b3952ecf02f17\nCMSDigestType=2\nCDHash=e5c995c7628ec58c6e95c3bc2d5df7445e4f6fe0\nSignature=adhoc\nInfo.plist entries=44\nTeamIdentifier=not set\nSealed Resources version=2 rules=10 files=288\nInternal requirements count=0 size=12\nTotal signatures=1\nChosen signature=1\n",
+  "verifyExitCode": 0,
+  "firstSignedLaunchPid": 14028
+}

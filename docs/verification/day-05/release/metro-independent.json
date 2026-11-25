@@ -1,0 +1,17 @@
+{
+  "metroPid": 85517,
+  "startedAt": "2026-11-24T06:24:54.008506+00:00",
+  "watchdogSeconds": 60,
+  "stoppedAt": "2026-11-24T06:24:54.008766+00:00",
+  "metroProbe": {
+    "exitCode": 28,
+    "httpStatus": "000"
+  },
+  "launch": {
+    "exitCode": 0,
+    "output": "dev.doyeon.chagok: 16695",
+    "finishedAt": "2026-11-24T06:24:56.989154+00:00",
+    "commandElapsedMs": 943.6654999999998
+  },
+  "resumedAt": "2026-11-24T06:25:45.325326+00:00"
+}

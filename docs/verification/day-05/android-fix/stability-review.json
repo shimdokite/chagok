@@ -1,0 +1,14 @@
+{
+  "label": "fix-stable-25",
+  "waitSeconds": 25,
+  "elapsedSeconds": 27.177419542,
+  "formVisible": false,
+  "errorVisible": false,
+  "frameProof": [],
+  "visualReview": {
+    "formVisible": true,
+    "srcdocPosted": true,
+    "blankPostAvailable": false,
+    "note": "Initial UIAutomator missed WebView subtree; screenshot showed form and probe. Immediate fresh dump fix-stable-recheck confirmed same state."
+  }
+}

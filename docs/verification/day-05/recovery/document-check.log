@@ -1,0 +1,19 @@
+2026-11-23 KST: baseline 772 files; 7 intended document updates; 765 unchanged SHA-256; missing0.
+Product source/config, next-env.d.ts, handoff.md and prior raw evidence unchanged.
+Relative links 141 valid, broken0.
+git diff --check: exit0 empty
+git diff --cached --name-only: exit0 empty
+git ls-files -- docs/learning: exit0 empty
+git diff --cached --name-status -- docs/learning: exit0 empty
+git diff --name-status origin/main...HEAD -- docs/learning: exit0 empty
+Local learning preserved, ignored and untracked.
+Latest PR/commit required sections valid; no commit/push/PR.
+Raw SHA-256 valid; previous23 samples unchanged; current7 classified; source8/8 hash matches.
+Changed existing files:
+docs/changes/latest-commit.txt
+docs/changes/latest-pr.md
+docs/learning/day-05.md
+docs/metrics/daily/day-05.md
+docs/plans/day-05.md
+docs/progress.md
+docs/verification/day-05.md

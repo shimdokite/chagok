@@ -1,0 +1,40 @@
+{
+  "runId": "day-05-1795418954266",
+  "os": "darwin",
+  "release": "27.2.0",
+  "arch": "arm64",
+  "node": "v24.22.3",
+  "sharp": "0.35.5",
+  "transport": "loopback HTTP, Next development, raw body, local private filesystem",
+  "clock": "Node performance.now",
+  "boundary": "fetch start to parsed upload response; local byte verification excluded",
+  "nativePickerSamples": 0,
+  "cameraSamples": 0,
+  "bridgeAckSamples": 0,
+  "warmupPerFixture": 1,
+  "measuredPerFixture": 10,
+  "fixtures": [
+    {
+      "fixtureId": "synthetic-jpeg",
+      "mimeType": "image/jpeg",
+      "originalBytes": 47843,
+      "transmittedBytes": 47843,
+      "sha256": "7b0b8a3e968f30c2c871915c9c5889401ddce8f3fb5162d7010fa24258db7656",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "fixtureId": "synthetic-png",
+      "mimeType": "image/png",
+      "originalBytes": 44888,
+      "transmittedBytes": 44888,
+      "sha256": "0b5c08fd19f943309c45b58d5f8d710d546bbef7ee20235a8c59f76ca0a67a31",
+      "width": 1200,
+      "height": 1600
+    }
+  ],
+  "cleanup": {
+    "deleted": 22,
+    "failed": 0
+  }
+}

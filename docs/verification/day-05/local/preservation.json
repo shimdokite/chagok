@@ -1,0 +1,20 @@
+{
+  "date": "2026-11-24 KST",
+  "readOnly": true,
+  "from": "2026-11-24T05:50:00.000Z",
+  "newAttachments": 0,
+  "newClaims": 0,
+  "existingFileCount": 30,
+  "aggregateContentHash": "89a2f6e17f5c05b9803aa47736d1576e084effb655be4ab9d736212df53f0b36",
+  "services": [
+    {
+      "url": "http://127.0.0.1:3000/apply",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8081/status",
+      "status": 200
+    }
+  ],
+  "notes": "Existing data was not cleaned. CLI ran on separate temporary port55433. Current UI attachment JPEG46.7KB was preserved."
+}

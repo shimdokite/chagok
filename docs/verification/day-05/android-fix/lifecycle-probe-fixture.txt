@@ -1,0 +1,94 @@
+"use client";
+import { useEffect } from "react";
+import { requestId } from "../apply/request-id";
+import { bridgeBase } from "@chagok/contracts";
+import type { FormClient } from "../apply/form-client";
+
+declare global {
+  interface Window {
+    ReactNativeWebView?: { postMessage: (data: string) => void };
+    __CHAGOK_BRIDGE__?: { receive: (value: unknown) => void };
+  }
+}
+
+export function BridgeReceiver({ client }: { client: FormClient }) {
+  useEffect(() => {
+    const receiver = { receive: (value: unknown) => client.receive(value) };
+
+    const connect = () => {
+      window.__CHAGOK_BRIDGE__ = receiver;
+      client.start();
+      if (!window.ReactNativeWebView)
+        client.receive({
+          ...bridgeBase,
+          type: "FORM_INIT",
+          connectionId: requestId(),
+          payload: { mode: "demo" },
+        });
+    };
+
+    const resume = (event: PageTransitionEvent) => {
+      if (event.persisted) connect();
+    };
+
+    connect();
+    // Temporary emulator-only direct child-frame message probe.
+    const proof = document.createElement("p");
+    proof.id = "frame-probe-proof";
+    proof.textContent = "frame-probe waiting";
+    const controls = document.createElement("div");
+    const actions: [string, () => void][] = [
+      ["검증: 새로고침", () => location.reload()],
+      ["검증: 다른 경로", () => history.replaceState(history.state, "", "/bridge-test-blocked")],
+      ["검증: 웹 닫기", () => window.ReactNativeWebView?.postMessage(JSON.stringify({ ...bridgeBase, type: "CLOSE_WEBVIEW" }))],
+    ];
+    for (const [label, action] of actions) {
+      const button = document.createElement("button");
+      button.textContent = label;
+      button.style.cssText = "padding:12px;margin:4px;border:1px solid gray;";
+      button.onclick = action;
+      controls.appendChild(button);
+    }
+    document.body.prepend(controls);
+    document.body.prepend(proof);
+    history.replaceState(history.state, "", location.href);
+    const frames: HTMLIFrameElement[] = [];
+    for (const kind of ["srcdoc", "blank"]) {
+      const frame = document.createElement("iframe");
+      frame.style.display = "none";
+      const payload = JSON.stringify(JSON.stringify({ ...bridgeBase, type: "CLOSE_WEBVIEW" }));
+      const html = `<script>setTimeout(() => { const available = typeof window.ReactNativeWebView?.postMessage === 'function'; if (available) window.ReactNativeWebView.postMessage(${payload}); parent.document.getElementById('frame-probe-proof').textContent += ' / ${kind} posted=' + available; }, 2500);</script>`;
+      if (kind === "srcdoc") frame.srcdoc = html;
+      if (kind === "blank") {
+        frame.src = "about:blank";
+        frame.onload = () => {
+          const script = frame.contentDocument?.createElement("script");
+          if (script && frame.contentDocument) {
+            script.textContent = html.slice(8, -9);
+            frame.contentDocument.body.appendChild(script);
+          }
+        };
+      }
+      document.body.appendChild(frame);
+      frames.push(frame);
+    }
+
+    const cleanup = () => {
+      frames.forEach((frame) => frame.remove());
+      proof.remove();
+      controls.remove();
+      client.dispose();
+      if (window.__CHAGOK_BRIDGE__ === receiver)
+        delete window.__CHAGOK_BRIDGE__;
+    };
+
+    window.addEventListener("pagehide", cleanup);
+    window.addEventListener("pageshow", resume);
+    return () => {
+      window.removeEventListener("pagehide", cleanup);
+      window.removeEventListener("pageshow", resume);
+      cleanup();
+    };
+  }, [client]);
+  return null;
+}

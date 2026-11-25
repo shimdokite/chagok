@@ -1,0 +1,46 @@
+{
+  "date": "2026-11-24 KST",
+  "port": 55433,
+  "isolated": true,
+  "batches": [
+    {
+      "deleted": 99,
+      "failed": 1,
+      "elapsedMs": 1140.9500000000003,
+      "exitCode": 0
+    },
+    {
+      "deleted": 6,
+      "failed": 0,
+      "elapsedMs": 1370.1146250000002,
+      "exitCode": 0
+    },
+    {
+      "deleted": 0,
+      "failed": 0,
+      "elapsedMs": 1510.5950830000002,
+      "exitCode": 0
+    }
+  ],
+  "postgres": "18.6",
+  "migrationsAppliedAsSql": [
+    "20261116000000_auth",
+    "20261117000000_benefits",
+    "20261117010000_claim_membership_restrict",
+    "20261119000000_claim_request_id",
+    "20261120080000_receipt_attachments"
+  ],
+  "result": "passed",
+  "fixtureRows": 108,
+  "eligibleRows": 105,
+  "preserved": [
+    "fresh READY",
+    "fresh PENDING",
+    "old LINKED with actual claim"
+  ],
+  "deletedMissingObject": true,
+  "failedDeletionRetried": true,
+  "fileMode": "0600",
+  "directoryMode": "0700",
+  "temporaryClusterStoppedAndRemoved": true
+}

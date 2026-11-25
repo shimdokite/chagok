@@ -1,0 +1,59 @@
+{
+  "queryWindow": {
+    "start": "2026-11-23T09:57:00.000Z",
+    "end": "2026-11-23T10:03:45.378Z"
+  },
+  "matched": 4,
+  "fixtureMatch": 4,
+  "ready": 4,
+  "linked": 0,
+  "claimsCreated": 0,
+  "removed": 0,
+  "note": "Read-only. All matching synthetic uploads retained under existing 24-hour unlinked cleanup policy. Client cancellation does not guarantee server rollback.",
+  "checks": [
+    {
+      "sample": 1,
+      "mimeType": "image/jpeg",
+      "byteSize": 47843,
+      "createdAt": "2026-11-23T09:58:23.810Z",
+      "state": "READY",
+      "linked": false,
+      "fileMode": "0600",
+      "fixtureMatch": true,
+      "sha256": "7b0b8a3e968f30c2c871915c9c5889401ddce8f3fb5162d7010fa24258db7656"
+    },
+    {
+      "sample": 2,
+      "mimeType": "image/png",
+      "byteSize": 44888,
+      "createdAt": "2026-11-23T10:00:03.696Z",
+      "state": "READY",
+      "linked": false,
+      "fileMode": "0600",
+      "fixtureMatch": true,
+      "sha256": "0b5c08fd19f943309c45b58d5f8d710d546bbef7ee20235a8c59f76ca0a67a31"
+    },
+    {
+      "sample": 3,
+      "mimeType": "image/jpeg",
+      "byteSize": 47843,
+      "createdAt": "2026-11-23T10:01:32.577Z",
+      "state": "READY",
+      "linked": false,
+      "fileMode": "0600",
+      "fixtureMatch": true,
+      "sha256": "7b0b8a3e968f30c2c871915c9c5889401ddce8f3fb5162d7010fa24258db7656"
+    },
+    {
+      "sample": 4,
+      "mimeType": "image/png",
+      "byteSize": 44888,
+      "createdAt": "2026-11-23T10:02:55.071Z",
+      "state": "READY",
+      "linked": false,
+      "fileMode": "0600",
+      "fixtureMatch": true,
+      "sha256": "0b5c08fd19f943309c45b58d5f8d710d546bbef7ee20235a8c59f76ca0a67a31"
+    }
+  ]
+}

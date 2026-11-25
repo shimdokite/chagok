@@ -1,0 +1,925 @@
+env: load .env.local
+env: export EXPO_PUBLIC_BENCHMARK_APP_BUILD EXPO_PUBLIC_BENCHMARK_DEVICE EXPO_PUBLIC_BENCHMARK_SOURCE_REF EXPO_PUBLIC_BENCHMARK_WEB_MODE EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID EXPO_PUBLIC_VISUAL_CHECKS EXPO_PUBLIC_WEB_ORIGIN
+› Using --device ECA59080-35A7-42E0-BE0C-7E4C4A4BEFEA
+- Installing CocoaPods...
+✔ Installed CocoaPods
+› Planning build
+› Executing react-native Pods/hermes-engine » [CP-User] [Hermes] Replace Hermes for the right configuration, if needed
+› Executing react-native Pods/ReactNativeDependencies » [CP-User] [RNDeps] Replace React Native Dependencies for the right configuration, if needed
+› Preparing Pods/React-timing-React-timing_privacy » ResourceBundle-React-timing_privacy-React-timing-Info.plist
+› Copying   React-timing/React-timing_privacy.bundle/PrivacyInfo.xcprivacy ➜ ../../node_modules/react-native/ReactCommon/react/timing/PrivacyInfo.xcprivacy
+› Preparing Pods/React-cxxreact-React-cxxreact_privacy » ResourceBundle-React-cxxreact_privacy-React-cxxreact-Info.plist
+› Copying   React-cxxreact/React-cxxreact_privacy.bundle/PrivacyInfo.xcprivacy ➜ ../../node_modules/react-native/ReactCommon/cxxreact/PrivacyInfo.xcprivacy
+› Preparing Pods/RNSVG-RNSVGFilters » ResourceBundle-RNSVGFilters-RNSVG-Info.plist
+› Copying   RNSVG/RNSVGFilters.bundle/RNSVGCompositeXor.iphoneos.metallib ➜ ../../node_modules/react-native-svg/apple/Filters/MetalCI/RNSVGCompositeXor.iphoneos.metallib
+› Copying   RNSVG/RNSVGFilters.bundle/RNSVGArithmeticFilter.iphoneos.metallib ➜ ../../node_modules/react-native-svg/apple/Filters/MetalCI/RNSVGArithmeticFilter.iphoneos.metallib
+› Preparing Pods/PromisesSwift-Promises_Privacy » ResourceBundle-Promises_Privacy-PromisesSwift-Info.plist
+› Copying   PromisesSwift/Promises_Privacy.bundle/PrivacyInfo.xcprivacy ➜ ios/Pods/PromisesSwift/Sources/Promises/Resources/PrivacyInfo.xcprivacy
+› Creating  Pods/React-timing-React-timing_privacy » React-timing_privacy.bundle
+› Preparing Pods/PromisesObjC-FBLPromises_Privacy » ResourceBundle-FBLPromises_Privacy-PromisesObjC-Info.plist
+› Copying   PromisesObjC/FBLPromises_Privacy.bundle/PrivacyInfo.xcprivacy ➜ ios/Pods/PromisesObjC/Sources/FBLPromises/Resources/PrivacyInfo.xcprivacy
+› Creating  Pods/React-cxxreact-React-cxxreact_privacy » React-cxxreact_privacy.bundle
+› Creating  Pods/RNSVG-RNSVGFilters » RNSVGFilters.bundle
+› Preparing Pods/GoogleUtilities-GoogleUtilities_Privacy » ResourceBundle-GoogleUtilities_Privacy-GoogleUtilities-Info.plist
+› Copying   GoogleUtilities/GoogleUtilities_Privacy.bundle/PrivacyInfo.xcprivacy ➜ ios/Pods/GoogleUtilities/GoogleUtilities/Privacy/Resources/PrivacyInfo.xcprivacy
+› Creating  Pods/PromisesSwift-Promises_Privacy » Promises_Privacy.bundle
+› Preparing Pods/expo-dev-menu-EXDevMenu » ResourceBundle-EXDevMenu-expo-dev-menu-Info.plist
+› Executing react-native Pods/hermes-engine » [CP] Copy XCFrameworks
+› Executing react-native Pods/ReactNativeDependencies » [CP] Copy XCFrameworks
+› Compiling Pods/GoogleUtilities » IsAppEncrypted.m
+› Compiling @react-native-google-signin/google-signin Pods/PromisesObjC » PromisesObjC-dummy.m
+› Compiling @react-native-google-signin/google-signin Pods/PromisesObjC » FBLPromiseError.m
+› Compiling @react-native-google-signin/google-signin Pods/PromisesObjC » FBLPromise.m
+› Compiling @react-native-google-signin/google-signin Pods/PromisesObjC » FBLPromise+Wrap.m
+› Compiling @react-native-google-signin/google-signin Pods/PromisesObjC » FBLPromise+Validate.m
+› Compiling @react-native-google-signin/google-signin Pods/PromisesObjC » FBLPromise+Timeout.m
+› Compiling @react-native-google-signin/google-signin Pods/PromisesObjC » FBLPromise+Then.m
+› Compiling @react-native-google-signin/google-signin Pods/PromisesObjC » FBLPromise+Testing.m
+› Compiling @react-native-google-signin/google-signin Pods/PromisesObjC » FBLPromise+Retry.m
+› Compiling @react-native-google-signin/google-signin Pods/PromisesObjC » FBLPromise+Reduce.m
+› Compiling @react-native-google-signin/google-signin Pods/PromisesObjC » FBLPromise+Recover.m
+› Compiling @react-native-google-signin/google-signin Pods/PromisesObjC » FBLPromise+Race.m
+› Compiling @react-native-google-signin/google-signin Pods/PromisesObjC » FBLPromise+Do.m
+› Compiling @react-native-google-signin/google-signin Pods/PromisesObjC » FBLPromise+Delay.m
+› Compiling @react-native-google-signin/google-signin Pods/PromisesObjC » FBLPromise+Catch.m
+› Compiling @react-native-google-signin/google-signin Pods/PromisesObjC » FBLPromise+Await.m
+› Compiling @react-native-google-signin/google-signin Pods/PromisesObjC » FBLPromise+Async.m
+› Compiling @react-native-google-signin/google-signin Pods/PromisesObjC » FBLPromise+Any.m
+› Compiling @react-native-google-signin/google-signin Pods/PromisesObjC » FBLPromise+Always.m
+› Compiling @react-native-google-signin/google-signin Pods/PromisesObjC » FBLPromise+All.m
+› Compiling Pods/GoogleUtilities » GoogleUtilities-dummy.m
+› Compiling Pods/GoogleUtilities » GULUserDefaults.m
+› Compiling Pods/GoogleUtilities » GULLogger.m
+› Compiling Pods/GoogleUtilities » GULKeychainUtils.m
+› Compiling Pods/GoogleUtilities » GULKeychainStorage.m
+› Compiling Pods/GoogleUtilities » GULNetworkInfo.m
+› Preparing Pods/expo-dev-launcher-EXDevLauncher » ResourceBundle-EXDevLauncher-expo-dev-launcher-Info.plist
+› Creating  Pods/PromisesObjC-FBLPromises_Privacy » FBLPromises_Privacy.bundle
+› Creating  Pods/GoogleUtilities-GoogleUtilities_Privacy » GoogleUtilities_Privacy.bundle
+› Executing react-native Pods/React-Core-prebuilt » [CP-User] [RNCore] Replace React Native Core for the right configuration, if needed
+› Packaging @react-native-google-signin/google-signin Pods/PromisesObjC » libPromisesObjC.a
+› Preparing @react-native-google-signin/google-signin Pods/GoogleSignIn-GoogleSignIn » ResourceBundle-GoogleSignIn-GoogleSignIn-Info.plist
+› Copying   @react-native-google-signin/google-signin GoogleSignIn/GoogleSignIn.bundle/zh_TW.lproj ➜ ios/Pods/GoogleSignIn/GoogleSignIn/Sources/Strings/zh_TW.lproj
+› Copying   @react-native-google-signin/google-signin GoogleSignIn/GoogleSignIn.bundle/zh_CN.lproj ➜ ios/Pods/GoogleSignIn/GoogleSignIn/Sources/Strings/zh_CN.lproj
+› Copying   @react-native-google-signin/google-signin GoogleSignIn/GoogleSignIn.bundle/vi.lproj ➜ ios/Pods/GoogleSignIn/GoogleSignIn/Sources/Strings/vi.lproj
+› Copying   @react-native-google-signin/google-signin GoogleSignIn/GoogleSignIn.bundle/uk.lproj ➜ ios/Pods/GoogleSignIn/GoogleSignIn/Sources/Strings/uk.lproj
+› Copying   @react-native-google-signin/google-signin GoogleSignIn/GoogleSignIn.bundle/tr.lproj ➜ ios/Pods/GoogleSignIn/GoogleSignIn/Sources/Strings/tr.lproj
+› Copying   @react-native-google-signin/google-signin GoogleSignIn/GoogleSignIn.bundle/th.lproj ➜ ios/Pods/GoogleSignIn/GoogleSignIn/Sources/Strings/th.lproj
+› Copying   @react-native-google-signin/google-signin GoogleSignIn/GoogleSignIn.bundle/sv.lproj ➜ ios/Pods/GoogleSignIn/GoogleSignIn/Sources/Strings/sv.lproj
+› Copying   @react-native-google-signin/google-signin GoogleSignIn/GoogleSignIn.bundle/sk.lproj ➜ ios/Pods/GoogleSignIn/GoogleSignIn/Sources/Strings/sk.lproj
+› Copying   @react-native-google-signin/google-signin GoogleSignIn/GoogleSignIn.bundle/ru.lproj ➜ ios/Pods/GoogleSignIn/GoogleSignIn/Sources/Strings/ru.lproj
+› Copying   @react-native-google-signin/google-signin GoogleSignIn/GoogleSignIn.bundle/ro.lproj ➜ ios/Pods/GoogleSignIn/GoogleSignIn/Sources/Strings/ro.lproj
+› Copying   @react-native-google-signin/google-signin GoogleSignIn/GoogleSignIn.bundle/pt_PT.lproj ➜ ios/Pods/GoogleSignIn/GoogleSignIn/Sources/Strings/pt_PT.lproj
+› Copying   @react-native-google-signin/google-signin GoogleSignIn/GoogleSignIn.bundle/pt_BR.lproj ➜ ios/Pods/GoogleSignIn/GoogleSignIn/Sources/Strings/pt_BR.lproj
+› Copying   @react-native-google-signin/google-signin GoogleSignIn/GoogleSignIn.bundle/pt.lproj ➜ ios/Pods/GoogleSignIn/GoogleSignIn/Sources/Strings/pt.lproj
+› Copying   @react-native-google-signin/google-signin GoogleSignIn/GoogleSignIn.bundle/pl.lproj ➜ ios/Pods/GoogleSignIn/GoogleSignIn/Sources/Strings/pl.lproj
+› Copying   @react-native-google-signin/google-signin GoogleSignIn/GoogleSignIn.bundle/nl.lproj ➜ ios/Pods/GoogleSignIn/GoogleSignIn/Sources/Strings/nl.lproj
+› Copying   @react-native-google-signin/google-signin GoogleSignIn/GoogleSignIn.bundle/nb.lproj ➜ ios/Pods/GoogleSignIn/GoogleSignIn/Sources/Strings/nb.lproj
+› Copying   @react-native-google-signin/google-signin GoogleSignIn/GoogleSignIn.bundle/ms.lproj ➜ ios/Pods/GoogleSignIn/GoogleSignIn/Sources/Strings/ms.lproj
+› Copying   @react-native-google-signin/google-signin GoogleSignIn/GoogleSignIn.bundle/ko.lproj ➜ ios/Pods/GoogleSignIn/GoogleSignIn/Sources/Strings/ko.lproj
+› Copying   @react-native-google-signin/google-signin GoogleSignIn/GoogleSignIn.bundle/ja.lproj ➜ ios/Pods/GoogleSignIn/GoogleSignIn/Sources/Strings/ja.lproj
+› Copying   @react-native-google-signin/google-signin GoogleSignIn/GoogleSignIn.bundle/it.lproj ➜ ios/Pods/GoogleSignIn/GoogleSignIn/Sources/Strings/it.lproj
+› Copying   @react-native-google-signin/google-signin GoogleSignIn/GoogleSignIn.bundle/id.lproj ➜ ios/Pods/GoogleSignIn/GoogleSignIn/Sources/Strings/id.lproj
+› Copying   @react-native-google-signin/google-signin GoogleSignIn/GoogleSignIn.bundle/hu.lproj ➜ ios/Pods/GoogleSignIn/GoogleSignIn/Sources/Strings/hu.lproj
+› Copying   @react-native-google-signin/google-signin GoogleSignIn/GoogleSignIn.bundle/hr.lproj ➜ ios/Pods/GoogleSignIn/GoogleSignIn/Sources/Strings/hr.lproj
+› Copying   @react-native-google-signin/google-signin GoogleSignIn/GoogleSignIn.bundle/hi.lproj ➜ ios/Pods/GoogleSignIn/GoogleSignIn/Sources/Strings/hi.lproj
+› Copying   @react-native-google-signin/google-signin GoogleSignIn/GoogleSignIn.bundle/he.lproj ➜ ios/Pods/GoogleSignIn/GoogleSignIn/Sources/Strings/he.lproj
+› Copying   @react-native-google-signin/google-signin GoogleSignIn/GoogleSignIn.bundle/fr_CA.lproj ➜ ios/Pods/GoogleSignIn/GoogleSignIn/Sources/Strings/fr_CA.lproj
+› Copying   @react-native-google-signin/google-signin GoogleSignIn/GoogleSignIn.bundle/fr.lproj ➜ ios/Pods/GoogleSignIn/GoogleSignIn/Sources/Strings/fr.lproj
+› Copying   @react-native-google-signin/google-signin GoogleSignIn/GoogleSignIn.bundle/fi.lproj ➜ ios/Pods/GoogleSignIn/GoogleSignIn/Sources/Strings/fi.lproj
+› Copying   @react-native-google-signin/google-signin GoogleSignIn/GoogleSignIn.bundle/es_MX.lproj ➜ ios/Pods/GoogleSignIn/GoogleSignIn/Sources/Strings/es_MX.lproj
+› Copying   @react-native-google-signin/google-signin GoogleSignIn/GoogleSignIn.bundle/es.lproj ➜ ios/Pods/GoogleSignIn/GoogleSignIn/Sources/Strings/es.lproj
+› Copying   @react-native-google-signin/google-signin GoogleSignIn/GoogleSignIn.bundle/en_GB.lproj ➜ ios/Pods/GoogleSignIn/GoogleSignIn/Sources/Strings/en_GB.lproj
+› Copying   @react-native-google-signin/google-signin GoogleSignIn/GoogleSignIn.bundle/en.lproj ➜ ios/Pods/GoogleSignIn/GoogleSignIn/Sources/Strings/en.lproj
+› Copying   @react-native-google-signin/google-signin GoogleSignIn/GoogleSignIn.bundle/el.lproj ➜ ios/Pods/GoogleSignIn/GoogleSignIn/Sources/Strings/el.lproj
+› Copying   @react-native-google-signin/google-signin GoogleSignIn/GoogleSignIn.bundle/de.lproj ➜ ios/Pods/GoogleSignIn/GoogleSignIn/Sources/Strings/de.lproj
+› Copying   @react-native-google-signin/google-signin GoogleSignIn/GoogleSignIn.bundle/da.lproj ➜ ios/Pods/GoogleSignIn/GoogleSignIn/Sources/Strings/da.lproj
+› Copying   @react-native-google-signin/google-signin GoogleSignIn/GoogleSignIn.bundle/cs.lproj ➜ ios/Pods/GoogleSignIn/GoogleSignIn/Sources/Strings/cs.lproj
+› Copying   @react-native-google-signin/google-signin GoogleSignIn/GoogleSignIn.bundle/ca.lproj ➜ ios/Pods/GoogleSignIn/GoogleSignIn/Sources/Strings/ca.lproj
+› Copying   @react-native-google-signin/google-signin GoogleSignIn/GoogleSignIn.bundle/ar.lproj ➜ ios/Pods/GoogleSignIn/GoogleSignIn/Sources/Strings/ar.lproj
+› Copying   @react-native-google-signin/google-signin GoogleSignIn/GoogleSignIn.bundle/Roboto-Bold.ttf ➜ ios/Pods/GoogleSignIn/GoogleSignIn/Sources/Resources/Roboto-Bold.ttf
+› Copying   @react-native-google-signin/google-signin GoogleSignIn/GoogleSignIn.bundle/PrivacyInfo.xcprivacy ➜ ios/Pods/GoogleSignIn/GoogleSignIn/Sources/Resources/PrivacyInfo.xcprivacy
+› Executing react-native Pods/React-Core-prebuilt » [CP] Copy XCFrameworks
+› Creating  Pods/expo-dev-menu-EXDevMenu » EXDevMenu.bundle
+› Preparing Pods/GTMSessionFetcher-GTMSessionFetcher_Core_Privacy » ResourceBundle-GTMSessionFetcher_Core_Privacy-GTMSessionFetcher-Info.plist
+› Copying   GTMSessionFetcher/GTMSessionFetcher_Core_Privacy.bundle/PrivacyInfo.xcprivacy ➜ ios/Pods/GTMSessionFetcher/Sources/Core/Resources/PrivacyInfo.xcprivacy
+› Creating  Pods/expo-dev-launcher-EXDevLauncher » EXDevLauncher.bundle
+› Creating  @react-native-google-signin/google-signin Pods/GoogleSignIn-GoogleSignIn » GoogleSignIn.bundle
+› Compiling Pods/GoogleUtilities » GULAppEnvironmentUtil.m
+› Compiling @react-native-google-signin/google-signin Pods/RecaptchaInterop » placeholder.m
+› Packaging Pods/GoogleUtilities » libGoogleUtilities.a
+› Compiling @react-native-google-signin/google-signin Pods/RecaptchaInterop » RecaptchaInterop-dummy.m
+› Packaging @react-native-google-signin/google-signin Pods/RecaptchaInterop » libRecaptchaInterop.a
+› Compiling Pods/GTMSessionFetcher » GTMSessionFetcher-dummy.m
+› Compiling Pods/GTMSessionFetcher » GTMSessionUploadFetcher.m
+› Compiling Pods/GTMSessionFetcher » GTMSessionFetcherService.m
+› Compiling Pods/GTMSessionFetcher » GTMSessionFetcher.m
+› Compiling Pods/GTMSessionFetcher » GTMSessionFetcherLogging.m
+› Preparing Pods/GTMAppAuth-GTMAppAuth_Privacy » ResourceBundle-GTMAppAuth_Privacy-GTMAppAuth-Info.plist
+› Copying   GTMAppAuth/GTMAppAuth_Privacy.bundle/PrivacyInfo.xcprivacy ➜ ios/Pods/GTMAppAuth/GTMAppAuth/Sources/Resources/PrivacyInfo.xcprivacy
+› Creating  Pods/GTMSessionFetcher-GTMSessionFetcher_Core_Privacy » GTMSessionFetcher_Core_Privacy.bundle
+› Preparing Pods/ExpoSystemUI-ExpoSystemUI_privacy » ResourceBundle-ExpoSystemUI_privacy-ExpoSystemUI-Info.plist
+› Copying   ExpoSystemUI/ExpoSystemUI_privacy.bundle/PrivacyInfo.xcprivacy ➜ ../../node_modules/expo-system-ui/ios/PrivacyInfo.xcprivacy
+› Creating  Pods/GTMAppAuth-GTMAppAuth_Privacy » GTMAppAuth_Privacy.bundle
+› Preparing Pods/ExpoFileSystem-ExpoFileSystem_privacy » ResourceBundle-ExpoFileSystem_privacy-ExpoFileSystem-Info.plist
+› Creating  Pods/ExpoSystemUI-ExpoSystemUI_privacy » ExpoSystemUI_privacy.bundle
+› Creating  Pods/ExpoFileSystem-ExpoFileSystem_privacy » ExpoFileSystem_privacy.bundle
+› Preparing Pods/EXConstants-ExpoConstants_privacy » ResourceBundle-ExpoConstants_privacy-EXConstants-Info.plist
+› Copying   EXConstants/ExpoConstants_privacy.bundle/PrivacyInfo.xcprivacy ➜ ../../node_modules/expo-constants/ios/PrivacyInfo.xcprivacy
+› Preparing expo-constants Pods/EXConstants-EXConstants » ResourceBundle-EXConstants-EXConstants-Info.plist
+› Packaging Pods/GTMSessionFetcher » libGTMSessionFetcher.a
+› Creating  Pods/EXConstants-ExpoConstants_privacy » ExpoConstants_privacy.bundle
+› Preparing Pods/AppAuth-AppAuthCore_Privacy » ResourceBundle-AppAuthCore_Privacy-AppAuth-Info.plist
+› Copying   AppAuth/AppAuthCore_Privacy.bundle/PrivacyInfo.xcprivacy ➜ ios/Pods/AppAuth/Sources/AppAuthCore/Resources/PrivacyInfo.xcprivacy
+› Compiling @react-native-google-signin/google-signin Pods/AppAuth » OIDURLSessionProvider.m
+› Compiling @react-native-google-signin/google-signin Pods/AppAuth » OIDURLQueryComponent.m
+› Compiling @react-native-google-signin/google-signin Pods/AppAuth » OIDTokenResponse.m
+› Compiling @react-native-google-signin/google-signin Pods/AppAuth » OIDTokenUtilities.m
+› Compiling @react-native-google-signin/google-signin Pods/AppAuth » OIDTokenRequest.m
+› Compiling @react-native-google-signin/google-signin Pods/AppAuth » OIDServiceDiscovery.m
+› Compiling @react-native-google-signin/google-signin Pods/AppAuth » OIDServiceConfiguration.m
+› Compiling @react-native-google-signin/google-signin Pods/AppAuth » OIDScopes.m
+› Compiling @react-native-google-signin/google-signin Pods/AppAuth » OIDScopeUtilities.m
+› Compiling @react-native-google-signin/google-signin Pods/AppAuth » OIDResponseTypes.m
+› Compiling @react-native-google-signin/google-signin Pods/AppAuth » OIDRegistrationResponse.m
+› Compiling @react-native-google-signin/google-signin Pods/AppAuth » OIDRegistrationRequest.m
+› Compiling @react-native-google-signin/google-signin Pods/AppAuth » OIDIDToken.m
+› Compiling @react-native-google-signin/google-signin Pods/AppAuth » OIDGrantTypes.m
+› Compiling @react-native-google-signin/google-signin Pods/AppAuth » OIDFieldMapping.m
+› Compiling @react-native-google-signin/google-signin Pods/AppAuth » OIDExternalUserAgentIOSCustomBrowser.m
+› Compiling @react-native-google-signin/google-signin Pods/AppAuth » OIDExternalUserAgentIOS.m
+› Compiling @react-native-google-signin/google-signin Pods/AppAuth » OIDExternalUserAgentCatalyst.m
+› Compiling @react-native-google-signin/google-signin Pods/AppAuth » OIDErrorUtilities.m
+› Compiling @react-native-google-signin/google-signin Pods/AppAuth » OIDError.m
+› Compiling @react-native-google-signin/google-signin Pods/AppAuth » OIDEndSessionRequest.m
+› Compiling @react-native-google-signin/google-signin Pods/AppAuth » OIDEndSessionResponse.m
+› Compiling @react-native-google-signin/google-signin Pods/AppAuth » OIDClientMetadataParameters.m
+› Compiling @react-native-google-signin/google-signin Pods/AppAuth » OIDAuthorizationService.m
+› Compiling @react-native-google-signin/google-signin Pods/AppAuth » OIDAuthorizationResponse.m
+› Compiling @react-native-google-signin/google-signin Pods/AppAuth » OIDAuthorizationService+IOS.m
+› Compiling @react-native-google-signin/google-signin Pods/AppAuth » OIDAuthorizationRequest.m
+› Compiling @react-native-google-signin/google-signin Pods/AppAuth » OIDAuthState.m
+› Compiling @react-native-google-signin/google-signin Pods/AppAuth » OIDAuthState+IOS.m
+› Compiling @react-native-google-signin/google-signin Pods/AppAuth » AppAuth-dummy.m
+› Executing expo-modules-jsi Pods/ExpoModulesJSI » [CP-User] Build ExpoModulesJSI xcframework
+› Executing react-native Pods/React-RCTFBReactNativeSpec » [CP-User] [RN]Check FBReactNativeSpec
+› Creating  expo-constants Pods/EXConstants-EXConstants » EXConstants.bundle
+› Executing @chagok/mobile Pods/ReactCodegen » [CP-User] Generate Specs
+› Creating  Pods/AppAuth-AppAuthCore_Privacy » AppAuthCore_Privacy.bundle
+› Packaging @react-native-google-signin/google-signin Pods/AppAuth » libAppAuth.a
+› Compiling @react-native-google-signin/google-signin Pods/GTMAppAuth » GTMAppAuth-dummy.m
+› Packaging @react-native-google-signin/google-signin Pods/GTMAppAuth » libGTMAppAuth.a
+› Executing @react-native-google-signin/google-signin Pods/GTMAppAuth » Copy generated compatibility header
+› Compiling expo-json-utils Pods/EXJSONUtils » EXJSONUtils-dummy.m
+› Compiling expo-json-utils Pods/EXJSONUtils » NSDictionary+EXJSONUtils.m
+› Compiling expo-dev-menu-interface Pods/expo-dev-menu-interface » expo-dev-menu-interface-dummy.m
+› Compiling @react-native-google-signin/google-signin Pods/PromisesSwift » PromisesSwift-dummy.m
+› Packaging expo-json-utils Pods/EXJSONUtils » libEXJSONUtils.a
+› Packaging expo-dev-menu-interface Pods/expo-dev-menu-interface » libexpo-dev-menu-interface.a
+› Packaging @react-native-google-signin/google-signin Pods/PromisesSwift » libPromisesSwift.a
+› Executing expo-dev-menu-interface Pods/expo-dev-menu-interface » Copy generated compatibility header
+› Executing @react-native-google-signin/google-signin Pods/PromisesSwift » Copy generated compatibility header
+› Executing @chagok/mobile Pods/ReactCodegen » [Expo] Remove duplicate codegen output
+› Compiling @chagok/mobile Pods/ReactCodegen » safeareacontext-generated.mm
+› Compiling @chagok/mobile Pods/ReactCodegen » rnworklets-generated.mm
+› Compiling @chagok/mobile Pods/ReactCodegen » rnsvg-generated.mm
+› Compiling @chagok/mobile Pods/ReactCodegen » rnscreens-generated.mm
+› Compiling @chagok/mobile Pods/ReactCodegen » rnreanimated-generated.mm
+› Compiling @chagok/mobile Pods/ReactCodegen » rngesturehandler_codegen-generated.mm
+› Compiling @chagok/mobile Pods/ReactCodegen » States.cpp
+› Compiling @chagok/mobile Pods/ReactCodegen » States.cpp
+› Compiling @chagok/mobile Pods/ReactCodegen » States.cpp
+› Compiling @chagok/mobile Pods/ReactCodegen » States.cpp
+› Compiling @chagok/mobile Pods/ReactCodegen » States.cpp
+› Compiling @chagok/mobile Pods/ReactCodegen » States.cpp
+› Compiling @chagok/mobile Pods/ReactCodegen » States.cpp
+› Compiling @chagok/mobile Pods/ReactCodegen » ShadowNodes.cpp
+› Compiling @chagok/mobile Pods/ReactCodegen » ShadowNodes.cpp
+› Compiling @chagok/mobile Pods/ReactCodegen » ShadowNodes.cpp
+› Compiling @chagok/mobile Pods/ReactCodegen » ShadowNodes.cpp
+› Compiling @chagok/mobile Pods/ReactCodegen » ShadowNodes.cpp
+› Compiling @chagok/mobile Pods/ReactCodegen » ShadowNodes.cpp
+› Compiling @chagok/mobile Pods/ReactCodegen » ShadowNodes.cpp
+› Compiling @chagok/mobile Pods/ReactCodegen » RNGoogleSignInCGen-generated.mm
+› Compiling @chagok/mobile Pods/ReactCodegen » RNCWebViewSpec-generated.mm
+› Compiling @chagok/mobile Pods/ReactCodegen » RCTUnstableModulesRequiringMainQueueSetupProvider.mm
+› Compiling @chagok/mobile Pods/ReactCodegen » RCTThirdPartyComponentsProvider.mm
+› Compiling @chagok/mobile Pods/ReactCodegen » RCTModulesConformingToProtocolsProvider.mm
+› Compiling @chagok/mobile Pods/ReactCodegen » RCTModuleProviders.mm
+› Compiling @chagok/mobile Pods/ReactCodegen » Props.cpp
+› Compiling @chagok/mobile Pods/ReactCodegen » Props.cpp
+› Compiling @chagok/mobile Pods/ReactCodegen » Props.cpp
+› Compiling @chagok/mobile Pods/ReactCodegen » Props.cpp
+› Compiling @chagok/mobile Pods/ReactCodegen » Props.cpp
+› Compiling @chagok/mobile Pods/ReactCodegen » Props.cpp
+› Compiling @chagok/mobile Pods/ReactCodegen » Props.cpp
+› Compiling @chagok/mobile Pods/ReactCodegen » EventEmitters.cpp
+› Compiling @chagok/mobile Pods/ReactCodegen » EventEmitters.cpp
+› Compiling @chagok/mobile Pods/ReactCodegen » EventEmitters.cpp
+› Compiling @chagok/mobile Pods/ReactCodegen » EventEmitters.cpp
+› Compiling @chagok/mobile Pods/ReactCodegen » EventEmitters.cpp
+› Compiling @chagok/mobile Pods/ReactCodegen » EventEmitters.cpp
+› Compiling @chagok/mobile Pods/ReactCodegen » EventEmitters.cpp
+› Compiling @chagok/mobile Pods/ReactCodegen » ComponentDescriptors.cpp
+› Compiling @chagok/mobile Pods/ReactCodegen » ComponentDescriptors.cpp
+› Compiling @chagok/mobile Pods/ReactCodegen » ComponentDescriptors.cpp
+› Compiling @chagok/mobile Pods/ReactCodegen » ComponentDescriptors.cpp
+› Compiling @chagok/mobile Pods/ReactCodegen » ComponentDescriptors.cpp
+› Compiling @chagok/mobile Pods/ReactCodegen » ComponentDescriptors.cpp
+› Compiling @chagok/mobile Pods/ReactCodegen » ComponentDescriptors.cpp
+› Compiling @chagok/mobile Pods/ReactCodegen » ReactCodegen-dummy.m
+› Compiling react-native-webview Pods/react-native-webview » RNCWebViewModule.mm
+› Compiling react-native-webview Pods/react-native-webview » RNCWebViewManager.mm
+› Compiling react-native-webview Pods/react-native-webview » RNCWebView.mm
+› Compiling react-native-webview Pods/react-native-webview » react-native-webview-dummy.m
+› Compiling react-native-safe-area-context Pods/react-native-safe-area-context » RNCSafeAreaViewState.cpp
+› Compiling react-native-safe-area-context Pods/react-native-safe-area-context » RNCSafeAreaViewShadowNode.cpp
+› Compiling react-native-safe-area-context Pods/react-native-safe-area-context » RNCSafeAreaViewComponentView.mm
+› Compiling react-native-safe-area-context Pods/react-native-safe-area-context » RNCSafeAreaProviderComponentView.mm
+› Compiling react-native-safe-area-context Pods/react-native-safe-area-context » RNCSafeAreaContext.mm
+› Packaging @chagok/mobile Pods/ReactCodegen » libReactCodegen.a
+› Compiling react-native-safe-area-context Pods/react-native-safe-area-context » react-native-safe-area-context-dummy.m
+› Executing expo-modules-jsi Pods/ExpoModulesJSI » [CP] Copy XCFrameworks
+› Compiling @chagok/mobile Pods/ReactAppDependencyProvider » RCTAppDependencyProvider.mm
+› Compiling @expo/log-box Pods/ExpoLogBox » ExpoRedBoxSwap.mm
+› Compiling @react-native-google-signin/google-signin Pods/AppCheckCore » NSURLSession+GACPromises.m
+› Compiling @react-native-google-signin/google-signin Pods/AppCheckCore » GULKeychainStorage+GACKeychainStorageProtocol.m
+› Compiling @react-native-google-signin/google-signin Pods/AppCheckCore » GACURLSessionDataResponse.m
+› Compiling @expo/log-box Pods/ExpoLogBox » ExpoLogBox-dummy.m
+› Compiling @react-native-google-signin/google-signin Pods/AppCheckCore » GACDeviceCheckAPIService.m
+› Compiling @react-native-google-signin/google-signin Pods/AppCheckCore » GACDeviceCheckProvider.m
+› Packaging @expo/log-box Pods/ExpoLogBox » libExpoLogBox.a
+› Compiling @react-native-google-signin/google-signin Pods/AppCheckCore » GACAppCheckTokenResult.m
+› Compiling @chagok/mobile Pods/ReactAppDependencyProvider » ReactAppDependencyProvider-dummy.m
+› Compiling @react-native-google-signin/google-signin Pods/AppCheckCore » GACAppCheckTokenRefresher.m
+› Compiling @react-native-google-signin/google-signin Pods/AppCheckCore » GACAppCheckTokenRefreshResult.m
+› Compiling @react-native-google-signin/google-signin Pods/AppCheckCore » GACAppCheckToken.m
+› Compiling @react-native-google-signin/google-signin Pods/AppCheckCore » GACAppCheckToken+APIResponse.m
+› Compiling @react-native-google-signin/google-signin Pods/AppCheckCore » GACAppCheckTimer.m
+› Compiling @react-native-google-signin/google-signin Pods/AppCheckCore » GACAppCheckStoredToken.m
+› Compiling @react-native-google-signin/google-signin Pods/AppCheckCore » GACAppCheckStorage.m
+› Compiling @react-native-google-signin/google-signin Pods/AppCheckCore » GACAppCheckStoredToken+GACAppCheckToken.m
+› Compiling @react-native-google-signin/google-signin Pods/AppCheckCore » GACAppCheckSettings.m
+› Compiling @react-native-google-signin/google-signin Pods/AppCheckCore » GACAppCheckLogger.m
+› Compiling @react-native-google-signin/google-signin Pods/AppCheckCore » GACAppCheckHTTPError.m
+› Compiling @react-native-google-signin/google-signin Pods/AppCheckCore » GACAppCheckErrors.m
+› Compiling @react-native-google-signin/google-signin Pods/AppCheckCore » GACAppCheckErrorUtil.m
+› Compiling @react-native-google-signin/google-signin Pods/AppCheckCore » GACAppCheckDebugProvider.m
+› Compiling @react-native-google-signin/google-signin Pods/AppCheckCore » GACAppCheckDebugProviderAPIService.m
+› Compiling @react-native-google-signin/google-signin Pods/AppCheckCore » GACAppCheckBackoffWrapper.m
+› Compiling @react-native-google-signin/google-signin Pods/AppCheckCore » GACAppCheckCryptoUtils.m
+› Compiling @react-native-google-signin/google-signin Pods/AppCheckCore » GACAppCheckAPIService.m
+› Compiling @react-native-google-signin/google-signin Pods/AppCheckCore » GACAppCheck.m
+› Compiling @react-native-google-signin/google-signin Pods/AppCheckCore » GACAppAttestStoredArtifact.m
+› Compiling @react-native-google-signin/google-signin Pods/AppCheckCore » GACAppAttestRejectionError.m
+› Compiling @react-native-google-signin/google-signin Pods/AppCheckCore » GACAppAttestProviderState.m
+› Compiling @react-native-google-signin/google-signin Pods/AppCheckCore » GACAppAttestProvider.m
+› Compiling @react-native-google-signin/google-signin Pods/AppCheckCore » GACAppAttestKeyIDStorage.m
+› Compiling @react-native-google-signin/google-signin Pods/AppCheckCore » GACAppAttestAttestationResponse.m
+› Compiling @react-native-google-signin/google-signin Pods/AppCheckCore » GACAppAttestArtifactStorage.m
+› Compiling @react-native-google-signin/google-signin Pods/AppCheckCore » GACAppAttestAPIService.m
+› Compiling @react-native-google-signin/google-signin Pods/AppCheckCore » DCDevice+GACDeviceCheckTokenGenerator.m
+› Compiling @react-native-google-signin/google-signin Pods/AppCheckCore » DCAppAttestService+GACAppAttestService.m
+› Compiling @react-native-google-signin/google-signin Pods/AppCheckCore » AppCheckCore-dummy.m
+› Compiling react-native-worklets Pods/RNWorklets » WorkletsVersion.cpp
+› Compiling react-native-worklets Pods/RNWorklets » WorkletsURLSessionDelegate.mm
+› Compiling react-native-worklets Pods/RNWorklets » WorkletsModuleProxyInitializer.cpp
+› Packaging @react-native-google-signin/google-signin Pods/AppCheckCore » libAppCheckCore.a
+› Compiling react-native-worklets Pods/RNWorklets » WorkletsModuleProxy.cpp
+› Compiling react-native-worklets Pods/RNWorklets » WorkletsModule.mm
+› Compiling react-native-worklets Pods/RNWorklets » WorkletsJSIUtils.cpp
+› Compiling react-native-worklets Pods/RNWorklets » WorkletRuntimeRegistry.cpp
+› Compiling react-native-worklets Pods/RNWorklets » WorkletRuntimeDecorator.cpp
+› Compiling react-native-worklets Pods/RNWorklets » WorkletRuntime.cpp
+› Compiling react-native-worklets Pods/RNWorklets » WorkletHermesRuntime.cpp
+› Compiling react-native-worklets Pods/RNWorklets » VersionUtils.cpp
+› Compiling react-native-worklets Pods/RNWorklets » UIScheduler.cpp
+› Compiling react-native-worklets Pods/RNWorklets » UIRuntimeDecorator.cpp
+› Compiling react-native-worklets Pods/RNWorklets » TextDecoding.cpp
+› Compiling react-native-worklets Pods/RNWorklets » SynchronizableFixed.cpp
+› Compiling react-native-worklets Pods/RNWorklets » SynchronizableDynamic.cpp
+› Compiling react-native-worklets Pods/RNWorklets » SynchronizableAccess.cpp
+› Compiling react-native-worklets Pods/RNWorklets » StableApi.cpp
+› Compiling react-native-worklets Pods/RNWorklets » SlowAnimations.mm
+› Compiling react-native-worklets Pods/RNWorklets » Shareable.cpp
+› Compiling react-native-worklets Pods/RNWorklets » SerializableWorklet.cpp
+› Compiling react-native-worklets Pods/RNWorklets » SerializableTurboModuleLike.cpp
+› Compiling react-native-worklets Pods/RNWorklets » SerializableString.cpp
+› Compiling react-native-worklets Pods/RNWorklets » SerializableSet.cpp
+› Compiling react-native-worklets Pods/RNWorklets » SerializableScalar.cpp
+› Compiling react-native-worklets Pods/RNWorklets » SerializableRemoteFunction.cpp
+› Compiling react-native-worklets Pods/RNWorklets » SerializableRegExp.cpp
+› Compiling react-native-worklets Pods/RNWorklets » SerializableObject.cpp
+› Compiling react-native-worklets Pods/RNWorklets » SerializableMap.cpp
+› Compiling react-native-worklets Pods/RNWorklets » SerializableImport.cpp
+› Compiling react-native-worklets Pods/RNWorklets » SerializableHostObject.cpp
+› Compiling react-native-worklets Pods/RNWorklets » SerializableHostFunction.cpp
+› Compiling react-native-worklets Pods/RNWorklets » SerializableError.cpp
+› Compiling react-native-worklets Pods/RNWorklets » SerializableBigInt.cpp
+› Compiling react-native-worklets Pods/RNWorklets » SerializableArrayBuffer.cpp
+› Compiling react-native-worklets Pods/RNWorklets » SerializableArray.cpp
+› Compiling react-native-worklets Pods/RNWorklets » Serializable.cpp
+› Compiling react-native-worklets Pods/RNWorklets » ScriptLoader.mm
+› Compiling react-native-worklets Pods/RNWorklets » RuntimeManager.cpp
+› Compiling react-native-worklets Pods/RNWorklets » RNRuntimeWorkletDecorator.cpp
+› Compiling react-native-worklets Pods/RNWorklets » PlatformLogger.mm
+› Compiling react-native-worklets Pods/RNWorklets » NetworkingInstaller.cpp
+› Compiling react-native-worklets Pods/RNWorklets » Networking.cpp
+› Compiling react-native-worklets Pods/RNWorklets » MemoryManager.cpp
+› Compiling react-native-worklets Pods/RNWorklets » JSScheduler.cpp
+› Compiling react-native-worklets Pods/RNWorklets » JSLogger.cpp
+› Compiling react-native-worklets Pods/RNWorklets » JSIWorkletsModuleProxy.cpp
+› Compiling react-native-worklets Pods/RNWorklets » JSISerializer.cpp
+› Compiling react-native-worklets Pods/RNWorklets » IOSUIScheduler.mm
+› Compiling react-native-worklets Pods/RNWorklets » HermesProfiling.cpp
+› Compiling react-native-worklets Pods/RNWorklets » FeatureFlags.cpp
+› Compiling react-native-worklets Pods/RNWorklets » EventLoop.cpp
+› Compiling react-native-worklets Pods/RNWorklets » CustomSerializable.cpp
+› Compiling react-native-worklets Pods/RNWorklets » AsyncQueueImpl.cpp
+› Compiling react-native-worklets Pods/RNWorklets » AppleNetworkingBackend.mm
+› Compiling react-native-worklets Pods/RNWorklets » AnimationFrameQueue.mm
+› Compiling react-native-worklets Pods/RNWorklets » AnimationFrameBatchinator.cpp
+› Compiling react-native-webview Pods/react-native-webview » RNCWKProcessPoolManager.m
+› Compiling react-native-webview Pods/react-native-webview » RNCWebViewImpl.m
+› Compiling react-native-webview Pods/react-native-webview » RNCWebViewDecisionManager.m
+› Compiling react-native-webview Pods/react-native-webview » RCTConvert+WKDataDetectorTypes.m
+› Compiling react-native-safe-area-context Pods/react-native-safe-area-context » RNCSafeAreaViewMode.m
+› Compiling react-native-safe-area-context Pods/react-native-safe-area-context » RNCSafeAreaViewManager.m
+› Compiling react-native-safe-area-context Pods/react-native-safe-area-context » RNCSafeAreaViewLocalData.m
+› Compiling react-native-safe-area-context Pods/react-native-safe-area-context » RNCSafeAreaViewEdges.m
+› Compiling react-native-safe-area-context Pods/react-native-safe-area-context » RNCSafeAreaViewEdgeMode.m
+› Compiling react-native-safe-area-context Pods/react-native-safe-area-context » RNCSafeAreaView.m
+› Compiling react-native-safe-area-context Pods/react-native-safe-area-context » RNCSafeAreaUtils.m
+› Compiling react-native-safe-area-context Pods/react-native-safe-area-context » RNCSafeAreaShadowView.m
+› Compiling react-native-safe-area-context Pods/react-native-safe-area-context » RNCSafeAreaProviderManager.m
+› Compiling react-native-safe-area-context Pods/react-native-safe-area-context » RNCSafeAreaProvider.m
+› Compiling react-native-safe-area-context Pods/react-native-safe-area-context » RNCSafeAreaCornerAdaptation.m
+› Compiling react-native-safe-area-context Pods/react-native-safe-area-context » RNCOnInsetsChangeEvent.m
+› Packaging react-native-webview Pods/react-native-webview » libreact-native-webview.a
+› Packaging @chagok/mobile Pods/ReactAppDependencyProvider » libReactAppDependencyProvider.a
+› Compiling react-native-screens Pods/RNScreens » UIWindow+RNScreens.mm
+› Compiling react-native-screens Pods/RNScreens » UIViewController+RNScreens.mm
+› Compiling react-native-screens Pods/RNScreens » UIView+RNSUtility.mm
+› Compiling react-native-screens Pods/RNScreens » UIScrollView+RNScreens.mm
+› Packaging react-native-safe-area-context Pods/react-native-safe-area-context » libreact-native-safe-area-context.a
+› Compiling react-native-screens Pods/RNScreens » UINavigationBar+RNSUtility.mm
+› Compiling react-native-screens Pods/RNScreens » RNScreensTurboModule.cpp
+› Compiling react-native-screens Pods/RNScreens » RNSTabsScreenViewController.mm
+› Compiling react-native-screens Pods/RNScreens » RNSTabsScreenEventEmitter.mm
+› Compiling react-native-screens Pods/RNScreens » RNSTabsScreenComponentView.mm
+› Compiling react-native-screens Pods/RNScreens » RNSTabsNavigationStateObserverRegistry.mm
+› Compiling react-native-screens Pods/RNScreens » RNSTabsNavigationState.mm
+› Compiling react-native-screens Pods/RNScreens » RNSTabsHostState.cpp
+› Compiling react-native-screens Pods/RNScreens » RNSTabsHostShadowNode.cpp
+› Compiling react-native-screens Pods/RNScreens » RNSTabsHostEventEmitter.mm
+› Compiling react-native-screens Pods/RNScreens » RNSTabsHostComponentView.mm
+› Compiling react-native-screens Pods/RNScreens » RNSTabsHostComponentView+RNSImageLoader.mm
+› Compiling react-native-screens Pods/RNScreens » RNSTabsBottomAccessoryWrapperView.mm
+› Compiling react-native-screens Pods/RNScreens » RNSTabsBottomAccessoryShadowStateProxy.mm
+› Compiling react-native-screens Pods/RNScreens » RNSTabsBottomAccessoryShadowNode.cpp
+› Compiling react-native-screens Pods/RNScreens » RNSTabsBottomAccessoryHelper.mm
+› Compiling react-native-screens Pods/RNScreens » RNSTabsBottomAccessoryEventEmitter.mm
+› Compiling react-native-screens Pods/RNScreens » RNSTabsBottomAccessoryContentComponentView.mm
+› Compiling react-native-screens Pods/RNScreens » RNSTabsBottomAccessoryComponentView.mm
+› Compiling react-native-screens Pods/RNScreens » RNSTabBarItemCoordinator.mm
+› Compiling react-native-screens Pods/RNScreens » RNSTabBarController.mm
+› Compiling react-native-screens Pods/RNScreens » RNSTabBarAppearanceCoordinator.mm
+› Compiling react-native-screens Pods/RNScreens » RNSStackScreenState.cpp
+› Compiling react-native-screens Pods/RNScreens » RNSStackScreenShadowNode.cpp
+› Compiling react-native-screens Pods/RNScreens » RNSStackScreenHeaderCoordinator.mm
+› Compiling react-native-screens Pods/RNScreens » RNSStackScreenController.mm
+› Compiling react-native-screens Pods/RNScreens » RNSStackScreenComponentViewManager.mm
+› Compiling react-native-screens Pods/RNScreens » RNSStackScreenComponentView.mm
+› Compiling react-native-screens Pods/RNScreens » RNSStackScreenComponentEventEmitter.mm
+› Compiling react-native-screens Pods/RNScreens » RNSStackOperationCoordinator.mm
+› Compiling react-native-screens Pods/RNScreens » RNSStackOperation.mm
+› Compiling react-native-screens Pods/RNScreens » RNSStackNavigationController.mm
+› Compiling react-native-screens Pods/RNScreens » RNSStackNavigationBarCoordinator.mm
+› Compiling react-native-screens Pods/RNScreens » RNSStackHostComponentViewManager.mm
+› Compiling react-native-screens Pods/RNScreens » RNSStackHostComponentView.mm
+› Compiling react-native-screens Pods/RNScreens » RNSStackHeaderSubviewState.cpp
+› Compiling react-native-screens Pods/RNScreens » RNSStackHeaderSubviewShadowNode.cpp
+› Compiling react-native-screens Pods/RNScreens » RNSStackHeaderMenuUpdateOptions.mm
+› Compiling react-native-screens Pods/RNScreens » RNSStackHeaderMenuTrackerRegistry.mm
+› Compiling react-native-screens Pods/RNScreens » RNSStackHeaderMenuToggleStateTracker.mm
+› Compiling react-native-screens Pods/RNScreens » RNSStackHeaderMenuMapper.mm
+› Compiling react-native-screens Pods/RNScreens » RNSStackHeaderMenuFinder.mm
+› Compiling react-native-screens Pods/RNScreens » RNSStackHeaderMenuData.mm
+› Compiling react-native-screens Pods/RNScreens » RNSStackHeaderMenuCoordinator.mm
+› Compiling react-native-screens Pods/RNScreens » RNSStackHeaderItemWrapperView.mm
+› Compiling react-native-screens Pods/RNScreens » RNSStackHeaderItemState.cpp
+› Compiling react-native-screens Pods/RNScreens » RNSStackHeaderItemSpacerComponentView.mm
+› Compiling react-native-screens Pods/RNScreens » RNSStackHeaderItemShadowStateProxy.mm
+› Compiling react-native-screens Pods/RNScreens » RNSStackHeaderItemShadowNode.cpp
+› Compiling react-native-screens Pods/RNScreens » RNSStackHeaderItemEventEmitter.mm
+› Compiling react-native-screens Pods/RNScreens » RNSStackHeaderItemComponentView.mm
+› Compiling react-native-screens Pods/RNScreens » RNSStackHeaderIconResolver.mm
+› Compiling react-native-screens Pods/RNScreens » RNSStackHeaderIconMapper.mm
+› Compiling react-native-screens Pods/RNScreens » RNSStackHeaderIconData.mm
+› Compiling react-native-screens Pods/RNScreens » RNSStackHeaderContentFactory.mm
+› Compiling react-native-screens Pods/RNScreens » RNSStackHeaderConfigState.cpp
+› Compiling react-native-screens Pods/RNScreens » RNSStackHeaderConfigShadowStateProxy.mm
+› Compiling react-native-screens Pods/RNScreens » RNSStackHeaderConfigShadowNode.cpp
+› Compiling react-native-screens Pods/RNScreens » RNSStackHeaderConfigEventEmitter.mm
+› Compiling react-native-screens Pods/RNScreens » RNSStackHeaderConfigComponentView.mm
+› Compiling react-native-screens Pods/RNScreens » RNSSplitScreenShadowStateProxy.mm
+› Compiling react-native-screens Pods/RNScreens » RNSSplitScreenShadowNode.cpp
+› Compiling react-native-screens Pods/RNScreens » RNSSplitScreenController.mm
+› Compiling react-native-screens Pods/RNScreens » RNSSplitScreenComponentViewManager.mm
+› Compiling react-native-screens Pods/RNScreens » RNSSplitScreenComponentView.mm
+› Compiling react-native-screens Pods/RNScreens » RNSSplitScreenComponentEventEmitter.mm
+› Compiling react-native-screens Pods/RNScreens » RNSSplitNavigationControllerFrameObserver.mm
+› Compiling react-native-screens Pods/RNScreens » RNSSplitNavigationController.mm
+› Compiling react-native-screens Pods/RNScreens » RNSSplitHostController.mm
+› Compiling react-native-screens Pods/RNScreens » RNSSplitHostComponentViewManager.mm
+› Compiling react-native-screens Pods/RNScreens » RNSSplitHostComponentView.mm
+› Compiling react-native-screens Pods/RNScreens » RNSSplitHostComponentEventEmitter.mm
+› Compiling react-native-screens Pods/RNScreens » RNSSplitAppearanceCoordinator.mm
+› Compiling react-native-screens Pods/RNScreens » RNSSplitAppearanceApplicator.mm
+› Compiling react-native-screens Pods/RNScreens » RNSSearchBar.mm
+› Compiling react-native-screens Pods/RNScreens » RNSScrollViewMarkerComponentView.mm
+› Compiling react-native-screens Pods/RNScreens » RNSScrollViewHelper.mm
+› Compiling react-native-screens Pods/RNScreens » RNSScrollViewFinder.mm
+› Compiling react-native-screens Pods/RNScreens » RNSScrollToTopGuardGestureRecognizer.mm
+› Compiling react-native-screens Pods/RNScreens » RNSScrollToTopGuard.mm
+› Compiling react-native-screens Pods/RNScreens » RNSScrollEdgeEffectApplicator.mm
+› Compiling react-native-screens Pods/RNScreens » RNSScreenWindowTraits.mm
+› Compiling react-native-screens Pods/RNScreens » RNSScreenViewEvent.mm
+› Compiling react-native-screens Pods/RNScreens » RNSScreenState.cpp
+› Compiling react-native-screens Pods/RNScreens » RNSScreenStackHeaderSubviewState.cpp
+› Compiling react-native-screens Pods/RNScreens » RNSScreenStackHeaderSubviewShadowNode.cpp
+› Compiling react-native-screens Pods/RNScreens » RNSScreenStackHeaderSubview.mm
+› Compiling react-native-screens Pods/RNScreens » RNSScreenStackHeaderConfigState.cpp
+› Compiling react-native-screens Pods/RNScreens » RNSScreenStackHeaderConfigShadowNode.cpp
+› Compiling react-native-screens Pods/RNScreens » RNSScreenStackHeaderConfig.mm
+› Compiling react-native-screens Pods/RNScreens » RNSScreenStackAnimator.mm
+› Compiling react-native-screens Pods/RNScreens » RNSScreenStack.mm
+› Compiling react-native-screens Pods/RNScreens » RNSScreenShadowNodeCommitHook.cpp
+› Compiling react-native-screens Pods/RNScreens » RNSScreenShadowNode.cpp
+› Compiling react-native-screens Pods/RNScreens » RNSScreenRemovalListener.cpp
+› Compiling react-native-screens Pods/RNScreens » RNSScreenNavigationContainer.mm
+› Compiling react-native-screens Pods/RNScreens » RNSScreenFooter.mm
+› Compiling react-native-screens Pods/RNScreens » RNSScreenContentWrapper.mm
+› Compiling react-native-screens Pods/RNScreens » RNSScreenContainer.mm
+› Compiling react-native-screens Pods/RNScreens » RNSScreen.mm
+› Compiling react-native-screens Pods/RNScreens » RNSSafeAreaViewState.cpp
+› Compiling react-native-screens Pods/RNScreens » RNSSafeAreaViewShadowNode.cpp
+› Compiling react-native-screens Pods/RNScreens » RNSSafeAreaViewComponentView.mm
+› Compiling react-native-screens Pods/RNScreens » RNSReactBaseView.mm
+› Compiling react-native-screens Pods/RNScreens » RNSPresentationSourceProvider.mm
+› Compiling react-native-screens Pods/RNScreens » RNSPercentDrivenInteractiveTransition.mm
+› Compiling react-native-screens Pods/RNScreens » RNSParentContainerItemRegistry.mm
+› Compiling react-native-screens Pods/RNScreens » RNSNavigationBar.mm
+› Compiling react-native-screens Pods/RNScreens » RNSModule.mm
+› Compiling react-native-screens Pods/RNScreens » RNSModalScreenShadowNode.cpp
+› Compiling react-native-screens Pods/RNScreens » RNSModalScreen.mm
+› Compiling react-native-screens Pods/RNScreens » RNSImageLoadingHelper.mm
+› Compiling react-native-screens Pods/RNScreens » RNSHeaderHeightChangeEvent.mm
+› Compiling react-native-screens Pods/RNScreens » RNSFullWindowOverlayShadowNode.cpp
+› Compiling react-native-screens Pods/RNScreens » RNSFullWindowOverlay.mm
+› Compiling react-native-screens Pods/RNScreens » RNSFormSheetUpdateCoordinator.mm
+› Compiling react-native-screens Pods/RNScreens » RNSFormSheetPresentationManager.mm
+› Compiling react-native-screens Pods/RNScreens » RNSFormSheetHostState.cpp
+› Compiling react-native-screens Pods/RNScreens » RNSFormSheetHostShadowStateProxy.mm
+› Compiling react-native-screens Pods/RNScreens » RNSFormSheetHostShadowNode.cpp
+› Compiling react-native-screens Pods/RNScreens » RNSFormSheetHostEventEmitter.mm
+› Compiling react-native-screens Pods/RNScreens » RNSFormSheetHostComponentView.mm
+› Compiling react-native-screens Pods/RNScreens » RNSFormSheetDetentResolver.mm
+› Compiling react-native-screens Pods/RNScreens » RNSFormSheetContentWrapperComponentView.mm
+› Compiling react-native-screens Pods/RNScreens » RNSFormSheetContentView.mm
+› Compiling react-native-screens Pods/RNScreens » RNSFormSheetContentController.mm
+› Compiling react-native-screens Pods/RNScreens » RNSFormSheetConfigurationApplicator.mm
+› Compiling react-native-screens Pods/RNScreens » RNSConvert.mm
+› Compiling react-native-screens Pods/RNScreens » RNSConversions.mm
+› Compiling react-native-screens Pods/RNScreens » RNSConversions-Tabs.mm
+› Compiling react-native-screens Pods/RNScreens » RNSConversions-Stack.mm
+› Compiling react-native-screens Pods/RNScreens » RNSConversions-SplitView.mm
+› Compiling react-native-screens Pods/RNScreens » RNSConversions-ScrollViewMarker.mm
+› Compiling react-native-screens Pods/RNScreens » RNSConversions-Fabric.mm
+› Compiling react-native-screens Pods/RNScreens » RNSContainerItemSupport.mm
+› Compiling react-native-screens Pods/RNScreens » RNSContainerHelpers.mm
+› Compiling react-native-screens Pods/RNScreens » RNSBarButtonItem.mm
+› Compiling react-native-screens Pods/RNScreens » RNSBackBarButtonItem.mm
+› Compiling react-native-screens Pods/RNScreens » RCTSurfaceTouchHandler+RNSUtility.mm
+› Compiling react-native-screens Pods/RNScreens » RCTImageComponentView+RNSScreenStackHeaderConfig.mm
+› Compiling react-native-screens Pods/RNScreens » RCTConvert+RNSTabs.mm
+› Compiling react-native-screens Pods/RNScreens » NSString+RNSUtility.mm
+› Executing @expo/log-box Pods/ExpoLogBox » Copy generated compatibility header
+› Executing @react-native-google-signin/google-signin Pods/AppCheckCore » Copy generated compatibility header
+› Executing expo-modules-core Pods/ExpoModulesCore » [CP-User] [Expo] Resolve ExpoModulesCore dSYM source maps
+› Compiling react-native-svg Pods/RNSVG » RNSVGViewBox.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGUseManager.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGUse.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGTopAlignedLabel.ios.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGTextProperties.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGTextPathManager.mm
+› Compiling react-native-screens Pods/RNScreens » RNScreens-dummy.m
+› Compiling react-native-svg Pods/RNSVG » RNSVGTextPath.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGTextManager.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGText.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGTSpanManager.mm
+› Packaging react-native-screens Pods/RNScreens » libRNScreens.a
+› Compiling react-native-svg Pods/RNSVG » RNSVGTSpan.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGSymbolManager.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGSymbol.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGSvgViewModule.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGSvgViewManager.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGSvgView.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGSolidColorBrush.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGShadowNodes.cpp
+› Compiling react-native-svg Pods/RNSVG » RNSVGRenderableModule.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGRenderableManager.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGRenderable.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGRenderUtils.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGRectManager.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGRect.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGRadialGradientManager.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGRadialGradient.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGPropHelper.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGPatternManager.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGPattern.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGPathParser.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGPathMeasure.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGPathManager.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGPath.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGPainterBrush.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGPainter.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGNodeManager.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGNode.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGMaskManager.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGMask.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGMarkerPosition.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGMarkerManager.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGMarker.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGLinearGradientManager.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGLinearGradient.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGLineManager.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGLine.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGLength.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGLayoutableShadowNode.cpp
+› Compiling react-native-svg Pods/RNSVG » RNSVGImageState.cpp
+› Compiling react-native-svg Pods/RNSVG » RNSVGImageShadowNode.cpp
+› Compiling react-native-svg Pods/RNSVG » RNSVGImageManager.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGImage.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGGroupManager.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGGroup.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGGlyphContext.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGForeignObjectManager.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGForeignObject.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGFontData.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGFilterRegion.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGFilterPrimitiveManager.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGFilterPrimitive.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGFilterManager.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGFilter.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGFeOffsetManager.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGFeOffset.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGFeMergeManager.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGFeMerge.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGFeGaussianBlurManager.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGFeGaussianBlur.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGFeFloodManager.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGFeFlood.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGFeCompositeManager.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGFeComposite.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGFeColorMatrixManager.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGFeColorMatrix.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGFeBlendManager.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGFeBlend.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGEllipseManager.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGEllipse.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGDefsManager.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGDefs.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGCustomFilter.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGConvert.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGContextBrush.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGCompositeXor.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGClipPathManager.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGClipPath.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGCircleManager.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGCircle.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGBrush.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGBezierElement.mm
+› Compiling react-native-svg Pods/RNSVG » RNSVGArithmeticFilter.mm
+› Compiling react-native-svg Pods/RNSVG » RCTConvert+RNSVG.mm
+› Compiling react-native-reanimated Pods/RNReanimated » vectors.cpp
+› Executing expo-modules-core Pods/ExpoModulesCore » [CP-User] [Expo] Switch ExpoModulesCore XCFramework for build configuration
+› Compiling react-native-reanimated Pods/RNReanimated » translate.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » steps.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » skew.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » scale.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » rotate.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » props.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » platform.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » perspective.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » matrix.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » linear.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » interpolators.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » cubicBezier.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » common.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » algorithms.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » ViewStylesRepository.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » ValueInterpolator.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » UpdatesRegistryManager.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » UpdatesRegistry.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » UIRuntimeDecorator.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » UIEventHandlerRegistry.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » UIEventHandler.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » TransitionStyleInterpolator.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » TransitionProgressProvider.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » TransformsStyleInterpolator.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » TransformOperationInterpolator.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » TransformOperation.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » TransformOp.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » TransformMatrix3D.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » TransformMatrix2D.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » TransformMatrix.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » TimeProgressProvider.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » SynchronousWritesTracker.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » SynchronousPropsBufferSerializer.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » StyleOperationInterpolator.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » StyleOperation.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » StaticPropsRegistry.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » StaleSynchronousPropsTracker.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » SimpleValueInterpolator.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » SharedTransitions.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » ShadowTreeCloner.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » SetGestureState.mm
+› Compiling react-native-reanimated Pods/RNReanimated » SVGStrokeDashArray.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » SVGStops.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » SVGPath.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » SVGBrush.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » RunLifecycle.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » ResolvableValueInterpolator.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » RecordPropertiesInterpolator.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » ReanimatedVersion.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » ReanimatedMountHook.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » ReanimatedModuleProxy.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » ReanimatedModule.mm
+› Compiling react-native-reanimated Pods/RNReanimated » ReanimatedCommitHook.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » RNRuntimeDecorator.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » REATouchHoverCoordinator.mm
+› Compiling react-native-reanimated Pods/RNReanimated » REASynchronousPropsRewriter.mm
+› Compiling react-native-reanimated Pods/RNReanimated » REASlowAnimations.mm
+› Compiling react-native-reanimated Pods/RNReanimated » REASharedTransitionBoundaryView.mm
+› Compiling react-native-reanimated Pods/RNReanimated » REASharedTransitionBoundaryShadowNode.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » REAPseudoSelectorObserver.mm
+› Compiling react-native-reanimated Pods/RNReanimated » REAPseudoSelectorAttachQueue.mm
+› Compiling react-native-reanimated Pods/RNReanimated » REANodesManager.mm
+› Compiling react-native-reanimated Pods/RNReanimated » REAKeyboardEventObserver.mm
+› Compiling react-native-reanimated Pods/RNReanimated » REACSSPlatformTransitions.mm
+› Compiling react-native-reanimated Pods/RNReanimated » REACSSPlatformProps.mm
+› Compiling react-native-reanimated Pods/RNReanimated » Quaternion.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » PseudoStylesRegistry.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » PropsDiffer.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » PropertyInterpolator.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » PropValueProcessor.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » PlatformDepMethodsHolderImpl.mm
+› Compiling react-native-reanimated Pods/RNReanimated » OperationsStyleInterpolator.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » OperationsLoop.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » NativeProxy.mm
+› Compiling react-native-reanimated Pods/RNReanimated » LayoutAnimationsProxy_Legacy.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » LayoutAnimationsProxyRegistry.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » LayoutAnimationsProxyCommon.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » LayoutAnimationsProxy.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » LayoutAnimationsManager.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » InterpolatorRegistry.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » InterpolatorFactory.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » GroupPropertiesInterpolator.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » FilterStyleInterpolator.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » FilterOperationInterpolator.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » FilterOperation.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » FilterOp.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » FeatureFlags.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » EasingFunctions.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » EasingConfigs.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » CSSValueVariant.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » CSSTransitionsRegistry.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » CSSTransitionConfig.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » CSSTransition.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » CSSPlatformTransitionProxy.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » CSSNumber.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » CSSLoopTransition.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » CSSLoopAnimation.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » CSSLengthVector.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » CSSLengthArray.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » CSSLength.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » CSSKeyword.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » CSSKeyframesRegistry.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » CSSKeyframesConfig.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » CSSEventsEmitter.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » CSSDropShadow.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » CSSDiscreteArray.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » CSSColor.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » CSSBoxShadow.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » CSSBoolean.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » CSSAnimationsRegistry.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » CSSAnimationsGroup.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » CSSAnimationConfig.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » CSSAnimation.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » CSSAngle.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » ArrayPropertiesInterpolator.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » AnimationStyleInterpolatorFactory.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » AnimationStyleInterpolator.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » AnimationProgressProvider.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » AnimatedSensorModule.cpp
+› Compiling react-native-reanimated Pods/RNReanimated » AnimatedPropsRegistry.cpp
+› Compiling @react-native-google-signin/google-signin Pods/RNGoogleSignin » RNGoogleSigninButtonManager.mm
+› Compiling @react-native-google-signin/google-signin Pods/RNGoogleSignin » RNGoogleSignin.mm
+› Compiling @react-native-google-signin/google-signin Pods/RNGoogleSignin » RNGoogleSignInButtonComponentView.mm
+› Compiling @react-native-google-signin/google-signin Pods/RNGoogleSignin » RNGoogleSignInButton.mm
+› Compiling @react-native-google-signin/google-signin Pods/RNGoogleSignin » RCTConvert+RNGoogleSignin.mm
+› Compiling react-native-worklets Pods/RNWorklets » RNWorklets-dummy.m
+› Packaging react-native-worklets Pods/RNWorklets » libRNWorklets.a
+› Compiling @react-native-google-signin/google-signin Pods/RNGoogleSignin » RNGoogleSignin-dummy.m
+› Executing expo-modules-core Pods/ExpoModulesCore » [CP] Copy XCFrameworks
+› Compiling react-native-gesture-handler Pods/RNGestureHandler » RNNativeViewHandler.mm
+› Compiling react-native-gesture-handler Pods/RNGestureHandler » RNGestureHandlerRootViewComponentView.mm
+› Compiling react-native-gesture-handler Pods/RNGestureHandler » RNGestureHandlerPointerTracker.mm
+› Compiling react-native-gesture-handler Pods/RNGestureHandler » RNGestureHandlerNativeEventUtils.mm
+› Compiling react-native-gesture-handler Pods/RNGestureHandler » RNGestureHandlerModule.mm
+› Compiling react-native-gesture-handler Pods/RNGestureHandler » RNGestureHandlerManager.mm
+› Compiling react-native-gesture-handler Pods/RNGestureHandler » RNGestureHandlerEvents.mm
+› Compiling react-native-gesture-handler Pods/RNGestureHandler » RNGestureHandlerDetectorShadowNode.cpp
+› Compiling react-native-gesture-handler Pods/RNGestureHandler » RNGestureHandlerDetector.mm
+› Compiling react-native-gesture-handler Pods/RNGestureHandler » RNGestureHandlerButtonComponentView.mm
+› Compiling react-native-gesture-handler Pods/RNGestureHandler » RNGestureHandlerButton.mm
+› Compiling react-native-gesture-handler Pods/RNGestureHandler » RNGestureHandler.mm
+› Compiling react-native-gesture-handler Pods/RNGestureHandler » RNGHRuntimeDecorator.cpp
+› Compiling react-native-svg Pods/RNSVG » RNSVG-dummy.m
+› Packaging react-native-svg Pods/RNSVG » libRNSVG.a
+› Compiling react-native-reanimated Pods/RNReanimated » ReanimatedSensorContainer.m
+› Compiling react-native-reanimated Pods/RNReanimated » ReanimatedSensor.m
+› Compiling react-native-reanimated Pods/RNReanimated » RNReanimated-dummy.m
+› Compiling react-native-reanimated Pods/RNReanimated » RCTUIView+Reanimated.m
+› Executing expo-modules-core Pods/ExpoModulesWorklets » [CP-User] [Expo] Resolve ExpoModulesWorklets dSYM source maps
+› Executing expo-font Pods/ExpoFont » [CP-User] [Expo] Resolve ExpoFont dSYM source maps
+› Executing expo-file-system Pods/ExpoFileSystem » [CP-User] [Expo] Resolve ExpoFileSystem dSYM source maps
+› Compiling @react-native-masked-view/masked-view Pods/RNCMaskedView » RNCMaskedView-dummy.m
+› Compiling @react-native-masked-view/masked-view Pods/RNCMaskedView » RNCMaskedView.m
+› Compiling @react-native-masked-view/masked-view Pods/RNCMaskedView » RNCMaskedViewManager.m
+› Packaging react-native-reanimated Pods/RNReanimated » libRNReanimated.a
+› Packaging @react-native-masked-view/masked-view Pods/RNCMaskedView » libRNCMaskedView.a
+› Executing expo-font Pods/ExpoFont » [CP-User] [Expo] Switch ExpoFont XCFramework for build configuration
+› Executing expo-modules-core Pods/ExpoModulesWorklets » [CP-User] [Expo] Switch ExpoModulesWorklets XCFramework for build configuration
+› Executing expo-file-system Pods/ExpoFileSystem » [CP-User] [Expo] Switch ExpoFileSystem XCFramework for build configuration
+› Compiling react-native-gesture-handler Pods/RNGestureHandler » RNGHVector.m
+› Compiling react-native-gesture-handler Pods/RNGestureHandler » RNGHStylusData.m
+› Compiling react-native-gesture-handler Pods/RNGestureHandler » RNTapHandler.m
+› Compiling react-native-gesture-handler Pods/RNGestureHandler » RNRotationHandler.m
+› Compiling react-native-gesture-handler Pods/RNGestureHandler » RNRootViewGestureRecognizer.m
+› Compiling react-native-gesture-handler Pods/RNGestureHandler » RNPinchHandler.m
+› Compiling react-native-gesture-handler Pods/RNGestureHandler » RNPanHandler.m
+› Compiling react-native-gesture-handler Pods/RNGestureHandler » RNManualHandler.m
+› Compiling react-native-gesture-handler Pods/RNGestureHandler » RNManualActivationRecognizer.m
+› Compiling react-native-gesture-handler Pods/RNGestureHandler » RNLongPressHandler.m
+› Compiling react-native-gesture-handler Pods/RNGestureHandler » RNHoverHandler.m
+› Compiling react-native-gesture-handler Pods/RNGestureHandler » RNGestureHandlerRegistry.m
+› Compiling react-native-gesture-handler Pods/RNGestureHandler » RNForceTouchHandler.m
+› Compiling react-native-gesture-handler Pods/RNGestureHandler » RNFlingHandler.m
+› Compiling @react-native-google-signin/google-signin Pods/GoogleSignIn » NSBundle+GIDBundle.m
+› Compiling @react-native-google-signin/google-signin Pods/GoogleSignIn » GoogleSignIn-dummy.m
+› Compiling @react-native-google-signin/google-signin Pods/GoogleSignIn » GIDToken.m
+› Compiling @react-native-google-signin/google-signin Pods/GoogleSignIn » GIDSignInStrings.m
+› Compiling @react-native-google-signin/google-signin Pods/GoogleSignIn » GIDSignInPreferences.m
+› Compiling @react-native-google-signin/google-signin Pods/GoogleSignIn » GIDSignInCallbackSchemes.m
+› Compiling @react-native-google-signin/google-signin Pods/GoogleSignIn » GIDScopes.m
+› Compiling @react-native-google-signin/google-signin Pods/GoogleSignIn » GIDProfileData.m
+› Compiling @react-native-google-signin/google-signin Pods/GoogleSignIn » GIDMDMPasscodeState.m
+› Compiling @react-native-google-signin/google-signin Pods/GoogleSignIn » GIDFakeBundle.m
+› Compiling @react-native-google-signin/google-signin Pods/GoogleSignIn » GIDFakeAuthStateMigration.m
+› Compiling @react-native-google-signin/google-signin Pods/GoogleSignIn » GIDConfiguration.m
+› Compiling @react-native-google-signin/google-signin Pods/GoogleSignIn » GIDClaim.m
+› Compiling @react-native-google-signin/google-signin Pods/GoogleSignIn » GIDCallbackQueue.m
+› Executing expo-modules-core Pods/ExpoModulesWorklets » [CP] Copy XCFrameworks
+› Executing expo-font Pods/ExpoFont » [CP] Copy XCFrameworks
+› Executing expo-file-system Pods/ExpoFileSystem » [CP] Copy XCFrameworks
+› Compiling expo-modules-core Pods/ExpoModulesWorkletsAdapter » ExpoWorkletsBridgeProvider.mm
+› Compiling react-native-gesture-handler Pods/RNGestureHandler » RNGestureHandler-dummy.m
+› Packaging react-native-gesture-handler Pods/RNGestureHandler » libRNGestureHandler.a
+› Compiling expo-modules-core Pods/ExpoModulesWorkletsAdapter » ExpoModulesWorkletsAdapter-dummy.m
+› Compiling @react-native-google-signin/google-signin Pods/GoogleSignIn » NSBundle+GID3PAdditions.m
+› Compiling @react-native-google-signin/google-signin Pods/GoogleSignIn » GIDTimedLoader.m
+› Compiling @react-native-google-signin/google-signin Pods/GoogleSignIn » GIDSignInResult.m
+› Compiling @react-native-google-signin/google-signin Pods/GoogleSignIn » GIDSignInInternalOptions.m
+› Compiling @react-native-google-signin/google-signin Pods/GoogleSignIn » GIDSignInButton.m
+› Compiling @react-native-google-signin/google-signin Pods/GoogleSignIn » GIDMDMPasscodeCache.m
+› Compiling @react-native-google-signin/google-signin Pods/GoogleSignIn » GIDJSONSerializerImpl.m
+› Compiling @react-native-google-signin/google-signin Pods/GoogleSignIn » GIDFakeJSONSerializerImpl.m
+› Compiling @react-native-google-signin/google-signin Pods/GoogleSignIn » GIDEMMErrorHandler.m
+› Compiling @react-native-google-signin/google-signin Pods/GoogleSignIn » GIDClaimsInternalOptions.m
+› Compiling @react-native-google-signin/google-signin Pods/GoogleSignIn » GIDAuthentication.m
+› Compiling @react-native-google-signin/google-signin Pods/GoogleSignIn » GIDActivityIndicatorViewController.m
+› Compiling @react-native-google-signin/google-signin Pods/GoogleSignIn » GIDAppCheckProviderFake.m
+› Compiling @react-native-google-signin/google-signin Pods/GoogleSignIn » GIDAppCheck.m
+› Compiling @react-native-google-signin/google-signin Pods/GoogleSignIn » GIDSignIn.m
+› Compiling @react-native-google-signin/google-signin Pods/GoogleSignIn » GIDGoogleUser.m
+› Compiling @react-native-google-signin/google-signin Pods/GoogleSignIn » GIDEMMSupport.m
+› Compiling @react-native-google-signin/google-signin Pods/GoogleSignIn » GIDAuthStateMigration.m
+› Executing expo-constants Pods/EXConstants » [CP-User] Generate app.config for prebuilt Constants.manifest
+› Packaging expo-modules-core Pods/ExpoModulesWorkletsAdapter » libExpoModulesWorkletsAdapter.a
+› Compiling expo-system-ui Pods/ExpoSystemUI » ExpoSystemUI-dummy.m
+› Compiling expo-status-bar Pods/ExpoStatusBar » ExpoStatusBar-dummy.m
+› Compiling expo-secure-store Pods/ExpoSecureStore » ExpoSecureStore-dummy.m
+› Packaging expo-system-ui Pods/ExpoSystemUI » libExpoSystemUI.a
+› Packaging expo-status-bar Pods/ExpoStatusBar » libExpoStatusBar.a
+› Packaging expo-secure-store Pods/ExpoSecureStore » libExpoSecureStore.a
+› Compiling expo-linking Pods/ExpoLinking » ExpoLinking-dummy.m
+› Packaging expo-linking Pods/ExpoLinking » libExpoLinking.a
+› Compiling expo-keep-awake Pods/ExpoKeepAwake » ExpoKeepAwake-dummy.m
+› Packaging expo-keep-awake Pods/ExpoKeepAwake » libExpoKeepAwake.a
+› Compiling expo-glass-effect Pods/ExpoGlassEffect » ExpoGlassEffect-dummy.m
+› Compiling @expo/dom-webview Pods/ExpoDomWebView » ExpoDomWebView-dummy.m
+› Compiling expo-asset Pods/ExpoAsset » ExpoAsset-dummy.m
+› Packaging expo-glass-effect Pods/ExpoGlassEffect » libExpoGlassEffect.a
+› Packaging @expo/dom-webview Pods/ExpoDomWebView » libExpoDomWebView.a
+› Packaging expo-asset Pods/ExpoAsset » libExpoAsset.a
+› Executing expo-system-ui Pods/ExpoSystemUI » Copy generated compatibility header
+› Executing expo-status-bar Pods/ExpoStatusBar » Copy generated compatibility header
+› Executing expo-secure-store Pods/ExpoSecureStore » Copy generated compatibility header
+› Compiling @react-native-google-signin/google-signin Pods/ExpoAdapterGoogleSignIn » ExpoAdapterGoogleSignIn-dummy.m
+› Compiling expo-updates-interface Pods/EXUpdatesInterface » noop-file.m
+› Compiling expo-updates-interface Pods/EXUpdatesInterface » EXUpdatesInterface-dummy.m
+› Compiling expo-manifests Pods/EXManifests » EXManifests-dummy.m
+› Executing expo-linking Pods/ExpoLinking » Copy generated compatibility header
+› Executing expo-keep-awake Pods/ExpoKeepAwake » Copy generated compatibility header
+› Executing expo-glass-effect Pods/ExpoGlassEffect » Copy generated compatibility header
+› Executing @expo/dom-webview Pods/ExpoDomWebView » Copy generated compatibility header
+› Packaging expo-updates-interface Pods/EXUpdatesInterface » libEXUpdatesInterface.a
+› Executing expo-asset Pods/ExpoAsset » Copy generated compatibility header
+› Packaging expo-manifests Pods/EXManifests » libEXManifests.a
+› Compiling expo-router Pods/ExpoRouter » ExpoRouter-dummy.m
+› Packaging expo-router Pods/ExpoRouter » libExpoRouter.a
+› Packaging @react-native-google-signin/google-signin Pods/GoogleSignIn » libGoogleSignIn.a
+› Executing expo-router Pods/ExpoRouter » Copy generated compatibility header
+› Executing expo-updates-interface Pods/EXUpdatesInterface » Copy generated compatibility header
+› Executing expo-manifests Pods/EXManifests » Copy generated compatibility header
+› Compiling expo-image-picker Pods/ExpoImagePicker » ExpoImagePicker-dummy.m
+› Compiling expo-constants Pods/EXConstants » EXConstantsInstallationIdProvider.m
+› Compiling expo-constants Pods/EXConstants » EXConstants-dummy.m
+› Packaging expo-image-picker Pods/ExpoImagePicker » libExpoImagePicker.a
+› Executing expo-image-picker Pods/ExpoImagePicker » Copy generated compatibility header
+› Packaging @react-native-google-signin/google-signin Pods/RNGoogleSignin » libRNGoogleSignin.a
+› Packaging @react-native-google-signin/google-signin Pods/ExpoAdapterGoogleSignIn » libExpoAdapterGoogleSignIn.a
+› Executing @react-native-google-signin/google-signin Pods/ExpoAdapterGoogleSignIn » Copy generated compatibility header
+› Compiling expo-constants Pods/EXConstants » EXConstantsService.m
+› Packaging expo-constants Pods/EXConstants » libEXConstants.a
+› Executing expo-constants Pods/EXConstants » Copy generated compatibility header
+› Compiling expo Pods/Expo » ExpoReactNativeFactory.mm
+› Compiling expo Pods/Expo » EXReactRootViewFactory.mm
+› Compiling expo Pods/Expo » EXBundleConfiguration.mm
+› Compiling expo Pods/Expo » Expo-dummy.m
+› Compiling expo Pods/Expo » EXLegacyAppDelegateWrapper.m
+› Compiling expo Pods/Expo » EXAppDefinesLoader.m
+› Compiling expo Pods/Expo » EXAppDelegatesLoader.m
+› Packaging expo Pods/Expo » libExpo.a
+› Executing expo Pods/Expo » Copy generated compatibility header
+› Compiling expo-dev-menu Pods/expo-dev-menu » RCTKeyCommands.m
+› Compiling expo-dev-menu Pods/expo-dev-menu » expo-dev-menu-dummy.m
+› Compiling expo-dev-menu Pods/expo-dev-menu » EXDevMenuAppInfo.m
+› Packaging expo-dev-menu Pods/expo-dev-menu » libexpo-dev-menu.a
+› Executing expo-dev-menu Pods/expo-dev-menu » Copy generated compatibility header
+› Compiling expo-dev-launcher Pods/expo-dev-launcher » expo-dev-launcher-dummy.m
+› Compiling expo-dev-launcher Pods/expo-dev-launcher » EXDevLauncherUpdatesHelper.m
+› Compiling expo-dev-launcher Pods/expo-dev-launcher » EXDevLauncherRCTDevSettings.m
+› Compiling expo-dev-launcher Pods/expo-dev-launcher » EXDevLauncher.m
+› Compiling expo-dev-launcher Pods/expo-dev-launcher » EXDevLauncherController.m
+› Compiling expo-dev-launcher Pods/expo-dev-launcher » EXDevLauncherManifestParser.m
+› Packaging expo-dev-launcher Pods/expo-dev-launcher » libexpo-dev-launcher.a
+› Executing expo-dev-launcher Pods/expo-dev-launcher » Copy generated compatibility header
+› Compiling Pods/Pods-app » Pods-app-dummy.m
+› Packaging Pods/Pods-app » libPods-app.a
+› Executing app » [CP] Check Pods Manifest.lock
+› Executing app » [Expo] Configure project
+    The @ExpoModule class 'CoreModule' (/Users/doyeon/Desktop/chagok/node_modules/expo-modules-core/ios/Core/Modules/CoreModule.swift) is internal, so the generated modules provider cannot reference it. Declare it public to link it automatically, or use a lower access level such as private to opt it out of linking.
+› Linking   app » __preview.dylib
+› Copying   ./PrivacyInfo.xcprivacy ➜ ./PrivacyInfo.xcprivacy
+› Copying   ios/app/Supporting/Expo.plist ➜ ./Expo.plist
+› Compiling app » SplashScreen.storyboard
+› Preparing app » Info.plist
+› Compiling app » app_vers.c
+› Linking   app » app.debug.dylib
+› Generating debug app » app.app.dSYM
+› Linking   app » app
+› Generating debug app » app.app.dSYM
+› Executing app » Bundle React Native code and images
+› Executing app » [CP] Copy Pods Resources
+› Executing app » [Expo Dev Launcher] Strip Local Network Keys for Release
+› Executing app » [CP] Embed Pods Frameworks
+› Signing   app » app.debug.dylib
+› Signing   app » __preview.dylib
+› Signing   app » app.app
+› Creating  app » app.app
+⚠️  Script has ambiguous dependencies causing it to run on every build.
+   To fix, go to: Xcode » app/app » Build Phases » '[Expo Dev Launcher] Strip Local Network Keys for Release'
+   Either: Uncheck "Based on dependency analysis", or select output files to trigger the script
+
+› Build Succeeded
+
+› 0 error(s), and 2 warning(s)
+
+Waiting on http://localhost:8081
+› Installing /Users/doyeon/Library/Developer/Xcode/DerivedData/app-fcpwwnosoxednxfuekhazhymvguq/Build/Products/Debug-iphonesimulator/app.app
+› Installing on iPhone 17
+› Opening on iPhone 17 (dev.doyeon.chagok)
+› Opening exp+chagok://?__expo_url=http%3A%2F%2F192.168.219.100%3A8081&__expo_disable_fab=1&__expo_disable_auto_launch=1&__expo_disable_onboarding=1 on iPhone 17

@@ -13,12 +13,13 @@
     "db:seed": "node --experimental-strip-types scripts/benefits-seed.ts"
   },
   "dependencies": {
+    "@chagok/contracts": "*",
     "@prisma/adapter-pg": "^7.10.1",
     "@prisma/client": "^7.10.1",
     "@trpc/server": "11.28.0",
     "google-auth-library": "^11.3.4",
-    "zod": "^4.6.7",
-    "@chagok/contracts": "*"
+    "sharp": "^0.35.5",
+    "zod": "^4.6.7"
   },
   "devDependencies": {
     "prisma": "^7.10.1"

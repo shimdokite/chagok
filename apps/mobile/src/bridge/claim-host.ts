@@ -6,8 +6,13 @@ import {
   type BridgeMessage,
   type FormContext,
 } from "@chagok/contracts";
+import {
+  receiptErrorSchema,
+  type ReceiptResult,
+} from "@chagok/contracts/receipts";
 import type { CreateClaimInput } from "@chagok/contracts/benefits";
 
+import type { ReceiptTrace } from "../receipts/metrics";
 import type { AuthState } from "../auth/session";
 import { sessionScope } from "../benefits/cache";
 
@@ -19,6 +24,12 @@ type Ports = {
   load(month: string, signal: AbortSignal): Promise<FormContext>;
   create(input: CreateClaimInput, signal: AbortSignal): Promise<{ id: string }>;
   invalidate(): Promise<unknown>;
+  measureReceipt?(source: "camera" | "library"): ReceiptTrace | undefined;
+  pickReceipt?(
+    source: "camera" | "library",
+    signal: AbortSignal,
+    trace?: ReceiptTrace,
+  ): Promise<ReceiptResult>;
 };
 let sequence = 0;
 
@@ -38,11 +49,24 @@ export class ClaimHost {
   private connectionId = `form-${Date.now()}-${++sequence}`;
   private abort = new AbortController();
   private scope: string | null = null;
+  private receipt?: {
+    id: string;
+    abort: AbortController;
+    trace?: ReceiptTrace;
+  };
+  private receiptAcks = new Map<
+    string,
+    { scope: string; trace: ReceiptTrace }
+  >();
 
   constructor(private ports: Ports) {}
 
   reset() {
     this.abort.abort();
+    this.receipt?.abort.abort();
+    this.receipt?.trace?.abort();
+    for (const pending of this.receiptAcks.values()) pending.trace.abort();
+    this.receiptAcks.clear();
     this.abort = new AbortController();
     this.connectionId = `form-${Date.now()}-${++sequence}`;
     this.scope = null;
@@ -68,7 +92,14 @@ export class ClaimHost {
       this.announce();
       return;
     }
-    if (message.type !== "FORM_LOAD" && message.type !== "CLAIM_SUBMIT") return;
+    if (
+      message.type !== "FORM_LOAD" &&
+      message.type !== "CLAIM_SUBMIT" &&
+      message.type !== "RECEIPT_PICK" &&
+      message.type !== "RECEIPT_CANCEL" &&
+      message.type !== "RECEIPT_ACK"
+    )
+      return;
     if (message.connectionId !== this.connectionId) return;
     const connectionId = this.connectionId;
     const access = this.ports.access();
@@ -77,6 +108,26 @@ export class ClaimHost {
       connectionId,
       requestId: message.requestId,
     };
+    if (message.type === "RECEIPT_ACK") {
+      const pending = this.receiptAcks.get(message.requestId);
+      if (!pending) return;
+      if (
+        access.mode === "live" &&
+        access.scope === pending.scope &&
+        access.scope === this.scope
+      )
+        pending.trace.ack();
+      else pending.trace.abort();
+      return;
+    }
+    if (message.type === "RECEIPT_CANCEL") {
+      if (this.receipt?.id === message.requestId) {
+        this.receipt.abort.abort();
+        this.receipt.trace?.abort();
+      }
+      this.receiptAcks.get(message.requestId)?.trace.abort();
+      return;
+    }
     if (
       access.mode !== "live" ||
       !access.scope ||
@@ -84,9 +135,90 @@ export class ClaimHost {
     ) {
       this.ports.send({
         ...response,
-        type: "FORM_ERROR",
+        type: message.type === "RECEIPT_PICK" ? "RECEIPT_ERROR" : "FORM_ERROR",
         payload: { code: "UNAUTHORIZED" },
       });
+      return;
+    }
+    if (message.type === "RECEIPT_PICK") {
+      if (this.receiptAcks.has(message.requestId)) return;
+      if (this.receipt) {
+        this.ports.send({
+          ...response,
+          type: "RECEIPT_ERROR",
+          payload: { code: "BUSY" },
+        });
+        return;
+      }
+      const operation = {
+        id: message.requestId,
+        abort: new AbortController(),
+        trace: this.ports.measureReceipt?.(message.payload.source),
+      };
+      let delivered = false;
+      const receiptScope = access.scope;
+
+      const sendReceipt = (
+        reply: BridgeMessage,
+        outcome: "uploaded" | "cancelled" | "error",
+      ) => {
+        const trace = operation.trace;
+        if (trace) {
+          this.receiptAcks.set(message.requestId, {
+            scope: receiptScope,
+            trace,
+          });
+          trace.sent(outcome, () => this.receiptAcks.delete(message.requestId));
+        }
+        this.ports.send(reply);
+        delivered = true;
+      };
+
+      this.receipt = operation;
+      const signal = AbortSignal.any([
+        this.abort.signal,
+        operation.abort.signal,
+      ]);
+
+      const current = () =>
+        !signal.aborted && this.connectionId === connectionId;
+
+      try {
+        if (!this.ports.pickReceipt) throw new Error("Picker unavailable");
+        const payload = await this.ports.pickReceipt(
+          message.payload.source,
+          signal,
+          operation.trace,
+        );
+        if (!current()) return;
+        const latest = this.ports.access();
+        if (latest.mode !== "live") throw { code: "UNAUTHORIZED" };
+        if (latest.scope === access.scope)
+          sendReceipt(
+            { ...response, type: "RECEIPT_RESULT", payload },
+            payload.kind,
+          );
+      } catch (error) {
+        const latest = this.ports.access();
+        if (latest.mode === "live" && latest.scope !== access.scope) return;
+        const code = receiptErrorSchema.safeParse(
+          latest.mode !== "live"
+            ? "UNAUTHORIZED"
+            : (error as { code?: string })?.code,
+        );
+        if (current())
+          sendReceipt(
+            {
+              ...response,
+              type: "RECEIPT_ERROR",
+              payload: { code: code.success ? code.data : "UPLOAD_FAILED" },
+            },
+            "error",
+          );
+      } finally {
+        if (!delivered) operation.trace?.abort();
+        if (this.receipt === operation) this.receipt = undefined;
+      }
       return;
     }
     const signal = this.abort.signal;

@@ -11,12 +11,14 @@ import {
   ActivityIndicator,
   BackHandler,
   AppState,
+  Platform,
 } from "react-native";
 import { WebView } from "react-native-webview";
 import { router } from "expo-router";
 import { isAllowedApplyUrl, parseBridgeMessage } from "@chagok/contracts";
 import { useClaimHost } from "../bridge/useClaimHost";
 import { useWebViewBridge } from "../bridge/useWebViewBridge";
+import { applyMessageUrl } from "../bridge/message-source";
 import { webOrigin } from "../lib/trpc";
 import { Page, Button } from "./ui";
 import { BridgeDiagnostics } from "../dev/BridgeDiagnostics";
@@ -28,6 +30,7 @@ import { WebViewTrace, type WebViewEventKind } from "../dev/webview-trace";
 export default function ApplyContainer() {
   const c = useTheme();
   const ref = useRef<WebView<object>>(null);
+  const documentUrl = useRef<string | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const [revision, setRevision] = useState(0);
@@ -57,6 +60,7 @@ export default function ApplyContainer() {
   }, [record, revision]);
 
   const closeAndGoBack = useCallback(() => {
+    documentUrl.current = null;
     record("close", committedRevision.current);
     return router.canGoBack() ? router.back() : router.replace("/home");
   }, [record]);
@@ -66,6 +70,7 @@ export default function ApplyContainer() {
 
   const reset = useCallback(
     (reason: string) => {
+      documentUrl.current = null;
       claimHost.reset();
       baseBridge.reset(reason);
     },
@@ -168,14 +173,22 @@ export default function ApplyContainer() {
               });
             }}
             onNavigationStateChange={(state) => {
+              if (revision !== committedRevision.current) return;
               if (!isAllowedApplyUrl(state.url, webOrigin)) {
                 ref.current?.stopLoading();
                 fail("navigation-blocked");
               }
             }}
-            onLoadStart={() => {
+            onLoadStart={(event) => {
+              if (revision !== committedRevision.current) return;
               record("load-start", revision, { ready: bridge.ready });
               bridge.reset("reload");
+              if (!isAllowedApplyUrl(event.nativeEvent.url, webOrigin)) {
+                ref.current?.stopLoading();
+                fail("navigation-blocked");
+                return;
+              }
+              documentUrl.current = event.nativeEvent.url;
               setLoading(true);
             }}
             onLoadEnd={() => {
@@ -195,9 +208,18 @@ export default function ApplyContainer() {
             onMessage={(event) => {
               const { data, url } = event.nativeEvent;
               if (revision !== committedRevision.current) return;
-              const decision = bridge.receive(data, url);
+              const source = applyMessageUrl(
+                url,
+                documentUrl.current,
+                webOrigin,
+                Platform.OS,
+              );
+              const decision = source
+                ? bridge.receive(data, source)
+                : "rejected-origin";
               if (decision === "closed") claimHost.reset();
-              if (decision === "accepted") void claimHost.receive(data, url);
+              if (decision === "accepted" && source)
+                void claimHost.receive(data, source);
               if (__DEV__) {
                 const parsed = parseBridgeMessage(data);
                 if (

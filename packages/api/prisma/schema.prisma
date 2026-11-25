@@ -77,7 +77,31 @@ model Claim {
   usedOn String
   submittedAt DateTime @default(now())
   rejectionReason String?
+  attachmentId String? @unique
+  attachment Attachment? @relation(fields: [attachmentId], references: [id], onDelete: Restrict)
 
   @@index([userId, companyId, usedOn, submittedAt, id])
   @@unique([userId, requestId])
+}
+
+
+enum AttachmentState {
+  PENDING
+  READY
+  LINKED
+  DELETING
+}
+
+model Attachment {
+  id String @id
+  userId String
+  companyId String
+  mimeType String
+  byteSize Int
+  state AttachmentState @default(PENDING)
+  createdAt DateTime @default(now())
+  claim Claim?
+
+  @@index([state, createdAt])
+  @@index([userId, companyId])
 }

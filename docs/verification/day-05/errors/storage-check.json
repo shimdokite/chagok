@@ -1,0 +1,22 @@
+{
+  "queryWindow": {
+    "start": "2026-11-24T05:38:00.000Z",
+    "end": "2026-11-24T05:41:00.000Z"
+  },
+  "matched": 1,
+  "claimsCreated": 0,
+  "checks": [
+    {
+      "mimeType": "image/jpeg",
+      "byteSize": 47843,
+      "state": "READY",
+      "linked": false,
+      "createdAt": "2026-11-24T05:40:41.173Z",
+      "fileMode": "0600",
+      "fixtureMatch": true,
+      "sha256": "7b0b8a3e968f30c2c871915c9c5889401ddce8f3fb5162d7010fa24258db7656"
+    }
+  ],
+  "removed": 0,
+  "note": "Read-only. Successful retry retained; five injected failures bypassed the storage service. Integration-test identities were separate."
+}

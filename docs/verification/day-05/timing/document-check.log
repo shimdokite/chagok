@@ -1,0 +1,29 @@
+2026-11-23 KST final document/preservation verification
+Baseline 746 files: 16 intended updates; 730 unchanged SHA-256; missing 0.
+next-env.d.ts and handoff.md match starting SHA-256.
+Relative document links: 141 valid, broken 0.
+git diff --check: exit0, empty
+git diff --cached --name-only: exit0, empty
+git ls-files -- docs/learning: exit0, empty
+git diff --cached --name-status -- docs/learning: exit0, empty
+git diff --name-status origin/main...HEAD -- docs/learning: exit0, empty
+Local learning file exists and remains ignored/untracked.
+Latest PR/commit required sections present; no commit, push or PR performed.
+Measured source hashes 8/8 unchanged; raw SHA-256 unchanged.
+This task changed existing files:
+apps/mobile/src/bridge/claim-host.test.ts
+apps/mobile/src/bridge/claim-host.ts
+apps/mobile/src/bridge/useClaimHost.ts
+apps/mobile/src/components/ApplyContainer.test.tsx
+apps/mobile/src/dev/BridgeDiagnostics.tsx
+apps/mobile/src/receipts/native.ts
+apps/web/src/components/apply/form-client.test.ts
+apps/web/src/components/apply/form-client.ts
+docs/changes/latest-commit.txt
+docs/changes/latest-pr.md
+docs/learning/day-05.md
+docs/metrics/daily/day-05.md
+docs/plans/day-05.md
+docs/progress.md
+docs/verification/day-05.md
+packages/contracts/src/bridge.ts

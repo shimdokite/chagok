@@ -1,0 +1,22 @@
+
+> chagok@0.1.0 pretest
+> npm run style:check
+
+
+> chagok@0.1.0 style:check
+> node scripts/check-function-spacing.mjs
+
+코드 간격: 127개 파일 검사, 위반 0건
+
+> chagok@0.1.0 test
+> vitest run apps/mobile/src/bridge/claim-host.test.ts apps/web/src/components/apply/form-client.test.ts apps/mobile/src/receipts/upload.test.ts apps/mobile/src/receipts/native.test.ts apps/mobile/src/receipts/metrics.test.ts apps/mobile/src/receipts/metrics-native.test.ts apps/mobile/src/components/ApplyContainer.test.tsx --maxWorkers=2
+
+
+ RUN  v5.1.0 /Users/doyeon/Desktop/chagok
+
+
+ Test Files  6 passed (6)
+      Tests  39 passed (39)
+   Start at  18:59:13
+   Duration  380ms (import 55%, tests 30%, transform 10%, worker 5%)
+

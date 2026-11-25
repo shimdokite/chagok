@@ -1,0 +1,14 @@
+
+> chagok@0.1.0 pretest
+> npm run style:check
+
+
+> chagok@0.1.0 style:check
+> node scripts/check-function-spacing.mjs
+
+apps/mobile/src/bridge/claim-host.ts:160: 함수 선언 앞·뒤에 빈 줄 한 줄이 필요합니다.
+apps/mobile/src/receipts/native.test.ts:21: 함수 선언 앞·뒤에 빈 줄 한 줄이 필요합니다.
+apps/mobile/src/receipts/native.ts:21: 함수 선언 앞·뒤에 빈 줄 한 줄이 필요합니다.
+apps/mobile/src/receipts/native.ts:41: 함수 선언 앞·뒤에 빈 줄 한 줄이 필요합니다.
+apps/mobile/src/receipts/native.ts:58: 함수 선언 앞·뒤에 빈 줄 한 줄이 필요합니다.
+코드 간격: 126개 파일 검사, 위반 5건

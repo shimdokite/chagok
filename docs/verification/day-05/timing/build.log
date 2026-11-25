@@ -1,0 +1,32 @@
+
+> @chagok/web@0.1.0 build
+> next build --webpack
+
+▲ Next.js 16.4.6 (webpack)
+- Environments: .env.local
+✓ Running next.config.ts took 76ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 3.5s
+  Running TypeScript ...
+  Finished TypeScript in 25.3s ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/4) ...
+  Generating static pages using 7 workers (1/4) 
+  Generating static pages using 7 workers (2/4) 
+  Generating static pages using 7 workers (3/4) 
+✓ Generating static pages using 7 workers (4/4) in 7.6s
+  Finalizing page optimization ...
+  Collecting build traces ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ƒ /api/receipts
+├ ƒ /api/trpc/[trpc]
+└ ƒ /apply
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+

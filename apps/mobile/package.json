@@ -8,6 +8,8 @@
     "web": "expo start --web --port 8081",
     "ios": "expo run:ios",
     "android": "expo run:android",
+    "prebuild:android:local": "npm --prefix ../.. run postinstall && CHAGOK_ANDROID_LOCAL=1 EXPO_PUBLIC_WEB_ORIGIN=http://10.0.2.2:3000 expo prebuild --platform android --no-install",
+    "android:local": "npm run prebuild:android:local && CHAGOK_ANDROID_LOCAL=1 EXPO_PUBLIC_WEB_ORIGIN=http://10.0.2.2:3000 expo run:android --variant release --no-bundler",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
@@ -19,6 +21,8 @@
     "expo": "58.0.25",
     "expo-constants": "~58.0.16",
     "expo-dev-client": "~58.0.20",
+    "expo-file-system": "~58.0.13",
+    "expo-image-picker": "~58.0.10",
     "expo-linking": "~58.0.17",
     "expo-router": "~58.0.31",
     "expo-secure-store": "~58.0.3",

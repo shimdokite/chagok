@@ -6,6 +6,8 @@ import { useSession } from "../auth/SessionProvider";
 import { benefitsClient } from "../benefits/api";
 import { requireCompanyScope, sessionScope } from "../benefits/cache";
 import { webOrigin } from "../lib/trpc";
+import { startReceiptMeasurement } from "../receipts/metrics-native";
+import { pickAndUploadReceipt } from "../receipts/native";
 import { claimAccess, ClaimHost } from "./claim-host";
 
 export function useClaimHost(webview: React.RefObject<WebView<object> | null>) {
@@ -54,6 +56,21 @@ export function useClaimHost(webview: React.RefObject<WebView<object> | null>) {
             });
           } catch (error) {
             const code = (error as { data?: { code?: string } })?.data?.code;
+            if (code === "UNAUTHORIZED" || code === "FORBIDDEN")
+              void controller.restore("retry");
+            throw error;
+          }
+        },
+
+        measureReceipt: startReceiptMeasurement,
+
+        async pickReceipt(source, signal, trace) {
+          const companyId = controller.snapshot().session?.user.companyId;
+          if (!companyId) throw { code: "FORBIDDEN" };
+          try {
+            return await pickAndUploadReceipt(source, companyId, signal, trace);
+          } catch (error) {
+            const code = (error as { code?: string })?.code;
             if (code === "UNAUTHORIZED" || code === "FORBIDDEN")
               void controller.restore("retry");
             throw error;

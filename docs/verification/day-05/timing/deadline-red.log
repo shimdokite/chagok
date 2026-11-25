@@ -1,0 +1,40 @@
+
+ RUN  v5.1.0 /Users/doyeon/Desktop/chagok
+
+ ❯ apps/mobile/src/receipts/metrics.test.ts (4 tests | 1 failed) 21ms
+   × rejects an ACK at or past the deadline even when its timeout callback is delayed 9ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/mobile/src/receipts/metrics.test.ts > rejects an ACK at or past the deadline even when its timeout callback is delayed
+AssertionError: expected [ { source: 'library', …(3) } ] to deeply equal [ { source: 'library', …(2) } ]
+
+- Expected
++ Received
+
+  [
+    {
+-     "delivery": "timeout",
++     "bridgeAckMs": 3000,
++     "delivery": "acked",
+      "outcome": "uploaded",
+      "source": "library",
+    },
+  ]
+
+ ❯ apps/mobile/src/receipts/metrics.test.ts:99:38
+     97|   now = 3000;
+     98|   trace.ack();
+     99|   expect(journal.snapshot().samples).toEqual([{ source: "library", out…
+       |                                      ^
+    100| });
+    101|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 3 passed (4)
+   Start at  18:29:25
+   Duration  281ms (transform 52%, tests 23%, import 18%, worker 6%)
+

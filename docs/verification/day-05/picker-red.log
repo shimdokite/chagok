@@ -1,0 +1,37 @@
+
+> chagok@0.1.0 pretest
+> npm run style:check
+
+
+> chagok@0.1.0 style:check
+> node scripts/check-function-spacing.mjs
+
+코드 간격: 114개 파일 검사, 위반 0건
+
+> chagok@0.1.0 test
+> vitest run apps/mobile/src/receipts/picker.test.ts
+
+
+ RUN  v5.1.0 /Users/doyeon/Desktop/chagok
+
+ ❯ apps/mobile/src/receipts/picker.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/mobile/src/receipts/picker.test.ts [ apps/mobile/src/receipts/picker.test.ts ]
+Error: Cannot find module './picker' imported from /Users/doyeon/Desktop/chagok/apps/mobile/src/receipts/picker.test.ts
+ ❯ apps/mobile/src/receipts/picker.test.ts:2:1
+      1| import { expect, it, vi } from "vitest";
+      2| import { selectReceipt } from "./picker";
+       | ^
+      3| import { uploadReceipt } from "./upload";
+      4|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  16:22:15
+   Duration  100ms (worker 97%, environment 3%)
+

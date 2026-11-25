@@ -15,3 +15,6 @@ snapshots/
 
 # Personal learning notes stay local. Tracked files are removed in the day-02 PR.
 /docs/learning/
+
+# Private local receipt files, never versioned.
+.local-data/

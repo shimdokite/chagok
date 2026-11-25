@@ -1,0 +1,247 @@
+{
+  "runId": "day-05-1795159594831",
+  "samples": [
+    {
+      "fixtureId": "synthetic-jpeg",
+      "index": 0,
+      "warmup": true,
+      "startMs": 692.518417,
+      "endMs": 1208.53625,
+      "status": "failure",
+      "httpStatus": 500,
+      "error": "AssertionError",
+      "elapsedMs": 516.0178330000001
+    },
+    {
+      "fixtureId": "synthetic-jpeg",
+      "index": 1,
+      "warmup": false,
+      "startMs": 1209.711375,
+      "endMs": 1237.757458,
+      "status": "failure",
+      "httpStatus": 500,
+      "error": "AssertionError",
+      "elapsedMs": 28.046082999999953
+    },
+    {
+      "fixtureId": "synthetic-jpeg",
+      "index": 2,
+      "warmup": false,
+      "startMs": 1238.0995,
+      "endMs": 1284.601917,
+      "status": "failure",
+      "httpStatus": 500,
+      "error": "AssertionError",
+      "elapsedMs": 46.50241699999992
+    },
+    {
+      "fixtureId": "synthetic-jpeg",
+      "index": 3,
+      "warmup": false,
+      "startMs": 1284.794208,
+      "endMs": 1313.965625,
+      "status": "failure",
+      "httpStatus": 500,
+      "error": "AssertionError",
+      "elapsedMs": 29.17141700000002
+    },
+    {
+      "fixtureId": "synthetic-jpeg",
+      "index": 4,
+      "warmup": false,
+      "startMs": 1314.250667,
+      "endMs": 1344.147375,
+      "status": "failure",
+      "httpStatus": 500,
+      "error": "AssertionError",
+      "elapsedMs": 29.89670799999999
+    },
+    {
+      "fixtureId": "synthetic-jpeg",
+      "index": 5,
+      "warmup": false,
+      "startMs": 1344.288583,
+      "endMs": 1368.584667,
+      "status": "failure",
+      "httpStatus": 500,
+      "error": "AssertionError",
+      "elapsedMs": 24.296084000000064
+    },
+    {
+      "fixtureId": "synthetic-jpeg",
+      "index": 6,
+      "warmup": false,
+      "startMs": 1368.730792,
+      "endMs": 1392.8505,
+      "status": "failure",
+      "httpStatus": 500,
+      "error": "AssertionError",
+      "elapsedMs": 24.119707999999946
+    },
+    {
+      "fixtureId": "synthetic-jpeg",
+      "index": 7,
+      "warmup": false,
+      "startMs": 1392.957375,
+      "endMs": 1416.654417,
+      "status": "failure",
+      "httpStatus": 500,
+      "error": "AssertionError",
+      "elapsedMs": 23.69704200000001
+    },
+    {
+      "fixtureId": "synthetic-jpeg",
+      "index": 8,
+      "warmup": false,
+      "startMs": 1416.923125,
+      "endMs": 1464.207125,
+      "status": "failure",
+      "httpStatus": 500,
+      "error": "AssertionError",
+      "elapsedMs": 47.28399999999988
+    },
+    {
+      "fixtureId": "synthetic-jpeg",
+      "index": 9,
+      "warmup": false,
+      "startMs": 1464.416208,
+      "endMs": 1514.181667,
+      "status": "failure",
+      "httpStatus": 500,
+      "error": "AssertionError",
+      "elapsedMs": 49.765458999999964
+    },
+    {
+      "fixtureId": "synthetic-jpeg",
+      "index": 10,
+      "warmup": false,
+      "startMs": 1514.388708,
+      "endMs": 1538.287125,
+      "status": "failure",
+      "httpStatus": 500,
+      "error": "AssertionError",
+      "elapsedMs": 23.89841700000011
+    },
+    {
+      "fixtureId": "synthetic-png",
+      "index": 0,
+      "warmup": true,
+      "startMs": 1688.882458,
+      "endMs": 1708.917083,
+      "status": "failure",
+      "httpStatus": 500,
+      "error": "AssertionError",
+      "elapsedMs": 20.034625000000005
+    },
+    {
+      "fixtureId": "synthetic-png",
+      "index": 1,
+      "warmup": false,
+      "startMs": 1709.106708,
+      "endMs": 1735.376125,
+      "status": "failure",
+      "httpStatus": 500,
+      "error": "AssertionError",
+      "elapsedMs": 26.269416999999976
+    },
+    {
+      "fixtureId": "synthetic-png",
+      "index": 2,
+      "warmup": false,
+      "startMs": 1735.566292,
+      "endMs": 1748.552875,
+      "status": "failure",
+      "httpStatus": 500,
+      "error": "AssertionError",
+      "elapsedMs": 12.98658300000011
+    },
+    {
+      "fixtureId": "synthetic-png",
+      "index": 3,
+      "warmup": false,
+      "startMs": 1748.708125,
+      "endMs": 1761.330292,
+      "status": "failure",
+      "httpStatus": 500,
+      "error": "AssertionError",
+      "elapsedMs": 12.62216699999999
+    },
+    {
+      "fixtureId": "synthetic-png",
+      "index": 4,
+      "warmup": false,
+      "startMs": 1761.525958,
+      "endMs": 1774.761208,
+      "status": "failure",
+      "httpStatus": 500,
+      "error": "AssertionError",
+      "elapsedMs": 13.23524999999995
+    },
+    {
+      "fixtureId": "synthetic-png",
+      "index": 5,
+      "warmup": false,
+      "startMs": 1774.911708,
+      "endMs": 1788.76775,
+      "status": "failure",
+      "httpStatus": 500,
+      "error": "AssertionError",
+      "elapsedMs": 13.856041999999889
+    },
+    {
+      "fixtureId": "synthetic-png",
+      "index": 6,
+      "warmup": false,
+      "startMs": 1788.879333,
+      "endMs": 1799.300125,
+      "status": "failure",
+      "httpStatus": 500,
+      "error": "AssertionError",
+      "elapsedMs": 10.420791999999892
+    },
+    {
+      "fixtureId": "synthetic-png",
+      "index": 7,
+      "warmup": false,
+      "startMs": 1799.401292,
+      "endMs": 1817.402,
+      "status": "failure",
+      "httpStatus": 500,
+      "error": "AssertionError",
+      "elapsedMs": 18.00070800000003
+    },
+    {
+      "fixtureId": "synthetic-png",
+      "index": 8,
+      "warmup": false,
+      "startMs": 1818.035917,
+      "endMs": 1843.287542,
+      "status": "failure",
+      "httpStatus": 500,
+      "error": "AssertionError",
+      "elapsedMs": 25.251625000000104
+    },
+    {
+      "fixtureId": "synthetic-png",
+      "index": 9,
+      "warmup": false,
+      "startMs": 1843.470875,
+      "endMs": 1855.685583,
+      "status": "failure",
+      "httpStatus": 500,
+      "error": "AssertionError",
+      "elapsedMs": 12.214707999999973
+    },
+    {
+      "fixtureId": "synthetic-png",
+      "index": 10,
+      "warmup": false,
+      "startMs": 1855.795542,
+      "endMs": 1866.920333,
+      "status": "failure",
+      "httpStatus": 500,
+      "error": "AssertionError",
+      "elapsedMs": 11.12479099999996
+    }
+  ]
+}

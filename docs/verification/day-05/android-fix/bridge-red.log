@@ -1,0 +1,85 @@
+
+> chagok@0.1.0 pretest
+> npm run style:check
+
+
+> chagok@0.1.0 style:check
+> node scripts/check-function-spacing.mjs
+
+코드 간격: 129개 파일 검사, 위반 0건
+
+> chagok@0.1.0 test
+> vitest run apps/mobile/src/components/ApplyContainer.test.tsx
+
+
+ RUN  v5.1.0 /Users/doyeon/Desktop/chagok
+
+stdout | apps/mobile/src/components/ApplyContainer.test.tsx > Android message origins > initializes the form from an origin-only event on the loaded apply document
+[android-source-diagnostic] {"url":"http://localhost:3000","type":"WEB_READY"}
+
+stdout | apps/mobile/src/components/ApplyContainer.test.tsx > Android message origins > closes from Android origin events only while the apply document is active
+[android-source-diagnostic] {"url":"http://localhost:3000","type":"CLOSE_WEBVIEW"}
+[android-source-diagnostic] {"url":"http://localhost:3000","type":"CLOSE_WEBVIEW"}
+
+stdout | apps/mobile/src/components/ApplyContainer.test.tsx > Android message origins > rejects events from a prior WebView after retry and requires a fresh load
+[android-source-diagnostic] {"url":"http://localhost:3000","type":"CLOSE_WEBVIEW"}
+[android-source-diagnostic] {"url":"http://localhost:3000","type":"CLOSE_WEBVIEW"}
+[android-source-diagnostic] {"url":"http://localhost:3000","type":"CLOSE_WEBVIEW"}
+
+ ❯ apps/mobile/src/components/ApplyContainer.test.tsx (11 tests | 3 failed) 40ms
+   ❯ Android message origins (3)
+     × initializes the form from an origin-only event on the loaded apply document 8ms
+     × closes from Android origin events only while the apply document is active 3ms
+     × rejects events from a prior WebView after retry and requires a fresh load 2ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/mobile/src/components/ApplyContainer.test.tsx > Android message origins > initializes the form from an origin-only event on the loaded apply document
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ apps/mobile/src/components/ApplyContainer.test.tsx:309:45
+    307|     message(JSON.stringify({ ...bridgeBase, type: "WEB_READY" }), "htt…
+    308|     render();
+    309|     expect(find("Diagnostics").props.ready).toBe(true);
+       |                                             ^
+    310|     expect(injectJavaScript).toHaveBeenCalledWith(expect.stringContain…
+    311|     expect(injectJavaScript).toHaveBeenCalledWith(expect.stringContain…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  apps/mobile/src/components/ApplyContainer.test.tsx > Android message origins > closes from Android origin events only while the apply document is active
+AssertionError: expected "vi.fn()" to be called 1 times, but got 0 times
+ ❯ apps/mobile/src/components/ApplyContainer.test.tsx:322:29
+    320|     find("WebView").props.onLoadStart({ nativeEvent: { url: "http://lo…
+    321|     message(closeMessage, "http://localhost:3000");
+    322|     expect(navigation.back).toHaveBeenCalledTimes(1);
+       |                             ^
+    323|     message(closeMessage, "http://localhost:3000");
+    324|     expect(navigation.back).toHaveBeenCalledTimes(1);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  apps/mobile/src/components/ApplyContainer.test.tsx > Android message origins > rejects events from a prior WebView after retry and requires a fresh load
+AssertionError: expected "vi.fn()" to be called 1 times, but got 0 times
+ ❯ apps/mobile/src/components/ApplyContainer.test.tsx:336:29
+    334|     find("WebView").props.onLoadStart({ nativeEvent: { url: "http://lo…
+    335|     message(closeMessage, "http://localhost:3000");
+    336|     expect(navigation.back).toHaveBeenCalledTimes(1);
+       |                             ^
+    337|   });
+    338| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  3 failed | 8 passed (11)
+   Start at  14:15:26
+   Duration  616ms (import 45%, transform 45%, tests 9%, worker 1%)
+

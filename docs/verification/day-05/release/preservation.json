@@ -1,0 +1,54 @@
+{
+  "date": "2026-11-24 KST",
+  "from": "2026-11-24T06:17:00.840Z",
+  "checkedAt": "2026-11-24T06:26:29.375Z",
+  "readOnly": true,
+  "tables": {
+    "Attachment": {
+      "beforeCount": 30,
+      "afterExistingCount": 30,
+      "sha256": "2c61e9fe8388fde20045b9b65f6fb3b009195396193b4a5c9d4c2e1ae2022140",
+      "unchanged": true
+    },
+    "Claim": {
+      "beforeCount": 10,
+      "afterExistingCount": 10,
+      "sha256": "97816178ba06108cc7925e777507a7b0137c9c6e2202ea75662c4a5b6822f600",
+      "unchanged": true
+    },
+    "Membership": {
+      "beforeCount": 3,
+      "afterExistingCount": 3,
+      "sha256": "94d622c34f0c608efb9e6817f10ad749276f99ff3debff9bcd3b3c1c735b6cdd",
+      "unchanged": true
+    },
+    "Session": {
+      "beforeCount": 3,
+      "afterExistingCount": 3,
+      "sha256": "fd127b1b17df9448bbfad7e579b2b12524e90ffd53375b62bca7aac879b70901",
+      "unchanged": true
+    }
+  },
+  "existingFileCount": 30,
+  "afterFileCount": 31,
+  "oldFilesPreserved": true,
+  "newAttachments": [
+    {
+      "mimeType": "image/png",
+      "byteSize": 44888,
+      "state": "READY",
+      "createdAt": "2026-11-24T06:23:27.113Z"
+    }
+  ],
+  "newFiles": [
+    {
+      "sha256": "0b5c08fd19f943309c45b58d5f8d710d546bbef7ee20235a8c59f76ca0a67a31",
+      "mode": "600",
+      "bytes": 44888,
+      "fixtureMatches": true
+    }
+  ],
+  "journalsUnchanged": true,
+  "journalCount": 1,
+  "timestampNote": "Prisma timestamp without time zone columns are UTC; new attachment timestamp rendered using AT TIME ZONE UTC to avoid pg host-local Date parsing."
+}

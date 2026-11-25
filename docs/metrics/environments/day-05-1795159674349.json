@@ -1,0 +1,50 @@
+{
+  "runId": "day-05-1795159674349",
+  "os": "darwin",
+  "release": "27.2.0",
+  "arch": "arm64",
+  "node": "v24.22.3",
+  "sharp": "0.35.5",
+  "transport": "loopback HTTP, Next development, raw body, local private filesystem",
+  "clock": "Node performance.now",
+  "boundary": "fetch start to parsed upload response; local byte verification excluded",
+  "nativePickerSamples": 0,
+  "cameraSamples": 0,
+  "bridgeAckSamples": 0,
+  "warmupPerFixture": 1,
+  "measuredPerFixture": 10,
+  "fixtures": [
+    {
+      "fixtureId": "synthetic-jpeg",
+      "mimeType": "image/jpeg",
+      "originalBytes": 47843,
+      "transmittedBytes": 47843,
+      "sha256": "7b0b8a3e968f30c2c871915c9c5889401ddce8f3fb5162d7010fa24258db7656",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "fixtureId": "synthetic-png",
+      "mimeType": "image/png",
+      "originalBytes": 44888,
+      "transmittedBytes": 44888,
+      "sha256": "0b5c08fd19f943309c45b58d5f8d710d546bbef7ee20235a8c59f76ca0a67a31",
+      "width": 1200,
+      "height": 1600
+    }
+  ],
+  "cleanup": {
+    "deleted": 22,
+    "failed": 0
+  },
+  "sourceHashesRecordedAt": "2026-11-20 KST after successful second HTTP run",
+  "sourceSha256": {
+    "packages/api/src/receipts/image.ts": "4505d4c98b8a94178a11709bfe80271545bdb833313b99d25e1dd7d5583a7e4a",
+    "packages/api/src/receipts/body.ts": "7bd265cc5aaf024620913bcb79ee8925740bf412e4ae2349915312424151ad34",
+    "packages/api/src/receipts/storage.ts": "7973c29d39f122b9ccac6d99d8e01ce0b15dd024a8975830e290713b5a9024cd",
+    "packages/api/src/receipts/service.ts": "21829aa10ca3d8167043f032fc58e6c7c12dd7e0cbb7b6d652183920bcbd20fb",
+    "packages/api/src/receipts/http.ts": "68748822552f7b171ddfaf99026fb0faf5aa80e77913cf7fc7e77ee06f0825df",
+    "apps/web/src/app/api/receipts/route.ts": "93c73e1db82263a24775116605ea1628999d2002302cfa5bf630f444209cf049",
+    "packages/api/scripts/measure-receipts.mjs": "363cbcc06b361996a33850c232b7b54c39c1eecf5200bec1816b7f2f1f9f61cd"
+  }
+}

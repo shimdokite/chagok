@@ -1,0 +1,38 @@
+{
+  "dateKST": "2026-11-23",
+  "runId": "day-05-1795418954266",
+  "head": "760d43d93c3088d1482cf3ae0e4092f07639b044",
+  "workingTreeDirty": true,
+  "clock": "Node performance.now",
+  "bundler": "Next dev Turbopack",
+  "stats": {
+    "jpeg": {
+      "n": 10,
+      "minMs": 13.727999999999952,
+      "medianMs": 16.398521000000073,
+      "maxMs": 18.327792000000045
+    },
+    "png": {
+      "n": 10,
+      "minMs": 12.332875000000058,
+      "medianMs": 13.599353999999948,
+      "maxMs": 32.276457999999934
+    }
+  },
+  "sourceSha256": {
+    "package-lock.json": "edc070c2f98e4712b9b565bdd2589f5abbe8cb9dd1a06050ed88eb1e82bf7db2",
+    "packages/api/scripts/measure-receipts.mjs": "363cbcc06b361996a33850c232b7b54c39c1eecf5200bec1816b7f2f1f9f61cd",
+    "packages/api/src/receipts/storage.ts": "7973c29d39f122b9ccac6d99d8e01ce0b15dd024a8975830e290713b5a9024cd",
+    "packages/api/src/receipts/service.ts": "21829aa10ca3d8167043f032fc58e6c7c12dd7e0cbb7b6d652183920bcbd20fb",
+    "packages/api/src/receipts/http.ts": "68748822552f7b171ddfaf99026fb0faf5aa80e77913cf7fc7e77ee06f0825df",
+    "packages/api/src/receipts/image.ts": "a7c74ff42765753da7d5e1e74c7dc4ad7a2e81de2d548414af82d5b0b6bdd05e",
+    "apps/mobile/src/receipts/native.ts": "852241bf301d87c67b37d0bc5f483bb2661b5a533c87c638dbe6eb4979ab3a25",
+    "apps/mobile/src/bridge/claim-host.ts": "5a8f2d4ec9eed68320298b3dcea1edc24b67b137f6b652ab1ae87aad5a70f62e",
+    "apps/web/src/components/apply/form-client.ts": "416570131804836a9aac6e9c8ec25ff825d70254d9d3ee093c579fa158bc0ee9"
+  },
+  "limits": [
+    "loopback development HTTP only",
+    "picker/prepare/bridge ACK/camera samples remain zero",
+    "no claim or UI reflection timing"
+  ]
+}

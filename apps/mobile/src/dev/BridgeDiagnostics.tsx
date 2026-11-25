@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { receiptMeasurements } from "../receipts/metrics-native";
 import type { WebViewTrace } from "./webview-trace";
 
 type TraceSnapshot = ReturnType<WebViewTrace["snapshot"]>;
@@ -27,6 +28,9 @@ export function BridgeDiagnostics({
   const [traceSnapshot, setTraceSnapshot] = useState<TraceSnapshot | null>(
     null,
   );
+  const [receipts, setReceipts] = useState<ReturnType<
+    typeof receiptMeasurements
+  > | null>(null);
   const [open, setOpen] = useState(false);
   const [exportError, setExportError] = useState("");
   const c = useTheme();
@@ -135,6 +139,34 @@ export function BridgeDiagnostics({
                   ))}
                 </View>
               ) : null}
+            </>
+          ) : null}
+          <Button
+            title="영수증 구간 측정 기록"
+            secondary
+            onPress={() => setReceipts(receiptMeasurements())}
+          />
+          {receipts ? (
+            <>
+              <Text style={{ color: c.secondary, fontSize: 11 }}>
+                {receipts.runId} · {receipts.samples.length}건 · 대기{" "}
+                {receipts.pending} · 초과 {receipts.dropped} · 저장 실패{" "}
+                {String(receipts.saveFailed)}
+              </Text>
+              <Text style={{ color: c.secondary, fontSize: 11 }}>
+                {JSON.stringify(receipts.samples.slice(-3))}
+              </Text>
+              <Button
+                title="영수증 측정 JSON 공유"
+                secondary
+                onPress={() => {
+                  void Share.share({
+                    message: JSON.stringify(receipts, null, 2),
+                  }).catch(() =>
+                    setExportError("공유하지 못했어요. 다시 시도하세요."),
+                  );
+                }}
+              />
             </>
           ) : null}
           {exportError ? (

@@ -1,0 +1,6 @@
+--------- beginning of main
+11-25 14:47:24.260 18595 18614 I ReactNativeJS: Running "main"
+11-25 14:47:56.185 18595 18699 E chromium: [1125/144756.185297:ERROR:variations_seed_loader.cc(39)] Seed missing signature.
+11-25 14:49:38.020 18595 18595 E chromium: [ERROR:aw_browser_terminator.cc(165)] Renderer process (18711) crash detected (code -1).
+11-25 14:50:11.835 18595 18595 E chromium: [ERROR:aw_browser_terminator.cc(165)] Renderer process (18903) crash detected (code -1).
+11-25 14:50:31.387 18595 18595 E chromium: [ERROR:aw_browser_terminator.cc(165)] Renderer process (18982) crash detected (code -1).

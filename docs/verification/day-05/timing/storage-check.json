@@ -1,0 +1,258 @@
+{
+  "runId": "receipt-ui-1795426328923",
+  "queryWindow": {
+    "start": "2026-11-23T09:32:08.923Z",
+    "end": "2026-11-23T09:43:00.000Z"
+  },
+  "matched": 22,
+  "fixtureMatch": 22,
+  "ready": 22,
+  "linked": 0,
+  "claimsCreated": 0,
+  "removed": 0,
+  "note": "Read-only; synthetic uploads retained under existing 24-hour unlinked cleanup policy. Prior user data untouched.",
+  "checks": [
+    {
+      "sample": 1,
+      "mimeType": "image/png",
+      "byteSize": 44888,
+      "createdAt": "2026-11-23T09:34:16.421Z",
+      "state": "READY",
+      "linked": false,
+      "fileMode": "0600",
+      "fixtureMatch": true,
+      "sha256": "0b5c08fd19f943309c45b58d5f8d710d546bbef7ee20235a8c59f76ca0a67a31"
+    },
+    {
+      "sample": 2,
+      "mimeType": "image/jpeg",
+      "byteSize": 47843,
+      "createdAt": "2026-11-23T09:34:42.101Z",
+      "state": "READY",
+      "linked": false,
+      "fileMode": "0600",
+      "fixtureMatch": true,
+      "sha256": "7b0b8a3e968f30c2c871915c9c5889401ddce8f3fb5162d7010fa24258db7656"
+    },
+    {
+      "sample": 3,
+      "mimeType": "image/png",
+      "byteSize": 44888,
+      "createdAt": "2026-11-23T09:35:05.393Z",
+      "state": "READY",
+      "linked": false,
+      "fileMode": "0600",
+      "fixtureMatch": true,
+      "sha256": "0b5c08fd19f943309c45b58d5f8d710d546bbef7ee20235a8c59f76ca0a67a31"
+    },
+    {
+      "sample": 4,
+      "mimeType": "image/jpeg",
+      "byteSize": 47843,
+      "createdAt": "2026-11-23T09:35:30.657Z",
+      "state": "READY",
+      "linked": false,
+      "fileMode": "0600",
+      "fixtureMatch": true,
+      "sha256": "7b0b8a3e968f30c2c871915c9c5889401ddce8f3fb5162d7010fa24258db7656"
+    },
+    {
+      "sample": 5,
+      "mimeType": "image/png",
+      "byteSize": 44888,
+      "createdAt": "2026-11-23T09:36:06.333Z",
+      "state": "READY",
+      "linked": false,
+      "fileMode": "0600",
+      "fixtureMatch": true,
+      "sha256": "0b5c08fd19f943309c45b58d5f8d710d546bbef7ee20235a8c59f76ca0a67a31"
+    },
+    {
+      "sample": 6,
+      "mimeType": "image/jpeg",
+      "byteSize": 47843,
+      "createdAt": "2026-11-23T09:36:36.228Z",
+      "state": "READY",
+      "linked": false,
+      "fileMode": "0600",
+      "fixtureMatch": true,
+      "sha256": "7b0b8a3e968f30c2c871915c9c5889401ddce8f3fb5162d7010fa24258db7656"
+    },
+    {
+      "sample": 7,
+      "mimeType": "image/png",
+      "byteSize": 44888,
+      "createdAt": "2026-11-23T09:37:05.568Z",
+      "state": "READY",
+      "linked": false,
+      "fileMode": "0600",
+      "fixtureMatch": true,
+      "sha256": "0b5c08fd19f943309c45b58d5f8d710d546bbef7ee20235a8c59f76ca0a67a31"
+    },
+    {
+      "sample": 8,
+      "mimeType": "image/jpeg",
+      "byteSize": 47843,
+      "createdAt": "2026-11-23T09:37:15.653Z",
+      "state": "READY",
+      "linked": false,
+      "fileMode": "0600",
+      "fixtureMatch": true,
+      "sha256": "7b0b8a3e968f30c2c871915c9c5889401ddce8f3fb5162d7010fa24258db7656"
+    },
+    {
+      "sample": 9,
+      "mimeType": "image/png",
+      "byteSize": 44888,
+      "createdAt": "2026-11-23T09:37:29.940Z",
+      "state": "READY",
+      "linked": false,
+      "fileMode": "0600",
+      "fixtureMatch": true,
+      "sha256": "0b5c08fd19f943309c45b58d5f8d710d546bbef7ee20235a8c59f76ca0a67a31"
+    },
+    {
+      "sample": 10,
+      "mimeType": "image/jpeg",
+      "byteSize": 47843,
+      "createdAt": "2026-11-23T09:37:40.396Z",
+      "state": "READY",
+      "linked": false,
+      "fileMode": "0600",
+      "fixtureMatch": true,
+      "sha256": "7b0b8a3e968f30c2c871915c9c5889401ddce8f3fb5162d7010fa24258db7656"
+    },
+    {
+      "sample": 11,
+      "mimeType": "image/png",
+      "byteSize": 44888,
+      "createdAt": "2026-11-23T09:37:52.302Z",
+      "state": "READY",
+      "linked": false,
+      "fileMode": "0600",
+      "fixtureMatch": true,
+      "sha256": "0b5c08fd19f943309c45b58d5f8d710d546bbef7ee20235a8c59f76ca0a67a31"
+    },
+    {
+      "sample": 12,
+      "mimeType": "image/jpeg",
+      "byteSize": 47843,
+      "createdAt": "2026-11-23T09:38:04.462Z",
+      "state": "READY",
+      "linked": false,
+      "fileMode": "0600",
+      "fixtureMatch": true,
+      "sha256": "7b0b8a3e968f30c2c871915c9c5889401ddce8f3fb5162d7010fa24258db7656"
+    },
+    {
+      "sample": 13,
+      "mimeType": "image/png",
+      "byteSize": 44888,
+      "createdAt": "2026-11-23T09:38:22.237Z",
+      "state": "READY",
+      "linked": false,
+      "fileMode": "0600",
+      "fixtureMatch": true,
+      "sha256": "0b5c08fd19f943309c45b58d5f8d710d546bbef7ee20235a8c59f76ca0a67a31"
+    },
+    {
+      "sample": 14,
+      "mimeType": "image/jpeg",
+      "byteSize": 47843,
+      "createdAt": "2026-11-23T09:40:22.136Z",
+      "state": "READY",
+      "linked": false,
+      "fileMode": "0600",
+      "fixtureMatch": true,
+      "sha256": "7b0b8a3e968f30c2c871915c9c5889401ddce8f3fb5162d7010fa24258db7656"
+    },
+    {
+      "sample": 15,
+      "mimeType": "image/png",
+      "byteSize": 44888,
+      "createdAt": "2026-11-23T09:40:38.139Z",
+      "state": "READY",
+      "linked": false,
+      "fileMode": "0600",
+      "fixtureMatch": true,
+      "sha256": "0b5c08fd19f943309c45b58d5f8d710d546bbef7ee20235a8c59f76ca0a67a31"
+    },
+    {
+      "sample": 16,
+      "mimeType": "image/jpeg",
+      "byteSize": 47843,
+      "createdAt": "2026-11-23T09:40:47.824Z",
+      "state": "READY",
+      "linked": false,
+      "fileMode": "0600",
+      "fixtureMatch": true,
+      "sha256": "7b0b8a3e968f30c2c871915c9c5889401ddce8f3fb5162d7010fa24258db7656"
+    },
+    {
+      "sample": 17,
+      "mimeType": "image/png",
+      "byteSize": 44888,
+      "createdAt": "2026-11-23T09:40:56.090Z",
+      "state": "READY",
+      "linked": false,
+      "fileMode": "0600",
+      "fixtureMatch": true,
+      "sha256": "0b5c08fd19f943309c45b58d5f8d710d546bbef7ee20235a8c59f76ca0a67a31"
+    },
+    {
+      "sample": 18,
+      "mimeType": "image/jpeg",
+      "byteSize": 47843,
+      "createdAt": "2026-11-23T09:41:08.357Z",
+      "state": "READY",
+      "linked": false,
+      "fileMode": "0600",
+      "fixtureMatch": true,
+      "sha256": "7b0b8a3e968f30c2c871915c9c5889401ddce8f3fb5162d7010fa24258db7656"
+    },
+    {
+      "sample": 19,
+      "mimeType": "image/png",
+      "byteSize": 44888,
+      "createdAt": "2026-11-23T09:41:18.038Z",
+      "state": "READY",
+      "linked": false,
+      "fileMode": "0600",
+      "fixtureMatch": true,
+      "sha256": "0b5c08fd19f943309c45b58d5f8d710d546bbef7ee20235a8c59f76ca0a67a31"
+    },
+    {
+      "sample": 20,
+      "mimeType": "image/jpeg",
+      "byteSize": 47843,
+      "createdAt": "2026-11-23T09:41:27.989Z",
+      "state": "READY",
+      "linked": false,
+      "fileMode": "0600",
+      "fixtureMatch": true,
+      "sha256": "7b0b8a3e968f30c2c871915c9c5889401ddce8f3fb5162d7010fa24258db7656"
+    },
+    {
+      "sample": 21,
+      "mimeType": "image/png",
+      "byteSize": 44888,
+      "createdAt": "2026-11-23T09:41:36.955Z",
+      "state": "READY",
+      "linked": false,
+      "fileMode": "0600",
+      "fixtureMatch": true,
+      "sha256": "0b5c08fd19f943309c45b58d5f8d710d546bbef7ee20235a8c59f76ca0a67a31"
+    },
+    {
+      "sample": 22,
+      "mimeType": "image/jpeg",
+      "byteSize": 47843,
+      "createdAt": "2026-11-23T09:41:46.497Z",
+      "state": "READY",
+      "linked": false,
+      "fileMode": "0600",
+      "fixtureMatch": true,
+      "sha256": "7b0b8a3e968f30c2c871915c9c5889401ddce8f3fb5162d7010fa24258db7656"
+    }
+  ]
+}

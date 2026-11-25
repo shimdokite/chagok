@@ -69,6 +69,7 @@ export const createClaimInput = z
   .object({
     requestId: z.uuid().toLowerCase(),
     expectedCompanyId: z.string().min(1).max(100).optional(),
+    attachmentId: z.uuid().optional(),
     title: claimText.max(100),
     category: claimText.max(50),
     amount: z.number().int().min(1).max(2147483647),

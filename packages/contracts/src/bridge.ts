@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { receiptResultSchema, receiptErrorSchema } from "./receipts";
 import { createClaimInput, monthSchema } from "./benefits";
 
 const base = {
@@ -31,6 +32,29 @@ export const formErrorCode = z.enum([
 ]);
 const correlated = { ...base, connectionId: requestId, requestId };
 export const bridgeSchema = z.discriminatedUnion("type", [
+  z
+    .object({
+      ...correlated,
+      type: z.literal("RECEIPT_PICK"),
+      payload: z.object({ source: z.enum(["camera", "library"]) }).strict(),
+    })
+    .strict(),
+  z.object({ ...correlated, type: z.literal("RECEIPT_CANCEL") }).strict(),
+  z.object({ ...correlated, type: z.literal("RECEIPT_ACK") }).strict(),
+  z
+    .object({
+      ...correlated,
+      type: z.literal("RECEIPT_RESULT"),
+      payload: receiptResultSchema,
+    })
+    .strict(),
+  z
+    .object({
+      ...correlated,
+      type: z.literal("RECEIPT_ERROR"),
+      payload: z.object({ code: receiptErrorSchema }).strict(),
+    })
+    .strict(),
   z
     .object({
       ...base,

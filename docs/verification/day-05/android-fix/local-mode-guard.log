@@ -1,0 +1,16 @@
+env: load .env.local
+env: export EXPO_PUBLIC_BENCHMARK_APP_BUILD EXPO_PUBLIC_BENCHMARK_DEVICE EXPO_PUBLIC_BENCHMARK_SOURCE_REF EXPO_PUBLIC_BENCHMARK_WEB_MODE EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID EXPO_PUBLIC_VISUAL_CHECKS
+Error: Error reading Expo config at /Users/doyeon/Desktop/chagok/apps/mobile/app.config.ts:
+
+Android local mode requires EXPO_PUBLIC_WEB_ORIGIN=http://10.0.2.2:3000
+Error: Android local mode requires EXPO_PUBLIC_WEB_ORIGIN=http://10.0.2.2:3000
+    at Object.<anonymous> (/Users/doyeon/Desktop/chagok/apps/mobile/app.config.js:6:11)
+    at Module._compile (node:internal/modules/cjs/loader:1929:14)
+    at compileModule (/Users/doyeon/Desktop/chagok/node_modules/@expo/require-utils/build/load.js:265:13)
+    at evalModule (/Users/doyeon/Desktop/chagok/node_modules/@expo/require-utils/build/load.js:370:21)
+    at loadModuleSync (/Users/doyeon/Desktop/chagok/node_modules/@expo/require-utils/build/load.js:430:12)
+    at evalConfig (/Users/doyeon/Desktop/chagok/node_modules/@expo/config/build/evalConfig.js:34:52)
+    at readConfigFile (/Users/doyeon/Desktop/chagok/node_modules/@expo/config/build/getConfig.js:52:43)
+    at getDynamicConfig (/Users/doyeon/Desktop/chagok/node_modules/@expo/config/build/getConfig.js:61:20)
+    at getConfig (/Users/doyeon/Desktop/chagok/node_modules/@expo/config/build/Config.js:259:125)
+    at configAsync (/Users/doyeon/Desktop/chagok/node_modules/@expo/cli/build/src/config/configAsync.js:156:60)
