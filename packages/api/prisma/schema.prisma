@@ -96,6 +96,7 @@ model Attachment {
   id String @id
   userId String
   companyId String
+  storageLocation String @default("local")
   mimeType String
   byteSize Int
   state AttachmentState @default(PENDING)

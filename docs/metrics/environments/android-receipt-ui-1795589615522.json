@@ -1,0 +1,16 @@
+{
+  "runId": "receipt-ui-1795589615522",
+  "dateKst": "2026-11-25",
+  "sourceCommit": "260821a",
+  "device": "Pixel 7 AVD, API 36, arm64-v8a",
+  "build": "Expo development client 0.1.0, Android Debug",
+  "apkSha256": "81a6d7c99fdf1440cfa1d8c80e9e6afd1ebed9b1250f2fc647d067f4db7bba8a",
+  "metro": "10.0.2.2:8082",
+  "web": "Next.js dev, 127.0.0.1:3000 in Debug via adb reverse tcp:3000 tcp:3000",
+  "storage": "local private filesystem and PostgreSQL",
+  "fixtures": {"image/png": 44888, "image/jpeg": 47843},
+  "protocol": "OS photo picker via ADB; one warmup PNG, one warmup JPEG, remove attachment, alternate PNG then JPEG ten times each, then cancel one picker. Submit a single claim with the final JPEG.",
+  "statistics": "median of 10 values per MIME and stage, excluding both warmups and the cancellation",
+  "limits": "Picker includes UIAutomator and input latency. Upload includes token lookup and response parsing. ACK ends on web state acknowledgement. Local Debug measurements only.",
+  "rawSha256": "e2a33fe72736645bdd1de9b88029085714edc8d6fd6063a15e63cdea929c3027"
+}
