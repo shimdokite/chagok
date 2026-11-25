@@ -1,0 +1,55 @@
+
+ RUN  v5.1.0 /Users/doyeon/Desktop/chagok
+
+ ❯ apps/mobile/src/receipts/metrics.test.ts (0 test)
+ ❯ apps/web/src/components/apply/form-client.test.ts (12 tests | 1 failed) 42ms
+   × ACKs only an applied receipt response, once, after updating the state 10ms
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/mobile/src/receipts/metrics.test.ts [ apps/mobile/src/receipts/metrics.test.ts ]
+Error: Cannot find module './metrics' imported from /Users/doyeon/Desktop/chagok/apps/mobile/src/receipts/metrics.test.ts
+ ❯ apps/mobile/src/receipts/metrics.test.ts:2:1
+      1| import { afterEach, expect, it, vi } from "vitest";
+      2| import { ReceiptJournal } from "./metrics";
+       | ^
+      3|
+      4| afterEach(() => vi.useRealTimers());
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/web/src/components/apply/form-client.test.ts > ACKs only an applied receipt response, once, after updating the state
+AssertionError: expected { channel: 'chagok.bridge', …(5) } to match object { channel: 'chagok.bridge', …(5) }
+
+- Expected
++ Received
+
+  {
+    "channel": "chagok.bridge",
+    "connectionId": "load",
+    "payload": {},
+    "requestId": "cd9ff467-50a2-4cec-8cfe-89a27fcfc500",
+-   "type": "RECEIPT_ACK",
++   "type": "RECEIPT_PICK",
+    "version": 1,
+  }
+
+ ❯ apps/web/src/components/apply/form-client.test.ts:253:29
+    251|   s.client.receive(response);
+    252|   expect(s.client.snapshot().receiptBusy).toBe(false);
+    253|   expect(s.messages.at(-1)).toMatchObject({ ...response, type: "RECEIP…
+       |                             ^
+    254|   s.client.receive(response);
+    255|   expect(s.messages.filter((m) => m.type === "RECEIPT_ACK")).toHaveLen…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  1 failed | 11 passed (12)
+   Start at  18:24:48
+   Duration  458ms (import 44%, transform 34%, tests 17%, worker 5%)
+

@@ -169,3 +169,133 @@ it("blocks a resumed uncertain document until history is checked", () => {
   expect(s.client.snapshot().phase).toBe("interrupted");
   expect(s.messages.filter((m) => m.type === "CLAIM_SUBMIT")).toHaveLength(1);
 });
+
+describe("receipt form lifecycle", () => {
+  const receipt = {
+    attachmentId: "123e4567-e89b-42d3-a456-426614174001",
+    mimeType: "image/png",
+    byteSize: 123,
+  };
+
+  function attach(s: ReturnType<typeof setup>) {
+    s.client.pickReceipt("library");
+    s.client.receive({
+      ...s.messages.at(-1),
+      type: "RECEIPT_RESULT",
+      payload: { kind: "uploaded", receipt },
+    });
+  }
+
+  it("blocks submission and duplicate picker while uploading, then includes the receipt", () => {
+    const s = setup();
+    s.client.pickReceipt("library");
+    s.client.pickReceipt("camera");
+    s.client.submit(draft);
+    expect(s.messages.filter((m) => m.type === "RECEIPT_PICK")).toHaveLength(1);
+    expect(s.messages.filter((m) => m.type === "CLAIM_SUBMIT")).toHaveLength(0);
+    s.client.receive({
+      ...s.messages.at(-1),
+      type: "RECEIPT_RESULT",
+      payload: { kind: "uploaded", receipt },
+    });
+    s.client.submit(draft);
+    expect(s.messages.at(-1)).toMatchObject({
+      type: "CLAIM_SUBMIT",
+      payload: { attachmentId: receipt.attachmentId },
+    });
+  });
+  it("preserves existing receipt on cancellation/failure and drops late results", () => {
+    const s = setup();
+    attach(s);
+    s.client.pickReceipt("camera");
+    const old = s.messages.at(-1);
+    s.client.cancelReceipt();
+    s.client.receive({
+      ...old,
+      type: "RECEIPT_RESULT",
+      payload: { kind: "uploaded", receipt: { ...receipt, byteSize: 999 } },
+    });
+    expect(s.client.snapshot().receipt).toEqual(receipt);
+    s.client.pickReceipt("library");
+    s.client.receive({
+      ...s.messages.at(-1),
+      type: "RECEIPT_ERROR",
+      payload: { code: "PERMISSION_SETTINGS" },
+    });
+    expect(s.client.snapshot().receipt).toEqual(receipt);
+    expect(s.client.snapshot().receiptError).toContain("설정");
+    s.client.removeReceipt();
+    expect(s.client.snapshot().receipt).toBeUndefined();
+  });
+  it("preserves the attachment across a policy reload, clears it across sessions", () => {
+    const s = setup();
+    attach(s);
+    s.client.load("2026-12");
+    expect(s.client.snapshot().receipt).toEqual(receipt);
+    s.client.receive({
+      ...bridgeBase,
+      type: "FORM_INIT",
+      connectionId: "new-session",
+      payload: { mode: "live" },
+    });
+    expect(s.client.snapshot().receipt).toBeUndefined();
+  });
+  it.each([
+    ["UNAUTHORIZED", "로그인이 만료됐어요. 다시 로그인해 주세요."],
+    ["FORBIDDEN", "소속 회사가 변경됐어요. 화면을 다시 열어 주세요."],
+    ["TOO_LARGE", "10MiB 이하 사진을 선택해 주세요."],
+    ["UPLOAD_FAILED", "업로드하지 못했어요. 사진을 다시 선택해 주세요."],
+  ])("preserves attachment, ACKs %s and clears the error on retry", (code, text) => {
+    const s = setup();
+    attach(s);
+    s.client.pickReceipt("library");
+    const request = s.messages.at(-1);
+    s.client.receive({
+      ...request,
+      type: "RECEIPT_ERROR",
+      payload: { code },
+    });
+    expect(s.client.snapshot()).toMatchObject({
+      receipt,
+      receiptBusy: false,
+      receiptError: text,
+    });
+    expect(s.messages.at(-1)).toMatchObject({
+      ...request,
+      type: "RECEIPT_ACK",
+      payload: {},
+    });
+    s.client.pickReceipt("library");
+    const retry = s.messages.at(-1);
+    expect(retry?.type).toBe("RECEIPT_PICK");
+    expect(s.client.snapshot().receiptBusy).toBe(true);
+    s.client.receive({
+      ...retry,
+      type: "RECEIPT_RESULT",
+      payload: { kind: "uploaded", receipt: { ...receipt, byteSize: 456 } },
+    });
+    expect(s.client.snapshot().receiptError).toBeUndefined();
+    expect(s.client.snapshot().receipt?.byteSize).toBe(456);
+  });
+});
+
+it("ACKs only an applied receipt response, once, after updating the state", () => {
+  const s = setup();
+  s.client.pickReceipt("library");
+  const response = {
+    ...s.messages.at(-1),
+    type: "RECEIPT_RESULT",
+    payload: { kind: "cancelled" },
+  };
+  s.client.receive({ ...response, connectionId: "stale" });
+  expect(s.messages.filter((m) => m.type === "RECEIPT_ACK")).toHaveLength(0);
+  s.client.receive(response);
+  expect(s.client.snapshot().receiptBusy).toBe(false);
+  expect(s.messages.at(-1)).toMatchObject({
+    ...response,
+    type: "RECEIPT_ACK",
+    payload: {},
+  });
+  s.client.receive(response);
+  expect(s.messages.filter((m) => m.type === "RECEIPT_ACK")).toHaveLength(1);
+});

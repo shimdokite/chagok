@@ -1,0 +1,25 @@
+{
+  "runId": "day05-native-1795160418309",
+  "environment": "iPhone 17 iOS27.2 Simulator Debug, Hermes performance.now, real File and expo/fetch, local HTTP server",
+  "boundary": "uploadReceipt start to response validation, file byte verification excluded",
+  "pickerSamples": 0,
+  "cameraSamples": 0,
+  "bridgeAckSamples": 0,
+  "fixtureSource": "day-05-1795160193571.json",
+  "node": "24.22.3",
+  "expo": "58.0.25",
+  "expoImagePicker": "58.0.10",
+  "expoFileSystem": "58.0.14",
+  "sourceSha256": {
+    "apps/mobile/src/receipts/upload.ts": "83d28e10419f7f4e785d745a692efd48f50cd9ad80e75792d7c4872ed2b51970",
+    "apps/mobile/src/receipts/native.ts": "852241bf301d87c67b37d0bc5f483bb2661b5a533c87c638dbe6eb4979ab3a25",
+    "packages/api/src/receipts/image.ts": "a7c74ff42765753da7d5e1e74c7dc4ad7a2e81de2d548414af82d5b0b6bdd05e",
+    "packages/api/src/receipts/service.ts": "21829aa10ca3d8167043f032fc58e6c7c12dd7e0cbb7b6d652183920bcbd20fb",
+    "packages/api/scripts/verify-receipt-native.mjs": "32af1a09b4e18047d25c8ae0076f6724efd095704cf89d81616c47e64e0a2401"
+  },
+  "cleanup": {
+    "deleted": 22,
+    "failed": 0
+  },
+  "originalSessionUnchanged": true
+}

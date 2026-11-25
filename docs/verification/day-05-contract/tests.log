@@ -1,0 +1,25 @@
+
+> chagok@0.1.0 pretest
+> npm run style:check
+
+
+> chagok@0.1.0 style:check
+> node scripts/check-function-spacing.mjs
+
+코드 간격: 106개 파일 검사, 위반 0건
+
+> chagok@0.1.0 test
+> vitest run
+
+
+ RUN  v5.1.0 /Users/doyeon/Desktop/chagok
+
+
+ Test Files  26 passed (26)
+      Tests  258 passed (258)
+   Start at  16:00:06
+   Duration  2.09s (tests 61%, import 28%, transform 9%, worker 2%)
+
+    Isolate  26 workers spawned · ~155ms startup each (spawn + environment, per file)
+             at least ~422ms faster with isolate: false — reuses workers across files instead of one per file
+

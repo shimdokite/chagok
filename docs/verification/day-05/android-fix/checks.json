@@ -1,0 +1,29 @@
+{
+  "baselineFiles": 800,
+  "unchangedFiles": 785,
+  "changedExistingFiles": [
+    "apps/mobile/src/components/ApplyContainer.tsx",
+    "apps/mobile/src/components/ApplyContainer.test.tsx",
+    "apps/mobile/.env.example",
+    "apps/mobile/package.json",
+    "apps/mobile/app.config.ts",
+    "apps/web/next.config.ts",
+    "package-lock.json",
+    "package.json",
+    "docs/metrics/daily/day-05.md",
+    "docs/progress.md",
+    "docs/verification/day-05.md",
+    "docs/changes/latest-pr.md",
+    "docs/changes/latest-commit.txt",
+    "docs/plans/day-05.md",
+    "docs/learning/day-05.md"
+  ],
+  "missingFiles": [],
+  "brokenLinks": [],
+  "diffCheckExit": 0,
+  "stagedDiffEmpty": true,
+  "learningTracked": [],
+  "learningLocalExists": true,
+  "temporaryWebFixtureRestored": true,
+  "temporaryNativeLogsRemoved": true
+}

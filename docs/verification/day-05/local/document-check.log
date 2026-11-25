@@ -1,0 +1,25 @@
+{
+  "baseline": 802,
+  "changed": [
+    "docs/changes/latest-commit.txt",
+    "docs/changes/latest-pr.md",
+    "docs/learning/day-05.md",
+    "docs/metrics/daily/day-05.md",
+    "docs/plans/day-05.md",
+    "docs/progress.md",
+    "docs/verification/day-05.md",
+    "scripts/cleanup-receipts.test.ts"
+  ],
+  "preserved": 794,
+  "missing": 0,
+  "relativeLinksChecked": 158,
+  "gitDiffCheck": "passed",
+  "stagedFiles": 0,
+  "learningTracked": 0,
+  "learningPrDiff": 0,
+  "learningIgnoredAndPresent": true,
+  "previousSamplesPreserved": 36,
+  "newSamples": 3,
+  "sourceConfigurationSchemaUnchanged": true,
+  "noCommitPushPr": true
+}

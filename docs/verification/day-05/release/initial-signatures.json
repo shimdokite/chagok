@@ -1,0 +1,22 @@
+[
+  {
+    "kind": "debug-backup",
+    "path": "/tmp/chagok-day05-debug-before-release.app",
+    "signing": "Executable=/private/tmp/chagok-day05-debug-before-release.app/app\nIdentifier=dev.doyeon.chagok\nFormat=app bundle with Mach-O thin (arm64)\nCodeDirectory v=20400 size=426 flags=0x2(adhoc) hashes=3+7 location=embedded\nHash type=sha256 size=32\nCandidateCDHash sha256=8f422b56142cd404599793ea2b274e840010f668\nCandidateCDHashFull sha256=8f422b56142cd404599793ea2b274e840010f6686afe699185e199ebe4521583\nHash choices=sha256\nCMSDigest=8f422b56142cd404599793ea2b274e840010f6686afe699185e199ebe4521583\nCMSDigestType=2\nCDHash=8f422b56142cd404599793ea2b274e840010f668\nSignature=adhoc\nInfo.plist entries=46\nTeamIdentifier=not set\nSealed Resources version=2 rules=10 files=218\nInternal requirements count=0 size=12\nTotal signatures=1\nChosen signature=1\n",
+    "artifacts": {
+      "app": "460e0eed4ef17322d97286b98d589f7260e4ac1b5e34f3b9a8957418b995975d",
+      "Info.plist": "a234702f95c2241e217648799b3c476d27159cc89243bc0e2fa5dac17baeaa89"
+    },
+    "jsBundleSha256": null
+  },
+  {
+    "kind": "initial-release",
+    "path": "/tmp/chagok-day05-release-linker-signed.app",
+    "signing": "Executable=/private/tmp/chagok-day05-release-linker-signed.app/app\nIdentifier=app\nFormat=app bundle with Mach-O universal (x86_64 arm64)\nCodeDirectory v=20400 size=110204 flags=0x20002(adhoc,linker-signed) hashes=3441+0 location=embedded\nHash type=sha256 size=32\nCandidateCDHash sha256=43cad349282eef3633df14409f62bee0ed310256\nCandidateCDHashFull sha256=43cad349282eef3633df14409f62bee0ed310256088087087af9b60ac6da7c7a\nHash choices=sha256\nCMSDigest=43cad349282eef3633df14409f62bee0ed310256088087087af9b60ac6da7c7a\nCMSDigestType=2\nCDHash=43cad349282eef3633df14409f62bee0ed310256\nSignature=adhoc\nInfo.plist=not bound\nTeamIdentifier=not set\nSealed Resources=none\nInternal requirements=none\n",
+    "artifacts": {
+      "app": "adf5a8aa9de9247b58a939bcf6a19344ac824e67afe31d25cebd549058667e56",
+      "Info.plist": "2a4c2350e7e805de3a8e5e0ddc6bad8268a3dd8516c38f30d4081982c0239a39"
+    },
+    "jsBundleSha256": "2eb6e226bc531631d22020cfa01bddbb6fed62dc9e20b829b0165525d68d6cf1"
+  }
+]

@@ -1,0 +1,225 @@
+{
+  "runId": "day-05-1795160193571",
+  "samples": [
+    {
+      "fixtureId": "synthetic-jpeg",
+      "index": 0,
+      "warmup": true,
+      "startMs": 1528.276125,
+      "endMs": 2176.056541,
+      "status": "success",
+      "httpStatus": 201,
+      "elapsedMs": 647.7804159999998
+    },
+    {
+      "fixtureId": "synthetic-jpeg",
+      "index": 1,
+      "warmup": false,
+      "startMs": 2177.967291,
+      "endMs": 2224.452083,
+      "status": "success",
+      "httpStatus": 201,
+      "elapsedMs": 46.4847920000002
+    },
+    {
+      "fixtureId": "synthetic-jpeg",
+      "index": 2,
+      "warmup": false,
+      "startMs": 2224.841958,
+      "endMs": 2251.996458,
+      "status": "success",
+      "httpStatus": 201,
+      "elapsedMs": 27.1545000000001
+    },
+    {
+      "fixtureId": "synthetic-jpeg",
+      "index": 3,
+      "warmup": false,
+      "startMs": 2252.426,
+      "endMs": 2278.099541,
+      "status": "success",
+      "httpStatus": 201,
+      "elapsedMs": 25.673541000000114
+    },
+    {
+      "fixtureId": "synthetic-jpeg",
+      "index": 4,
+      "warmup": false,
+      "startMs": 2278.463083,
+      "endMs": 2318.333666,
+      "status": "success",
+      "httpStatus": 201,
+      "elapsedMs": 39.8705829999999
+    },
+    {
+      "fixtureId": "synthetic-jpeg",
+      "index": 5,
+      "warmup": false,
+      "startMs": 2318.7325,
+      "endMs": 2340.101375,
+      "status": "success",
+      "httpStatus": 201,
+      "elapsedMs": 21.368875000000116
+    },
+    {
+      "fixtureId": "synthetic-jpeg",
+      "index": 6,
+      "warmup": false,
+      "startMs": 2340.424666,
+      "endMs": 2359.474291,
+      "status": "success",
+      "httpStatus": 201,
+      "elapsedMs": 19.049625000000106
+    },
+    {
+      "fixtureId": "synthetic-jpeg",
+      "index": 7,
+      "warmup": false,
+      "startMs": 2359.710083,
+      "endMs": 2378.528791,
+      "status": "success",
+      "httpStatus": 201,
+      "elapsedMs": 18.818708000000242
+    },
+    {
+      "fixtureId": "synthetic-jpeg",
+      "index": 8,
+      "warmup": false,
+      "startMs": 2378.864791,
+      "endMs": 2428.351333,
+      "status": "success",
+      "httpStatus": 201,
+      "elapsedMs": 49.4865420000001
+    },
+    {
+      "fixtureId": "synthetic-jpeg",
+      "index": 9,
+      "warmup": false,
+      "startMs": 2428.952583,
+      "endMs": 2450.816125,
+      "status": "success",
+      "httpStatus": 201,
+      "elapsedMs": 21.863542000000052
+    },
+    {
+      "fixtureId": "synthetic-jpeg",
+      "index": 10,
+      "warmup": false,
+      "startMs": 2451.149416,
+      "endMs": 2470.899291,
+      "status": "success",
+      "httpStatus": 201,
+      "elapsedMs": 19.749874999999975
+    },
+    {
+      "fixtureId": "synthetic-png",
+      "index": 0,
+      "warmup": true,
+      "startMs": 2680.65825,
+      "endMs": 2706.399708,
+      "status": "success",
+      "httpStatus": 201,
+      "elapsedMs": 25.741457999999966
+    },
+    {
+      "fixtureId": "synthetic-png",
+      "index": 1,
+      "warmup": false,
+      "startMs": 2706.778958,
+      "endMs": 2754.394166,
+      "status": "success",
+      "httpStatus": 201,
+      "elapsedMs": 47.615208000000166
+    },
+    {
+      "fixtureId": "synthetic-png",
+      "index": 2,
+      "warmup": false,
+      "startMs": 2754.77025,
+      "endMs": 2779.235416,
+      "status": "success",
+      "httpStatus": 201,
+      "elapsedMs": 24.465165999999954
+    },
+    {
+      "fixtureId": "synthetic-png",
+      "index": 3,
+      "warmup": false,
+      "startMs": 2786.151625,
+      "endMs": 2813.003041,
+      "status": "success",
+      "httpStatus": 201,
+      "elapsedMs": 26.851415999999972
+    },
+    {
+      "fixtureId": "synthetic-png",
+      "index": 4,
+      "warmup": false,
+      "startMs": 2813.502375,
+      "endMs": 2845.14125,
+      "status": "success",
+      "httpStatus": 201,
+      "elapsedMs": 31.6388750000001
+    },
+    {
+      "fixtureId": "synthetic-png",
+      "index": 5,
+      "warmup": false,
+      "startMs": 2845.697375,
+      "endMs": 2888.588791,
+      "status": "success",
+      "httpStatus": 201,
+      "elapsedMs": 42.891415999999936
+    },
+    {
+      "fixtureId": "synthetic-png",
+      "index": 6,
+      "warmup": false,
+      "startMs": 2889.124208,
+      "endMs": 2913.5205,
+      "status": "success",
+      "httpStatus": 201,
+      "elapsedMs": 24.396291999999903
+    },
+    {
+      "fixtureId": "synthetic-png",
+      "index": 7,
+      "warmup": false,
+      "startMs": 2914.120583,
+      "endMs": 2932.975083,
+      "status": "success",
+      "httpStatus": 201,
+      "elapsedMs": 18.854499999999916
+    },
+    {
+      "fixtureId": "synthetic-png",
+      "index": 8,
+      "warmup": false,
+      "startMs": 2933.224333,
+      "endMs": 2955.232791,
+      "status": "success",
+      "httpStatus": 201,
+      "elapsedMs": 22.00845799999979
+    },
+    {
+      "fixtureId": "synthetic-png",
+      "index": 9,
+      "warmup": false,
+      "startMs": 2956.92725,
+      "endMs": 2987.680833,
+      "status": "success",
+      "httpStatus": 201,
+      "elapsedMs": 30.753582999999708
+    },
+    {
+      "fixtureId": "synthetic-png",
+      "index": 10,
+      "warmup": false,
+      "startMs": 2987.9935,
+      "endMs": 3006.751791,
+      "status": "success",
+      "httpStatus": 201,
+      "elapsedMs": 18.7582910000001
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+ POST /api/receipts 201 in 103ms (next.js: 4ms, application-code: 100ms)
+ GET /api/trpc/auth.session 200 in 82ms (next.js: 9ms, application-code: 73ms)
+ GET /api/trpc/benefits.home?input=%7B%22month%22%3A%222026-11%22%7D 200 in 38ms (next.js: 1.3ms, application-code: 37ms)
+ GET /apply 200 in 47ms (next.js: 3ms, application-code: 43ms)
+ GET /api/trpc/benefits.home?input=%7B%22month%22%3A%222026-11%22%7D 200 in 60ms (next.js: 7ms, application-code: 53ms)
+ GET /apply 200 in 47ms (next.js: 5ms, application-code: 42ms)

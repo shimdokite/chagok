@@ -1,0 +1,42 @@
+env: load .env.local
+env: export EXPO_PUBLIC_BENCHMARK_APP_BUILD EXPO_PUBLIC_BENCHMARK_DEVICE EXPO_PUBLIC_BENCHMARK_SOURCE_REF EXPO_PUBLIC_BENCHMARK_WEB_MODE EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID EXPO_PUBLIC_VISUAL_CHECKS EXPO_PUBLIC_WEB_ORIGIN
+Expo Autolinking module resolution enabled
+Starting Metro Bundler
+
+| (node:87672) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:87672) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:87672) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:87672) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:87672) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:87672) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+Android Bundled 35358ms node_modules/expo-router/entry.js (1495 modules)
+
+› Assets (26):
+../../node_modules/expo-router/assets/arrow_down.png (9.5KB)
+../../node_modules/expo-router/assets/arrow_right.xml (307B)
+../../node_modules/expo-router/assets/checkmark.xml (312B)
+../../node_modules/expo-router/assets/error.png (469B)
+../../node_modules/expo-router/assets/file.png (138B)
+../../node_modules/expo-router/assets/forward.png (188B)
+../../node_modules/expo-router/assets/pkg.png (364B)
+../../node_modules/expo-router/assets/react-navigation/elements/back-icon-mask.png (653B)
+../../node_modules/expo-router/assets/react-navigation/elements/back-icon.png (4 variations | 152B)
+../../node_modules/expo-router/assets/react-navigation/elements/clear-icon.png (4 variations | 425B)
+../../node_modules/expo-router/assets/react-navigation/elements/close-icon.png (4 variations | 235B)
+../../node_modules/expo-router/assets/react-navigation/elements/search-icon.png (4 variations | 599B)
+../../node_modules/expo-router/assets/sitemap.png (465B)
+../../node_modules/expo-router/assets/unmatched.png (4.8KB)
+
+› android bundles (1):
+_expo/static/js/android/entry-7e5d36cc8cc401f29d10e55c89d2585d.hbc (4MB)
+
+› Files (1):
+metadata.json (1.8KB)
+
+Exported: /tmp/chagok-day05-android-export

@@ -1,0 +1,42 @@
+{
+  "before": {
+    "Attachment": {
+      "count": 31,
+      "sha256": "fa18887a064caf4857edb734aaa96707463bfcb04de796ef87826052c9b75947"
+    },
+    "Claim": {
+      "count": 10,
+      "sha256": "40b96ce8ba0f4ff2c53e9bb2043b3a5b9801ca8e16fe6b61ab1f80f800ac3015"
+    },
+    "Membership": {
+      "count": 3,
+      "sha256": "085d25b29dcc7b3c1e479ce85c90676b3f0470508e76699a7dd56df978ee2b29"
+    },
+    "Session": {
+      "count": 3,
+      "sha256": "cd265e441f8219645bf0a2e3f91ad4b0656823c6618e361fff35ff4b1ba2aa17"
+    }
+  },
+  "after": {
+    "Attachment": {
+      "count": 31,
+      "sha256": "fa18887a064caf4857edb734aaa96707463bfcb04de796ef87826052c9b75947"
+    },
+    "Claim": {
+      "count": 10,
+      "sha256": "40b96ce8ba0f4ff2c53e9bb2043b3a5b9801ca8e16fe6b61ab1f80f800ac3015"
+    },
+    "Membership": {
+      "count": 3,
+      "sha256": "085d25b29dcc7b3c1e479ce85c90676b3f0470508e76699a7dd56df978ee2b29"
+    },
+    "Session": {
+      "count": 3,
+      "sha256": "cd265e441f8219645bf0a2e3f91ad4b0656823c6618e361fff35ff4b1ba2aa17"
+    }
+  },
+  "tablesIdentical": true,
+  "filesBefore": 31,
+  "filesAfter": 31,
+  "allFileHashesIdentical": true
+}

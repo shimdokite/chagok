@@ -1,0 +1,15 @@
+Baseline 785 files; 10 expected existing files changed, 775 SHA256 unchanged, missing 0
+apps/mobile/src/receipts/picker.test.ts
+apps/web/src/components/apply/form-client.test.ts
+docs/changes/latest-commit.txt
+docs/changes/latest-pr.md
+docs/learning/day-05.md
+docs/metrics/daily/day-05.md
+docs/plans/day-05.md
+docs/progress.md
+docs/verification/day-05.md
+packages/api/src/receipts/receipts.integration.test.ts
+Relative links checked 147, broken 0
+Git diff --check exit0, staged0, learning tracked0 and PR diff0; ignored local learning preserved
+Latest PR/commit format valid
+Product source, temporary route, previous raw snapshots, handoff.md, next-env.d.ts unchanged

@@ -1,0 +1,7 @@
+timeout: paused/resumed, elapsed 55.004s, limit 55s
+close: paused/resumed, elapsed 25.006s, limit 25s
+reload: paused/resumed, elapsed 25.006s, limit 25s
+7 new samples: 4 uploaded/acked, 1 error/acked, 2 interrupted/aborted; pending/dropped/saveFailed zero.
+Timeout upload elapsed: 35319.87ms. Interrupted uploadMs/bridgeAckMs absent, not zero.
+HTTP 3000: exit0 status200
+HTTP 8081: exit0 status200

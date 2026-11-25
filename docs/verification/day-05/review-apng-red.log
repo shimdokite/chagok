@@ -1,0 +1,50 @@
+
+> chagok@0.1.0 pretest
+> npm run style:check
+
+
+> chagok@0.1.0 style:check
+> node scripts/check-function-spacing.mjs
+
+코드 간격: 121개 파일 검사, 위반 0건
+
+> chagok@0.1.0 test
+> vitest run apps/mobile/src/bridge/claim-host.test.ts scripts/cleanup-receipts.test.ts packages/api/src/receipts/image.test.ts --maxWorkers=2
+
+
+ RUN  v5.1.0 /Users/doyeon/Desktop/chagok
+
+ ❯ packages/api/src/receipts/image.test.ts (6 tests | 1 failed) 147ms
+   × rejects a valid animated PNG instead of inspecting only its default frame 12ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/api/src/receipts/image.test.ts > rejects a valid animated PNG instead of inspecting only its default frame
+AssertionError: promise resolved "{ mimeType: 'image/png', byteSize: 193 }" instead of rejecting
+
+- Expected
++ Received
+
+- Error {
+-   "message": "rejected promise",
++ {
++   "byteSize": 193,
++   "mimeType": "image/png",
+  }
+
+ ❯ packages/api/src/receipts/image.test.ts:127:53
+    125|     chunk("IEND", Buffer.alloc(0)),
+    126|   ]);
+    127|   await expect(validateImage(animated, "image/png")).rejects.toMatchOb…
+       |                                                     ^
+    128|     code: "BAD_REQUEST",
+    129|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 2 passed (3)
+      Tests  1 failed | 18 passed (19)
+   Start at  16:31:23
+   Duration  1.01s (tests 60%, import 28%, transform 11%, worker 1%)
+

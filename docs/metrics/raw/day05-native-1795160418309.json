@@ -1,0 +1,234 @@
+{
+  "runId": "day05-native-1795160418309",
+  "events": [
+    {
+      "status": "success",
+      "startMs": 172298379.110166,
+      "endMs": 172298801.846166,
+      "byteSize": 47843,
+      "format": "jpeg",
+      "index": 0,
+      "warmup": true,
+      "elapsedMs": 422.7360000014305
+    },
+    {
+      "status": "success",
+      "startMs": 172298834.593791,
+      "endMs": 172298881.242625,
+      "byteSize": 47843,
+      "format": "jpeg",
+      "index": 1,
+      "warmup": false,
+      "elapsedMs": 46.648833990097046
+    },
+    {
+      "status": "success",
+      "startMs": 172298939.959416,
+      "endMs": 172298958.954791,
+      "byteSize": 47843,
+      "format": "jpeg",
+      "index": 2,
+      "warmup": false,
+      "elapsedMs": 18.995375007390976
+    },
+    {
+      "status": "success",
+      "startMs": 172299049.70775,
+      "endMs": 172299072.048833,
+      "byteSize": 47843,
+      "format": "jpeg",
+      "index": 3,
+      "warmup": false,
+      "elapsedMs": 22.341083019971848
+    },
+    {
+      "status": "success",
+      "startMs": 172299163.564041,
+      "endMs": 172299181.003666,
+      "byteSize": 47843,
+      "format": "jpeg",
+      "index": 4,
+      "warmup": false,
+      "elapsedMs": 17.439625024795532
+    },
+    {
+      "status": "success",
+      "startMs": 172299273.198333,
+      "endMs": 172299298.694791,
+      "byteSize": 47843,
+      "format": "jpeg",
+      "index": 5,
+      "warmup": false,
+      "elapsedMs": 25.496457993984222
+    },
+    {
+      "status": "success",
+      "startMs": 172299384.501666,
+      "endMs": 172299401.787791,
+      "byteSize": 47843,
+      "format": "jpeg",
+      "index": 6,
+      "warmup": false,
+      "elapsedMs": 17.286125004291534
+    },
+    {
+      "status": "success",
+      "startMs": 172299496.3095,
+      "endMs": 172299526.338041,
+      "byteSize": 47843,
+      "format": "jpeg",
+      "index": 7,
+      "warmup": false,
+      "elapsedMs": 30.02854099869728
+    },
+    {
+      "status": "success",
+      "startMs": 172299641.793333,
+      "endMs": 172299763.14225,
+      "byteSize": 47843,
+      "format": "jpeg",
+      "index": 8,
+      "warmup": false,
+      "elapsedMs": 121.34891700744629
+    },
+    {
+      "status": "success",
+      "startMs": 172299804.43875,
+      "endMs": 172299821.315875,
+      "byteSize": 47843,
+      "format": "jpeg",
+      "index": 9,
+      "warmup": false,
+      "elapsedMs": 16.87712499499321
+    },
+    {
+      "status": "success",
+      "startMs": 172299915.14575,
+      "endMs": 172299935.931583,
+      "byteSize": 47843,
+      "format": "jpeg",
+      "index": 10,
+      "warmup": false,
+      "elapsedMs": 20.78583300113678
+    },
+    {
+      "status": "success",
+      "startMs": 172300027.063583,
+      "endMs": 172300045.5575,
+      "byteSize": 44888,
+      "format": "png",
+      "index": 0,
+      "warmup": true,
+      "elapsedMs": 18.493917018175125
+    },
+    {
+      "status": "success",
+      "startMs": 172300137.647375,
+      "endMs": 172300162.489791,
+      "byteSize": 44888,
+      "format": "png",
+      "index": 1,
+      "warmup": false,
+      "elapsedMs": 24.842416018247604
+    },
+    {
+      "status": "success",
+      "startMs": 172300250.241333,
+      "endMs": 172300267.832458,
+      "byteSize": 44888,
+      "format": "png",
+      "index": 2,
+      "warmup": false,
+      "elapsedMs": 17.59112498164177
+    },
+    {
+      "status": "success",
+      "startMs": 172300360.180958,
+      "endMs": 172300378.688541,
+      "byteSize": 44888,
+      "format": "png",
+      "index": 3,
+      "warmup": false,
+      "elapsedMs": 18.507582992315292
+    },
+    {
+      "status": "success",
+      "startMs": 172300469.576333,
+      "endMs": 172300485.5635,
+      "byteSize": 44888,
+      "format": "png",
+      "index": 4,
+      "warmup": false,
+      "elapsedMs": 15.987167000770569
+    },
+    {
+      "status": "success",
+      "startMs": 172300578.247916,
+      "endMs": 172300599.951916,
+      "byteSize": 44888,
+      "format": "png",
+      "index": 5,
+      "warmup": false,
+      "elapsedMs": 21.703999996185303
+    },
+    {
+      "status": "success",
+      "startMs": 172300686.364041,
+      "endMs": 172300713.014416,
+      "byteSize": 44888,
+      "format": "png",
+      "index": 6,
+      "warmup": false,
+      "elapsedMs": 26.65037500858307
+    },
+    {
+      "status": "success",
+      "startMs": 172300796.580291,
+      "endMs": 172300820.876541,
+      "byteSize": 44888,
+      "format": "png",
+      "index": 7,
+      "warmup": false,
+      "elapsedMs": 24.296249985694885
+    },
+    {
+      "status": "success",
+      "startMs": 172300904.661958,
+      "endMs": 172300922.063291,
+      "byteSize": 44888,
+      "format": "png",
+      "index": 8,
+      "warmup": false,
+      "elapsedMs": 17.40133300423622
+    },
+    {
+      "status": "success",
+      "startMs": 172301014.628125,
+      "endMs": 172301040.588125,
+      "byteSize": 44888,
+      "format": "png",
+      "index": 9,
+      "warmup": false,
+      "elapsedMs": 25.959999978542328
+    },
+    {
+      "status": "success",
+      "startMs": 172301126.52075,
+      "endMs": 172301148.336416,
+      "byteSize": 44888,
+      "format": "png",
+      "index": 10,
+      "warmup": false,
+      "elapsedMs": 21.815666019916534
+    }
+  ],
+  "cleanup": {
+    "deleted": 22,
+    "failed": 0
+  },
+  "environment": "iPhone 17 iOS27.2 Simulator Debug, Hermes performance.now, real File and expo/fetch, local HTTP server",
+  "pickerSamples": 0,
+  "cameraSamples": 0,
+  "originalSessionUnchanged": true,
+  "boundary": "uploadReceipt start to response validation, file byte verification excluded"
+}

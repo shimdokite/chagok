@@ -1,0 +1,380 @@
+DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer xcodebuild -workspace apps/mobile/ios/app.xcworkspace -scheme app -configuration Release -sdk iphonesimulator -destination 'generic/platform=iOS Simulator' -derivedDataPath /tmp/chagok-day05-release-build CODE_SIGNING_ALLOWED=NO build
+exitCode: 0
+Full raw log retained locally: .local-tools/day-05-local/ios-release-build.full.log
+Raw SHA-256: 389fd458c903f877c66d47e4bbd32e56521e6744debcab6892fa79cf8d43399c
+Raw bytes: 15840693
+
+Build/bundle output:
+        ➜ Explicit dependency on target 'React-RuntimeHermes' in project 'Pods'
+        ➜ Explicit dependency on target 'React-RuntimeHermes' in project 'Pods'
+    Target 'React-RuntimeHermes' in project 'Pods'
+PhaseScriptExecution [CP-User]\ [Hermes]\ Replace\ Hermes\ for\ the\ right\ configuration,\ if\ needed /tmp/chagok-day05-release-build/Build/Intermediates.noindex/Pods.build/Release-iphonesimulator/hermes-engine.build/Script-46EB2E00023DC0.sh (in target 'hermes-engine' from project 'Pods')
+CreateBuildDirectory /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/React-RuntimeHermes
+    builtin-create-build-directory /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/React-RuntimeHermes
+React.framework/Headers/RCTHermesInstanceFactory.h
+CompileC /tmp/chagok-day05-release-build/Build/Intermediates.noindex/Pods.build/Release-iphonesimulator/RNWorklets.build/Objects-normal/x86_64/WorkletHermesRuntime.o /Users/doyeon/Desktop/chagok/node_modules/react-native-worklets/Common/cpp/worklets/WorkletRuntime/WorkletHermesRuntime.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler (in target 'RNWorklets' from project 'Pods')
+CompileC /tmp/chagok-day05-release-build/Build/Intermediates.noindex/Pods.build/Release-iphonesimulator/RNWorklets.build/Objects-normal/x86_64/HermesProfiling.o /Users/doyeon/Desktop/chagok/node_modules/react-native-worklets/Common/cpp/worklets/WorkletRuntime/HermesProfiling.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler (in target 'RNWorklets' from project 'Pods')
+CompileC /tmp/chagok-day05-release-build/Build/Intermediates.noindex/Pods.build/Release-iphonesimulator/RNWorklets.build/Objects-normal/arm64/WorkletHermesRuntime.o /Users/doyeon/Desktop/chagok/node_modules/react-native-worklets/Common/cpp/worklets/WorkletRuntime/WorkletHermesRuntime.cpp normal arm64 c++ com.apple.compilers.llvm.clang.1_0.compiler (in target 'RNWorklets' from project 'Pods')
+CompileC /tmp/chagok-day05-release-build/Build/Intermediates.noindex/Pods.build/Release-iphonesimulator/RNWorklets.build/Objects-normal/arm64/HermesProfiling.o /Users/doyeon/Desktop/chagok/node_modules/react-native-worklets/Common/cpp/worklets/WorkletRuntime/HermesProfiling.cpp normal arm64 c++ com.apple.compilers.llvm.clang.1_0.compiler (in target 'RNWorklets' from project 'Pods')
+ 85 | #import <React/RCTHermesInstanceFactory.h>
+ 85 | #import <React/RCTHermesInstanceFactory.h>
+ 85 | #import <React/RCTHermesInstanceFactory.h>
+ 85 | #import <React/RCTHermesInstanceFactory.h>
+ 85 | #import <React/RCTHermesInstanceFactory.h>
+ 85 | #import <React/RCTHermesInstanceFactory.h>
+ 85 | #import <React/RCTHermesInstanceFactory.h>
+ 85 | #import <React/RCTHermesInstanceFactory.h>
+ 85 | #import <React/RCTHermesInstanceFactory.h>
+ 85 | #import <React/RCTHermesInstanceFactory.h>
+ 85 | #import <React/RCTHermesInstanceFactory.h>
+ 85 | #import <React/RCTHermesInstanceFactory.h>
+In file included from /Users/doyeon/Desktop/chagok/apps/mobile/ios/Pods/Headers/Public/React-Core-prebuilt/reacthermes/HermesExecutorFactory.h:13:
+In file included from /Users/doyeon/Desktop/chagok/apps/mobile/ios/Pods/Headers/Public/React-Core-prebuilt/reacthermes/HermesExecutorFactory.h:13:
+In file included from /Users/doyeon/Desktop/chagok/apps/mobile/ios/Pods/Headers/Public/React-Core-prebuilt/reacthermes/HermesExecutorFactory.h:13:
+In file included from /Users/doyeon/Desktop/chagok/apps/mobile/ios/Pods/Headers/Public/React-Core-prebuilt/reacthermes/HermesExecutorFactory.h:13:
+In file included from /Users/doyeon/Desktop/chagok/apps/mobile/ios/Pods/Headers/Public/React-Core-prebuilt/reacthermes/HermesExecutorFactory.h:13:
+In file included from /Users/doyeon/Desktop/chagok/apps/mobile/ios/Pods/Headers/Public/React-Core-prebuilt/reacthermes/HermesExecutorFactory.h:13:
+ 85 | #import <React/RCTHermesInstanceFactory.h>
+ 85 | #import <React/RCTHermesInstanceFactory.h>
+ 85 | #import <React/RCTHermesInstanceFactory.h>
+ 85 | #import <React/RCTHermesInstanceFactory.h>
+ 85 | #import <React/RCTHermesInstanceFactory.h>
+ 85 | #import <React/RCTHermesInstanceFactory.h>
+ 85 | #import <React/RCTHermesInstanceFactory.h>
+ 85 | #import <React/RCTHermesInstanceFactory.h>
+ 85 | #import <React/RCTHermesInstanceFactory.h>
+ 85 | #import <React/RCTHermesInstanceFactory.h>
+ 85 | #import <React/RCTHermesInstanceFactory.h>
+ 85 | #import <React/RCTHermesInstanceFactory.h>
+ 85 | #import <React/RCTHermesInstanceFactory.h>
+ 85 | #import <React/RCTHermesInstanceFactory.h>
+ 85 | #import <React/RCTHermesInstanceFactory.h>
+ 85 | #import <React/RCTHermesInstanceFactory.h>
+ 85 | #import <React/RCTHermesInstanceFactory.h>
+ 85 | #import <React/RCTHermesInstanceFactory.h>
+iOS Bundled 19711ms node_modules/expo-router/entry.js (1500 modules)
+Writing bundle output to: /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/main.jsbundle
+Done writing bundle output
+note: Run script build phase '[CP-User] [Hermes] Replace Hermes for the right configuration, if needed' will be run during every build because the option to run the script phase "Based on dependency analysis" is unchecked. (in target 'hermes-engine' from project 'Pods')
+** BUILD SUCCEEDED **
+
+Distinct compiler/script warnings (count, message):
+2: 'placeholder.o' has no symbols
+2: 'GTMSessionFetcherLogging.o' has no symbols
+2: 'NSDictionary+EXJSONUtils.o' has no symbols
+16: ISO C++ requires field designators to be specified in declaration order; field 'lockIdentifier' will be initialized after field 'title' [-Wreorder-init-list]
+6: ISO C++ requires field designators to be specified in declaration order; field 'navigationType' will be initialized after field 'canGoBack' [-Wreorder-init-list]
+2: ISO C++ requires field designators to be specified in declaration order; field 'isTopFrame' will be initialized after field 'loading' [-Wreorder-init-list]
+14: ISO C++ requires field designators to be specified in declaration order; field 'canGoForward' will be initialized after field 'loading' [-Wreorder-init-list]
+4: ISO C++ requires field designators to be specified in declaration order; field 'description' will be initialized after field 'canGoBack' [-Wreorder-init-list]
+2: ISO C++ requires field designators to be specified in declaration order; field 'selectedText' will be initialized after field 'key' [-Wreorder-init-list]
+2: ISO C++ requires field designators to be specified in declaration order; field 'key' will be initialized after field 'label' [-Wreorder-init-list]
+2: ISO C++ requires field designators to be specified in declaration order; field 'x' will be initialized after field 'y' [-Wreorder-init-list]
+2: ISO C++ requires field designators to be specified in declaration order; field 'contentOffset' will be initialized after field 'contentInset' [-Wreorder-init-list]
+2: ISO C++ requires field designators to be specified in declaration order; field 'top' will be initialized after field 'bottom' [-Wreorder-init-list]
+4: ISO C++ requires field designators to be specified in declaration order; field 'width' will be initialized after field 'height' [-Wreorder-init-list]
+2: ISO C++ requires field designators to be specified in declaration order; field 'statusCode' will be initialized after field 'description' [-Wreorder-init-list]
+2: ISO C++ requires field designators to be specified in declaration order; field 'right' will be initialized after field 'bottom' [-Wreorder-init-list]
+18: implicit conversion loses integer precision: 'WKDataDetectorTypes' (aka 'unsigned long') to 'RNCWebViewDataDetectorTypesMask' (aka 'unsigned int') [-Wshorten-64-to-32]
+4: null passed to a callee that requires a non-null argument [-Wnonnull]
+2: 'EventEmitters-2daebde03ef56b82eeee4e36d7217a89.o' has no symbols
+2: 'ShadowNodes-47142dc7c7854bba61a23f68714397af.o' has no symbols
+2: 'States-6e35fed979ea9aaada247b864abcac2f.o' has no symbols
+2: 'States-b6715ac382802fec1a2259b1e20b6831.o' has no symbols
+2: 'States-b91ec1e1c8ab61e6965f4f4ef6ec407e.o' has no symbols
+2: 'States-9146427afba8555f39b360f8ba87f4ea.o' has no symbols
+2: 'States-0adb4fb4866f785a76aadd9ff441c73a.o' has no symbols
+2: 'States-d100aacaef0e43adfd2ec2fd4bb3be07.o' has no symbols
+2: 'States-3f85dedca08a5f85c4c340f1bc77665d.o' has no symbols
+2: ISO C++ requires field designators to be specified in declaration order; field 'left' will be initialized after field 'bottom' [-Wreorder-init-list]
+2: ISO C++ requires field designators to be specified in declaration order; field 'bottom' will be initialized after field 'right' [-Wreorder-init-list]
+64: block pointer is missing a nullability type specifier (_Nonnull, _Nullable, or _Null_unspecified) [-Wnullability-completeness]
+88: pointer is missing a nullability type specifier (_Nonnull, _Nullable, or _Null_unspecified) [-Wnullability-completeness]
+8: umbrella header for module 'React' does not include header 'RCTRedBox2Controller+Internal.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'UIView+ComponentViewProtocol.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTParagraphComponentAccessibilityProvider.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTSafeAreaViewComponentView.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTSurfacePresenterBridgeAdapter.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTRootViewFactory.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTCxxInspectorWebSocketAdapter.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTTextInputComponentView.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTRedBox2ErrorParser+Internal.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTComponentViewDescriptor.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTPullToRefreshViewComponentView.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTConvert+Transform.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'Debug.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTImageResponseObserverProxy.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTVirtualViewContainerState.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'PlatformRunLoopObserver.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTUIConfiguratorProtocol.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTMountingManagerDelegate.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTDebuggingOverlayComponentView.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTUnimplementedViewComponentView.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTSurfaceRegistry.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTImageLoaderWithAttributionProtocol.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'NSDataBigString.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTJscSafeUrl+Internal.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTPrimitives.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTParagraphComponentView.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTConvert+CoreLocation.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTModalHostViewComponentView.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTLegacyViewManagerInteropComponentView.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTRedBoxController+Internal.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'Timing.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTBoxShadow.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTGradientUtils.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTRedBoxHMRClient+Internal.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTBridge+Inspector.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTRedBox2AnsiParser+Internal.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTSwitchComponentView.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTBackgroundImageUtils.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTFont+Private.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'View.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTRootComponentView.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTAppSetupUtils.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTMessageThread.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTComponentViewClassDescriptor.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'MapBuffer.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTVirtualViewRenderState.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTAppDelegate.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTLinearGradient.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTCxxBridgeDelegate.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTMountingTransactionObserverCoordinator.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTEnhancedScrollView.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTDependencyProvider.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTDefaultReactNativeFactoryDelegate.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTInputAccessoryComponentView.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTCxxInspectorPackagerConnectionDelegate.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTAccessibilityManager+Internal.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTTouchableComponentViewProtocol.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTMountingTransactionObserving.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTIdentifierPool.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTJSRuntimeConfiguratorProtocol.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTActivityIndicatorViewComponentView.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTUnimplementedNativeComponentView.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'CallInvoker.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'FeatureFlags.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTShadowView+Layout.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTImageURLLoaderWithAttribution.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTConversions.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTVirtualViewProtocol.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTReactNativeFactory.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTRedBox+Internal.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTFabricSurface.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTRadialGradient.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTScrollViewComponentView.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTLegacyViewManagerInteropCoordinatorAdapter.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'AppleEventBeat.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTCxxUtils.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTFabricComponentsPlugins.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTVirtualViewComponentView.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTScheduler.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'UIView+Private.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTBridgeProxy+Cxx.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTNetworking+Internal.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTTextInputNativeCommands.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTImageComponentView.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTFrameTimingsObserver.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTTextInputUtils.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTConvert+Text.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTFollyConvert.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTSurfaceView+Internal.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'RCTVirtualViewMode.h' [-Wincomplete-umbrella]
+8: umbrella header for module 'React' does not include header 'NSTextStorage+FontScaling.h' [-Wincomplete-umbrella]
+10: 'WKProcessPool' is deprecated: first deprecated in iOS 15.0 - Creating and using multiple instances of WKProcessPool no longer has any effect. [-Wdeprecated-declarations]
+2: 'statusBarStyle' is deprecated: first deprecated in iOS 13.0 - Use the statusBarManager property of the window scene instead. [-Wdeprecated-declarations]
+2: 'statusBarHidden' is deprecated: first deprecated in iOS 13.0 - Use the statusBarManager property of the window scene instead. [-Wdeprecated-declarations]
+2: 'javaScriptEnabled' is deprecated: first deprecated in iOS 14.0 - Use WKWebpagePreferences.allowsContentJavaScript to disable content JavaScript on a per-navigation basis [-Wdeprecated-declarations]
+2: 'processPool' is deprecated: first deprecated in iOS 15.0 - Creating and using multiple instances of WKProcessPool no longer has any effect. [-Wdeprecated-declarations]
+2: 'suspendAllMediaPlayback:' is deprecated: first deprecated in iOS 15.0 [-Wdeprecated-declarations]
+2: 'RNCSafeAreaViewState.o' has no symbols
+4: unused function 'IsTurboModuleManagerQueue' [-Wunused-function]
+2: 'ExpoRedBoxSwap.o' has no symbols
+2: unused function 'MessageCodeEnumToString' [-Wunused-function]
+2: unused function 'LoggerLevelEnumToString' [-Wunused-function]
+2: 'GACAppCheckStoredToken+GACAppCheckToken.o' has no symbols
+2: 'GACAppCheckToken+APIResponse.o' has no symbols
+84: declaration is marked with '@deprecated' command but does not have a deprecation attribute [-Wdocumentation-deprecated-sync]
+2: auto property synthesis will not synthesize property 'stackScreen'; it will be implemented by its superclass, use @dynamic to acknowledge intention [-Wobjc-property-synthesis]
+2: unused variable 'controller' [-Wunused-variable]
+2: unused variable 'viewController' [-Wunused-variable]
+4: unused variable 'key' [-Wunused-variable]
+2: unused variable 'minNumberOfColumns' [-Wunused-const-variable]
+2: unused variable 'maxNumberOfColumns' [-Wunused-const-variable]
+2: unused variable 'maxNumberOfInspectors' [-Wunused-const-variable]
+52: method possibly missing a [super updateProps:oldProps:] call [-Wobjc-missing-super-calls]
+50: unused function 'intToRNSVGVBMOS' [-Wunused-function]
+2: 'NSString+RNSUtility.o' has no symbols
+2: 'RCTConvert+RNSTabs.o' has no symbols
+2: 'RCTImageComponentView+RNSScreenStackHeaderConfig.o' has no symbols
+2: 'RCTSurfaceTouchHandler+RNSUtility.o' has no symbols
+2: 'RNSFormSheetHostState.o' has no symbols
+2: 'RNSSafeAreaViewState.o' has no symbols
+2: 'RNSScreenShadowNodeCommitHook.o' has no symbols
+2: 'RNSScreenStackHeaderSubviewState.o' has no symbols
+2: 'RNSScreenState.o' has no symbols
+2: 'RNSStackHeaderItemState.o' has no symbols
+2: 'RNSStackHeaderSubviewState.o' has no symbols
+2: 'RNSStackScreenState.o' has no symbols
+2: 'RNSTabsHostComponentView+RNSImageLoader.o' has no symbols
+2: 'UINavigationBar+RNSUtility.o' has no symbols
+2: 'UIScrollView+RNScreens.o' has no symbols
+2: 'UIView+RNSUtility.o' has no symbols
+2: 'UIWindow+RNScreens.o' has no symbols
+20: variable length arrays in C++ are a Clang extension [-Wvla-cxx-extension]
+2: auto property synthesis will not synthesize property 'hitTestEdgeInsets'; it will be implemented by its superclass, use @dynamic to acknowledge intention [-Wobjc-property-synthesis]
+6: 'static' function 'RNSVGConvertFollyDynamicToId' declared in header file should be declared 'static inline' [-Wunneeded-internal-declaration]
+28: implicit conversion loses integer precision: 'size_type' (aka 'unsigned long') to 'int' [-Wshorten-64-to-32]
+6: unused function 'REAIsJavaScriptQueue' [-Wunused-function]
+4: unused function 'REAIsTurboModuleManagerQueue' [-Wunused-function]
+4: 'windows' is deprecated: first deprecated in iOS 15.0 - Use UIWindowScene.windows on a relevant window scene instead [-Wdeprecated-declarations]
+44: unused function 'ghSpherical2tilt' [-Wunused-function]
+2: auto property synthesis will not synthesize property 'dispatchToJSThread' declared in protocol 'RCTJSDispatcherModule' [-Wobjc-protocol-property-synthesis]
+2: method possibly missing a [super invalidate] call [-Wobjc-missing-super-calls]
+2: block implicitly retains 'self'; explicitly mention 'self' to indicate this is intended behavior [-Wimplicit-retain-self]
+4: ISO C++ requires field designators to be specified in declaration order; field 'pointerType' will be initialized after field 'numberOfTouches' [-Wreorder-init-list]
+4: ISO C++ requires field designators to be specified in declaration order; field 'changedTouches' will be initialized after field 'allTouches' [-Wreorder-init-list]
+2: 'sendDeviceEventWithName:body:' is deprecated: Subclass RCTEventEmitter instead [-Wdeprecated-declarations]
+2: ISO C++ requires field designators to be specified in declaration order; field 'state' will be initialized after field 'handlerTag' [-Wreorder-init-list]
+2: ISO C++ requires field designators to be specified in declaration order; field 'right' will be initialized after field 'top' [-Wreorder-init-list]
+2: 'RCTUIView+Reanimated.o' has no symbols
+2: 'StaleSynchronousPropsTracker.o' has no symbols
+2: 'SynchronousPropsBufferSerializer.o' has no symbols
+2: conflicting return type in implementation of 'activateAfterLongPress': 'CGFloat' (aka 'double') vs 'void' [-Wmismatched-return-types]
+2: implicit conversion from enumeration type 'enum RNGestureHandlerDirection' to different enumeration type 'UISwipeGestureRecognizerDirection' (aka 'enum UISwipeGestureRecognizerDirection') [-Wimplicit-enum-enum-cast]
+272: pointer is missing a nullability type specifier (_Nonnull, _Nullable, or _Null_unspecified)
+26: cannot find protocol definition for 'EXImageLoaderInterface'
+26: cannot find protocol definition for 'RCTBridgeModule'
+144: block pointer is missing a nullability type specifier (_Nonnull, _Nullable, or _Null_unspecified)
+20: conflicting nullability specifier on parameter types, 'nonnull' conflicts with existing specifier 'nullable'
+4: class 'InvalidKeyException' must restate inherited '@unchecked Sendable' conformance
+4: class 'MissingPlistKeyException' must restate inherited '@unchecked Sendable' conformance
+4: class 'SecAccessControlError' must restate inherited '@unchecked Sendable' conformance
+4: class 'KeyChainException' must restate inherited '@unchecked Sendable' conformance
+8: 'kSecUseOperationPrompt' was deprecated in iOS 14.0: Use kSecUseAuthenticationContext and set LAContext.localizedReason property [#DeprecatedDeclaration]
+4: 'kSecAttrAccessibleAlways' was deprecated in iOS 12.0: Use an accessibility level that provides some user protection, such as kSecAttrAccessibleAfterFirstUnlock [#DeprecatedDeclaration]
+4: 'kSecAttrAccessibleAlwaysThisDeviceOnly' was deprecated in iOS 12.0: Use an accessibility level that provides some user protection, such as kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly [#DeprecatedDeclaration]
+4: class 'InvalidSchemeException' must restate inherited '@unchecked Sendable' conformance
+8: expression implicitly coerced from 'String?' to 'Any'
+4: expression implicitly coerced from 'NSUserActivityPersistentIdentifier?' (aka 'Optional<String>') to 'Any'
+8: expression implicitly coerced from 'URL?' to 'Any'
+4: expression implicitly coerced from 'Date?' to 'Any'
+4: expression implicitly coerced from '[AnyHashable : Any]?' to 'Any'
+4: 'kUTTypeText' was deprecated in iOS 15.0: Use UTTypeText or UTType.text (swift) instead. [#DeprecatedDeclaration]
+4: value 'localUrl' was defined but never used; consider replacing with boolean test [#NoUsage]
+8: use '#selector' instead of explicitly constructing a 'Selector'
+4: class 'PermissionsModuleNotFoundException' must restate inherited '@unchecked Sendable' conformance
+4: class 'FileSystemModuleNotFoundException' must restate inherited '@unchecked Sendable' conformance
+4: class 'MissingCameraPermissionException' must restate inherited '@unchecked Sendable' conformance
+4: class 'MissingMicrophonePermissionException' must restate inherited '@unchecked Sendable' conformance
+4: class 'MissingCurrentViewControllerException' must restate inherited '@unchecked Sendable' conformance
+4: class 'MaxDurationWhileEditingExceededException' must restate inherited '@unchecked Sendable' conformance
+4: class 'InvalidMediaTypeException' must restate inherited '@unchecked Sendable' conformance
+4: class 'FailedToCreateGifException' must restate inherited '@unchecked Sendable' conformance
+4: class 'FailedToExportGifException' must restate inherited '@unchecked Sendable' conformance
+4: class 'FailedToWriteImageException' must restate inherited '@unchecked Sendable' conformance
+4: class 'FailedToReadImageException' must restate inherited '@unchecked Sendable' conformance
+4: class 'FailedToReadImageDataException' must restate inherited '@unchecked Sendable' conformance
+4: class 'FailedToReadVideoSizeException' must restate inherited '@unchecked Sendable' conformance
+4: class 'FailedToReadVideoException' must restate inherited '@unchecked Sendable' conformance
+4: class 'FailedToTranscodeVideoException' must restate inherited '@unchecked Sendable' conformance
+4: class 'UnsupportedVideoExportPresetException' must restate inherited '@unchecked Sendable' conformance
+4: class 'FailedToPickVideoException' must restate inherited '@unchecked Sendable' conformance
+4: class 'FailedToReadImageDataForBase64Exception' must restate inherited '@unchecked Sendable' conformance
+4: class 'FailedToPickLivePhotoException' must restate inherited '@unchecked Sendable' conformance
+16: 'referenceURL' was deprecated in iOS 11.0: Will be removed in a future release, use PHPicker. [#DeprecatedDeclaration]
+8: 'fetchAssets(withALAssetURLs:options:)' was deprecated in iOS 11: Will be removed in a future release [#DeprecatedDeclaration]
+4: 'isStatusBarHidden' was deprecated in iOS 13.0: Use the statusBarManager property of the window scene instead. [#DeprecatedDeclaration]
+8: 'duration' was deprecated in iOS 16.0: Use load(.duration) instead [#DeprecatedDeclaration]
+4: 'tracks(withMediaType:)' was deprecated in iOS 16.0: Use loadTracks(withMediaType:) instead [#DeprecatedDeclaration]
+4: 'naturalSize' was deprecated in iOS 16.0: Use load(.naturalSize) instead [#DeprecatedDeclaration]
+4: 'preferredTransform' was deprecated in iOS 16.0: Use load(.preferredTransform) instead [#DeprecatedDeclaration]
+2: 'OIDAuthorizationService+IOS.o' has no symbols
+2: 'OIDAuthState+IOS.o' has no symbols
+2: 'OIDExternalUserAgentCatalyst.o' has no symbols
+4: class 'UnableToDownloadAssetException' must restate inherited '@unchecked Sendable' conformance
+4: class 'UnableToSaveAssetToDirectoryException' must restate inherited '@unchecked Sendable' conformance
+4: 'legacyId()' is deprecated: Prefer scopeKey or projectId depending on use case [#DeprecatedDeclaration]
+4: 'Constants' is deprecated: Use `Constant` or `Property` instead [#DeprecatedDeclaration]
+2: 'noop-file.o' has no symbols
+2: 'statusBarFrame' is deprecated: first deprecated in iOS 13.0 - Use the statusBarManager property of the window scene instead. [-Wdeprecated-declarations]
+2: method definition for 'deviceYear' not found [-Wincomplete-implementation]
+2: ISO C++ requires field designators to be specified in declaration order; field 'BUTTON_SIZE_STANDARD' will be initialized after field 'BUTTON_SIZE_WIDE' [-Wreorder-init-list]
+2: ISO C++ requires field designators to be specified in declaration order; field 'BUTTON_SIZE_WIDE' will be initialized after field 'SIGN_IN_CANCELLED' [-Wreorder-init-list]
+2: ISO C++ requires field designators to be specified in declaration order; field 'SIGN_IN_REQUIRED' will be initialized after field 'IN_PROGRESS' [-Wreorder-init-list]
+2: ISO C++ requires field designators to be specified in declaration order; field 'SCOPES_ALREADY_GRANTED' will be initialized after field 'PLAY_SERVICES_NOT_AVAILABLE' [-Wreorder-init-list]
+2: ISO C++ requires field designators to be specified in declaration order; field 'NO_SAVED_CREDENTIAL_FOUND' will be initialized after field 'ONE_TAP_START_FAILED' [-Wreorder-init-list]
+12: 'RCTRootView' is deprecated: This API will be removed along with the legacy architecture.
+10: cannot find protocol definition for 'RCTHostDelegate'
+4: 'NativeArrayBuffer' is deprecated: Use ArrayBuffer instead. [#DeprecatedDeclaration]
+4: value 'delegate' was defined but never used; consider replacing with boolean test [#NoUsage]
+4: class 'FetchUnknownException' must restate inherited '@unchecked Sendable' conformance
+4: class 'FetchRequestCanceledException' must restate inherited '@unchecked Sendable' conformance
+4: class 'FetchRedirectException' must restate inherited '@unchecked Sendable' conformance
+4: class 'FetchBlobModuleUnavailableException' must restate inherited '@unchecked Sendable' conformance
+4: capture of 'completionHandler' with non-Sendable type '(URLRequest?) -> Void' in a '@Sendable' closure [#SendableClosureCaptures]
+14: 'RCTRootView' is deprecated: This API will be removed along with the legacy architecture. [-Wdeprecated-declarations]
+6: 'JSExecutorFactory' is deprecated: This API will be removed along with the legacy architecture. [-Wdeprecated-declarations]
+2: class 'EXReactNativeFactory' does not conform to protocol 'RCTHostDelegate' [-Wprotocol]
+2: implementing deprecated method [-Wdeprecated-implementations]
+2: 'application:performFetchWithCompletionHandler:' is deprecated: first deprecated in iOS 13.0 - Use a BGAppRefreshTask in the BackgroundTasks framework instead [-Wdeprecated-declarations]
+2: unused variable 'APP_DEBUG' [-Wunused-variable]
+2: cannot find protocol definition for 'EXAppDelegateSubscriberProtocol'
+2: 'RCTKeyCommands.o' has no symbols
+4: concurrently-executed local function 'finish' must be marked as '@Sendable'; this is an error in the Swift 6 language mode
+4: reference to captured var 'resumed' in concurrently-executing code; this is an error in the Swift 6 language mode [#SendableClosureCaptures]
+4: mutation of captured var 'resumed' in concurrently-executing code; this is an error in the Swift 6 language mode [#SendableClosureCaptures]
+4: 'windows' was deprecated in iOS 15.0: Use UIWindowScene.windows on a relevant window scene instead [#DeprecatedDeclaration]
+4: constant 'metaClass' inferred to have type 'AnyClass?' (aka 'Optional<any AnyObject.Type>'), which may be unexpected
+1: The @ExpoModule class 'CoreModule' (/Users/doyeon/Desktop/chagok/node_modules/expo-modules-core/ios/Core/Modules/CoreModule.swift) is internal, so the generated modules provider cannot reference it. Declare it public to link it automatically, or use a lower access level such as private to opt it out of linking.
+8: reference to type 'CKShareMetadata' broken by a context change; 'CKShareMetadata' was expected to be in 'UIKit', but now a candidate is found only in 'CloudKit'
+1: Bundler cache is empty, rebuilding (this may take a minute)
+1: the variable "Promise" was not declared in anonymous function
+1: the variable "URL" was not declared in anonymous arrow function
+1: the variable "fetch" was not declared in anonymous function
+1: the variable "AbortSignal" was not declared in anonymous function
+1: the variable "setTimeout" was not declared in function "reportListenerError"
+1: the variable "performance" was not declared in anonymous function
+1: the variable "clearTimeout" was not declared in anonymous function
+1: the variable "Node" was not declared in anonymous function
+1: the variable "Blob" was not declared in anonymous function
+1: the variable "FileReader" was not declared in function "readBlobAsArrayBuffer"
+1: the variable "FormData" was not declared in anonymous function
+1: the variable "URLSearchParams" was not declared in anonymous function
+1: the variable "XMLHttpRequest" was not declared in anonymous function
+1: the variable "ErrorUtils" was not declared in anonymous function
+1: the variable "TransformStream" was not declared in anonymous function
+1: the variable "TextDecoder" was not declared in anonymous function
+1: the variable "atob" was not declared in function "prepareBitmap"
+1: the variable "Request" was not declared in anonymous arrow function
+1: the variable "clearImmediate" was not declared in function "scheduleQueueFlush"
+1: the variable "requestAnimationFrame" was not declared in anonymous function
+1: the variable "ReadableStream" was not declared in function "wrapWithConsumption"
+1: the variable "Headers" was not declared in anonymous function
+1: Direct call to eval(), but lexical scope is not supported.
+1: the variable "Image" was not declared in anonymous arrow function
+1: the variable "setInterval" was not declared in anonymous arrow function
+1: the variable "clearInterval" was not declared in anonymous arrow function
+1: the variable "WebSocket" was not declared in anonymous function
+1: the variable "ResizeObserver" was not declared in anonymous arrow function
+1: the variable "requestIdleCallback" was not declared in anonymous arrow function
+1: the variable "cancelIdleCallback" was not declared in anonymous arrow function
+1: the variable "cancelAnimationFrame" was not declared in function "cancelSplashScreenAnimationFrame"
+1: the variable "REACT_NAVIGATION_DEVTOOLS" was not declared in anonymous arrow function
+1: the variable "btoa" was not declared in function "uint8ArrayToBase64"
+1: the variable "alert" was not declared in function "throwOrAlert"
+1: Run script build phase '[Expo Dev Launcher] Strip Local Network Keys for Release' will be run during every build because it does not specify any outputs. To address this issue, either add output dependencies to the script phase, or configure it to run in every build by unchecking "Based on dependency analysis" in the script phase. (in target 'app' from project 'app')
+
+Final output:
+note: Run script build phase '[CP-User] [RNCore] Replace React Native Core for the right configuration, if needed' will be run during every build because the option to run the script phase "Based on dependency analysis" is unchecked. (in target 'React-Core-prebuilt' from project 'Pods')
+note: Run script build phase '[CP-User] [Expo] Switch ExpoModulesWorklets XCFramework for build configuration' will be run during every build because the option to run the script phase "Based on dependency analysis" is unchecked. (in target 'ExpoModulesWorklets' from project 'Pods')
+note: Run script build phase '[CP-User] Build ExpoModulesJSI xcframework' will be run during every build because the option to run the script phase "Based on dependency analysis" is unchecked. (in target 'ExpoModulesJSI' from project 'Pods')
+note: Run script build phase '[CP-User] [Expo] Switch ExpoFont XCFramework for build configuration' will be run during every build because the option to run the script phase "Based on dependency analysis" is unchecked. (in target 'ExpoFont' from project 'Pods')
+note: Run script build phase '[CP-User] [Expo] Switch ExpoModulesCore XCFramework for build configuration' will be run during every build because the option to run the script phase "Based on dependency analysis" is unchecked. (in target 'ExpoModulesCore' from project 'Pods')
+note: Run script build phase '[CP-User] [Expo] Switch ExpoFileSystem XCFramework for build configuration' will be run during every build because the option to run the script phase "Based on dependency analysis" is unchecked. (in target 'ExpoFileSystem' from project 'Pods')
+note: Run script build phase '[Expo] Configure project' will be run during every build because the option to run the script phase "Based on dependency analysis" is unchecked. (in target 'app' from project 'app')
+note: Run script build phase 'Bundle React Native code and images' will be run during every build because the option to run the script phase "Based on dependency analysis" is unchecked. (in target 'app' from project 'app')
+warning: Run script build phase '[Expo Dev Launcher] Strip Local Network Keys for Release' will be run during every build because it does not specify any outputs. To address this issue, either add output dependencies to the script phase, or configure it to run in every build by unchecking "Based on dependency analysis" in the script phase. (in target 'app' from project 'app')
+note: Run script build phase '[CP-User] Generate app.config for prebuilt Constants.manifest' will be run during every build because the option to run the script phase "Based on dependency analysis" is unchecked. (in target 'EXConstants' from project 'Pods')
+** BUILD SUCCEEDED **
+

@@ -1,0 +1,49 @@
+{
+  "date": "2026-11-24 KST",
+  "runId": "receipt-ui-1795426328923",
+  "platform": "iPhone 17 / iOS 27.2 simulator",
+  "build": "Existing Debug app with current Metro source; unchanged product code",
+  "source": "Actual OS camera permission prompt denied through Device Hub CUA",
+  "raw": "docs/metrics/raw/receipt-ui-1795426328923-permission.json",
+  "sha256": "e28001cfe7db54b36ca01d25e1a3e7bd575331fcf7664936c39e4baa9f8c3c2d",
+  "previousSamplesPreserved": 36,
+  "newSamples": 3,
+  "scenarios": [
+    "Initial camera denial: PERMISSION_SETTINGS visible",
+    "Camera retry: settings guidance, no new prompt",
+    "Library still opens; cancellation preserves existing JPEG 46.7KB"
+  ],
+  "samples": [
+    {
+      "source": "camera",
+      "pickerMs": 13069.279334008694,
+      "outcome": "error",
+      "bridgeAckMs": 48.80441698431969,
+      "delivery": "acked"
+    },
+    {
+      "source": "camera",
+      "pickerMs": 5.280791997909546,
+      "outcome": "error",
+      "bridgeAckMs": 2.5380829870700836,
+      "delivery": "acked"
+    },
+    {
+      "source": "library",
+      "pickerMs": 14127.005874991417,
+      "outcome": "cancelled",
+      "bridgeAckMs": 369.31808400154114,
+      "delivery": "acked"
+    }
+  ],
+  "pending": 0,
+  "dropped": 0,
+  "saveFailed": false,
+  "limitations": [
+    "No captured photo or permission-granted camera launch",
+    "Simulator camera permission remains denied",
+    "Picker timing includes agent interaction; concurrent Release build and Android export affect timings",
+    "ACK confirms web state, not paint",
+    "No upload or prepare in these three samples; performance comparison is not valid"
+  ]
+}

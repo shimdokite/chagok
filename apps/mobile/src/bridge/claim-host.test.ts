@@ -153,3 +153,163 @@ it("invalidates possibly committed writes even after a transport failure", async
     payload: { code: "UNKNOWN" },
   });
 });
+
+it("suppresses receipt completion after cancellation, reload and scope change", async () => {
+  for (const end of ["cancel", "reset", "scope"]) {
+    const output: BridgeMessage[] = [];
+    let scope: string | null = "a";
+    let finish!: (value: { kind: "cancelled" }) => void;
+    const host = new ClaimHost({
+      origin,
+
+      access: () => ({ scope, mode: "live" }),
+
+      send: (message) => output.push(message),
+
+      load: async () => home,
+
+      create: async () => ({ id: "saved" }),
+
+      invalidate: async () => {},
+
+      pickReceipt: () =>
+        new Promise((resolve) => {
+          finish = resolve;
+        }),
+    });
+    host.announce();
+    const init = output[0];
+    if (init.type !== "FORM_INIT") throw new Error("init");
+    const request = {
+      ...bridgeBase,
+      connectionId: init.connectionId,
+      requestId: "pick",
+      type: "RECEIPT_PICK",
+      payload: { source: "library" },
+    };
+    const pending = host.receive(request, `${origin}/apply`);
+    expect(finish).toBeTypeOf("function");
+    if (end === "reset") host.reset();
+    else if (end === "scope") scope = "b";
+    else
+      await host.receive(
+        { ...request, type: "RECEIPT_CANCEL", payload: {} },
+        `${origin}/apply`,
+      );
+    finish({ kind: "cancelled" });
+    await pending;
+    expect(output.filter((m) => m.type === "RECEIPT_RESULT")).toHaveLength(0);
+  }
+});
+
+it("returns a receipt error for session expiry before or during selection", async () => {
+  for (const during of [false, true]) {
+    let valid = true;
+    const output: BridgeMessage[] = [];
+    const host = new ClaimHost({
+      origin,
+
+      access: () => ({
+        scope: valid ? "a" : null,
+        mode: valid ? "live" : "unavailable",
+      }),
+
+      send: (message) => output.push(message),
+
+      load: async () => home,
+
+      create: async () => ({ id: "saved" }),
+
+      invalidate: async () => {},
+
+      pickReceipt: async () => {
+        valid = false;
+        return { kind: "cancelled" };
+      },
+    });
+    host.announce();
+    const init = output[0];
+    if (init.type !== "FORM_INIT") throw new Error("init");
+    if (!during) valid = false;
+    await host.receive(
+      {
+        ...bridgeBase,
+        type: "RECEIPT_PICK",
+        connectionId: init.connectionId,
+        requestId: "expired",
+        payload: { source: "library" },
+      },
+      `${origin}/apply`,
+    );
+    expect(output.at(-1)).toMatchObject({
+      type: "RECEIPT_ERROR",
+      requestId: "expired",
+      payload: { code: "UNAUTHORIZED" },
+    });
+  }
+});
+
+it("correlates receipt ACK with origin, request, connection and scope, clears reset", async () => {
+  const { ReceiptJournal } = await import("../receipts/metrics");
+  let now = 0;
+  let scope = "a";
+  const journal = new ReceiptJournal(() => now);
+  const output: BridgeMessage[] = [];
+  const host = new ClaimHost({
+    origin,
+
+    access: () => ({ scope, mode: "live" }),
+
+    send: (message) => output.push(message),
+
+    load: async () => home,
+
+    create: async () => ({ id: "saved" }),
+
+    invalidate: async () => {},
+
+    pickReceipt: async () => ({ kind: "cancelled" }),
+
+    measureReceipt: (source) => journal.start(source),
+  });
+  host.announce();
+  const init = output[0];
+  if (init.type !== "FORM_INIT") throw new Error("init");
+  const pick = {
+    ...bridgeBase,
+    type: "RECEIPT_PICK",
+    connectionId: init.connectionId,
+    requestId: "pick",
+    payload: { source: "library" },
+  };
+  await host.receive(pick, `${origin}/apply`);
+  const ack = { ...pick, type: "RECEIPT_ACK", payload: {} };
+  await host.receive(pick, `${origin}/apply`);
+  expect(journal.snapshot().started).toBe(1);
+  now = 9;
+  await host.receive(ack, "https://other.test/apply");
+  await host.receive({ ...ack, requestId: "other" }, `${origin}/apply`);
+  await host.receive({ ...ack, connectionId: "old" }, `${origin}/apply`);
+  expect(journal.snapshot().samples).toHaveLength(0);
+  await host.receive(ack, `${origin}/apply`);
+  await host.receive(ack, `${origin}/apply`);
+  expect(journal.snapshot().samples).toMatchObject([
+    { delivery: "acked", bridgeAckMs: 9 },
+  ]);
+  await host.receive({ ...pick, requestId: "reset" }, `${origin}/apply`);
+  host.reset();
+  expect(journal.snapshot().samples.at(-1)?.delivery).toBe("aborted");
+  host.announce();
+  const next = output.at(-1);
+  if (next?.type !== "FORM_INIT") throw new Error("init");
+  await host.receive(
+    { ...pick, connectionId: next.connectionId, requestId: "scope" },
+    `${origin}/apply`,
+  );
+  scope = "b";
+  await host.receive(
+    { ...ack, connectionId: next.connectionId, requestId: "scope" },
+    `${origin}/apply`,
+  );
+  expect(journal.snapshot().samples.at(-1)?.delivery).toBe("aborted");
+});

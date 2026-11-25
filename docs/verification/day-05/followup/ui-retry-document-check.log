@@ -1,0 +1,7 @@
+Existing files: 743 changed: 3 unchanged: 740
+Local links: 10
+PASS git diff --check
+PASS git diff --cached
+PASS git ls-files -- docs/learning
+PASS git diff --name-status origin/main...HEAD -- docs/learning
+Draft structure and learning preservation PASS

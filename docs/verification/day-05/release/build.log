@@ -1,0 +1,193 @@
+Summary, not full raw log.
+PATH="$PWD/.local-tools/node24/node_modules/.bin:$PATH" DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer xcodebuild -workspace apps/mobile/ios/app.xcworkspace -scheme app -configuration Release -sdk iphonesimulator -destination "generic/platform=iOS Simulator" -derivedDataPath /tmp/chagok-day05-release-build CODE_SIGNING_ALLOWED=YES CODE_SIGN_IDENTITY=- build
+{
+  "fullLog": ".local-tools/day-05-local/ios-release-signed-build.full.log",
+  "byteSize": 3818586,
+  "sha256": "b781795d296881ba0ba058d772f903b751b192dfa137548a109ca77714b6d18e",
+  "exitCode": 0,
+  "warningLines": 91,
+  "errorLines": 0
+}
+
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/React-timing/React-timing_privacy.bundle (in target 'React-timing-React-timing_privacy' from project 'Pods')
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/React-timing/React-timing_privacy.bundle
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/PromisesObjC/FBLPromises_Privacy.bundle (in target 'PromisesObjC-FBLPromises_Privacy' from project 'Pods')
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/PromisesObjC/FBLPromises_Privacy.bundle
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/GoogleUtilities/GoogleUtilities_Privacy.bundle (in target 'GoogleUtilities-GoogleUtilities_Privacy' from project 'Pods')
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/GoogleUtilities/GoogleUtilities_Privacy.bundle
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/GTMSessionFetcher/GTMSessionFetcher_Core_Privacy.bundle (in target 'GTMSessionFetcher-GTMSessionFetcher_Core_Privacy' from project 'Pods')
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/GTMSessionFetcher/GTMSessionFetcher_Core_Privacy.bundle
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/ExpoFileSystem/ExpoFileSystem_privacy.bundle (in target 'ExpoFileSystem-ExpoFileSystem_privacy' from project 'Pods')
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/ExpoFileSystem/ExpoFileSystem_privacy.bundle
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/AppAuth/AppAuthCore_Privacy.bundle (in target 'AppAuth-AppAuthCore_Privacy' from project 'Pods')
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/AppAuth/AppAuthCore_Privacy.bundle
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/PromisesObjC/libPromisesObjC.a (in target 'PromisesObjC' from project 'Pods')
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/PromisesObjC/libPromisesObjC.a
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/AppAuth/libAppAuth.a (in target 'AppAuth' from project 'Pods')
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/AppAuth/libAppAuth.a
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/PromisesSwift/Promises_Privacy.bundle (in target 'PromisesSwift-Promises_Privacy' from project 'Pods')
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/PromisesSwift/Promises_Privacy.bundle
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/GTMAppAuth/GTMAppAuth_Privacy.bundle (in target 'GTMAppAuth-GTMAppAuth_Privacy' from project 'Pods')
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/GTMAppAuth/GTMAppAuth_Privacy.bundle
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/GoogleUtilities/libGoogleUtilities.a (in target 'GoogleUtilities' from project 'Pods')
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/GoogleUtilities/libGoogleUtilities.a
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/GTMSessionFetcher/libGTMSessionFetcher.a (in target 'GTMSessionFetcher' from project 'Pods')
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/GTMSessionFetcher/libGTMSessionFetcher.a
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/PromisesSwift/libPromisesSwift.a (in target 'PromisesSwift' from project 'Pods')
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/PromisesSwift/libPromisesSwift.a
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/RecaptchaInterop/libRecaptchaInterop.a (in target 'RecaptchaInterop' from project 'Pods')
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/RecaptchaInterop/libRecaptchaInterop.a
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/React-cxxreact/React-cxxreact_privacy.bundle (in target 'React-cxxreact-React-cxxreact_privacy' from project 'Pods')
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/React-cxxreact/React-cxxreact_privacy.bundle
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/RNSVG/RNSVGFilters.bundle (in target 'RNSVG-RNSVGFilters' from project 'Pods')
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/RNSVG/RNSVGFilters.bundle
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/ReactCodegen/libReactCodegen.a (in target 'ReactCodegen' from project 'Pods')
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/ReactCodegen/libReactCodegen.a
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/RNWorklets/libRNWorklets.a (in target 'RNWorklets' from project 'Pods')
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/RNWorklets/libRNWorklets.a
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/ReactAppDependencyProvider/libReactAppDependencyProvider.a (in target 'ReactAppDependencyProvider' from project 'Pods')
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/ReactAppDependencyProvider/libReactAppDependencyProvider.a
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/ExpoSystemUI/ExpoSystemUI_privacy.bundle (in target 'ExpoSystemUI-ExpoSystemUI_privacy' from project 'Pods')
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/ExpoSystemUI/ExpoSystemUI_privacy.bundle
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/RNScreens/libRNScreens.a (in target 'RNScreens' from project 'Pods')
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/RNScreens/libRNScreens.a
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/EXConstants/EXConstants.bundle (in target 'EXConstants-EXConstants' from project 'Pods')
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/EXConstants/EXConstants.bundle
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/EXConstants/ExpoConstants_privacy.bundle (in target 'EXConstants-ExpoConstants_privacy' from project 'Pods')
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/EXConstants/ExpoConstants_privacy.bundle
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/EXManifests/libEXManifests.a (in target 'EXManifests' from project 'Pods')
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/EXManifests/libEXManifests.a
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/AppCheckCore/libAppCheckCore.a (in target 'AppCheckCore' from project 'Pods')
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/AppCheckCore/libAppCheckCore.a
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/expo-dev-menu/EXDevMenu.bundle (in target 'expo-dev-menu-EXDevMenu' from project 'Pods')
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/expo-dev-menu/EXDevMenu.bundle
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/EXUpdatesInterface/libEXUpdatesInterface.a (in target 'EXUpdatesInterface' from project 'Pods')
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/EXUpdatesInterface/libEXUpdatesInterface.a
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/GTMAppAuth/libGTMAppAuth.a (in target 'GTMAppAuth' from project 'Pods')
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/GTMAppAuth/libGTMAppAuth.a
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/expo-dev-launcher/EXDevLauncher.bundle (in target 'expo-dev-launcher-EXDevLauncher' from project 'Pods')
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/expo-dev-launcher/EXDevLauncher.bundle
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/GoogleSignIn/GoogleSignIn.bundle (in target 'GoogleSignIn-GoogleSignIn' from project 'Pods')
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/GoogleSignIn/GoogleSignIn.bundle
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/expo-dev-menu-interface/libexpo-dev-menu-interface.a (in target 'expo-dev-menu-interface' from project 'Pods')
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/expo-dev-menu-interface/libexpo-dev-menu-interface.a
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/GoogleSignIn/libGoogleSignIn.a (in target 'GoogleSignIn' from project 'Pods')
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/GoogleSignIn/libGoogleSignIn.a
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/EXConstants/libEXConstants.a (in target 'EXConstants' from project 'Pods')
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/EXConstants/libEXConstants.a
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/EXJSONUtils/libEXJSONUtils.a (in target 'EXJSONUtils' from project 'Pods')
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/EXJSONUtils/libEXJSONUtils.a
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/Expo/libExpo.a (in target 'Expo' from project 'Pods')
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/Expo/libExpo.a
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/ExpoAdapterGoogleSignIn/libExpoAdapterGoogleSignIn.a (in target 'ExpoAdapterGoogleSignIn' from project 'Pods')
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/ExpoAdapterGoogleSignIn/libExpoAdapterGoogleSignIn.a
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/ExpoAsset/libExpoAsset.a (in target 'ExpoAsset' from project 'Pods')
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/ExpoAsset/libExpoAsset.a
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/ExpoDomWebView/libExpoDomWebView.a (in target 'ExpoDomWebView' from project 'Pods')
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/ExpoDomWebView/libExpoDomWebView.a
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/ExpoGlassEffect/libExpoGlassEffect.a (in target 'ExpoGlassEffect' from project 'Pods')
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/ExpoGlassEffect/libExpoGlassEffect.a
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/ExpoImagePicker/libExpoImagePicker.a (in target 'ExpoImagePicker' from project 'Pods')
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/ExpoImagePicker/libExpoImagePicker.a
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/ExpoKeepAwake/libExpoKeepAwake.a (in target 'ExpoKeepAwake' from project 'Pods')
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/ExpoKeepAwake/libExpoKeepAwake.a
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/ExpoLinking/libExpoLinking.a (in target 'ExpoLinking' from project 'Pods')
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/ExpoLinking/libExpoLinking.a
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/ExpoLogBox/libExpoLogBox.a (in target 'ExpoLogBox' from project 'Pods')
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/ExpoLogBox/libExpoLogBox.a
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/ExpoModulesWorkletsAdapter/libExpoModulesWorkletsAdapter.a (in target 'ExpoModulesWorkletsAdapter' from project 'Pods')
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/ExpoModulesWorkletsAdapter/libExpoModulesWorkletsAdapter.a
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/ExpoRouter/libExpoRouter.a (in target 'ExpoRouter' from project 'Pods')
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/ExpoRouter/libExpoRouter.a
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/ExpoSecureStore/libExpoSecureStore.a (in target 'ExpoSecureStore' from project 'Pods')
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/ExpoSecureStore/libExpoSecureStore.a
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/ExpoStatusBar/libExpoStatusBar.a (in target 'ExpoStatusBar' from project 'Pods')
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/ExpoStatusBar/libExpoStatusBar.a
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/ExpoSystemUI/libExpoSystemUI.a (in target 'ExpoSystemUI' from project 'Pods')
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/ExpoSystemUI/libExpoSystemUI.a
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/RNCMaskedView/libRNCMaskedView.a (in target 'RNCMaskedView' from project 'Pods')
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/RNCMaskedView/libRNCMaskedView.a
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/RNGestureHandler/libRNGestureHandler.a (in target 'RNGestureHandler' from project 'Pods')
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/RNGestureHandler/libRNGestureHandler.a
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/RNGoogleSignin/libRNGoogleSignin.a (in target 'RNGoogleSignin' from project 'Pods')
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/RNGoogleSignin/libRNGoogleSignin.a
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/RNReanimated/libRNReanimated.a (in target 'RNReanimated' from project 'Pods')
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/RNReanimated/libRNReanimated.a
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/RNSVG/libRNSVG.a (in target 'RNSVG' from project 'Pods')
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/RNSVG/libRNSVG.a
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/expo-dev-menu/libexpo-dev-menu.a (in target 'expo-dev-menu' from project 'Pods')
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/expo-dev-menu/libexpo-dev-menu.a
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/expo-dev-launcher/libexpo-dev-launcher.a (in target 'expo-dev-launcher' from project 'Pods')
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/expo-dev-launcher/libexpo-dev-launcher.a
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/react-native-safe-area-context/libreact-native-safe-area-context.a (in target 'react-native-safe-area-context' from project 'Pods')
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/react-native-safe-area-context/libreact-native-safe-area-context.a
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/react-native-webview/libreact-native-webview.a (in target 'react-native-webview' from project 'Pods')
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/react-native-webview/libreact-native-webview.a
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/libPods-app.a (in target 'Pods-app' from project 'Pods')
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/libPods-app.a
+CodeSign /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/app.app (in target 'app' from project 'app')
+    /usr/bin/codesign --force --sign - --entitlements /tmp/chagok-day05-release-build/Build/Intermediates.noindex/app.build/Release-iphonesimulator/app.build/app.app.xcent --timestamp\=none --generate-entitlement-der --strip-disallowed-xattrs /tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/app.app
+** BUILD SUCCEEDED **
+
+Unique warning lines:
+    |                                       `- warning: 'windows' was deprecated in iOS 15.0: Use UIWindowScene.windows on a relevant window scene instead [#DeprecatedDeclaration]
+    |                `- warning: reference to captured var 'resumed' in concurrently-executing code; this is an error in the Swift 6 language mode [#SendableClosureCaptures]
+    |            `- warning: concurrently-executed local function 'finish' must be marked as '@Sendable'; this is an error in the Swift 6 language mode
+    |         `- warning: mutation of captured var 'resumed' in concurrently-executing code; this is an error in the Swift 6 language mode [#SendableClosureCaptures]
+   |                                                          `- warning: cannot find protocol definition for 'RCTHostDelegate'
+   |                            `- warning: 'RCTRootView' is deprecated: This API will be removed along with the legacy architecture.
+   |           |- warning: constant 'metaClass' inferred to have type 'AnyClass?' (aka 'Optional<any AnyObject.Type>'), which may be unexpected
+  | |- warning: reference to type 'CKShareMetadata' broken by a context change; 'CKShareMetadata' was expected to be in 'UIKit', but now a candidate is found only in 'CloudKit'
+/Users/doyeon/Desktop/chagok/apps/mobile/ios/Pods/AppCheckCore/AppCheckCore/Sources/Core/GACAppCheckLogger.m:47:18: warning: unused function 'MessageCodeEnumToString' [-Wunused-function]
+/Users/doyeon/Desktop/chagok/apps/mobile/ios/Pods/AppCheckCore/AppCheckCore/Sources/Core/GACAppCheckLogger.m:51:18: warning: unused function 'LoggerLevelEnumToString' [-Wunused-function]
+/Users/doyeon/Desktop/chagok/apps/mobile/ios/Pods/Headers/Private/React-RCTAppDelegate/RCTUIConfiguratorProtocol.h:40:28: warning: 'RCTRootView' is deprecated: This API will be removed along with the legacy architecture.
+/Users/doyeon/Desktop/chagok/apps/mobile/ios/Pods/Headers/Private/React-RCTAppDelegate/RCTUIConfiguratorProtocol.h:40:28: warning: 'RCTRootView' is deprecated: This API will be removed along with the legacy architecture. [-Wdeprecated-declarations]
+/Users/doyeon/Desktop/chagok/apps/mobile/ios/Pods/Headers/Public/Expo/Expo/ExpoReactNativeFactory.h:11:58: warning: cannot find protocol definition for 'RCTHostDelegate'
+/Users/doyeon/Desktop/chagok/node_modules/expo-dev-launcher/ios/EXDevLauncherController.m:171:60: warning: 'windows' is deprecated: first deprecated in iOS 15.0 - Use UIWindowScene.windows on a relevant window scene instead [-Wdeprecated-declarations]
+/Users/doyeon/Desktop/chagok/node_modules/expo-dev-launcher/ios/EXDevLauncherUtils.swift:15:11: warning: constant 'metaClass' inferred to have type 'AnyClass?' (aka 'Optional<any AnyObject.Type>'), which may be unexpected
+/Users/doyeon/Desktop/chagok/node_modules/expo-dev-launcher/ios/SwiftUI/DevLauncherViewModel.swift:388:12: warning: concurrently-executed local function 'finish' must be marked as '@Sendable'; this is an error in the Swift 6 language mode
+/Users/doyeon/Desktop/chagok/node_modules/expo-dev-launcher/ios/SwiftUI/DevLauncherViewModel.swift:438:16: warning: reference to captured var 'resumed' in concurrently-executing code; this is an error in the Swift 6 language mode [#SendableClosureCaptures]
+/Users/doyeon/Desktop/chagok/node_modules/expo-dev-launcher/ios/SwiftUI/DevLauncherViewModel.swift:439:9: warning: mutation of captured var 'resumed' in concurrently-executing code; this is an error in the Swift 6 language mode [#SendableClosureCaptures]
+/Users/doyeon/Desktop/chagok/node_modules/expo-dev-launcher/ios/SwiftUI/DevLauncherViewModel.swift:777:39: warning: 'windows' was deprecated in iOS 15.0: Use UIWindowScene.windows on a relevant window scene instead [#DeprecatedDeclaration]
+/tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/Expo/Expo.swiftmodule/arm64-apple-ios-simulator.swiftmodule:1:1: warning: reference to type 'CKShareMetadata' broken by a context change; 'CKShareMetadata' was expected to be in 'UIKit', but now a candidate is found only in 'CloudKit'
+/tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/Expo/Expo.swiftmodule/x86_64-apple-ios-simulator.swiftmodule:1:1: warning: reference to type 'CKShareMetadata' broken by a context change; 'CKShareMetadata' was expected to be in 'UIKit', but now a candidate is found only in 'CloudKit'
+/tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/main.jsbundle:100969:16: warning: the variable "requestIdleCallback" was not declared in anonymous arrow function
+/tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/main.jsbundle:100972:20: warning: the variable "cancelIdleCallback" was not declared in anonymous arrow function
+/tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/main.jsbundle:108855:7: warning: the variable "cancelAnimationFrame" was not declared in function "cancelSplashScreenAnimationFrame"
+/tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/main.jsbundle:115211:9: warning: the variable "REACT_NAVIGATION_DEVTOOLS" was not declared in anonymous arrow function
+/tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/main.jsbundle:125758:12: warning: the variable "btoa" was not declared in function "uint8ArrayToBase64"
+/tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/main.jsbundle:168362:7: warning: the variable "alert" was not declared in function "throwOrAlert"
+/tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/main.jsbundle:22459:21: warning: the variable "clearTimeout" was not declared in anonymous function
+/tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/main.jsbundle:22497:42: warning: the variable "Node" was not declared in anonymous function
+/tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/main.jsbundle:27294:15: warning: the variable "Blob" was not declared in anonymous function
+/tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/main.jsbundle:27433:24: warning: the variable "FileReader" was not declared in function "readBlobAsArrayBuffer"
+/tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/main.jsbundle:27486:40: warning: the variable "FormData" was not declared in anonymous function
+/tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/main.jsbundle:27488:44: warning: the variable "URLSearchParams" was not declared in anonymous function
+/tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/main.jsbundle:27741:23: warning: the variable "XMLHttpRequest" was not declared in anonymous function
+/tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/main.jsbundle:31779:25: warning: the variable "ErrorUtils" was not declared in anonymous function
+/tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/main.jsbundle:32114:35: warning: the variable "TransformStream" was not declared in anonymous function
+/tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/main.jsbundle:32116:25: warning: the variable "TextDecoder" was not declared in anonymous function
+/tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/main.jsbundle:32554:72: warning: the variable "atob" was not declared in function "prepareBitmap"
+/tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/main.jsbundle:3499:26: warning: the variable "URL" was not declared in anonymous arrow function
+/tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/main.jsbundle:3531:42: warning: the variable "fetch" was not declared in anonymous function
+/tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/main.jsbundle:35332:50: warning: the variable "Request" was not declared in anonymous arrow function
+/tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/main.jsbundle:38544:5: warning: the variable "clearImmediate" was not declared in function "scheduleQueueFlush"
+/tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/main.jsbundle:40388:32: warning: the variable "requestAnimationFrame" was not declared in anonymous function
+/tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/main.jsbundle:56847:22: warning: the variable "ReadableStream" was not declared in function "wrapWithConsumption"
+/tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/main.jsbundle:57112:18: warning: the variable "Headers" was not declared in anonymous function
+/tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/main.jsbundle:57820:16: warning: Direct call to eval(), but lexical scope is not supported.
+/tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/main.jsbundle:58884:21: warning: the variable "Image" was not declared in anonymous arrow function
+/tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/main.jsbundle:5898:57: warning: the variable "AbortSignal" was not declared in anonymous function
+/tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/main.jsbundle:60354:39: warning: the variable "setInterval" was not declared in anonymous arrow function
+/tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/main.jsbundle:60355:34: warning: the variable "clearInterval" was not declared in anonymous arrow function
+/tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/main.jsbundle:6158:5: warning: the variable "setTimeout" was not declared in function "reportListenerError"
+/tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/main.jsbundle:6204:71: warning: the variable "performance" was not declared in anonymous function
+/tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/main.jsbundle:76273:155: warning: the variable "WebSocket" was not declared in anonymous function
+/tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/main.jsbundle:919:13: warning: the variable "Promise" was not declared in anonymous function
+/tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/main.jsbundle:99488:26: warning: the variable "ResizeObserver" was not declared in anonymous arrow function
+libtool: warning: 'GACAppCheckStoredToken+GACAppCheckToken.o' has no symbols
+libtool: warning: 'GACAppCheckToken+APIResponse.o' has no symbols
+libtool: warning: 'RCTKeyCommands.o' has no symbols
+warning: Bundler cache is empty, rebuilding (this may take a minute)
+warning: Run script build phase '[Expo Dev Launcher] Strip Local Network Keys for Release' will be run during every build because it does not specify any outputs. To address this issue, either add output dependencies to the script phase, or configure it to run in every build by unchecking "Based on dependency analysis" in the script phase. (in target 'app' from project 'app')
+warning: The @ExpoModule class 'CoreModule' (/Users/doyeon/Desktop/chagok/node_modules/expo-modules-core/ios/Core/Modules/CoreModule.swift) is internal, so the generated modules provider cannot reference it. Declare it public to link it automatically, or use a lower access level such as private to opt it out of linking.

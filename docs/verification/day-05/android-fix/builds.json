@@ -1,0 +1,92 @@
+[
+  {
+    "log": "/tmp/chagok-android-fix-diagnostic-build.log",
+    "sha256": "7b01c398d78ab250383a2b109355bfcc1c31ef2e6067318531d4f3ae662b50f3",
+    "tail": [
+      "> Task :app:assembleRelease",
+      "",
+      "[Incubating] Problems report is available at: file:///Users/doyeon/Desktop/chagok/apps/mobile/android/build/reports/problems/problems-report.html",
+      "",
+      "Deprecated Gradle features were used in this build, making it incompatible with Gradle 10.",
+      "",
+      "You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.",
+      "",
+      "For more on this, please refer to https://docs.gradle.org/9.4.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.",
+      "",
+      "BUILD SUCCESSFUL in 5m 53s",
+      "900 actionable tasks: 874 executed, 26 up-to-date"
+    ]
+  },
+  {
+    "log": "/tmp/chagok-android-fix-final-build.log",
+    "sha256": "4b538bdcb5380448e297400c07666eead67857ce7ee46dfb9b3de6d89f17988f",
+    "tail": [
+      "> Task :app:assembleRelease",
+      "",
+      "[Incubating] Problems report is available at: file:///Users/doyeon/Desktop/chagok/apps/mobile/android/build/reports/problems/problems-report.html",
+      "",
+      "Deprecated Gradle features were used in this build, making it incompatible with Gradle 10.",
+      "",
+      "You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.",
+      "",
+      "For more on this, please refer to https://docs.gradle.org/9.4.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.",
+      "",
+      "BUILD SUCCESSFUL in 4m 49s",
+      "900 actionable tasks: 868 executed, 32 up-to-date"
+    ]
+  },
+  {
+    "log": "/tmp/chagok-android-fix-hardened-build.log",
+    "sha256": "e54c3b0480b3424915d9d5d2d91dbdc218a8be4b260a62364c90b5063eefb9fc",
+    "tail": [
+      "> Task :app:assembleRelease",
+      "",
+      "[Incubating] Problems report is available at: file:///Users/doyeon/Desktop/chagok/apps/mobile/android/build/reports/problems/problems-report.html",
+      "",
+      "Deprecated Gradle features were used in this build, making it incompatible with Gradle 10.",
+      "",
+      "You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.",
+      "",
+      "For more on this, please refer to https://docs.gradle.org/9.4.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.",
+      "",
+      "BUILD SUCCESSFUL in 2m 35s",
+      "900 actionable tasks: 38 executed, 862 up-to-date"
+    ]
+  },
+  {
+    "log": "/tmp/chagok-android-fix-order-build.log",
+    "sha256": "aff34e8b224f67149b3db782258cdd2f5e2db7034d008eaa40c4037b2cba4aaa",
+    "tail": [
+      "> Task :app:assembleRelease",
+      "",
+      "[Incubating] Problems report is available at: file:///Users/doyeon/Desktop/chagok/apps/mobile/android/build/reports/problems/problems-report.html",
+      "",
+      "Deprecated Gradle features were used in this build, making it incompatible with Gradle 10.",
+      "",
+      "You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.",
+      "",
+      "For more on this, please refer to https://docs.gradle.org/9.4.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.",
+      "",
+      "BUILD SUCCESSFUL in 44s",
+      "900 actionable tasks: 25 executed, 875 up-to-date"
+    ]
+  },
+  {
+    "log": "/tmp/chagok-android-fix-complete-build.log",
+    "sha256": "9e34fe8873e1758d93e9cd57da9e872320a33594093ade19fc404ff07e50e925",
+    "tail": [
+      "> Task :app:assembleRelease",
+      "",
+      "[Incubating] Problems report is available at: file:///Users/doyeon/Desktop/chagok/apps/mobile/android/build/reports/problems/problems-report.html",
+      "",
+      "Deprecated Gradle features were used in this build, making it incompatible with Gradle 10.",
+      "",
+      "You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.",
+      "",
+      "For more on this, please refer to https://docs.gradle.org/9.4.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.",
+      "",
+      "BUILD SUCCESSFUL in 2m 30s",
+      "900 actionable tasks: 41 executed, 859 up-to-date"
+    ]
+  }
+]

@@ -5,7 +5,8 @@
   "exports": {
     ".": "./src/bridge.ts",
     "./demo": "./src/demo.ts",
-    "./benefits": "./src/benefits.ts"
+    "./benefits": "./src/benefits.ts",
+    "./receipts": "./src/receipts.ts"
   },
   "scripts": {
     "typecheck": "tsc --noEmit"

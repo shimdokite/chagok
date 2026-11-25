@@ -1,0 +1,42 @@
+{
+  "date": "2026-11-24 KST",
+  "command": "DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer xcodebuild -workspace apps/mobile/ios/app.xcworkspace -scheme app -configuration Release -sdk iphonesimulator -destination 'generic/platform=iOS Simulator' -derivedDataPath /tmp/chagok-day05-release-build CODE_SIGNING_ALLOWED=NO build",
+  "exitCode": 0,
+  "configuration": "Release",
+  "platform": "iphonesimulator",
+  "bundleIdentifier": "dev.doyeon.chagok",
+  "binary": "/tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/app.app/app: Mach-O universal binary with 2 architectures: [x86_64:Mach-O 64-bit executable x86_64] [arm64]\n/tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/app.app/app (for architecture x86_64):\tMach-O 64-bit executable x86_64\n/tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/app.app/app (for architecture arm64):\tMach-O 64-bit executable arm64",
+  "artifacts": [
+    {
+      "name": "app",
+      "byteSize": 28621840,
+      "sha256": "adf5a8aa9de9247b58a939bcf6a19344ac824e67afe31d25cebd549058667e56"
+    },
+    {
+      "name": "main.jsbundle",
+      "byteSize": 3972975,
+      "sha256": "2eb6e226bc531631d22020cfa01bddbb6fed62dc9e20b829b0165525d68d6cf1"
+    },
+    {
+      "name": "Info.plist",
+      "byteSize": 4558,
+      "sha256": "2a4c2350e7e805de3a8e5e0ddc6bad8268a3dd8516c38f30d4081982c0239a39"
+    }
+  ],
+  "permissions": {
+    "NSCameraUsageDescription": "복지비 신청에 첨부할 영수증을 촬영합니다.",
+    "NSPhotoLibraryUsageDescription": "복지비 신청에 첨부할 영수증 사진을 선택합니다.",
+    "NSMicrophoneUsageDescription": null
+  },
+  "ats": {
+    "NSAllowsLocalNetworking": true
+  },
+  "installedOrLaunched": false,
+  "codeSigningAllowed": false,
+  "warnings": 2283,
+  "errorLines": 0,
+  "fullLog": ".local-tools/day-05-local/ios-release-build.full.log",
+  "fullLogByteSize": 15840693,
+  "fullLogSha256": "389fd458c903f877c66d47e4bbd32e56521e6744debcab6892fa79cf8d43399c",
+  "limitation": "Simulator Release compilation and embedded bundle only; no device archive, signing, installation or execution."
+}

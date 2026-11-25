@@ -1,5 +1,11 @@
 # 1일차 실행 기록 — 2026-11-13 KST
 
+현재 최신 상태(2026-11-20, 5일차 전체 연결): 로컬 영수증 업로드, 실제 파일 검증, Expo 선택/촬영 코드, 브릿지 상태와 신청 연결 구현. 자동283테스트, 타입, 스타일122파일, 웹 Webpack 및 iOS Debug 빌드 통과. HTTP22회와 iOS 실제 파일 전송22회 성공. 실제 선택창/촬영 조작과 원격 저장소는 미검증이다. [AC/검증](verification/day-05.md), [측정 원본](metrics/daily/day-05.md). 이후의 준비/Task1 문단은 이전 시점 기록이다.
+
+이전 상태(2026-11-20, 5일차 Task 1): 독립 영수증 메타데이터 계약과26개 경계 테스트를 추가했다. 실제 DB 포함 전체258개, 스타일106파일, 타입4개 workspace 통과. [검증과 한계](verification/day-05-contract.md). 촬영/업로드/화면 연결과 실측은 미완료이며 준비 단계 아래 기록은 당시 상태다.
+
+현재 최신 상태(2026-11-20, 5일차 준비): 시작 HEAD `760d43d`에서 [상세 계획](plans/day-05.md)과 [측정 계획](metrics/daily/day-05.md)을 작성했다. 준비만 승인받았으며 제품 구현·테스트·실측은 시작하지 않았다. [준비 검증](verification/day-05-preparation.md)을 마친 뒤 사용자가 알려 주는 잔여 한도로 독립 메타데이터 계약/테스트 단계의 실행 가능성을 판단한다. 아래 HEAD와 완료 수치는 각 과거 작업 당시 기록이다.
+
 현재 최신 상태(2026-11-20): [PR #6](https://github.com/shimdokite/chagok/pull/6)은 2026-11-19 병합 완료. 로컬 main은 `0a66a38`. [병합 후 iOS 재실측·입력·복원 보완 검증](verification/day-04-followup.md)을 수행했다. 아래 기록은 각 작업 당시의 상태다.
 
 최신 상태(2026-11-17): [3일차 구현·AC·수동 확인](verification/day-03.md). commit·push·PR 없음. 아래 2일차 게시 대기 문구는 당시 기록이며 현재 HEAD는 PR #4 병합 이후다.
@@ -251,3 +257,82 @@ Simulator 실제 native app/WKWebView에서 웹 재로드2회 후 close2→unmou
 - Chrome production에서 실제 BFCache 왕복2회와 정책 재연결/입력 유지/미확정 재제출 차단 확인. iOS WKWebView의 BFCache 자체 검증으로 확대하지 않는다.
 - 검증 도구 실패 정리2건 보강, 실제 실패 주입에서도 세션 복구/fixture 정리 성공. 최종232테스트·스타일104파일 위반0, webpack production 빌드 통과.
 - 제품 기능 변경 없이 검증 도구와 기록만 보완했다. 새 commit/push/PR은 수행하지 않았다. Android·실기기·Release 검증, 완전 종료 뒤 초안 영구 복구는 별도 범위다.
+
+## 5일차 준비 — 2026-11-20
+
+- 사진 선택/촬영, 권한, 비공개 업로드, 브릿지, 신청 연결을 5개 단계로 나누고 전체 AC 8개와 검증 7묶음을 작성했다. 파일 정책과 저장소 방식은 구현자 제안으로 표시했다.
+- 독립 메타데이터 계약을 다음 작은 후보로 정의했다. 패키지 설치/DB 변경/화면 연결 없이 진행할 수 있으나 사용자 잔여 한도 전달 후 판단하며 아직 착수하지 않는다.
+- 측정은 표본0이며 시간 경계, 고정 fixture, 환경과 원본 기록 방법만 작성했다. 구현·앱 테스트·빌드·서버 실행·브라우저 검증은 이번 문서 작업에서 수행하지 않았다.
+- 준비 검증/최신 초안을 작성했다. 기존 생성 타입 변경, 인계 파일과 과거 학습 자료를 보존하며 학습은 계속 Git 제외다. commit/push/PR 없음.
+
+## 5일차 Task 1 — 메타데이터 계약
+
+- `@chagok/contracts/receipts`로 strict MIME/정수 바이트 계약과 타입/상한을 제공한다. 기존 신청·브릿지 입력은 변경하지 않았다.
+- 공개 export 부재로 RED 확인 후26개 GREEN. 전체 첫 실행은 로컬 DB EPERM으로17실패/241통과였고 허용 환경 재실행에서258통과/skip0을 확인했다.
+- 기존 사용자 변경을 보존하고 로컬 학습, 계획, 측정 상태와 최신 초안을 갱신했다. 실측 표본0, 화면 변화 없음, commit/push/PR 없음. 다음 시작점은 Task 2 저장소와 실제 파일 검증 설계 확정이다.
+
+
+## 5일차 검증 재개 — 2026-11-23
+
+- 기존 DB/웹/Metro 복구, 브라우저 신청 미리보기 확인. 현재 코드로30파일283테스트, 스타일122파일 위반0, 타입4개 workspace 통과.
+- 새 로컬 HTTP22/22회 성공, JPEG/PNG 각본10회 중앙16.40/13.60ms. 생성 첨부22건 정리/실패0. 과거 환경과 성능 비교하지 않는다.
+- Device Hub 화면은 조회되나 앱 클릭이 noWindowsAvailable로 실패해 사용자 다시 시도/사진 선택 조작 대기. 실기기 가능 여부도 확인 대기다.
+- picker/prepare/웹 ACK 계측은 코드 추가가 필요하다. 원격 저장소, 예약 정리, Android/Release와 전체 앱 흐름은 미완료 유지. [이번 검증](verification/day-05/followup/result.md).
+- 제품 코드 변경/커밋/push/PR 없음. 최신 초안은 이번 후속 검증 범위로 작성한다.
+
+
+### 2026-11-23 — 로그인 후 5일차 앱 흐름 확인
+
+- 에이전트가 iPhone17/iOS27.2에서 시스템 사진 선택/취소, PNG 업로드, 교체 취소 시 기존 첨부 유지, JPEG 교체, 삭제/PNG 재선택을 직접 확인했다.
+- 테스트 신청1건(1,000원), 최종 첨부 LINKED, 홈 잔여65,000→64,000원과 신청 내역 반영 확인. 저장 파일3/3 원본 바이트 일치. 테스트 신청과 첨부3건은 로컬 보존했고 READY2건은 기존24시간 정리 대상이다.
+- [최신 AC/근거/한계](verification/day-05/followup/result.md). 제품 코드 변경 없음. 실제 촬영/권한, 장애 복구/진행 중 종료 UI, picker/prepare/ACK 계측, 원격 저장소/예약 정리와 Android/Release는 남아 있다. 입력 포커스 후 확대/오른쪽 잘림도 후속 확인 대상으로 기록했다.
+
+
+### 2026-11-23 — 영수증 구간 계측과 실제 표본
+
+- 앱 단일 시계의 picker/prepare/upload/ACK 계측, 개발 전용100표본 JSON과 패널, strict RECEIPT_ACK 구현. 늦은 ACK/동일 request 재사용 회귀 보완.
+- 전체291테스트/스타일127파일/타입4 workspace/웹 빌드 통과. 빌드 동시 실행의 기존 테스트1건 timeout과 단독 재실행 성공을 각각 기록했다.
+- iPhone17 Simulator에서 JPEG/PNG 각각 준비1+본10회, 취소1회, ACK23건. 준비/업로드/ACK 중앙값 JPEG6.95/67.88/2.55ms, PNG6.45/100.40/2.24ms. picker 조작 대기 포함, 일부 빌드/테스트 병행으로 성능 개선 근거는 아니다.
+- 파일22/22바이트 일치·READY·0600, 신규 신청0, 삭제0. 실제 촬영/실패 복구 UI/원격 저장소/예약 정리/Android·Release는 남는다. [이번 AC/근거](verification/day-05/timing/result.md). commit/push/PR 없음.
+
+
+### 2026-11-23 — 업로드 실패·종료·재연결 UI 검증
+
+- 응답 지연35.32초 오류 후 기존 첨부 유지와 재시도, 업로드 중 닫기/재진입, 웹뷰 reload 후 새 첨부 성공을 직접 확인했다. R1~R4 충족.
+- 관련45테스트·스타일127파일 통과. Next 일시정지3회 전부 자동 재개, Next/Metro HTTP200. 제품 코드 변경 없이 검증·측정·학습·초안을 갱신했다.
+- 이번 표본7건: 성공4/오류1/중단2. DB 첨부4건 READY·바이트 일치·신규 신청0, 로컬 보존. [상세](verification/day-05/recovery/result.md).
+- 실제 세션 변경/서버 오류 코드별 UI, 실기기 카메라/권한, 원격 저장소/예약 정리와 Android/Release는 남는다. commit/push/PR 없음.
+
+
+### 2026-11-24 — Day5 오류와 세션 경계 후속
+
+실제 iOS 앱에서401/403/413/500/503 오류 안내·기존 PNG 보존, 복구 후 JPEG 성공을 확인했다. 테스트16개를 추가해 세션 구독의 만료/회사 변경 취소, 동일 세션 유지, 실제 DB 만료/소속 변경 및 본문 전송 중 재검증을 확인했다. 최종307테스트·스타일128파일·타입4 workspace 통과. [검증/남은 항목](verification/day-05/errors/result.md). 새 합성 첨부1건·신청0, 임시 API 원복. 실제 계정 변경 전체 UI, 실기기/권한, 원격 운영, Android/Release는 미검증. commit/push/PR 없음.
+
+
+## 2026-11-24 — Day5 추가 로컬 검증
+
+별도 임시 DB에서 실제 정리 CLI의100건 제한/실패 재시도/최신·연결 첨부 보존을 확인했다. 운영 로컬 저장소 차단 테스트3개 추가 후310테스트/스타일128파일/타입4 workspace 통과. iOS Simulator Release 빌드와 Android production Hermes export 통과. 시뮬레이터에서 카메라 권한 실제 거절→재시도→사진 선택 취소까지 직접 확인해3표본을 추가했다. [AC별 결과와 남은 환경](verification/day-05/local/result.md).
+
+제품 소스/설정/스키마 변경 없음, 기존 DB 새 첨부0/신청0. 카메라 권한은 거절 상태. 실기기 촬영/설정 복귀, 실제 계정 전환 UI, iOS Release 실행/Android native 실행, 원격 저장/운영 예약은 남아 있다. 학습은 로컬 보존, 최신 초안 갱신, commit/push/PR 없음.
+
+
+## 2026-11-24 — iOS Simulator Release 실행 확인
+
+Release 클라이언트의 기존 로그인 복원·홈·신청 WebView·사진 선택/취소·합성 PNG 업로드·권한 거절 안내와 첨부 보존을 확인했다. Metro를 약51.32초 멈춘 동안에도 앱 프로세스를 재실행해 홈과 신청 화면이 열렸고 Metro는 정상 재개했다. 최초 CODE_SIGNING_ALLOWED=NO 산출물의 Keychain -34018 오류는 시뮬레이터 ad-hoc 서명을 적용한 재빌드로 해소했다. 제품 소스/설정 수정 없이 동일 JS 번들로 검증했다. [실패·성공·AC 상세](verification/day-05/release/result.md).
+
+이번 관련20테스트·스타일128파일 위반0, Release 빌드/서명/설치 해시 대조 통과. 기존 DB/30파일 보존, 새 PNG1건 READY·원본 동일·0600, 신청0. Release에서는 개발 journal이 늘지 않았다. 현재 앱은 Release/로그인된 새 신청 화면이며 카메라 거절 상태다. 실기기 촬영·허용 복귀, 실제 계정 전환 UI, Android native, 배포/원격 저장/운영 예약은 남는다. 학습 로컬 보존, 초안 갱신, commit/push/PR 없음.
+
+## 2026-11-24 — Android 환경과 Release 실행
+
+Java17·SDK/NDK·Gradle·Android Studio·Pixel7/API36 ARM64 에뮬레이터 준비, 원본 Release 빌드/서명/설치와 데모 홈·내역·정책 탐색을 확인했다. Metro 중지 중에도 로그인 화면과 데모 홈이 실행됐다. A1/A2/A4 충족, A3 미충족: 신청 WebView는 Android 메시지 출처 형식과 /apply 검사 불일치로 연결 실패한다. OAuth 미등록으로 로그인/사진/업로드는 미검증이다. [결과와 다음 작업](verification/day-05/android/result.md).
+
+관련23테스트·스타일128파일0위반. 임시 Android HTTP/Next 허용/웹 진단 코드 복구, 기존 DB4테이블/영수증31파일 동일·새 신청/첨부0. 현재 에뮬레이터는 로컬 HTTP 진단용 Release 데모 홈이다. 실제 기기·배포·원격 저장/예약 정리는 남는다. 로컬 학습과 최신 초안 갱신, commit/push/PR 없음.
+
+
+## 2026-11-25 — Android 로컬 연결·신청 브릿지 수정
+
+명시적 local Release 네트워크 설정과 Next 개발 origin 허용을 재현 가능한 명령으로 정리했다. Android origin-only 메시지를 활성 /apply 문서와 함께 검증하고, 고정 WebView 패치로 직접 하위 프레임 송신을 차단했다. 실제 WEB_READY 뒤 동일 URL history 이벤트가 다시 초기화하던 두 번째 원인도 수정했다.
+
+AC1~4 충족: 최종333테스트/36파일, 타입4 workspace, 스타일132파일0위반, Release 빌드/서명/설치 해시 일치. 에뮬레이터에서25초 안정성·hard reload·다른 경로 차단·정상 웹/네이티브 닫기·재진입·서버 복구 후 재시도 확인. 기존 DB4테이블/영수증31파일 동일, 임시 fixture/로그 제거, 학습 로컬 제외 유지. Android OAuth/실제 영수증·실기기·원격 운영은 미검증. 구형 WebView는 연결을 거부하는 호환성 제한이 있다. commit/push/PR 없음.
+
+[상세 결과](verification/day-05/android-fix/result.md).

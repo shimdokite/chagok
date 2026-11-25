@@ -1,0 +1,36 @@
+{
+  "baselineFiles": 820,
+  "changed": [
+    "docs/changes/latest-commit.txt",
+    "docs/changes/latest-pr.md",
+    "docs/learning/day-05.md",
+    "docs/metrics/daily/day-05.md",
+    "docs/plans/day-05.md",
+    "docs/progress.md",
+    "docs/verification/day-05.md"
+  ],
+  "preserved": 813,
+  "missing": [],
+  "newFiles": [
+    "docs/verification/day-05/release/artifact.json",
+    "docs/verification/day-05/release/build-log-info.json",
+    "docs/verification/day-05/release/build.log",
+    "docs/verification/day-05/release/document-check.log",
+    "docs/verification/day-05/release/initial-failure.txt",
+    "docs/verification/day-05/release/initial-signatures.json",
+    "docs/verification/day-05/release/metro-independent.json",
+    "docs/verification/day-05/release/metro-ui-observation.json",
+    "docs/verification/day-05/release/preservation.json",
+    "docs/verification/day-05/release/result.md",
+    "docs/verification/day-05/release/server-flow.log",
+    "docs/verification/day-05/release/tests.log"
+  ],
+  "relativeLinks": 159,
+  "productSourceConfigSchemaUnchanged": true,
+  "installedArtifactStillMatches": true,
+  "metroStoppedDuringUi": true,
+  "gitDiffCheck": "pass",
+  "stagedFiles": 0,
+  "learningTrackedOrPrDiff": 0,
+  "learningIgnoredAndExists": true
+}

@@ -1,0 +1,7 @@
+2026-11-24 KST
+Initial install exit0; launch exit0 pid9628. UI: restore error on first launch and retry.
+securityd 15:17:23.745 and 15:17:46.469: SecItemCopyMatching error -34018: Client has neither application-identifier nor keychain-access-groups entitlements.
+Initial Release: CODE_SIGNING_ALLOWED=NO; signature identifier=app, linker-signed, Info.plist not bound.
+Debug backup: identifier=dev.doyeon.chagok, ad-hoc app signature, empty entitlements.
+App data container relocated by update; previous journal SHA preserved.
+Diagnostic log command --level debug was rejected; corrected with --debug --info. This was a diagnostic command error, not an app test failure.

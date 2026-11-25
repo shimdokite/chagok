@@ -10,6 +10,7 @@
     "node": ">=24.3.0 <25"
   },
   "scripts": {
+    "postinstall": "patch-package --error-on-fail",
     "dev:mobile": "npm run dev -w @chagok/mobile",
     "dev:preview": "npm run web -w @chagok/mobile",
     "dev:web": "npm run dev -w @chagok/web",
@@ -26,5 +27,8 @@
     "prettier": "^3.10.1",
     "typescript": "~5.9.3",
     "vitest": "^5.1.0"
+  },
+  "dependencies": {
+    "patch-package": "8.0.1"
   }
 }

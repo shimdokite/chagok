@@ -1,0 +1,127 @@
+
+> chagok@0.1.0 pretest
+> npm run style:check
+
+
+> chagok@0.1.0 style:check
+> node scripts/check-function-spacing.mjs
+
+코드 간격: 121개 파일 검사, 위반 0건
+
+> chagok@0.1.0 test
+> vitest run apps/mobile/src/bridge/claim-host.test.ts scripts/cleanup-receipts.test.ts --maxWorkers=2
+
+
+ RUN  v5.1.0 /Users/doyeon/Desktop/chagok
+
+ ❯ apps/mobile/src/bridge/claim-host.test.ts (12 tests | 1 failed) 58ms
+   × returns a receipt error for session expiry before or during selection 38ms
+ ❯ scripts/cleanup-receipts.test.ts (1 test | 1 failed) 1062ms
+   × refuses a remote database before starting local receipt cleanup 1061ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  scripts/cleanup-receipts.test.ts > refuses a remote database before starting local receipt cleanup
+AssertionError: expected '(node:79143) ExperimentalWarning: Tra…' to contain 'dedicated local chagok database'
+
+- Expected
++ Received
+
+- dedicated local chagok database
++ (node:79143) ExperimentalWarning: Transform Types is an experimental feature and might change at any time
++ (Use `node --trace-warnings ...` to show where the warning was created)
++ (node:79143) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/doyeon/Desktop/chagok/packages/api/src/auth/store.ts is not specified and it doesn't parse as CommonJS.
++ Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
++ To eliminate this warning, add "type": "module" to /Users/doyeon/Desktop/chagok/packages/api/package.json.
++ (node:79143) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/doyeon/Desktop/chagok/packages/contracts/src/receipts.ts is not specified and it doesn't parse as CommonJS.
++ Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
++ To eliminate this warning, add "type": "module" to /Users/doyeon/Desktop/chagok/packages/contracts/package.json.
++ /Users/doyeon/Desktop/chagok/node_modules/@prisma/client/src/runtime/RequestHandler.ts:238
++       throw new PrismaClientKnownRequestError(message, {
++             ^
++
++ PrismaClientKnownRequestError: 
++ Invalid `db.attachment.findMany()` invocation in
++ /Users/doyeon/Desktop/chagok/packages/api/src/receipts/service.ts:81:43
++
++   78 
++   79 async cleanup(now = new Date(), ids?: string[]) {
++   80   const cutoff = new Date(now.getTime() - RECEIPT_TTL_MS);
++ → 81   const expired = await db.attachment.findMany(
++ Can't reach database server at invalid.invalid
++     at vn.handleRequestError (/Users/doyeon/Desktop/chagok/node_modules/@prisma/client/src/runtime/RequestHandler.ts:238:13)
++     at vn.handleAndLogRequestError (/Users/doyeon/Desktop/chagok/node_modules/@prisma/client/src/runtime/RequestHandler.ts:184:12)
++     at vn.request (/Users/doyeon/Desktop/chagok/node_modules/@prisma/client/src/runtime/RequestHandler.ts:153:12)
++     at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
++     at async a (/Users/doyeon/Desktop/chagok/node_modules/@prisma/client/src/runtime/getPrismaClient.ts:1012:24)
++     at async Object.cleanup (/Users/doyeon/Desktop/chagok/packages/api/src/receipts/service.ts:81:23)
++     at async file:///Users/doyeon/Desktop/chagok/packages/api/scripts/cleanup-receipts.mjs:23:7 {
++   code: 'P1001',
++   meta: {
++     modelName: 'Attachment',
++     driverAdapterError: DriverAdapterError: DatabaseNotReachable
++         at PrismaPgAdapter.onError (file:///Users/doyeon/Desktop/chagok/node_modules/@prisma/adapter-pg/dist/index.mjs:666:11)
++         at PrismaPgAdapter.performIO (file:///Users/doyeon/Desktop/chagok/node_modules/@prisma/adapter-pg/dist/index.mjs:661:12)
++         at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
++         at async PrismaPgAdapter.queryRaw (file:///Users/doyeon/Desktop/chagok/node_modules/@prisma/adapter-pg/dist/index.mjs:595:30)
++         at async <anonymous> (/Users/doyeon/Desktop/chagok/node_modules/@prisma/client-engine-runtime/src/interpreter/query-interpreter.ts:200:28)
++         at async e.run (/Users/doyeon/Desktop/chagok/node_modules/@prisma/client-engine-runtime/src/interpreter/query-interpreter.ts:115:40)
++         at async e.execute (/Users/doyeon/Desktop/chagok/node_modules/@prisma/client/src/runtime/core/engines/client/LocalExecutor.ts:81:12)
++         at async yr.request (/Users/doyeon/Desktop/chagok/node_modules/@prisma/client/src/runtime/core/engines/client/ClientEngine.ts:510:22)
++         at async Object.singleLoader (/Users/doyeon/Desktop/chagok/node_modules/@prisma/client/src/runtime/RequestHandler.ts:113:26)
++         at async vn.request (/Users/doyeon/Desktop/chagok/node_modules/@prisma/client/src/runtime/RequestHandler.ts:150:14) {
++       cause: {
++         kind: 'DatabaseNotReachable',
++         host: 'invalid.invalid',
++         port: undefined
++       }
++     }
++   },
++   clientVersion: '7.10.1'
++ }
++
++ Node.js v24.22.3
++
+
+ ❯ scripts/cleanup-receipts.test.ts:23:25
+     21|   );
+     22|   expect(result.status).toBe(1);
+     23|   expect(result.stderr).toContain("dedicated local chagok database");
+       |                         ^
+     24|   expect(result.stderr).not.toContain("getaddrinfo");
+     25| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  apps/mobile/src/bridge/claim-host.test.ts > returns a receipt error for session expiry before or during selection
+AssertionError: expected { channel: 'chagok.bridge', …(5) } to match object { type: 'RECEIPT_ERROR', …(2) }
+(3 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+    "payload": {
+      "code": "UNAUTHORIZED",
+    },
+    "requestId": "expired",
+-   "type": "RECEIPT_ERROR",
++   "type": "FORM_ERROR",
+  }
+
+ ❯ apps/mobile/src/bridge/claim-host.test.ts:244:27
+    242|       `${origin}/apply`,
+    243|     );
+    244|     expect(output.at(-1)).toMatchObject({
+       |                           ^
+    245|       type: "RECEIPT_ERROR",
+    246|       requestId: "expired",
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  2 failed | 11 passed (13)
+   Start at  16:30:41
+   Duration  1.34s (tests 78%, import 11%, transform 10%, worker 1%)
+

@@ -1,0 +1,23 @@
+{
+  "dateKst": "2026-11-25",
+  "device": "Pixel 7 / Chagok_API_36 emulator-5554",
+  "android": "16",
+  "api": 36,
+  "abi": "arm64-v8a",
+  "node": "24.22.3",
+  "java": "17.0.21.1+2",
+  "gradle": "9.4.1",
+  "webViewDependency": "14.0.1 + tracked patch",
+  "appPackage": "dev.doyeon.chagok",
+  "appBuild": "Release 0.1.0 (1), development signing key",
+  "webOrigin": "http://10.0.2.2:3000",
+  "hostWebHttp": 200,
+  "metroHttp": 200,
+  "webMode": "Next16.4.6 development",
+  "processPid": 18595,
+  "installedApkSha256": "25fdeb0605abb14feed696c44723555a4d89e13104c43f43535fcc062d92e5a0",
+  "finalScreen": "demo apply form",
+  "nativeBuildToolsStopped": true,
+  "physicalDevice": false,
+  "googleOAuthRegistered": false
+}

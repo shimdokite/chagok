@@ -10,6 +10,7 @@ import {
   type CreateClaimInput,
 } from "@chagok/contracts/benefits";
 
+import type { UploadedReceipt } from "@chagok/contracts/receipts";
 import { requestId } from "./request-id";
 
 type Phase =
@@ -27,6 +28,9 @@ type State = {
   context?: FormContext;
   error?: string;
   savedId?: string;
+  receipt?: UploadedReceipt;
+  receiptBusy?: boolean;
+  receiptError?: string;
 };
 type Draft = Omit<CreateClaimInput, "requestId">;
 const errors = {
@@ -49,6 +53,7 @@ export class FormClient {
     timer: ReturnType<typeof setTimeout>;
   };
   private input?: CreateClaimInput;
+  private receiptRequest?: { id: string; timer: ReturnType<typeof setTimeout> };
   private month: string;
   private connectTimer?: ReturnType<typeof setTimeout>;
   private interrupted = false;
@@ -98,6 +103,7 @@ export class FormClient {
       this.state.phase === "submitting" || this.state.phase === "uncertain";
     clearTimeout(this.connectTimer);
     this.clearPending();
+    this.cancelReceipt();
     this.connectionId = "";
     this.input = undefined;
   }
@@ -125,6 +131,49 @@ export class FormClient {
         this.set({ mode: message.payload.mode, phase: "connecting" });
         this.load(this.month);
       }
+      return;
+    }
+    if (
+      (message.type === "RECEIPT_RESULT" || message.type === "RECEIPT_ERROR") &&
+      message.connectionId === this.connectionId &&
+      message.requestId === this.receiptRequest?.id
+    ) {
+      clearTimeout(this.receiptRequest.timer);
+      this.receiptRequest = undefined;
+      if (message.type === "RECEIPT_RESULT") {
+        this.set({
+          ...this.state,
+          receiptBusy: false,
+          receiptError: undefined,
+          receipt:
+            message.payload.kind === "uploaded"
+              ? message.payload.receipt
+              : this.state.receipt,
+        });
+      } else {
+        const messages = {
+          PERMISSION_DENIED: "카메라 권한을 허용한 뒤 다시 시도해 주세요.",
+          PERMISSION_SETTINGS: "기기 설정에서 카메라 권한을 허용해 주세요.",
+          UNSUPPORTED:
+            "JPEG 또는 PNG 사진을 선택해 주세요. HEIC는 아직 지원하지 않아요.",
+          TOO_LARGE: "10MiB 이하 사진을 선택해 주세요.",
+          UNAUTHORIZED: "로그인이 만료됐어요. 다시 로그인해 주세요.",
+          FORBIDDEN: "소속 회사가 변경됐어요. 화면을 다시 열어 주세요.",
+          BUSY: "열린 사진 선택 창을 먼저 닫아 주세요.",
+          UPLOAD_FAILED: "업로드하지 못했어요. 사진을 다시 선택해 주세요.",
+        };
+        this.set({
+          ...this.state,
+          receiptBusy: false,
+          receiptError: messages[message.payload.code],
+        });
+      }
+      this.send({
+        ...bridgeBase,
+        type: "RECEIPT_ACK",
+        connectionId: message.connectionId,
+        requestId: message.requestId,
+      });
       return;
     }
     if (
@@ -203,6 +252,7 @@ export class FormClient {
     )
       return;
     this.clearPending();
+    this.cancelReceipt();
     this.month = month;
     if (!monthSchema.safeParse(month).success) {
       this.set({
@@ -235,7 +285,7 @@ export class FormClient {
       });
       return;
     }
-    this.set({ mode: "live", phase: "loading", error });
+    this.set({ ...this.state, mode: "live", phase: "loading", error });
     this.send({
       ...this.request("load", month),
       type: "FORM_LOAD",
@@ -244,9 +294,15 @@ export class FormClient {
   }
 
   submit(draft: Draft) {
-    if (this.state.mode !== "live" || this.state.phase !== "ready") return;
+    if (
+      this.state.mode !== "live" ||
+      this.state.phase !== "ready" ||
+      this.state.receiptBusy
+    )
+      return;
     const result = createClaimInput.safeParse({
       ...draft,
+      attachmentId: this.state.receipt?.attachmentId,
       requestId: requestId(),
     });
     const context = this.state.context;
@@ -265,6 +321,52 @@ export class FormClient {
     }
     this.input = result.data;
     this.sendClaim();
+  }
+
+  pickReceipt(source: "camera" | "library") {
+    if (
+      this.state.mode !== "live" ||
+      this.state.phase !== "ready" ||
+      this.state.receiptBusy ||
+      this.state.context?.kind !== "ready"
+    )
+      return;
+    const id = requestId();
+    const timer = setTimeout(() => {
+      this.cancelReceipt();
+      this.set({
+        ...this.state,
+        receiptError: "첨부가 오래 걸려 중단했어요. 다시 선택해 주세요.",
+      });
+    }, 120_000);
+    this.receiptRequest = { id, timer };
+    this.set({ ...this.state, receiptBusy: true, receiptError: undefined });
+    this.send({
+      ...bridgeBase,
+      type: "RECEIPT_PICK",
+      connectionId: this.connectionId,
+      requestId: id,
+      payload: { source },
+    });
+  }
+
+  cancelReceipt() {
+    if (!this.receiptRequest) return;
+    const { id, timer } = this.receiptRequest;
+    clearTimeout(timer);
+    this.receiptRequest = undefined;
+    this.send({
+      ...bridgeBase,
+      type: "RECEIPT_CANCEL",
+      connectionId: this.connectionId,
+      requestId: id,
+    });
+    this.set({ ...this.state, receiptBusy: false });
+  }
+
+  removeReceipt() {
+    if (this.state.phase !== "ready" || this.state.receiptBusy) return;
+    this.set({ ...this.state, receipt: undefined, receiptError: undefined });
   }
 
   private sendClaim() {

@@ -41,7 +41,11 @@ export function ApplyForm({ today }: { today: string }) {
     ? category
     : (policy?.categories[0] ?? "");
   const locked = !policy || state.phase !== "ready";
-  const canSubmit = state.mode === "live" && !locked && policy.available > 0;
+  const canSubmit =
+    state.mode === "live" &&
+    !locked &&
+    !state.receiptBusy &&
+    policy.available > 0;
   const isDemo = state.mode === "demo";
 
   function handleDate(value: string) {
@@ -92,7 +96,7 @@ export function ApplyForm({ today }: { today: string }) {
           어떤 복지를 사용했나요?
         </h1>
         <p className="leading-[1.7] text-muted-foreground">
-          사용 내역을 알려주세요. 영수증 첨부는 준비 중이에요.
+          사용 내역을 알려주세요. 영수증 사진을 한 장 첨부할 수 있어요.
         </p>
       </section>
       <div
@@ -141,12 +145,13 @@ export function ApplyForm({ today }: { today: string }) {
         <form
           onSubmit={handleSubmit}
           className="grid min-w-0 gap-[23px]"
-          aria-busy={state.phase === "submitting"}
+          aria-busy={state.phase === "submitting" || state.receiptBusy}
         >
           <div className={group}>
             <Label htmlFor="used-date">사용일</Label>
             <Input
               id="used-date"
+              className="text-base"
               type="date"
               min="2000-01-01"
               max="2099-12-31"
@@ -167,7 +172,7 @@ export function ApplyForm({ today }: { today: string }) {
                 required
                 value={selectedCategory}
                 onChange={(e) => setCategory(e.target.value)}
-                className="min-h-12 w-full min-w-0 rounded-[13px] border border-input bg-card p-[14px] text-[13px] text-foreground"
+                className="min-h-12 w-full min-w-0 rounded-[13px] border border-input bg-card p-[14px] text-base text-foreground"
               >
                 {!policy?.categories.length ? (
                   <option value="">선택 가능한 항목 없음</option>
@@ -191,7 +196,7 @@ export function ApplyForm({ today }: { today: string }) {
                   value={amount}
                   onChange={(e) => setAmount(e.target.value)}
                   placeholder="0"
-                  className="pr-[45px]"
+                  className="pr-[45px] text-base"
                   aria-describedby="amount-hint"
                 />
                 <span className="absolute top-[15px] right-4 text-[13px]">
@@ -208,6 +213,7 @@ export function ApplyForm({ today }: { today: string }) {
               <Label htmlFor="description">사용 내용</Label>
               <Input
                 id="description"
+                className="text-base"
                 required
                 maxLength={100}
                 value={title}
@@ -216,16 +222,67 @@ export function ApplyForm({ today }: { today: string }) {
               />
             </div>
             <div className={group}>
-              <Label htmlFor="receipt">영수증</Label>
-              <Button
-                id="receipt"
-                type="button"
-                disabled
-                variant="outline"
-                className="min-h-[70px] w-full text-muted-foreground disabled:opacity-100"
+              <Label htmlFor="receipt">영수증 (선택)</Label>
+              <p className="text-xs text-muted-foreground">
+                JPEG/PNG 한 장, 10MiB 이하
+              </p>
+              <div className="grid grid-cols-2 gap-2">
+                <Button
+                  id="receipt"
+                  type="button"
+                  variant="outline"
+                  disabled={isDemo || state.receiptBusy}
+                  onClick={() => client.pickReceipt("camera")}
+                >
+                  촬영하기
+                </Button>
+                <Button
+                  type="button"
+                  variant="outline"
+                  disabled={isDemo || state.receiptBusy}
+                  onClick={() => client.pickReceipt("library")}
+                >
+                  사진 선택
+                </Button>
+              </div>
+              <div
+                role="status"
+                aria-live="polite"
+                className="text-sm leading-relaxed"
               >
-                ◎　영수증 촬영·선택 · 준비 중
-              </Button>
+                {state.receiptBusy ? (
+                  <p>사진 선택 또는 업로드 중이에요.</p>
+                ) : null}
+                {state.receipt ? (
+                  <p>
+                    첨부 완료:{" "}
+                    {state.receipt.mimeType === "image/png" ? "PNG" : "JPEG"},{" "}
+                    {(state.receipt.byteSize / 1024).toFixed(1)}KB
+                  </p>
+                ) : null}
+                {state.receiptError ? <p>{state.receiptError}</p> : null}
+                {isDemo ? (
+                  <p>사진 첨부는 로그인한 앱에서 사용할 수 있어요.</p>
+                ) : null}
+              </div>
+              {state.receiptBusy ? (
+                <Button
+                  type="button"
+                  variant="outline"
+                  onClick={() => client.cancelReceipt()}
+                >
+                  첨부 중단
+                </Button>
+              ) : null}
+              {state.receipt && !state.receiptBusy ? (
+                <Button
+                  type="button"
+                  variant="outline"
+                  onClick={() => client.removeReceipt()}
+                >
+                  첨부 삭제
+                </Button>
+              ) : null}
             </div>
             <Button
               type="submit"

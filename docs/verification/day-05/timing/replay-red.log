@@ -1,0 +1,33 @@
+
+ RUN  v5.1.0 /Users/doyeon/Desktop/chagok
+
+ ❯ apps/mobile/src/bridge/claim-host.test.ts (13 tests | 1 failed) 26ms
+   × correlates receipt ACK with origin, request, connection and scope, clears reset 9ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/mobile/src/bridge/claim-host.test.ts > correlates receipt ACK with origin, request, connection and scope, clears reset
+AssertionError: expected 2 to be 1 // Object.is equality
+
+- Expected
++ Received
+
+- 1
++ 2
+
+ ❯ apps/mobile/src/bridge/claim-host.test.ts:288:38
+    286|   const ack = { ...pick, type: "RECEIPT_ACK", payload: {} };
+    287|   await host.receive(pick, `${origin}/apply`);
+    288|   expect(journal.snapshot().started).toBe(1);
+       |                                      ^
+    289|   now = 9;
+    290|   await host.receive(ack, "https://other.test/apply");
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 12 passed (13)
+   Start at  18:29:52
+   Duration  359ms (import 57%, transform 26%, tests 14%, worker 3%)
+

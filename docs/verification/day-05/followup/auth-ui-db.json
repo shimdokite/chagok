@@ -1,0 +1,48 @@
+{
+  "verifiedAt": "2026-11-23T08:30:55.578Z",
+  "environment": "local PostgreSQL / local private receipt storage / iPhone 17 iOS 27.2 Debug",
+  "attachments": [
+    {
+      "id": "118a5ffb-cc07-4aa0-8564-07d0023d8258",
+      "mimeType": "image/png",
+      "byteSize": 44888,
+      "state": "READY",
+      "createdAt": "2026-11-23T08:25:21.289Z",
+      "sha256": "0b5c08fd19f943309c45b58d5f8d710d546bbef7ee20235a8c59f76ca0a67a31",
+      "matchesFixture": true,
+      "mode": "600"
+    },
+    {
+      "id": "4cfff0c3-37ce-44f6-8036-ac400f0e1277",
+      "mimeType": "image/jpeg",
+      "byteSize": 47843,
+      "state": "READY",
+      "createdAt": "2026-11-23T08:26:28.504Z",
+      "sha256": "7b0b8a3e968f30c2c871915c9c5889401ddce8f3fb5162d7010fa24258db7656",
+      "matchesFixture": true,
+      "mode": "600"
+    },
+    {
+      "id": "4350a402-14f7-4f38-900b-475aa4646857",
+      "mimeType": "image/png",
+      "byteSize": 44888,
+      "state": "LINKED",
+      "createdAt": "2026-11-23T08:27:19.157Z",
+      "sha256": "0b5c08fd19f943309c45b58d5f8d710d546bbef7ee20235a8c59f76ca0a67a31",
+      "matchesFixture": true,
+      "mode": "600"
+    }
+  ],
+  "claims": [
+    {
+      "id": "71405881-9fb5-451f-a67c-5b8ace2a14d0",
+      "title": "DAY05 UI TEST 20261123",
+      "amount": 1000,
+      "status": "SUBMITTED",
+      "usedOn": "2026-11-23",
+      "attachmentId": "4350a402-14f7-4f38-900b-475aa4646857"
+    }
+  ],
+  "cleanup": "Not performed; test claim and attachments retained. READY objects await existing 24-hour cleanup policy.",
+  "timingSamples": 0
+}

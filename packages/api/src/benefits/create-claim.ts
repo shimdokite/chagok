@@ -1,5 +1,6 @@
 import type { PrismaClient } from "@prisma/client";
 import { TRPCError } from "@trpc/server";
+import { linkReceipt } from "../receipts/service";
 import { monthBounds, type CreateClaimInput } from "@chagok/contracts/benefits";
 
 export function createClaim(
@@ -39,7 +40,8 @@ export function createClaim(
           existing.title !== input.title ||
           existing.category !== input.category ||
           existing.amount !== input.amount ||
-          existing.usedOn !== input.usedOn
+          existing.usedOn !== input.usedOn ||
+          existing.attachmentId !== (input.attachmentId ?? null)
         )
           throw new TRPCError({
             code: "CONFLICT",
@@ -79,9 +81,13 @@ export function createClaim(
           message: "신청 금액이 남은 한도를 초과해요.",
         });
 
+      if (input.attachmentId)
+        await linkReceipt(tx, input.attachmentId, userId, member.companyId);
+
       return tx.claim.create({
         data: {
           requestId: input.requestId,
+          attachmentId: input.attachmentId,
           title: input.title,
           category: input.category,
           amount: input.amount,

@@ -1,0 +1,10 @@
+{
+  "label": "fix-reload-stable",
+  "waitSeconds": 25,
+  "elapsedSeconds": 27.172923959000002,
+  "formVisible": true,
+  "errorVisible": false,
+  "frameProof": [
+    "frame-probe waiting / blank posted=false / srcdoc posted=true"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "pid": 85458,
+  "method": "SIGSTOP -> SIGCONT",
+  "durationLimitSeconds": 55,
+  "scope": "local Next development server only",
+  "events": [
+    {
+      "event": "paused",
+      "utc": "2026-11-23T09:58:57.426837+00:00"
+    },
+    {
+      "event": "resumed",
+      "utc": "2026-11-23T09:59:52.430605+00:00"
+    }
+  ]
+}

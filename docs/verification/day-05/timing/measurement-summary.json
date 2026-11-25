@@ -1,0 +1,74 @@
+{
+  "runId": "receipt-ui-1795426328923",
+  "rawSha256": "16e31d3b504fe9e58a6943a4cc21e919aa75009f65a36f9194a4dc018b2481ae",
+  "method": "Python statistics.median; first uploaded sample per MIME excluded as warmup; no other exclusions",
+  "uploaded": 22,
+  "cancelled": 1,
+  "acked": 23,
+  "warmups": 2,
+  "mainSamples": 20,
+  "pending": 0,
+  "dropped": 0,
+  "saveFailed": false,
+  "stats": {
+    "image/png": {
+      "n": 10,
+      "byteSize": 44888,
+      "stages": {
+        "pickerMs": {
+          "min": 4125.855583012104,
+          "median": 5338.711958006024,
+          "max": 12043.603624999523
+        },
+        "prepareMs": {
+          "min": 4.023207992315292,
+          "median": 6.449604004621506,
+          "max": 7.667708992958069
+        },
+        "uploadMs": {
+          "min": 63.32391598820686,
+          "median": 100.39674949645996,
+          "max": 1159.2965829968452
+        },
+        "bridgeAckMs": {
+          "min": 1.6026250123977661,
+          "median": 2.238375023007393,
+          "max": 6.443624973297119
+        }
+      }
+    },
+    "image/jpeg": {
+      "n": 10,
+      "byteSize": 47843,
+      "stages": {
+        "pickerMs": {
+          "min": 4536.002958983183,
+          "median": 5652.594416514039,
+          "max": 11143.525582998991
+        },
+        "prepareMs": {
+          "min": 5.08541601896286,
+          "median": 6.949500009417534,
+          "max": 9.928084015846252
+        },
+        "uploadMs": {
+          "min": 47.33566701412201,
+          "median": 67.87508350610733,
+          "max": 290.8036670088768
+        },
+        "bridgeAckMs": {
+          "min": 1.6869169771671295,
+          "median": 2.5459794998168945,
+          "max": 3.9866670072078705
+        }
+      }
+    }
+  },
+  "cancelSample": {
+    "source": "library",
+    "pickerMs": 4427.4059999883175,
+    "outcome": "cancelled",
+    "bridgeAckMs": 92.89749997854233,
+    "delivery": "acked"
+  }
+}

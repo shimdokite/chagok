@@ -1,0 +1,38 @@
+
+ RUN  v5.1.0 /Users/doyeon/Desktop/chagok
+
+ ❯ apps/mobile/src/bridge/claim-host.test.ts (13 tests | 1 failed) 36ms
+   × correlates receipt ACK with origin, request, connection and scope, clears reset 17ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/mobile/src/bridge/claim-host.test.ts > correlates receipt ACK with origin, request, connection and scope, clears reset
+AssertionError: expected [] to match object [ { delivery: 'acked', …(1) } ]
+
+- Expected
++ Received
+
+- [
+-   {
+-     "bridgeAckMs": 9,
+-     "delivery": "acked",
+-   },
+- ]
++ []
+
+ ❯ apps/mobile/src/bridge/claim-host.test.ts:288:38
+    286|   await host.receive(ack, `${origin}/apply`);
+    287|   await host.receive(ack, `${origin}/apply`);
+    288|   expect(journal.snapshot().samples).toMatchObject([{ delivery: "acked…
+       |                                      ^
+    289|   await host.receive({ ...pick, requestId: "reset" }, `${origin}/apply…
+    290|   host.reset();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 12 passed (13)
+   Start at  18:25:32
+   Duration  368ms (import 52%, transform 29%, tests 17%, worker 2%)
+

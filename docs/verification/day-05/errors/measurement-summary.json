@@ -1,0 +1,88 @@
+{
+  "rawSha256": "1ba3ca3887d47cacb4aaa3b8086a9f5ff0a0a4aeda1da87e01f141eb88c01396",
+  "previousSamples": 30,
+  "newSamples": 6,
+  "pending": 0,
+  "dropped": 0,
+  "saveFailed": false,
+  "samples": [
+    {
+      "number": 31,
+      "scenario": "HTTP 401",
+      "source": "library",
+      "pickerMs": 12828.730333983898,
+      "prepareMs": 10.250874996185303,
+      "mimeType": "image/jpeg",
+      "byteSize": 47843,
+      "uploadMs": 536.5378749966621,
+      "outcome": "error",
+      "bridgeAckMs": 64.05662500858307,
+      "delivery": "acked"
+    },
+    {
+      "number": 32,
+      "scenario": "HTTP 403",
+      "source": "library",
+      "pickerMs": 5365.478792011738,
+      "prepareMs": 6.364167004823685,
+      "mimeType": "image/jpeg",
+      "byteSize": 47843,
+      "uploadMs": 132.55266699194908,
+      "outcome": "error",
+      "bridgeAckMs": 13.022707998752594,
+      "delivery": "acked"
+    },
+    {
+      "number": 33,
+      "scenario": "HTTP 413",
+      "source": "library",
+      "pickerMs": 4956.748582988977,
+      "prepareMs": 3.2512920200824738,
+      "mimeType": "image/jpeg",
+      "byteSize": 47843,
+      "uploadMs": 16.192624986171722,
+      "outcome": "error",
+      "bridgeAckMs": 2.103749990463257,
+      "delivery": "acked"
+    },
+    {
+      "number": 34,
+      "scenario": "HTTP 500",
+      "source": "library",
+      "pickerMs": 5955.652000010014,
+      "prepareMs": 3.6116659939289093,
+      "mimeType": "image/jpeg",
+      "byteSize": 47843,
+      "uploadMs": 76.17891600728035,
+      "outcome": "error",
+      "bridgeAckMs": 2.1072079837322235,
+      "delivery": "acked"
+    },
+    {
+      "number": 35,
+      "scenario": "HTTP 503",
+      "source": "library",
+      "pickerMs": 6032.502292007208,
+      "prepareMs": 4.014167010784149,
+      "mimeType": "image/jpeg",
+      "byteSize": 47843,
+      "uploadMs": 60.09258300065994,
+      "outcome": "error",
+      "bridgeAckMs": 2.5920830070972443,
+      "delivery": "acked"
+    },
+    {
+      "number": 36,
+      "scenario": "restored HTTP 201",
+      "source": "library",
+      "pickerMs": 5299.887374997139,
+      "prepareMs": 2.9698329865932465,
+      "mimeType": "image/jpeg",
+      "byteSize": 47843,
+      "uploadMs": 115.3906660079956,
+      "outcome": "uploaded",
+      "bridgeAckMs": 10.01595801115036,
+      "delivery": "acked"
+    }
+  ]
+}

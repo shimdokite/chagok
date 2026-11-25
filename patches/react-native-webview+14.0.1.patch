@@ -1,0 +1,75 @@
+diff --git a/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/RNCWebView.java b/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/RNCWebView.java
+index 80c6803..ea14ca8 100644
+--- a/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/RNCWebView.java
++++ b/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/RNCWebView.java
+@@ -253,6 +253,7 @@ public class RNCWebView extends WebView implements LifecycleEventListener {
+             this.bridgeListener = new WebViewCompat.WebMessageListener() {
+               @Override
+               public void onPostMessage(@NonNull WebView view, @NonNull WebMessageCompat message, @NonNull Uri sourceOrigin, boolean isMainFrame, @NonNull JavaScriptReplyProxy replyProxy) {
++                if (!isMainFrame) return;
+                 RNCWebView.this.onMessage(message.getData(), sourceOrigin.toString());
+               }
+             };
+@@ -264,10 +265,8 @@ public class RNCWebView extends WebView implements LifecycleEventListener {
+             );
+           }
+         } else {
+-          if (fallbackBridge == null) {
+-            fallbackBridge = new RNCWebViewBridge(webView);
+-            addJavascriptInterface(fallbackBridge, JAVASCRIPT_INTERFACE);
+-          }
++          // The legacy interface cannot identify the sending frame. Fail closed.
++          return;
+         }
+         injectJavascriptObject();
+     }
+diff --git a/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/RNCWebViewClient.java b/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/RNCWebViewClient.java
+index 209b855..6c03d63 100644
+--- a/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/RNCWebViewClient.java
++++ b/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/RNCWebViewClient.java
+@@ -39,6 +39,7 @@ public class RNCWebViewClient extends WebViewClient {
+     protected static final int SHOULD_OVERRIDE_URL_LOADING_TIMEOUT = 250;
+ 
+     protected boolean mLastLoadFailed = false;
++    private String mLastStartedUrl;
+     protected RNCWebView.ProgressChangedFilter progressChangedFilter = null;
+     protected @Nullable RNCBasicAuthCredential basicAuthCredential = null;
+ 
+@@ -67,17 +68,17 @@ public class RNCWebViewClient extends WebViewClient {
+     public void doUpdateVisitedHistory (WebView webView, String url, boolean isReload) {
+       super.doUpdateVisitedHistory(webView, url, isReload);
+ 
+-      ((RNCWebView) webView).dispatchEvent(
+-        webView,
+-        new TopLoadingStartEvent(
+-          RNCWebViewWrapper.getReactTagFromWebView(webView),
+-          createWebViewEvent(webView, url)));
++      // History API updates must not restart a ready document's bridge.
++      // Still report changed paths so the host can reject them.
++      if (url == null || !url.equals(mLastStartedUrl)) emitStartEvent(webView, url);
+     }
+ 
+     @Override
+     public void onPageStarted(WebView webView, String url, Bitmap favicon) {
+       super.onPageStarted(webView, url, favicon);
+       mLastLoadFailed = false;
++      mLastStartedUrl = url;
++      emitStartEvent(webView, url);
+ 
+       RNCWebView reactWebView = (RNCWebView) webView;
+       reactWebView.callInjectedJavaScriptBeforeContentLoaded();
+@@ -296,6 +297,14 @@ public class RNCWebViewClient extends WebViewClient {
+         return true;
+     }
+ 
++    protected void emitStartEvent(WebView webView, String url) {
++        ((RNCWebView) webView).dispatchEvent(
++            webView,
++            new TopLoadingStartEvent(
++                RNCWebViewWrapper.getReactTagFromWebView(webView),
++                createWebViewEvent(webView, url)));
++    }
++
+     protected void emitFinishEvent(WebView webView, String url) {
+         int reactTag = RNCWebViewWrapper.getReactTagFromWebView(webView);
+         UIManagerHelper.getEventDispatcherForReactTag((ReactContext) webView.getContext(), reactTag).dispatchEvent(new TopLoadingFinishEvent(reactTag, createWebViewEvent(webView, url)));

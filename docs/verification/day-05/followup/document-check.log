@@ -1,0 +1,9 @@
+Existing files: 735 changed only within plan: 7 unchanged: 728
+Local links resolved: 118
+PASS: git diff --check
+PASS: git ls-files -- docs/learning
+PASS: git diff --cached
+PASS: git diff --name-status origin/main...HEAD -- docs/learning
+Learning remains ignored and locally present
+PR/commit draft structure PASS
+Learning main answers: 5 with 15 answer lines; previous wording retained
