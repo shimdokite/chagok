@@ -12,6 +12,7 @@ import { useDetail } from "./queries";
 // with a real QueryObserver and SessionController. Native layout is not modeled.
 const host = vi.hoisted(() => ({
   ref: { current: false },
+  onFocus: undefined as (() => void) | undefined,
   client: undefined as unknown as QueryClient,
   controller: undefined as unknown as SessionController,
 }));
@@ -19,6 +20,13 @@ vi.mock("react", async (original) => ({
   ...(await original<object>()),
 
   useRef: () => host.ref,
+
+  useCallback: (callback: unknown) => callback,
+}));
+vi.mock("expo-router", () => ({
+  useFocusEffect: (callback: () => void) => {
+    host.onFocus = callback;
+  },
 }));
 vi.mock("@tanstack/react-query", async (original) => ({
   ...(await original<object>()),
@@ -130,7 +138,10 @@ async function setup(code: "NOT_FOUND" | "UNAUTHORIZED" = "NOT_FOUND") {
 }
 
 afterEach(() => {
-  cleanup.splice(0).reverse().forEach((dispose) => dispose());
+  cleanup
+    .splice(0)
+    .reverse()
+    .forEach((dispose) => dispose());
   vi.unstubAllGlobals();
   vi.useRealTimers();
 });
@@ -162,4 +173,13 @@ it("없는 상세를 확인한 뒤 세션이 만료돼도 인증 복구를 생�
   await retry;
   expect(run.controller.snapshot().status).toBe("signedOut");
   expect(run.counts()).toEqual({ requests: 3, sessionChecks: 2 });
+});
+
+it("화면 포커스가 활성 상세를 실제로 재조회한다", async () => {
+  const run = await setup();
+  const before = run.counts().requests;
+  host.onFocus?.();
+  await vi.advanceTimersByTimeAsync(20);
+  expect(run.counts().requests).toBe(before + 1);
+  expect(run.counts().sessionChecks).toBe(1);
 });

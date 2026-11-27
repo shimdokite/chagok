@@ -1,0 +1,9 @@
+
+ RUN  v5.1.0 /Users/doyeon/Desktop/chagok
+
+
+ Test Files  2 passed (2)
+      Tests  5 passed (5)
+   Start at  15:06:21
+   Duration  307ms (import 37%, transform 33%, tests 28%, worker 2%)
+

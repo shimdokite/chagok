@@ -1,0 +1,17 @@
+{
+  "runId": "day-06-1795759443083",
+  "dateKst": "2026-11-27",
+  "node": "v24.22.3",
+  "os": "darwin 27.2.0 arm64",
+  "browser": "Chrome headless",
+  "server": "Next development localhost:3000",
+  "database": "local PostgreSQL",
+  "scope": "Synthetic authenticated HTTP request start through parsed response; includes local Next and DB; excludes Google login and native rendering",
+  "head": "52c4dc2c1f4a9c7987da8641458ada89c10c1005",
+  "sourceHashes": {
+    "packages/api/src/review/service.ts": "cfae8a43ba783051152d65c587e89c994245eceb3af125aa17fdbcf5a5f7871c",
+    "packages/api/src/review/http.ts": "e058e9b57e5d6bbfec9dcbf5b9cd8ff3f6e777f2fa0b51d131b21e5b7bf3a6c9",
+    "apps/web/src/components/admin/AdminReview.tsx": "65bdbbaae485c3fca5c4e22c2c9be7f51ba3212f9814da0361e251c079cf4cc2",
+    "packages/api/scripts/verify-review.mjs": "8b7b938ca0d991642a39b7e59295684a9c4a459e8949e0fbbb6fae582cc46f24"
+  }
+}

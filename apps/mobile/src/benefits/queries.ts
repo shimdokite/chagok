@@ -1,4 +1,5 @@
-import { useRef } from "react";
+import { useCallback, useRef } from "react";
+import { useFocusEffect } from "expo-router";
 import {
   useQuery,
   useInfiniteQuery,
@@ -16,6 +17,12 @@ function useBenefitAccess() {
   const missingRecordChecked = useRef(false);
   const isDemo = state.status === "demo";
   const enabled = isDemo || state.status === "authenticated";
+  useFocusEffect(
+    useCallback(() => {
+      if (!isDemo && enabled)
+        void queryClient.invalidateQueries({ queryKey: ["benefits"] });
+    }, [isDemo, enabled, queryClient]),
+  );
 
   async function read<
     T extends { company: { id: string } | null } | { kind: "unassigned" },

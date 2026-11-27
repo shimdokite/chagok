@@ -1,0 +1,7 @@
+
+> chagok@0.1.0 style:check
+> node scripts/check-function-spacing.mjs
+
+apps/web/src/components/admin/GoogleLogin.tsx:50: 함수 선언 앞·뒤에 빈 줄 한 줄이 필요합니다.
+packages/api/src/review/http.test.ts:48: 함수 선언 앞·뒤에 빈 줄 한 줄이 필요합니다.
+코드 간격: 145개 파일 검사, 위반 2건

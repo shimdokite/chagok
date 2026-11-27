@@ -1,0 +1,28 @@
+{
+  "date": "2026-11-27",
+  "database": "local chagok",
+  "company": "그로브",
+  "role": "REVIEWER",
+  "updatedExistingMemberships": 1,
+  "otherExistingMembershipsUnchanged": true,
+  "ownClaimsUnchanged": true,
+  "httpList": 200,
+  "receiptReads": [
+    200,
+    200
+  ],
+  "testClaims": [
+    {
+      "title": "[테스트] 승인 연습용 도서비",
+      "amount": 1000,
+      "status": "SUBMITTED"
+    },
+    {
+      "title": "[테스트] 반려 연습용 도서비",
+      "amount": 2000,
+      "status": "SUBMITTED"
+    }
+  ],
+  "temporaryProbeSessionRemoved": true,
+  "actualGoogleLogin": "user pending"
+}

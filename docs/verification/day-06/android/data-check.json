@@ -1,0 +1,27 @@
+{
+  "checkedAt": "2026-11-27T15:31:25.291Z",
+  "unchangedClaims": 15,
+  "unchangedMemberships": 5,
+  "newClaims": 2,
+  "newAttachmentsLinked": 2,
+  "availableAmount": 98000,
+  "decisions": [
+    {
+      "title": "[Android 테스트] 화면 복귀 승인 도서비",
+      "amount": 1000,
+      "status": "APPROVED",
+      "reviewedAt": "2026-11-27T15:29:39.585Z",
+      "rejectionReason": null,
+      "expectedReviewer": true
+    },
+    {
+      "title": "[Android 테스트] 앱 복귀 반려 도서비",
+      "amount": 2000,
+      "status": "REJECTED",
+      "reviewedAt": "2026-11-27T15:30:21.951Z",
+      "rejectionReason": "Android 테스트: 사용일과 금액이 보이는 영수증으로 다시 신청해 주세요.",
+      "expectedReviewer": true
+    }
+  ],
+  "passed": true
+}

@@ -1,0 +1,10 @@
+{
+  "runId": "day-06-1795759443083",
+  "samples": [],
+  "checks": [
+    "HTTP anonymous 401, employee 403, reviewer 200",
+    "Authenticated receipt bytes equal original; cross-company 404; anonymous 401; no-store"
+  ],
+  "failure": "locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByText('승인했어요. 신청자의 사용 가능 한도는 그대로 유지돼요.') to be visible\u001b[22m\n",
+  "remainingFixtures": 0
+}

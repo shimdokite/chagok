@@ -109,3 +109,18 @@ it("페이지 응답에서 소속 해제·변경이 발견되면 기존 캐시�
     expect(refreshes).toBe(1);
   }
 });
+
+it("외부 검토 후 갱신은 30초 캐시도 무효화하고 새 상태를 읽는다", async () => {
+  const cache = new BenefitsCache(state);
+  let status = "SUBMITTED";
+  const options = {
+    queryKey: benefitKey(state, "detail", "claim"),
+
+    queryFn: async () => status,
+  };
+  expect(await cache.client.fetchQuery(options)).toBe("SUBMITTED");
+  status = "REJECTED";
+  await cache.refresh();
+  expect(await cache.client.fetchQuery(options)).toBe("REJECTED");
+  cache.dispose();
+});

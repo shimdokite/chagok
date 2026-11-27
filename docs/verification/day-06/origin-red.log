@@ -1,0 +1,33 @@
+
+ RUN  v5.1.0 /Users/doyeon/Desktop/chagok
+
+ ❯ packages/api/src/review/http.test.ts (6 tests | 1 failed) 28ms
+   × Next 내부 URL과 브라우저 Host가 달라도 같은 출처 요청을 허용한다 4ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/api/src/review/http.test.ts > Next 내부 URL과 브라우저 Host가 달라도 같은 출처 요청을 허용한다
+AssertionError: expected 403 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 403
+
+ ❯ packages/api/src/review/http.test.ts:135:60
+    133|     body: JSON.stringify({ action: "signOut" }),
+    134|   });
+    135|   expect((await handleReviewRequest(req, ports())).status).toBe(200);
+       |                                                            ^
+    136| });
+    137|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 5 passed (6)
+   Start at  15:05:29
+   Duration  221ms (import 48%, transform 27%, tests 22%, worker 2%)
+

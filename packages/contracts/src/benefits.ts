@@ -95,3 +95,36 @@ export function monthBounds(month: string) {
     end: `${shiftMonth(month, 1)}-01`,
   };
 }
+
+export const reviewDecisionInput = z.discriminatedUnion("decision", [
+  z
+    .object({
+      id: z.string().min(1).max(100),
+      expectedCompanyId: z.string().min(1).max(100),
+      decision: z.literal("APPROVED"),
+    })
+    .strict(),
+  z
+    .object({
+      id: z.string().min(1).max(100),
+      expectedCompanyId: z.string().min(1).max(100),
+      decision: z.literal("REJECTED"),
+      reason: claimText.max(500),
+    })
+    .strict(),
+]);
+export type ReviewDecisionInput = z.infer<typeof reviewDecisionInput>;
+export type ReviewItem = ClaimItem & {
+  applicantLabel: string;
+  isOwn: boolean;
+  hasReceipt: boolean;
+  reviewedBy: string | null;
+  reviewedAt: string | null;
+};
+export type ReviewList = {
+  company: Company;
+  items: ReviewItem[];
+  pendingCount: number;
+  nextCursor: HistoryData["nextCursor"];
+};
+export type ReviewDetail = { company: Company; claim: ReviewItem };

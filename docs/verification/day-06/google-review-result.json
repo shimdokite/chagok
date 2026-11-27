@@ -1,0 +1,26 @@
+{
+  "date": "2026-11-27",
+  "actualGoogleLogin": "Chrome passed",
+  "testClaims": [
+    {
+      "title": "[테스트] 반려 연습용 도서비",
+      "amount": 2000,
+      "status": "REJECTED",
+      "rejectionReason": "테스트: 사용일과 금액이 보이는 영수증으로 다시 신청해 주세요.",
+      "reviewedAt": "2026-11-27T07:05:50.162Z"
+    },
+    {
+      "title": "[테스트] 승인 연습용 도서비",
+      "amount": 1000,
+      "status": "APPROVED",
+      "rejectionReason": null,
+      "reviewedAt": "2026-11-27T07:05:23.679Z"
+    }
+  ],
+  "correctReviewer": true,
+  "ownClaimsUnchanged": true,
+  "ownAvailableBefore": 63999,
+  "ownAvailableAfter": 63999,
+  "fixtureAvailableBefore": 97000,
+  "fixtureAvailableAfter": 99000
+}

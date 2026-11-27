@@ -1,0 +1,134 @@
+{
+  "runId": "day-06-1795759536591",
+  "samples": [
+    {
+      "pair": 1,
+      "decision": "APPROVED",
+      "status": 200,
+      "durationMs": 16.693459000000075
+    },
+    {
+      "pair": 1,
+      "decision": "REJECTED",
+      "status": 409,
+      "durationMs": 17.603749999999764
+    },
+    {
+      "pair": 2,
+      "decision": "APPROVED",
+      "status": 200,
+      "durationMs": 11.663416999999754
+    },
+    {
+      "pair": 2,
+      "decision": "REJECTED",
+      "status": 409,
+      "durationMs": 13.046707999999853
+    },
+    {
+      "pair": 3,
+      "decision": "APPROVED",
+      "status": 200,
+      "durationMs": 12.335332999999991
+    },
+    {
+      "pair": 3,
+      "decision": "REJECTED",
+      "status": 409,
+      "durationMs": 13.676500000000033
+    },
+    {
+      "pair": 4,
+      "decision": "APPROVED",
+      "status": 409,
+      "durationMs": 40.08725000000004
+    },
+    {
+      "pair": 4,
+      "decision": "REJECTED",
+      "status": 200,
+      "durationMs": 26.126040999999987
+    },
+    {
+      "pair": 5,
+      "decision": "APPROVED",
+      "status": 409,
+      "durationMs": 12.901042000000416
+    },
+    {
+      "pair": 5,
+      "decision": "REJECTED",
+      "status": 200,
+      "durationMs": 11.019124999999804
+    },
+    {
+      "pair": 6,
+      "decision": "APPROVED",
+      "status": 200,
+      "durationMs": 11.584249999999884
+    },
+    {
+      "pair": 6,
+      "decision": "REJECTED",
+      "status": 409,
+      "durationMs": 12.64108299999998
+    },
+    {
+      "pair": 7,
+      "decision": "APPROVED",
+      "status": 200,
+      "durationMs": 11.470124999999825
+    },
+    {
+      "pair": 7,
+      "decision": "REJECTED",
+      "status": 409,
+      "durationMs": 12.504209000000174
+    },
+    {
+      "pair": 8,
+      "decision": "APPROVED",
+      "status": 200,
+      "durationMs": 10.777667000000292
+    },
+    {
+      "pair": 8,
+      "decision": "REJECTED",
+      "status": 409,
+      "durationMs": 12.558708000000024
+    },
+    {
+      "pair": 9,
+      "decision": "APPROVED",
+      "status": 200,
+      "durationMs": 10.524499999999989
+    },
+    {
+      "pair": 9,
+      "decision": "REJECTED",
+      "status": 409,
+      "durationMs": 11.466665999999805
+    },
+    {
+      "pair": 10,
+      "decision": "APPROVED",
+      "status": 200,
+      "durationMs": 14.358874999999898
+    },
+    {
+      "pair": 10,
+      "decision": "REJECTED",
+      "status": 409,
+      "durationMs": 15.573208999999679
+    }
+  ],
+  "checks": [
+    "HTTP anonymous 401, employee 403, reviewer 200",
+    "Authenticated receipt bytes equal original; cross-company 404; anonymous 401; no-store",
+    "Browser receipt pending guard, approve, reason required, reject, balances, 390px overflow",
+    "Browser status filter and empty state",
+    "10 concurrent HTTP pairs: one success/one conflict each; retry audit unchanged",
+    "Expired DB session removes review UI and shows login"
+  ],
+  "remainingFixtures": 0
+}
