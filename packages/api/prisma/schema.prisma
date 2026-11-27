@@ -35,12 +35,18 @@ model Company {
   policies BenefitPolicy[]
 }
 
+enum MembershipRole {
+  EMPLOYEE
+  REVIEWER
+}
+
 model Membership {
   userId String @id
   companyId String
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
   company Company @relation(fields: [companyId], references: [id], onDelete: Restrict)
   claims Claim[]
+  role MembershipRole @default(EMPLOYEE)
 
   @@unique([userId, companyId])
   @@index([companyId])
@@ -77,10 +83,13 @@ model Claim {
   usedOn String
   submittedAt DateTime @default(now())
   rejectionReason String?
+  reviewedBy String?
+  reviewedAt DateTime?
   attachmentId String? @unique
   attachment Attachment? @relation(fields: [attachmentId], references: [id], onDelete: Restrict)
 
   @@index([userId, companyId, usedOn, submittedAt, id])
+  @@index([companyId, usedOn, submittedAt, id])
   @@unique([userId, requestId])
 }
 

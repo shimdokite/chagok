@@ -1,0 +1,192 @@
+
+> chagok@0.1.0 pretest
+> npm run style:check
+
+
+> chagok@0.1.0 style:check
+> node scripts/check-function-spacing.mjs
+
+코드 간격: 145개 파일 검사, 위반 0건
+
+> chagok@0.1.0 test
+> vitest run
+
+
+ RUN  v5.1.0 /Users/doyeon/Desktop/chagok
+
+ ❯ scripts/cleanup-receipts.test.ts (4 tests | 3 failed) 2440ms
+   × returns an uncached 503 from the real upload route with production local storage 700ms
+   × refuses production cleanup before accessing the database 599ms
+   × refuses missing storage cleanup before accessing the database 702ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  scripts/cleanup-receipts.test.ts > returns an uncached 503 from the real upload route with production local storage
+AssertionError: expected { rejected: false, status: 401, …(2) } to deeply equal { rejected: true, status: 503, …(2) }
+
+- Expected
++ Received
+
+  {
+    "body": {
+-     "code": "SERVICE_UNAVAILABLE",
++     "code": "UNAUTHORIZED",
+    },
+    "cache": "no-store",
+-   "rejected": true,
+-   "status": 503,
++   "rejected": false,
++   "status": 401,
+  }
+
+ ❯ scripts/cleanup-receipts.test.ts:76:39
+     74|     );
+     75|     expect(result.status, result.stderr).toBe(0);
+     76|     expect(JSON.parse(result.stdout)).toEqual({
+       |                                       ^
+     77|       rejected: true,
+     78|       status: 503,
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  scripts/cleanup-receipts.test.ts > refuses production cleanup before accessing the database
+AssertionError: expected '(node:28958) ExperimentalWarning: Tra…' to contain 'Private receipt storage is not config…'
+
+- Expected
++ Received
+
+- Private receipt storage is not configured for this environment
++ (node:28958) ExperimentalWarning: Transform Types is an experimental feature and might change at any time
++ (Use `node --trace-warnings ...` to show where the warning was created)
++ (node:28958) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/doyeon/Desktop/chagok/packages/api/src/auth/store.ts is not specified and it doesn't parse as CommonJS.
++ Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
++ To eliminate this warning, add "type": "module" to /Users/doyeon/Desktop/chagok/packages/api/package.json.
++ (node:28958) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/doyeon/Desktop/chagok/packages/contracts/src/receipts.ts is not specified and it doesn't parse as CommonJS.
++ Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
++ To eliminate this warning, add "type": "module" to /Users/doyeon/Desktop/chagok/packages/contracts/package.json.
++ /Users/doyeon/Desktop/chagok/node_modules/@prisma/client/src/runtime/RequestHandler.ts:238
++       throw new PrismaClientKnownRequestError(message, {
++             ^
++
++ PrismaClientKnownRequestError: 
++ Invalid `prisma.attachment.findMany()` invocation:
++
++
++ Can't reach database server at 127.0.0.1:1
++     at vn.handleRequestError (/Users/doyeon/Desktop/chagok/node_modules/@prisma/client/src/runtime/RequestHandler.ts:238:13)
++     at vn.handleAndLogRequestError (/Users/doyeon/Desktop/chagok/node_modules/@prisma/client/src/runtime/RequestHandler.ts:184:12)
++     at vn.request (/Users/doyeon/Desktop/chagok/node_modules/@prisma/client/src/runtime/RequestHandler.ts:153:12)
++     at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
++     at async a (/Users/doyeon/Desktop/chagok/node_modules/@prisma/client/src/runtime/getPrismaClient.ts:1012:24)
++     at async Object.cleanup (/Users/doyeon/Desktop/chagok/packages/api/src/receipts/service.ts:87:23)
++     at async file:///Users/doyeon/Desktop/chagok/packages/api/scripts/cleanup-receipts.mjs:25:7 {
++   code: 'P1001',
++   meta: {
++     modelName: 'Attachment',
++     driverAdapterError: DriverAdapterError: DatabaseNotReachable
++         at PrismaPgAdapter.onError (file:///Users/doyeon/Desktop/chagok/node_modules/@prisma/adapter-pg/dist/index.mjs:666:11)
++         at PrismaPgAdapter.performIO (file:///Users/doyeon/Desktop/chagok/node_modules/@prisma/adapter-pg/dist/index.mjs:661:12)
++         at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
++         at async PrismaPgAdapter.queryRaw (file:///Users/doyeon/Desktop/chagok/node_modules/@prisma/adapter-pg/dist/index.mjs:595:30)
++         at async <anonymous> (/Users/doyeon/Desktop/chagok/node_modules/@prisma/client-engine-runtime/src/interpreter/query-interpreter.ts:200:28)
++         at async e.run (/Users/doyeon/Desktop/chagok/node_modules/@prisma/client-engine-runtime/src/interpreter/query-interpreter.ts:115:40)
++         at async e.execute (/Users/doyeon/Desktop/chagok/node_modules/@prisma/client/src/runtime/core/engines/client/LocalExecutor.ts:81:12)
++         at async yr.request (/Users/doyeon/Desktop/chagok/node_modules/@prisma/client/src/runtime/core/engines/client/ClientEngine.ts:510:22)
++         at async Object.singleLoader (/Users/doyeon/Desktop/chagok/node_modules/@prisma/client/src/runtime/RequestHandler.ts:113:26)
++         at async vn.request (/Users/doyeon/Desktop/chagok/node_modules/@prisma/client/src/runtime/RequestHandler.ts:150:14) {
++       cause: { kind: 'DatabaseNotReachable', host: '127.0.0.1', port: 1 }
++     }
++   },
++   clientVersion: '7.10.1'
++ }
++
++ Node.js v24.22.3
++
+
+ ❯ scripts/cleanup-receipts.test.ts:116:27
+    114|     );
+    115|     expect(result.status).toBe(1);
+    116|     expect(result.stderr).toContain(
+       |                           ^
+    117|       "Private receipt storage is not configured for this environment",
+    118|     );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  scripts/cleanup-receipts.test.ts > refuses missing storage cleanup before accessing the database
+AssertionError: expected '(node:28967) ExperimentalWarning: Tra…' to contain 'Private receipt storage is not config…'
+
+- Expected
++ Received
+
+- Private receipt storage is not configured for this environment
++ (node:28967) ExperimentalWarning: Transform Types is an experimental feature and might change at any time
++ (Use `node --trace-warnings ...` to show where the warning was created)
++ (node:28967) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/doyeon/Desktop/chagok/packages/api/src/auth/store.ts is not specified and it doesn't parse as CommonJS.
++ Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
++ To eliminate this warning, add "type": "module" to /Users/doyeon/Desktop/chagok/packages/api/package.json.
++ (node:28967) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/doyeon/Desktop/chagok/packages/contracts/src/receipts.ts is not specified and it doesn't parse as CommonJS.
++ Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
++ To eliminate this warning, add "type": "module" to /Users/doyeon/Desktop/chagok/packages/contracts/package.json.
++ /Users/doyeon/Desktop/chagok/node_modules/@prisma/client/src/runtime/RequestHandler.ts:238
++       throw new PrismaClientKnownRequestError(message, {
++             ^
++
++ PrismaClientKnownRequestError: 
++ Invalid `db.attachment.findMany()` invocation in
++ /Users/doyeon/Desktop/chagok/packages/api/src/receipts/service.ts:87:43
++
++   84 
++   85 async cleanup(now = new Date(), ids?: string[]) {
++   86   const cutoff = new Date(now.getTime() - RECEIPT_TTL_MS);
++ → 87   const expired = await db.attachment.findMany(
++ Can't reach database server at 127.0.0.1:1
++     at vn.handleRequestError (/Users/doyeon/Desktop/chagok/node_modules/@prisma/client/src/runtime/RequestHandler.ts:238:13)
++     at vn.handleAndLogRequestError (/Users/doyeon/Desktop/chagok/node_modules/@prisma/client/src/runtime/RequestHandler.ts:184:12)
++     at vn.request (/Users/doyeon/Desktop/chagok/node_modules/@prisma/client/src/runtime/RequestHandler.ts:153:12)
++     at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
++     at async a (/Users/doyeon/Desktop/chagok/node_modules/@prisma/client/src/runtime/getPrismaClient.ts:1012:24)
++     at async Object.cleanup (/Users/doyeon/Desktop/chagok/packages/api/src/receipts/service.ts:87:23)
++     at async file:///Users/doyeon/Desktop/chagok/packages/api/scripts/cleanup-receipts.mjs:25:7 {
++   code: 'P1001',
++   meta: {
++     modelName: 'Attachment',
++     driverAdapterError: DriverAdapterError: DatabaseNotReachable
++         at PrismaPgAdapter.onError (file:///Users/doyeon/Desktop/chagok/node_modules/@prisma/adapter-pg/dist/index.mjs:666:11)
++         at PrismaPgAdapter.performIO (file:///Users/doyeon/Desktop/chagok/node_modules/@prisma/adapter-pg/dist/index.mjs:661:12)
++         at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
++         at async PrismaPgAdapter.queryRaw (file:///Users/doyeon/Desktop/chagok/node_modules/@prisma/adapter-pg/dist/index.mjs:595:30)
++         at async <anonymous> (/Users/doyeon/Desktop/chagok/node_modules/@prisma/client-engine-runtime/src/interpreter/query-interpreter.ts:200:28)
++         at async e.run (/Users/doyeon/Desktop/chagok/node_modules/@prisma/client-engine-runtime/src/interpreter/query-interpreter.ts:115:40)
++         at async e.execute (/Users/doyeon/Desktop/chagok/node_modules/@prisma/client/src/runtime/core/engines/client/LocalExecutor.ts:81:12)
++         at async yr.request (/Users/doyeon/Desktop/chagok/node_modules/@prisma/client/src/runtime/core/engines/client/ClientEngine.ts:510:22)
++         at async Object.singleLoader (/Users/doyeon/Desktop/chagok/node_modules/@prisma/client/src/runtime/RequestHandler.ts:113:26)
++         at async vn.request (/Users/doyeon/Desktop/chagok/node_modules/@prisma/client/src/runtime/RequestHandler.ts:150:14) {
++       cause: { kind: 'DatabaseNotReachable', host: '127.0.0.1', port: 1 }
++     }
++   },
++   clientVersion: '7.10.1'
++ }
++
++ Node.js v24.22.3
++
+
+ ❯ scripts/cleanup-receipts.test.ts:116:27
+    114|     );
+    115|     expect(result.status).toBe(1);
+    116|     expect(result.stderr).toContain(
+       |                           ^
+    117|       "Private receipt storage is not configured for this environment",
+    118|     );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  1 failed | 38 passed (39)
+      Tests  3 failed | 354 passed (357)
+   Start at  14:59:32
+   Duration  3.53s (tests 62%, import 28%, transform 8%, worker 1%)
+
+    Isolate  39 workers spawned · ~156ms startup each (spawn + environment, per file)
+             at least ~714ms faster with isolate: false — reuses workers across files instead of one per file
+

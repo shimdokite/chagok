@@ -1,0 +1,38 @@
+{
+  "dateKst": "2026-11-27",
+  "checkedFiles": [
+    "docs/plans/day-06.md",
+    "docs/verification/day-06.md",
+    "docs/metrics/daily/day-06.md",
+    "docs/learning/day-06.md",
+    "docs/changes/latest-pr.md",
+    "docs/changes/latest-commit.txt"
+  ],
+  "missingLinks": [],
+  "interviewQuestions": 5,
+  "answerCounts": {
+    "**두괄식 답변:**": 5,
+    "**근거 1:**": 5,
+    "**근거 2:**": 5
+  },
+  "learningTracked": "",
+  "learningStaged": "",
+  "learningBranchDiff": "",
+  "learningIgnored": true,
+  "preserved": {
+    "apps/web/next-env.d.ts": true,
+    "handoff.md": true
+  },
+  "learningExistingFilesPresent": true,
+  "prSections": [
+    "요약",
+    "내용",
+    "변경",
+    "검증",
+    "사이드이펙트 검토"
+  ],
+  "sampleCount": 20,
+  "pairsValid": true,
+  "medianMs": 12.599895500000002,
+  "diffCheckExit": 0
+}

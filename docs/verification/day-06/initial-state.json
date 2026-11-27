@@ -1,0 +1,8 @@
+{
+  "apps/web/next-env.d.ts": "0f70629890b72a0a82e91972cc032c04b658b26c265373cb711cf576bfbf8fcc",
+  "docs/changes/latest-pr.md": "0432a6abe4b7eafcc698c1e77cf0aef71503c8356fcd986e707339123e6fd2a2",
+  "docs/changes/latest-commit.txt": "fe6f2abea405218283681287df2b08bc5967aa0131f2790eb8ff0398e2017769",
+  "handoff.md": "0eca2a3437d8dbc98d925b08b06038dda746d2f2b6c2f17f3f7dac1a740d118b",
+  "status": " M apps/web/next-env.d.ts\n M docs/changes/latest-commit.txt\n M docs/changes/latest-pr.md\n?? handoff.md\n",
+  "head": "52c4dc2c1f4a9c7987da8641458ada89c10c1005"
+}

@@ -18,3 +18,7 @@ snapshots/
 
 # Private local receipt files, never versioned.
 .local-data/
+
+# Day-06 Android verification evidence is documentation, not native build output.
+!/docs/verification/day-06/android/
+!/docs/verification/day-06/android/**

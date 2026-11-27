@@ -1,0 +1,26 @@
+
+ RUN  v5.1.0 /Users/doyeon/Desktop/chagok
+
+ ❯ apps/mobile/src/benefits/cache.test.ts (10 tests | 1 failed) 7ms
+   × 외부 검토 후 갱신은 30초 캐시도 무효화하고 새 상태를 읽는다 2ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/mobile/src/benefits/cache.test.ts > 외부 검토 후 갱신은 30초 캐시도 무효화하고 새 상태를 읽는다
+TypeError: cache.refresh is not a function
+ ❯ apps/mobile/src/benefits/cache.test.ts:123:15
+    121|   expect(await cache.client.fetchQuery(options)).toBe("SUBMITTED");
+    122|   status = "REJECTED";
+    123|   await cache.refresh();
+       |               ^
+    124|   expect(await cache.client.fetchQuery(options)).toBe("REJECTED");
+    125|   cache.dispose();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 9 passed (10)
+   Start at  14:58:53
+   Duration  143ms (import 44%, transform 40%, tests 12%, worker 4%)
+

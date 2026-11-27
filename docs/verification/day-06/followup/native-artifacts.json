@@ -1,0 +1,19 @@
+{
+  "iosBundle": {
+    "path": "/tmp/chagok-day05-release-build/Build/Products/Release-iphonesimulator/app.app/main.jsbundle",
+    "bytes": 3975184,
+    "sha256": "4743a01c516d5889fadf3c6afb5243f06080bfa7352b30c5aef6e5603fb0ab28"
+  },
+  "androidApk": {
+    "path": "apps/mobile/android/app/build/outputs/apk/release/app-release.apk",
+    "bytes": 32777741,
+    "sha256": "2488a96a3a35634e40ce8e1492b04e778db83de7912f6167858a19ad42cf44c5"
+  },
+  "builds": {
+    "ios": "BUILD SUCCEEDED",
+    "android": "BUILD SUCCESSFUL in 5m 38s"
+  },
+  "installedHashesMatch": true,
+  "dataPreservingInstall": true,
+  "previousIosAppBackup": "/tmp/chagok-day06-before.app"
+}

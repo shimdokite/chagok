@@ -1,0 +1,10 @@
+{
+  "provider": "supabase",
+  "synthetic": true,
+  "bytes": 44888,
+  "uploaded": true,
+  "read": true,
+  "removed": true,
+  "durationMs": 513.5396249999999,
+  "sha256": "0b5c08fd19f943309c45b58d5f8d710d546bbef7ee20235a8c59f76ca0a67a31"
+}

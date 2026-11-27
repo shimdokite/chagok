@@ -1,0 +1,7 @@
+{
+  "runId": "day-06-1795759400621",
+  "samples": [],
+  "checks": [],
+  "failure": "Expected values to be strictly equal:\n\n500 !== 403\n",
+  "remainingFixtures": 0
+}

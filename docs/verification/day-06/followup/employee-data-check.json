@@ -1,0 +1,19 @@
+{
+  "existingClaimsPreserved": 13,
+  "existingMembershipsPreserved": 4,
+  "newEmployeeMemberships": 1,
+  "newClaims": 2,
+  "states": [
+    {
+      "amount": 1000,
+      "status": "APPROVED",
+      "rejectionReason": null
+    },
+    {
+      "amount": 2000,
+      "status": "REJECTED",
+      "rejectionReason": "테스트: 사용일과 금액이 보이는 영수증으로 다시 신청해 주세요."
+    }
+  ],
+  "available": 99000
+}

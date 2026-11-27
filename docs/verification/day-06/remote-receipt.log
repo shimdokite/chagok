@@ -1,0 +1,6 @@
+(node:38419) ExperimentalWarning: Transform Types is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:38419) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/doyeon/Desktop/chagok/packages/api/src/receipts/supabase-storage.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/doyeon/Desktop/chagok/packages/api/package.json.
+{"provider":"supabase","synthetic":true,"bytes":44888,"uploaded":true,"read":true,"removed":true,"durationMs":513.5396249999999,"sha256":"0b5c08fd19f943309c45b58d5f8d710d546bbef7ee20235a8c59f76ca0a67a31"}

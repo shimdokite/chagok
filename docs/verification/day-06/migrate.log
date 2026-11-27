@@ -1,0 +1,18 @@
+
+> @chagok/api@0.1.0 db:migrate
+> prisma migrate deploy
+
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma/schema.prisma.
+Datasource "db": PostgreSQL database "chagok", schema "public" at "127.0.0.1:55432"
+
+Error: Schema engine error:
+
+npm error Lifecycle script `db:migrate` failed with error:
+npm error code 1
+npm error path /Users/doyeon/Desktop/chagok/packages/api
+npm error workspace @chagok/api@0.1.0
+npm error location /Users/doyeon/Desktop/chagok/packages/api
+npm error command failed
+npm error command sh -c prisma migrate deploy

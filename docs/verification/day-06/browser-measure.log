@@ -1,0 +1,15 @@
+(node:32499) ExperimentalWarning: Transform Types is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:32499) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/doyeon/Desktop/chagok/packages/api/src/auth/store.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/doyeon/Desktop/chagok/packages/api/package.json.
+(node:32499) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/doyeon/Desktop/chagok/packages/contracts/src/benefits.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/doyeon/Desktop/chagok/packages/contracts/package.json.
+{
+  "runId": "day-06-1795759400621",
+  "samples": 0,
+  "checks": [],
+  "failure": "Expected values to be strictly equal:\n\n500 !== 403\n",
+  "remainingFixtures": 0
+}

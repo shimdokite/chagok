@@ -1,0 +1,18 @@
+(node:33098) ExperimentalWarning: Transform Types is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:33098) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/doyeon/Desktop/chagok/packages/api/src/auth/store.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/doyeon/Desktop/chagok/packages/api/package.json.
+(node:33098) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/doyeon/Desktop/chagok/packages/contracts/src/benefits.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/doyeon/Desktop/chagok/packages/contracts/package.json.
+{
+  "runId": "day-06-1795759443083",
+  "samples": 0,
+  "checks": [
+    "HTTP anonymous 401, employee 403, reviewer 200",
+    "Authenticated receipt bytes equal original; cross-company 404; anonymous 401; no-store"
+  ],
+  "failure": "locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByText('승인했어요. 신청자의 사용 가능 한도는 그대로 유지돼요.') to be visible\u001b[22m\n",
+  "remainingFixtures": 0
+}

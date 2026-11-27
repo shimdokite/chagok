@@ -1,0 +1,28 @@
+
+ RUN  v5.1.0 /Users/doyeon/Desktop/chagok
+
+ ❯ packages/api/src/review/service.integration.test.ts (8 tests | 1 failed) 177ms
+   ❯ 담당자 검토 실제 DB (8)
+     × 빈/긴 사유와 승인에 붙인 사유를 거절한다 3ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/api/src/review/service.integration.test.ts > 담당자 검토 실제 DB > 빈/긴 사유와 승인에 붙인 사유를 거절한다
+TRPCError: 신청과 반려 사유를 확인해 주세요.
+ ❯ Object.decide packages/api/src/review/service.ts:61:34
+     59|     decide(userId: string, raw: unknown) {
+     60|       const parsed = reviewDecisionInput.safeParse(raw);
+     61|       if (!parsed.success) throw new TRPCError({ code: "BAD_REQUEST", …
+       |                                  ^
+     62|       const input = parsed.data;
+     63|       return db.$transaction(async (tx) => {
+ ❯ packages/api/src/review/service.integration.test.ts:78:28
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 7 passed (8)
+   Start at  14:55:03
+   Duration  396ms (tests 56%, import 38%, transform 6%, worker 1%)
+

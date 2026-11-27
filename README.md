@@ -101,6 +101,8 @@ npm test
 npm run build:web
 ```
 
+기본 웹 빌드는 Turbopack을 사용합니다. Codex의 macOS 실행 환경에서 CSS 처리 중 `creating new process → binding to a port → Operation not permitted`가 발생하면, Node.js 24를 사용하는 일반 macOS 터미널에서 같은 `npm run build:web`를 실행해 비교하세요. 권한 확장 실행에서도 이 제한이 남을 수 있습니다. 2026-11-28에는 코드·설정 변경 없이 일반 터미널 빌드가 성공했습니다. 일반 터미널에서도 실패하면 환경 제한으로 단정하지 말고 해당 로그를 다시 확인합니다. [재현 및 검증 기록](docs/verification/day-06/turbopack.md).
+
 ## 프로젝트 구조
 
 ```text
@@ -146,3 +148,15 @@ iOS 시뮬레이터의 실제 Google 로그인·세션 복원·만료·로그아
 - [2일차 측정 상태](docs/metrics/daily/day-02.md)
 
 `npm ci` 후 API workspace의 postinstall이 Prisma Client를 생성합니다. 별도 생성은 `npm run db:generate -w @chagok/api`입니다. 서버 전용 `DATABASE_URL`·`GOOGLE_WEB_CLIENT_ID`는 `apps/web/.env.local`에, 공개 OAuth client ID는 기존 모바일 `.env.local`에 설정합니다. 비밀값을 공개 앱 환경변수에 넣지 않습니다.
+
+## 6일차 담당자 웹
+
+`http://localhost:3000/admin`에서 기존 Google 웹 client ID로 로그인하고 같은 회사의 신청과 비공개 영수증을 검토합니다. Google Cloud의 해당 웹 OAuth client에 개발 Origin `http://localhost:3000`을 등록해야 합니다. 배포 시 실제 HTTPS Origin을 등록하고 프록시 Host가 다르면 서버 `ADMIN_ORIGIN=https://실제호스트`를 설정합니다(끝 슬래시 제외). 세션은 HttpOnly, SameSite=Strict 쿠키이며 production에서는 Secure를 적용합니다.
+
+먼저 기존 `db:generate`, `db:migrate` 절차를 실행하고 웹 서버를 재시작합니다. 새 Membership은 `EMPLOYEE`이며 담당자 권한을 자동 부여하지 않습니다. 운영자가 사용자와 소속을 확인한 뒤 **명시적으로 지정한 Membership 한 행에만** `role = REVIEWER`를 설정합니다. `userId`와 `companyId` 두 조건으로 대상을 제한하고 변경 행 수가 1인지 확인합니다. 브라우저나 API 입력으로 역할을 승격하는 기능은 없습니다. 권한을 회수하려면 같은 행을 `EMPLOYEE`로 변경합니다. 다음 검토 요청부터 서버가 다시 권한을 확인합니다.
+
+승인은 접수 때 예약한 한도를 유지하고, 반려는 입력한 사유를 직원 상세에 표시하며 한도를 복원합니다. 본인 신청은 다른 담당자가 처리합니다. 같은 결정 재시도는 기존 결과를 돌려주며 반대 결정으로 다시 바꿀 수 없습니다. 직원 화면 재진입이나 앱 활성화 시 새로 조회하며 실시간 푸시는 없습니다.
+
+로컬 및 Supabase의 기존 저장 위치를 각각 읽습니다. 원본은 서버가 인증 후 전달하며 공개 URL은 발급하지 않습니다. production에서 로컬 파일 읽기는 지원하지 않습니다. 구버전으로 롤백할 때 역할/감사 열을 즉시 삭제하지 말고 읽기 호환성을 유지합니다.
+
+[6일차 계획](docs/plans/day-06.md), [검증과 사용자 확인](docs/verification/day-06.md), [동시 요청 측정](docs/metrics/daily/day-06.md)을 참고하세요. [Chrome 후속 검증](docs/verification/day-06/google-review.md), [iOS와 Safari 검증](docs/verification/day-06/employee-live.md), [Android 에뮬레이터 검증](docs/verification/day-06/android-live.md)에서 실제 로그인과 승인·반려, 화면/앱 복귀 자동 갱신을 확인했습니다. 물리 Android 기기는 미검증이며, 이전 앱 내 브라우저의 빈 OAuth 반환 화면 원인은 확정하지 않았습니다.

@@ -45,6 +45,10 @@ export class BenefitsCache {
     if (sessionScope(state) !== this.scope) this.dispose();
   }
 
+  refresh() {
+    return this.client.invalidateQueries({ queryKey: ["benefits"] });
+  }
+
   dispose() {
     void this.client.cancelQueries();
     this.client.clear();
